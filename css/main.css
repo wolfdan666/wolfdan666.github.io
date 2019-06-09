@@ -1943,7 +1943,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #c8ff95;
+  background: #81ffcb;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3250,4 +3250,8 @@ pre .javascript .function {
   color: #fc6423;
   border-bottom: none;
   border-bottom: 1px solid #fc6423;
+}
+::selection {
+  background: #43cd80;
+  color: #fff;
 }
