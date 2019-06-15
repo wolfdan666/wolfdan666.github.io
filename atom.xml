@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>wolfdan&#39;s blog</title>
+  <title>狼胆</title>
   
-  <subtitle>beautiful green light</subtitle>
+  <subtitle>wolfdan&#39;s blog</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-06-12T02:50:53.614Z</updated>
+  <updated>2019-06-15T12:09:24.837Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>如何使用一个域名同时构建Hexo和WordPress</title>
+    <link href="http://yoursite.com/2019/06/15/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E4%B8%80%E4%B8%AA%E5%9F%9F%E5%90%8D%E5%90%8C%E6%97%B6%E6%9E%84%E5%BB%BAHexo%E5%92%8CWordPress/"/>
+    <id>http://yoursite.com/2019/06/15/如何使用一个域名同时构建Hexo和WordPress/</id>
+    <published>2019-06-15T11:16:22.000Z</published>
+    <updated>2019-06-15T12:09:24.837Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://gitee.com/wolfdan/BlogPic/raw/master/ARST/ARST8/%E4%B8%A4%E6%8A%8A%E6%A4%85%E5%AD%90%EF%BC%8C%E7%9C%8B%E8%A7%81%E5%90%8C%E4%B8%80%E7%89%87%E7%BE%8E%E6%99%AF.jpg" alt="两把椅子，看见同一片美景"><br><strong>两把椅子，看见同一片美景</strong></p><h2 id="wolfdan-blog主本人的配置"><a href="#wolfdan-blog主本人的配置" class="headerlink" title="wolfdan blog主本人的配置:"></a>wolfdan blog主本人的配置:</h2><p><strong>其他配置可以灵活参考</strong></p><ul><li>BT面板管理的WordPress</li><li>腾讯云管理域名</li><li>Hexo分布在github page和coding.me pages上面</li><li><strong>使用的<code>wolfdan.cn</code>做WordPress的域名，<code>www.wolfdan.cn</code>做Hexo的域名</strong>（主要是因为之前我的WordPress就是用的<code>wolfdan.cn</code>的域名,所以如果我想要反过来操作的话–&gt;那么1. 数据库里面不太好改的，2. 容易出一些文章链接不正常，3. 网站SEO会很奇怪–&gt;好奇的朋友可以自己尝试一下）</li></ul><h1 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h1><h2 id="一-给coding重新绑定域名"><a href="#一-给coding重新绑定域名" class="headerlink" title="一.给coding重新绑定域名"></a>一.给coding重新绑定域名</h2><p>　　我的是绑定<code>www.wolfdan.cn</code>，你们参考一下</p><ol><li>去腾讯云解析,把github的pages解析关闭掉，然后<code>www.wolfdan.cn</code>只留下<code>pages.coding.me</code>的<code>CNAME</code>的解析(详细操作请看图)</li></ol><p><strong>这样做是为了顺利申请<code>www.wolfdan.cn</code>的域名的SSL，因为如果还开着github的那个解析会申请失败(可以解决问题:coding申请SSL失败)</strong><br><img src="https://raw.githubusercontent.com/wolfdan666/BlogPic/master/ARST/ARST8/pages%E8%A7%A3%E6%9E%90.png" alt="pages解析"></p><h2 id="二-绑定好其他域名"><a href="#二-绑定好其他域名" class="headerlink" title="二.绑定好其他域名"></a>二.绑定好其他域名</h2><ol><li>去github.io仓库的setting设置custom domain的域名绑定<br><img src="https://raw.githubusercontent.com/wolfdan666/BlogPic/master/ARST/ARST8/githubCustomDomain.png" alt="githubCustomDomain"></li><li>Hexo的你的博客根目录下的source根目录下新建一个CNAME文件，里面写上你刚刚绑定的域名，<strong>这样是为了防止每次发布后重新绑定github的域名</strong><br><img src="https://raw.githubusercontent.com/wolfdan666/BlogPic/master/ARST/ARST8/CNAMEset.png" alt="CNAMEset"></li><li>用<code>@记录</code>绑定自己vps的地址<br><img src="https://raw.githubusercontent.com/wolfdan666/BlogPic/master/ARST/ARST8/%E6%9C%80%E5%90%8E%E7%9A%84%E8%A7%A3%E6%9E%90%E7%94%BB%E9%9D%A2.png" alt="最后解析的画面"></li><li>在bt面板添加网站并申请ssl<br><img src="https://raw.githubusercontent.com/wolfdan666/BlogPic/master/ARST/ARST8/BTaddWeb.png" alt="BTaddWeb"></li></ol><p><strong>添加网站</strong><br><img src="https://raw.githubusercontent.com/wolfdan666/BlogPic/master/ARST/ARST8/BTaddSSL.png" alt="BTaddSSL"><br><strong>申请ssl</strong></p><ol start="5"><li>修改wp-config（看情况是否需要操作）<br><img src="https://raw.githubusercontent.com/wolfdan666/BlogPic/master/ARST/ARST8/%E4%BF%AE%E6%94%B9wp-config.png" alt="修改wp-config"></li></ol><h2 id="开始测试玩耍收工咯"><a href="#开始测试玩耍收工咯" class="headerlink" title="开始测试玩耍收工咯"></a>开始测试玩耍收工咯</h2><h2 id="注："><a href="#注：" class="headerlink" title="注："></a>注：</h2><ul><li>测试效果的时候，谷歌浏览器要输入网址的话，<strong>域名最后一定要加<code>/</code></strong>,比如blog主的<code>https://www.wolfdan.cn/</code>，否则很可能出现谷歌智能跳转到以前访问过的<code>https://wolfdan.cn</code>上面去(我就在上面花了好久时间…)</li><li>提前谷歌了一下，发现自己应该没有重复造轮子，才写下此篇，2019年6月15日19:03:53应该没有重复造轮子，感谢大家浏览</li><li><strong>由于自己是5天后才写的，所以难免会有很多纰漏，如果大家有哪里看不懂的可以给我评论留言，谢谢大家的浏览和支持</strong></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      如何使用一个域名同时构建Hexo和WordPress    coding申请SSL失败的解决方法    BT面板添加网站申请SSL并修改数据库   防止每次发布后重新绑定github的域名
+    
+    </summary>
+    
+    
+      <category term="ARST" scheme="http://yoursite.com/tags/ARST/"/>
+    
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+      <category term="域名" scheme="http://yoursite.com/tags/%E5%9F%9F%E5%90%8D/"/>
+    
+      <category term="wordpress" scheme="http://yoursite.com/tags/wordpress/"/>
+    
+      <category term="总有一些事情值得" scheme="http://yoursite.com/tags/%E6%80%BB%E6%9C%89%E4%B8%80%E4%BA%9B%E4%BA%8B%E6%83%85%E5%80%BC%E5%BE%97/"/>
+    
+  </entry>
+  
+  <entry>
     <title>许岑老师的《如何成为有效学习的高手》读书有感</title>
     <link href="http://yoursite.com/2019/06/12/%E8%AE%B8%E5%B2%91%E8%80%81%E5%B8%88%E7%9A%84%E3%80%8A%E5%A6%82%E4%BD%95%E6%88%90%E4%B8%BA%E6%9C%89%E6%95%88%E5%AD%A6%E4%B9%A0%E7%9A%84%E9%AB%98%E6%89%8B%E3%80%8B%E8%AF%BB%E4%B9%A6%E6%9C%89%E6%84%9F/"/>
     <id>http://yoursite.com/2019/06/12/许岑老师的《如何成为有效学习的高手》读书有感/</id>
     <published>2019-06-12T01:17:23.000Z</published>
-    <updated>2019-06-12T02:50:53.614Z</updated>
+    <updated>2019-06-12T02:52:33.124Z</updated>
     
     <content type="html"><![CDATA[<h1 id="高效学习关关键词"><a href="#高效学习关关键词" class="headerlink" title="高效学习关关键词"></a>高效学习关关键词</h1><p>适合自己、学习方法、短时间、注意力、解决难题、设定目标，以及名师</p><h1 id="找到适合你的学习方法"><a href="#找到适合你的学习方法" class="headerlink" title="找到适合你的学习方法"></a>找到适合你的学习方法</h1><blockquote><p><strong>自然主义核心在于模仿，结构主义为的是创造</strong></p><ul><li>模仿类的学习–比如语言等,就是不断地模仿,不要花过多的时间去死扣结构</li><li>而学习创造性的学科时，比如艺术类，设计类，那么就要学好基础结构，这样才能有效创造</li><li><strong>练习不必顾全大局</strong>，练习的时候就可以把练习的东西先拆解反复练习，之后在组合练习的时候再顾全大局</li><li>不要收藏，而是多碎片化学习(没有整块学习时间的情况下)，当然碎片化学习的前提是你要有一定的知识体系(比如你要会1+1=2吧)</li></ul></blockquote><h1 id="不谈兴趣-用任务驱动学习"><a href="#不谈兴趣-用任务驱动学习" class="headerlink" title="不谈兴趣,用任务驱动学习"></a>不谈兴趣,用任务驱动学习</h1><blockquote><p><strong>生活驱动,工作驱动,以教为学</strong></p><ul><li>生活工作中的一些事情推动你学习,那种就是很强的驱动</li><li><strong>每次学习都要有教别人的任务心态去学习,比如写分享文章等</strong>,这样就能使得自己的学习变成一个强的任务驱动的学习过程，进而让自己成为一个高效的学习者</li></ul></blockquote><h1 id="你99-999999999-没有拖延症"><a href="#你99-999999999-没有拖延症" class="headerlink" title="你99.999999999%没有拖延症"></a>你99.999999999%没有拖延症</h1><ul><li><strong>事情的重要程度决定了你的行动力,所以给自己要学习的任务的重要性加码</strong></li></ul><h1 id="精致地对待自己的生活"><a href="#精致地对待自己的生活" class="headerlink" title="精致地对待自己的生活"></a>精致地对待自己的生活</h1><ul><li><strong>买贵的学习工具(贵到让你心痛)</strong>,那么你就会刻意学习了,因为这么贵,怎么舍得不好好利用,不每天都用几下,感觉少用一下都是亵渎钱财</li><li><strong>平时生活中要有仪式感</strong>,比如好好吃饭</li><li><strong>使用射灯,让自己有一种在舞台表演的感觉</strong></li><li><strong>进入高质量的睡眠</strong>,白天累到自己,比如超认真工作一天,睡前几小时锻炼身体,或者超级专注地玩游戏</li></ul><h1 id="设定有效的目标"><a href="#设定有效的目标" class="headerlink" title="设定有效的目标"></a>设定有效的目标</h1><ul><li>首先要有足够明确的目标，强烈的任务驱动欲望，而不是自己的白日梦那种偶尔幻想级别的任务，否则太容易半途而废了，<strong>比如你要出国留学,你现在迫在眉睫地需要练习好口语</strong>,<strong>还比如你下学期要打ICPC比赛了,你要急速提升你的算法竞赛能力</strong></li></ul><h1 id="直奔大师"><a href="#直奔大师" class="headerlink" title="直奔大师"></a>直奔大师</h1><ul><li><strong>在明确了自己的目标也就是自己要去到哪里之后，然后先来一次直奔你要去的地方的模仿</strong>(因为这里涵盖了<strong>兴趣和任务驱动</strong>),然后再是扎实地练习基础功，然后就不断地向着真正意义的大师慢慢进发</li><li><strong>怯场是最糟糕的自觉。一个人他胆子变得比之前的大一点，能走的路可能就长一点</strong></li></ul><h1 id="制造反馈"><a href="#制造反馈" class="headerlink" title="制造反馈"></a>制造反馈</h1><blockquote><p><strong>当学东西的时候，一定要想办法把学习的成功展示出来，应用出来</strong></p><ul><li>比如文字类的，写个总结(就是自己看着文章用自己的话来表述)</li><li>口语类的就给自己录音反复练习</li><li>动作类的就给自己拍视频然后看自己的动作是否规范，然后反复练习</li></ul></blockquote><h1 id="突破瓶颈"><a href="#突破瓶颈" class="headerlink" title="突破瓶颈"></a>突破瓶颈</h1><ul><li>解决自己的心态问题,在排除了技术问题后,要足够地自信</li><li>扩大涉猎范围,在你的专业里面,你要不断地积累</li><li>更加专注,请教名师</li></ul><h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><blockquote><p><strong>如果自信来自于自律，那就是扎扎实实的自信。如果自信来源于幻想，那就是盲目的自信</strong></p></blockquote>]]></content>
     
@@ -65,7 +93,7 @@
     <link href="http://yoursite.com/2019/06/09/ARST%E6%89%93%E5%8D%A1%E7%AC%AC%E4%B8%83%E5%91%A8-7-521/"/>
     <id>http://yoursite.com/2019/06/09/ARST打卡第七周-7-521/</id>
     <published>2019-06-09T13:37:00.000Z</published>
-    <updated>2019-06-10T12:41:34.177Z</updated>
+    <updated>2019-06-15T11:23:24.074Z</updated>
     
     <content type="html"><![CDATA[<p><img src="https://raw.githubusercontent.com/wolfdan666/BlogPic/master/ARST/ARST7/snow.jpg" alt="snow"></p><h1 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h1><p><a href="https://github.com/wolfdan666/WolfEat3moreMeatEveryday/tree/master/2019.6/2019.6.4" target="_blank" rel="noopener">Algorithm</a></p><h1 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h1><p><a href="https://dzone.com/articles/learning-containershttps://dzone.com/articles/learning-containers" target="_blank" rel="noopener">Learning Containers</a><br>　　In addition to all the traditional work of a DBA, I’ll be adding a bunch of information on containers as I learn it. For good or for ill, a lot of stuff like query tuning, backups, HA/DR, and more, is NOT going away.<br>　　我认为:是的，容器化改变了运维现状，以后的运维师将会变少，但不会消失，极度优秀的运维师反而还会出现新的供不应求—从古至今，市场从而不缺技术人员，只缺技术人才，所以我相信对于运维职业消失的担忧其实和当下的CV程序员对于自己是否会被裁掉的担忧是一样的,<strong>因此，我们面对技术变革，唯一需要做的，也是一辈子都需要做的就是：终身学习，我也喜欢这个行业带给我终身学习的习惯</strong></p><h1 id="Tips"><a href="#Tips" class="headerlink" title="Tips:"></a>Tips:</h1><p><a href="https://www.nixonli.com/22700.html" target="_blank" rel="noopener">V2ray问题合集</a><br><a href="http://jeffyang.top/Hexo/Hexo%E4%B8%BB%E9%A2%98Next%E7%BE%8E%E5%8C%96/" target="_blank" rel="noopener">Hexo搭建个性化next主题</a></p><h1 id="Share"><a href="#Share" class="headerlink" title="Share:"></a>Share:</h1><p><a href="https://www.wolfdan.cn/2019/06/09/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BD%BF%E7%94%A8Hexo/" target="_blank" rel="noopener">Hexo和WordPress</a></p>]]></content>
     
