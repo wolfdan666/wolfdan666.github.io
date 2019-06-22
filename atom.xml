@@ -64,9 +64,9 @@
       <category term="总有一些事情值得" scheme="http://yoursite.com/categories/cloud-studio/Hexo/%E6%80%BB%E6%9C%89%E4%B8%80%E4%BA%9B%E4%BA%8B%E6%83%85%E5%80%BC%E5%BE%97/"/>
     
     
-      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
-    
       <category term="总有一些事情值得" scheme="http://yoursite.com/tags/%E6%80%BB%E6%9C%89%E4%B8%80%E4%BA%9B%E4%BA%8B%E6%83%85%E5%80%BC%E5%BE%97/"/>
+    
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
     
       <category term="cloud studio" scheme="http://yoursite.com/tags/cloud-studio/"/>
     
@@ -122,9 +122,9 @@
     
       <category term="ARST" scheme="http://yoursite.com/tags/ARST/"/>
     
-      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
-    
       <category term="总有一些事情值得" scheme="http://yoursite.com/tags/%E6%80%BB%E6%9C%89%E4%B8%80%E4%BA%9B%E4%BA%8B%E6%83%85%E5%80%BC%E5%BE%97/"/>
+    
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
     
       <category term="域名" scheme="http://yoursite.com/tags/%E5%9F%9F%E5%90%8D/"/>
     
@@ -195,6 +195,32 @@
     
     
       <category term="ARST" scheme="http://yoursite.com/tags/ARST/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo和wordpress的选择</title>
+    <link href="http://yoursite.com/2019/06/08/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BD%BF%E7%94%A8Hexo/"/>
+    <id>http://yoursite.com/2019/06/08/为什么我使用Hexo/</id>
+    <published>2019-06-08T13:10:00.000Z</published>
+    <updated>2019-06-22T03:19:39.971Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Hexo和wordpress的选择"><a href="#Hexo和wordpress的选择" class="headerlink" title="Hexo和wordpress的选择"></a>Hexo和wordpress的选择</h1><p><img src="https://raw.githubusercontent.com/wolfdan666/BlogPic/master/ARST/ARST7/Hexo%E5%A4%9A%E7%AB%AF%E5%90%8C%E6%AD%A5/master.png" alt="master"></p><h2 id="1-原来的服务器ip被墙了"><a href="#1-原来的服务器ip被墙了" class="headerlink" title="1. 原来的服务器ip被墙了"></a>1. 原来的服务器ip被墙了</h2><p>　　因为原来自己的网站是搭建在国外的一台服务器上面，然后最近一段时间网络整顿，然后我的ip被ban了,然后我抢救了4天整,好不容易救活了,但是访问速度极其不友好,所以为了让我的读者能有最后的体验,我必须努力啊,然后我就想到了境内境外分流(其实也是受到一个学长的启发)</p><h2 id="2-因为维护vps太麻烦了"><a href="#2-因为维护vps太麻烦了" class="headerlink" title="2. 因为维护vps太麻烦了"></a>2. 因为维护vps太麻烦了</h2><p>　　记得自己是最喜欢配置各种生产环境的一个人,前段时间还想过要做一个运维工程师来着,但是最近头铁了4天整,<strong>发现维护vps实在是太麻烦了</strong>,而且自己还有很多其他的事要处理,<strong>所以这种比较吃时间,可以做到的,但做慢了却会影响用户体验而导致自己熬夜也要肝的事情还是尽量少发生比较好一点</strong>,所以自己觉得让网站托管在大厂微软的github和腾讯的coding上面</p><h2 id="3-Hexo的美化度比较高-个人感觉"><a href="#3-Hexo的美化度比较高-个人感觉" class="headerlink" title="3. Hexo的美化度比较高(个人感觉)"></a>3. Hexo的美化度比较高(个人感觉)</h2><p>　　不知道是自己没有认真地看wordpress的主题还是怎么样,我感觉Hexo的美化度是比较高的,然而我看到的比较好看的wordpress的主题都是收费版的更好看,这让暂时没什么钱的我有点难受,而且觉得不太值得</p><h2 id="4-免费"><a href="#4-免费" class="headerlink" title="4. 免费"></a>4. 免费</h2><p>　　真的,买vps不管国内国外,就连学生机都要至少10RMB/月左右,<strong>所以对于这种Hexo的部署分流方式，真是又快又好又便宜又省事,何乐而不为呢?</strong></p><h4 id="注"><a href="#注" class="headerlink" title="注:"></a>注:</h4><blockquote><p>虽然有些大佬可以薅到谷歌云和亚马逊云的羊毛免费使用一段时间,但是时间是有限的,而且还是有第一二个问题—<code>网站容易被墙</code>和<code>维护vps</code>困难</p></blockquote><h1 id="感言"><a href="#感言" class="headerlink" title="感言"></a>感言</h1><h2 id="当然我不是说不能用wordpress，wordpress其实也是有很多好处的，比如"><a href="#当然我不是说不能用wordpress，wordpress其实也是有很多好处的，比如" class="headerlink" title="当然我不是说不能用wordpress，wordpress其实也是有很多好处的，比如"></a>当然我不是说不能用wordpress，wordpress其实也是有很多好处的，比如</h2><ol><li>可以云端写文章(因为它是在网页端写作的特性)</li><li>可以搭建好了之后让一些没有计算机相关背景的作家使用(就是只要有技术的人定期维护一下就好)(当然这也不一定)</li><li>技术历史长，就是很多问题在谷歌百度上都能找到(而Hexo是一个相对来说新一点的东西)</li></ol><h2 id="做好真正重要的——————-学习和创作"><a href="#做好真正重要的——————-学习和创作" class="headerlink" title="做好真正重要的—————— 学习和创作"></a>做好真正重要的—————— <strong>学习和创作</strong></h2><p>　　这些东西其实都是一些工具，我们最应该做的还是在自己感兴趣的地方多多努力，然后创造价值，再分享给大家，这才是最重要的，也才是我们写作的最主要的目的–&gt;帮助更多的人</p><h1 id="2019年6月9日21-07-21"><a href="#2019年6月9日21-07-21" class="headerlink" title="2019年6月9日21:07:21"></a>2019年6月9日21:07:21</h1><p>　　当我今天用着wordpress写文档的时候，想着以后再有不用这个了，心里有说不出的难受，毕竟这真是我亲儿子一样，养了几个月了，难以割舍的情感，而且云端写作的体验也是妙不可言，所以我决定还是wordpress和hexo都使用<br>　　然后2019年6月9日21:49:40 发现Hexo是组件化，然后很多都是链接别处的东西，所以很容易挂掉某个组件，很惨的那种，然而WordPress就是只要你的vps不死掉，ip不死掉，基本上是没有任何事情会出大故障的</p>]]></content>
+    
+    <summary type="html">
+    
+      我对于wordpress和Hexo的一些观点,为什么我使用Hexo
+    
+    </summary>
+    
+      <category term="Hexo" scheme="http://yoursite.com/categories/Hexo/"/>
+    
+      <category term="Next" scheme="http://yoursite.com/categories/Hexo/Next/"/>
+    
+    
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+      <category term="Write" scheme="http://yoursite.com/tags/Write/"/>
     
   </entry>
   
