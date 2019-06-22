@@ -1,6 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[AD14.2如何安装各种库]]></title>
+    <url>%2F2019%2F06%2F17%2FAD14-2%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E5%90%84%E7%A7%8D%E5%BA%93%2F</url>
+    <content type="text"><![CDATA[AD14.2如何安装各种库我们先以安装NSC Amplifier.IntLib为例子安装文件由于我不知道NSC Amplifier.IntLib在哪,所以我直接搜索找到了这个官方网站的一直文档分支链接进入之后看图操作下载吧下载 使AD软件链接路径 开心食用 下载各种库？当然是找官网啦啦啦官网老库 注意:你清楚你要的库是哪个大文件包–&gt;否则1.谷歌搞清楚2.自己下载整个库解压后搜索 最后注好像又是重复造轮子，搬运工，所以大家多多了解这种解决方案的思路啦，以后多多触类旁通啦 谢谢大家的浏览啦]]></content>
+      <categories>
+        <category>hardware</category>
+        <category>总有一些事情值得</category>
+      </categories>
+      <tags>
+        <tag>hardware</tag>
+        <tag>总有一些事情值得</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[在另一个终端上同步写Hexo]]></title>
+    <url>%2F2019%2F06%2F17%2F%E5%9C%A8could-studio%E5%90%8C%E6%AD%A5%E5%86%99Hexo%2F</url>
+    <content type="text"><![CDATA[在另一个终端上同步写Hexo用Cloud Studio做示范,其他非linux可以适当借鉴 2019年6月17日20:49:03发现Cloud Studio发布的环境也没有保存npm！所以只能每次都重新安装，所以小编将会加急写个脚本出来–&gt;结果发现在cloudstudio运行脚本各种奇葩bug，所以大家要用cloudstudio写hexo的话可以每次粘贴一下下面的程序段，当然建议直接在本地装吧，这种免费但不怎么稳定的东西用着心累1234567echo "-------CloudStudioWriteHexoOnce-------"curl https://raw.github.com/creationix/nvm/v0.33.11/install.sh | shwget -qO- https://raw.github.com/creationix/nvm/v0.33.11/install.sh | shexport NVM_DIR="$HOME/.nvm" &amp;&amp; [ -s "$NVM_DIR/nvm.sh" ] &amp;&amp; \. "$NVM_DIR/nvm.sh" # This loads nvmnvm install stablenpm install -g hexo-clinpm install 1. 添加密钥并且Git pull你自己的仓库由于本着不重复造轮子的心态,所以不会云备份Hexo的朋友们可以看某大佬写的文章 2. 安装node.js安装 Node.js 的最佳方式是使用 nvm cURL: $ curl https://raw.github.com/creationix/nvm/v0.33.11/install.sh | sh Wget: $ wget -qO- https://raw.github.com/creationix/nvm/v0.33.11/install.sh | sh 配置nvm环境 export NVM_DIR=&quot;$HOME/.nvm&quot; &amp;&amp;[ -s &quot;$NVM_DIR/nvm.sh&quot; ] &amp;&amp; \. &quot;$NVM_DIR/nvm.sh&quot; # This loads nvm 安装完成后，重启终端并执行下列命令即可安装 Node.js $ nvm install stable 3. 在blog的根目录安装依赖 注意:blog的根目录就是你之前hexo init &lt;folder&gt;的这个foldernpm i 然后测试hexo clean &amp;&amp; hexo g &amp;&amp; hexo d 4. 写新文章测试 5. 发布自己的环境 这一步十分重要！！！ 博主就是由于之前这一步没做，导致了环境重置 因为cloud studio的工作目录和环境是分离的！ 丢失环境只能重建 发布自己的环境 谢谢大家的浏览啦]]></content>
+      <categories>
+        <category>cloud studio</category>
+        <category>Hexo</category>
+        <category>总有一些事情值得</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>总有一些事情值得</tag>
+        <tag>cloud studio</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ARST打卡第八周(8-521)]]></title>
+    <url>%2F2019%2F06%2F16%2FARST%E6%89%93%E5%8D%A1%E7%AC%AC%E5%85%AB%E5%91%A8-8-521%2F</url>
+    <content type="text"><![CDATA[ARST打卡第八周(8/521)探险就要做好面对乌云密布的准备注·最近因为踢球脚韧带拉伤了,所以最近喜欢看比较悲壮的图片,希望大家多多注意身体健康 AlgorithmARST第八周的刷题 ReviewDevOps: Tools vs. MindsetAnd it is so true: without developing a collaborative environment within the teams, and a culture to adapt to continuous change, no organization can claim to have achieved DevOps implementation success, no matter what tools or technologies you use.对的，通力合作才是最棒的DevOps Tips一个大佬的求职逆袭 Share如何使用一个域名同时构建Hexo和WordPress]]></content>
+      <categories>
+        <category>ARST</category>
+      </categories>
+      <tags>
+        <tag>ARST</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[如何使用一个域名同时构建Hexo和WordPress]]></title>
     <url>%2F2019%2F06%2F15%2F%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E4%B8%80%E4%B8%AA%E5%9F%9F%E5%90%8D%E5%90%8C%E6%97%B6%E6%9E%84%E5%BB%BAHexo%E5%92%8CWordPress%2F</url>
     <content type="text"><![CDATA[两把椅子，看见同一片美景 wolfdan blog主本人的配置:其他配置可以灵活参考 BT面板管理的WordPress 腾讯云管理域名 Hexo分布在github page和coding.me pages上面 使用的wolfdan.cn做WordPress的域名，www.wolfdan.cn做Hexo的域名（主要是因为之前我的WordPress就是用的wolfdan.cn的域名,所以如果我想要反过来操作的话–&gt;那么1. 数据库里面不太好改的，2. 容易出一些文章链接不正常，3. 网站SEO会很奇怪–&gt;好奇的朋友可以自己尝试一下） 操作一.给coding重新绑定域名 我的是绑定www.wolfdan.cn，你们参考一下 去腾讯云解析,把github的pages解析关闭掉，然后www.wolfdan.cn只留下pages.coding.me的CNAME的解析(详细操作请看图) 这样做是为了顺利申请www.wolfdan.cn的域名的SSL，因为如果还开着github的那个解析会申请失败(可以解决问题:coding申请SSL失败) pages解析 二.绑定好其他域名 去github.io仓库的setting设置custom domain的域名绑定 Hexo的你的博客根目录下的source根目录下新建一个CNAME文件，里面写上你刚刚绑定的域名，这样是为了防止每次发布后重新绑定github的域名 用@记录绑定自己vps的地址 最后解析的画面 在bt面板添加网站并申请ssl 添加网站申请ssl 修改wp-config（看情况是否需要操作） 开始测试玩耍收工咯注： 测试效果的时候，谷歌浏览器要输入网址的话，域名最后一定要加/,比如blog主的https://www.wolfdan.cn/，否则很可能出现谷歌智能跳转到以前访问过的https://wolfdan.cn上面去(我就在上面花了好久时间…) 提前谷歌了一下，发现自己应该没有重复造轮子，才写下此篇，2019年6月15日19:03:53应该没有重复造轮子，感谢大家浏览 由于自己是5天后才写的，所以难免会有很多纰漏，如果大家有哪里看不懂的可以给我评论留言，谢谢大家的浏览和支持]]></content>
@@ -12,11 +51,11 @@
         <category>总有一些事情值得</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
         <tag>ARST</tag>
+        <tag>Hexo</tag>
+        <tag>总有一些事情值得</tag>
         <tag>域名</tag>
         <tag>wordpress</tag>
-        <tag>总有一些事情值得</tag>
       </tags>
   </entry>
   <entry>
@@ -53,21 +92,8 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Hexo和wordpress的选择]]></title>
-    <url>%2F2019%2F06%2F09%2F%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BD%BF%E7%94%A8Hexo%2F</url>
-    <content type="text"><![CDATA[Hexo和wordpress的选择 1. 原来的服务器ip被墙了 因为原来自己的网站是搭建在国外的一台服务器上面，然后最近一段时间网络整顿，然后我的ip被ban了,然后我抢救了4天整,好不容易救活了,但是访问速度极其不友好,所以为了让我的读者能有最后的体验,我必须努力啊,然后我就想到了境内境外分流(其实也是受到一个学长的启发) 2. 因为维护vps太麻烦了 记得自己是最喜欢配置各种生产环境的一个人,前段时间还想过要做一个运维工程师来着,但是最近头铁了4天整,发现维护vps实在是太麻烦了,而且自己还有很多其他的事要处理,所以这种比较吃时间,可以做到的,但做慢了却会影响用户体验而导致自己熬夜也要肝的事情还是尽量少发生比较好一点,所以自己觉得让网站托管在大厂微软的github和腾讯的coding上面 3. Hexo的美化度比较高(个人感觉) 不知道是自己没有认真地看wordpress的主题还是怎么样,我感觉Hexo的美化度是比较高的,然而我看到的比较好看的wordpress的主题都是收费版的更好看,这让暂时没什么钱的我有点难受,而且觉得不太值得 4. 免费 真的,买vps不管国内国外,就连学生机都要至少10RMB/月左右,所以对于这种Hexo的部署分流方式，真是又快又好又便宜又省事,何乐而不为呢? 注: 虽然有些大佬可以薅到谷歌云和亚马逊云的羊毛免费使用一段时间,但是时间是有限的,而且还是有第一二个问题—网站容易被墙和维护vps困难 感言当然我不是说不能用wordpress，wordpress其实也是有很多好处的，比如 可以云端写文章(因为它是在网页端写作的特性) 可以搭建好了之后让一些没有计算机相关背景的作家使用(就是只要有技术的人定期维护一下就好)(当然这也不一定) 技术历史长，就是很多问题在谷歌百度上都能找到(而Hexo是一个相对来说新一点的东西) 做好真正重要的—————— 学习和创作 这些东西其实都是一些工具，我们最应该做的还是在自己感兴趣的地方多多努力，然后创造价值，再分享给大家，这才是最重要的，也才是我们写作的最主要的目的–&gt;帮助更多的人 2019年6月9日21:07:21 当我今天用着wordpress写文档的时候，想着以后再有不用这个了，心里有说不出的难受，毕竟这真是我亲儿子一样，养了几个月了，难以割舍的情感，而且云端写作的体验也是妙不可言，所以我决定还是wordpress和hexo都使用 然后2019年6月9日21:49:40 发现Hexo是组件化，然后很多都是链接别处的东西，所以很容易挂掉某个组件，很惨的那种，然而WordPress就是只要你的vps不死掉，ip不死掉，基本上是没有任何事情会出大故障的]]></content>
-      <categories>
-        <category>Hexo</category>
-        <category>Next</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>Write</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Hello World]]></title>
-    <url>%2F2019%2F06%2F09%2Fhello-world%2F</url>
+    <url>%2F2019%2F06%2F08%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
       <categories>
         <category>Hexo</category>

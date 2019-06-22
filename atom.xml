@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-06-15T13:43:15.087Z</updated>
+  <updated>2019-06-18T04:50:22.473Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,84 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>AD14.2如何安装各种库</title>
+    <link href="http://yoursite.com/2019/06/17/AD14-2%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E5%90%84%E7%A7%8D%E5%BA%93/"/>
+    <id>http://yoursite.com/2019/06/17/AD14-2如何安装各种库/</id>
+    <published>2019-06-17T11:16:31.000Z</published>
+    <updated>2019-06-18T04:50:22.473Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="AD14-2如何安装各种库"><a href="#AD14-2如何安装各种库" class="headerlink" title="AD14.2如何安装各种库"></a>AD14.2如何安装各种库</h1><h2 id="我们先以安装NSC-Amplifier-IntLib为例子"><a href="#我们先以安装NSC-Amplifier-IntLib为例子" class="headerlink" title="我们先以安装NSC Amplifier.IntLib为例子"></a>我们先以安装NSC Amplifier.IntLib为例子</h2><h3 id="安装文件"><a href="#安装文件" class="headerlink" title="安装文件"></a>安装文件</h3><p>由于我不知道NSC Amplifier.IntLib在哪,所以我直接搜索找到了这个官方网站的一直文档分支链接<br><a href="https://techdocs.altium.com/cn/display/AMSE/Defining+&+Running+Circuit+Simulation+Analyses" target="_blank" rel="noopener">进入之后看图操作下载吧</a><br><img src="https://gitee.com/wolfdan/BlogPic/raw/master/ARST/ARST9/how_to_install_library_in_AD14.2/1.png" alt="下载"><br><strong>下载</strong></p><h3 id="使AD软件链接路径"><a href="#使AD软件链接路径" class="headerlink" title="使AD软件链接路径"></a>使AD软件链接路径</h3><p><img src="https://gitee.com/wolfdan/BlogPic/raw/master/ARST/ARST9/how_to_install_library_in_AD14.2/2.png" alt="使AD软件链接路径"></p><h3 id="开心食用"><a href="#开心食用" class="headerlink" title="开心食用"></a>开心食用</h3><p><img src="https://gitee.com/wolfdan/BlogPic/raw/master/ARST/ARST9/how_to_install_library_in_AD14.2/3.png" alt="开心食用"></p><h2 id="下载各种库？"><a href="#下载各种库？" class="headerlink" title="下载各种库？"></a>下载各种库？</h2><h3 id="当然是找官网啦啦啦"><a href="#当然是找官网啦啦啦" class="headerlink" title="当然是找官网啦啦啦"></a>当然是找官网啦啦啦</h3><p><a href="https://techdocs.altium.com/display/ADOH/Download+Libraries" target="_blank" rel="noopener">官网老库</a></p><p><strong>注意:你清楚你要的库是哪个大文件包–&gt;否则1.谷歌搞清楚2.自己下载整个库解压后搜索</strong></p><h1 id="最后注"><a href="#最后注" class="headerlink" title="最后注"></a>最后注</h1><p><strong>好像又是重复造轮子，搬运工，所以大家多多了解这种解决方案的思路啦，以后多多触类旁通啦</strong></p><blockquote><p>谢谢大家的浏览啦</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      AD14.2如何安装各种库（以NSC Amplifier.IntLib为例子）
+    
+    </summary>
+    
+      <category term="hardware" scheme="http://yoursite.com/categories/hardware/"/>
+    
+      <category term="总有一些事情值得" scheme="http://yoursite.com/categories/hardware/%E6%80%BB%E6%9C%89%E4%B8%80%E4%BA%9B%E4%BA%8B%E6%83%85%E5%80%BC%E5%BE%97/"/>
+    
+    
+      <category term="hardware" scheme="http://yoursite.com/tags/hardware/"/>
+    
+      <category term="总有一些事情值得" scheme="http://yoursite.com/tags/%E6%80%BB%E6%9C%89%E4%B8%80%E4%BA%9B%E4%BA%8B%E6%83%85%E5%80%BC%E5%BE%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在另一个终端上同步写Hexo</title>
+    <link href="http://yoursite.com/2019/06/17/%E5%9C%A8could-studio%E5%90%8C%E6%AD%A5%E5%86%99Hexo/"/>
+    <id>http://yoursite.com/2019/06/17/在could-studio同步写Hexo/</id>
+    <published>2019-06-16T16:26:51.000Z</published>
+    <updated>2019-06-18T04:50:22.478Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="在另一个终端上同步写Hexo"><a href="#在另一个终端上同步写Hexo" class="headerlink" title="在另一个终端上同步写Hexo"></a>在另一个终端上同步写Hexo</h1><p><strong>用Cloud Studio做示范,其他非linux可以适当借鉴</strong></p><h3 id="2019年6月17日20-49-03发现Cloud-Studio发布的环境也没有保存npm！所以只能每次都重新安装，所以小编将会加急写个脚本出来–-gt-结果发现在cloudstudio运行脚本各种奇葩bug，所以大家要用cloudstudio写hexo的话可以每次粘贴一下下面的程序段，当然建议直接在本地装吧，这种免费但不怎么稳定的东西用着心累"><a href="#2019年6月17日20-49-03发现Cloud-Studio发布的环境也没有保存npm！所以只能每次都重新安装，所以小编将会加急写个脚本出来–-gt-结果发现在cloudstudio运行脚本各种奇葩bug，所以大家要用cloudstudio写hexo的话可以每次粘贴一下下面的程序段，当然建议直接在本地装吧，这种免费但不怎么稳定的东西用着心累" class="headerlink" title="2019年6月17日20:49:03发现Cloud Studio发布的环境也没有保存npm！所以只能每次都重新安装，所以小编将会加急写个脚本出来–&gt;结果发现在cloudstudio运行脚本各种奇葩bug，所以大家要用cloudstudio写hexo的话可以每次粘贴一下下面的程序段，当然建议直接在本地装吧，这种免费但不怎么稳定的东西用着心累"></a>2019年6月17日20:49:03发现Cloud Studio发布的环境也没有保存npm！所以只能每次都重新安装，所以小编将会加急写个脚本出来–&gt;结果发现在cloudstudio运行脚本各种奇葩bug，所以大家要用cloudstudio写hexo的话可以每次粘贴一下下面的程序段，当然建议直接在本地装吧，这种免费但不怎么稳定的东西用着心累</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"-------CloudStudioWriteHexoOnce-------"</span></span><br><span class="line">curl https://raw.github.com/creationix/nvm/v0.33.11/install.sh | sh</span><br><span class="line">wget -qO- https://raw.github.com/creationix/nvm/v0.33.11/install.sh | sh</span><br><span class="line"><span class="built_in">export</span> NVM_DIR=<span class="string">"<span class="variable">$HOME</span>/.nvm"</span> &amp;&amp; [ -s <span class="string">"<span class="variable">$NVM_DIR</span>/nvm.sh"</span> ] &amp;&amp; \. <span class="string">"<span class="variable">$NVM_DIR</span>/nvm.sh"</span> <span class="comment"># This loads nvm</span></span><br><span class="line">nvm install stable</span><br><span class="line">npm install -g hexo-cli</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure><h2 id="1-添加密钥并且Git-pull你自己的仓库"><a href="#1-添加密钥并且Git-pull你自己的仓库" class="headerlink" title="1. 添加密钥并且Git pull你自己的仓库"></a>1. 添加密钥并且Git pull你自己的仓库</h2><p>由于本着不重复造轮子的心态,所以<a href="https://cloud.tencent.com/developer/article/1365689" target="_blank" rel="noopener">不会云备份Hexo的朋友们可以看某大佬写的文章</a><br><img src="https://gitee.com/wolfdan/BlogPic/raw/master/ARST/ARST9/CloudStudio%E4%BA%91%E7%AB%AF%E5%90%8C%E6%AD%A5%E5%86%99Hexo/1.png" alt="1.添加密钥"></p><h2 id="2-安装node-js"><a href="#2-安装node-js" class="headerlink" title="2. 安装node.js"></a>2. 安装node.js</h2><p>安装 Node.js 的最佳方式是使用 nvm</p><p>cURL:</p><blockquote><p>$ <code>curl https://raw.github.com/creationix/nvm/v0.33.11/install.sh | sh</code></p></blockquote><p>Wget:</p><blockquote><p>$ <code>wget -qO- https://raw.github.com/creationix/nvm/v0.33.11/install.sh | sh</code></p></blockquote><p>配置nvm环境</p><blockquote><p><code>export NVM_DIR=&quot;$HOME/.nvm&quot; &amp;&amp;</code><br><code>[ -s &quot;$NVM_DIR/nvm.sh&quot; ] &amp;&amp; \. &quot;$NVM_DIR/nvm.sh&quot;  # This loads nvm</code></p></blockquote><p>安装完成后，重启终端并执行下列命令即可安装 Node.js</p><blockquote><p>$ <code>nvm install stable</code></p></blockquote><p><img src="https://gitee.com/wolfdan/BlogPic/raw/master/ARST/ARST9/CloudStudio%E4%BA%91%E7%AB%AF%E5%90%8C%E6%AD%A5%E5%86%99Hexo/2.png" alt="2.安装nodejs"></p><h2 id="3-在blog的根目录安装依赖"><a href="#3-在blog的根目录安装依赖" class="headerlink" title="3. 在blog的根目录安装依赖"></a>3. 在blog的根目录安装依赖</h2><blockquote><p>注意:blog的根目录就是你之前<code>hexo init &lt;folder&gt;</code>的这个folder<br><code>npm i</code></p></blockquote><p>然后测试<br><code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code></p><p><img src="https://gitee.com/wolfdan/BlogPic/raw/master/ARST/ARST9/CloudStudio%E4%BA%91%E7%AB%AF%E5%90%8C%E6%AD%A5%E5%86%99Hexo/3.png" alt="3.在blog的根目录安装依赖"></p><h2 id="4-写新文章测试"><a href="#4-写新文章测试" class="headerlink" title="4. 写新文章测试"></a>4. 写新文章测试</h2><p><img src="https://gitee.com/wolfdan/BlogPic/raw/master/ARST/ARST9/CloudStudio%E4%BA%91%E7%AB%AF%E5%90%8C%E6%AD%A5%E5%86%99Hexo/4.png" alt="4.写新文章测试"></p><h2 id="5-发布自己的环境"><a href="#5-发布自己的环境" class="headerlink" title="5. 发布自己的环境"></a>5. 发布自己的环境</h2><ul><li>这一步十分重要！！！</li><li>博主就是由于之前这一步没做，导致了环境重置</li><li><strong>因为cloud studio的工作目录和环境是分离的！</strong></li></ul><p><img src="https://gitee.com/wolfdan/BlogPic/raw/master/ARST/ARST9/CloudStudio%E4%BA%91%E7%AB%AF%E5%90%8C%E6%AD%A5%E5%86%99Hexo/5.png" alt="5.丢失环境只能重建"><br><strong>丢失环境只能重建</strong></p><p><img src="https://gitee.com/wolfdan/BlogPic/raw/master/ARST/ARST9/CloudStudio%E4%BA%91%E7%AB%AF%E5%90%8C%E6%AD%A5%E5%86%99Hexo/6.png" alt="6.发布自己的环境"><br><strong>发布自己的环境</strong></p><blockquote><p>谢谢大家的浏览啦</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      在另一个终端上同步写Hexo  在Could Studio同步写Hexo 多平台备份Hexo  安装node.js CouldStudio如何防止环境丢失
+    
+    </summary>
+    
+      <category term="cloud studio" scheme="http://yoursite.com/categories/cloud-studio/"/>
+    
+      <category term="Hexo" scheme="http://yoursite.com/categories/cloud-studio/Hexo/"/>
+    
+      <category term="总有一些事情值得" scheme="http://yoursite.com/categories/cloud-studio/Hexo/%E6%80%BB%E6%9C%89%E4%B8%80%E4%BA%9B%E4%BA%8B%E6%83%85%E5%80%BC%E5%BE%97/"/>
+    
+    
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+      <category term="总有一些事情值得" scheme="http://yoursite.com/tags/%E6%80%BB%E6%9C%89%E4%B8%80%E4%BA%9B%E4%BA%8B%E6%83%85%E5%80%BC%E5%BE%97/"/>
+    
+      <category term="cloud studio" scheme="http://yoursite.com/tags/cloud-studio/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ARST打卡第八周(8-521)</title>
+    <link href="http://yoursite.com/2019/06/16/ARST%E6%89%93%E5%8D%A1%E7%AC%AC%E5%85%AB%E5%91%A8-8-521/"/>
+    <id>http://yoursite.com/2019/06/16/ARST打卡第八周-8-521/</id>
+    <published>2019-06-16T04:52:14.000Z</published>
+    <updated>2019-06-18T04:50:22.476Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="ARST打卡第八周-8-521"><a href="#ARST打卡第八周-8-521" class="headerlink" title="ARST打卡第八周(8/521)"></a>ARST打卡第八周(8/521)</h1><p><img src="https://raw.githubusercontent.com/wolfdan666/BlogPic/master/ARST/ARST8/%E6%8E%A2%E9%99%A9%E5%B0%B1%E8%A6%81%E5%81%9A%E5%A5%BD%E9%9D%A2%E5%AF%B9%E4%B9%8C%E4%BA%91%E5%AF%86%E5%B8%83%E7%9A%84%E5%87%86%E5%A4%87.jpg" alt="探险就要做好面对乌云密布的准备"><br>探险就要做好面对乌云密布的准备<br>注·最近因为踢球脚韧带拉伤了,所以最近喜欢看比较悲壮的图片,希望大家多多注意身体健康</p><h1 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h1><p><a href="https://github.com/wolfdan666/WolfEat3moreMeatEveryday/tree/master/2019.6/2019.6.14" target="_blank" rel="noopener">ARST第八周的刷题</a></p><h1 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h1><p><a href="https://dzone.com/articles/devops-tools-vs-mindset-culture" target="_blank" rel="noopener">DevOps: Tools vs. Mindset</a><br>And it is so true: without developing a collaborative environment within the teams, and a culture to adapt to continuous change, no organization can claim to have achieved DevOps implementation success, no matter what tools or technologies you use.<br>对的，通力合作才是最棒的DevOps</p><h1 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h1><p><a href="https://juejin.im/post/5d0232b0f265da1b6836b7fd" target="_blank" rel="noopener">一个大佬的求职逆袭</a></p><h1 id="Share"><a href="#Share" class="headerlink" title="Share"></a>Share</h1><p><a href="https://wolfdan.cn/2019/06/15/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E4%B8%80%E4%B8%AA%E5%9F%9F%E5%90%8D%E5%90%8C%E6%97%B6%E6%9E%84%E5%BB%BAhexo%E5%92%8Cwordpress/" target="_blank" rel="noopener">如何使用一个域名同时构建Hexo和WordPress</a></p>]]></content>
+    
+    <summary type="html">
+    
+      ARST8/521 DevOps( Tools vs. Mindset ) 一个大佬的求职逆袭  如何使用一个域名同时构建Hexo和WordPress
+    
+    </summary>
+    
+      <category term="ARST" scheme="http://yoursite.com/categories/ARST/"/>
+    
+    
+      <category term="ARST" scheme="http://yoursite.com/tags/ARST/"/>
+    
+  </entry>
   
   <entry>
     <title>如何使用一个域名同时构建Hexo和WordPress</title>
@@ -42,15 +120,15 @@
       <category term="总有一些事情值得" scheme="http://yoursite.com/categories/%E5%9F%9F%E5%90%8D/ARST/Hexo/wordpress/%E6%80%BB%E6%9C%89%E4%B8%80%E4%BA%9B%E4%BA%8B%E6%83%85%E5%80%BC%E5%BE%97/"/>
     
     
+      <category term="ARST" scheme="http://yoursite.com/tags/ARST/"/>
+    
       <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
     
-      <category term="ARST" scheme="http://yoursite.com/tags/ARST/"/>
+      <category term="总有一些事情值得" scheme="http://yoursite.com/tags/%E6%80%BB%E6%9C%89%E4%B8%80%E4%BA%9B%E4%BA%8B%E6%83%85%E5%80%BC%E5%BE%97/"/>
     
       <category term="域名" scheme="http://yoursite.com/tags/%E5%9F%9F%E5%90%8D/"/>
     
       <category term="wordpress" scheme="http://yoursite.com/tags/wordpress/"/>
-    
-      <category term="总有一些事情值得" scheme="http://yoursite.com/tags/%E6%80%BB%E6%9C%89%E4%B8%80%E4%BA%9B%E4%BA%8B%E6%83%85%E5%80%BC%E5%BE%97/"/>
     
   </entry>
   
@@ -121,37 +199,11 @@
   </entry>
   
   <entry>
-    <title>Hexo和wordpress的选择</title>
-    <link href="http://yoursite.com/2019/06/09/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BD%BF%E7%94%A8Hexo/"/>
-    <id>http://yoursite.com/2019/06/09/为什么我使用Hexo/</id>
-    <published>2019-06-09T05:02:24.884Z</published>
-    <updated>2019-06-09T13:51:27.947Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Hexo和wordpress的选择"><a href="#Hexo和wordpress的选择" class="headerlink" title="Hexo和wordpress的选择"></a>Hexo和wordpress的选择</h1><p><img src="https://raw.githubusercontent.com/wolfdan666/BlogPic/master/ARST/ARST7/Hexo%E5%A4%9A%E7%AB%AF%E5%90%8C%E6%AD%A5/master.png" alt="master"></p><h2 id="1-原来的服务器ip被墙了"><a href="#1-原来的服务器ip被墙了" class="headerlink" title="1. 原来的服务器ip被墙了"></a>1. 原来的服务器ip被墙了</h2><p>　　因为原来自己的网站是搭建在国外的一台服务器上面，然后最近一段时间网络整顿，然后我的ip被ban了,然后我抢救了4天整,好不容易救活了,但是访问速度极其不友好,所以为了让我的读者能有最后的体验,我必须努力啊,然后我就想到了境内境外分流(其实也是受到一个学长的启发)</p><h2 id="2-因为维护vps太麻烦了"><a href="#2-因为维护vps太麻烦了" class="headerlink" title="2. 因为维护vps太麻烦了"></a>2. 因为维护vps太麻烦了</h2><p>　　记得自己是最喜欢配置各种生产环境的一个人,前段时间还想过要做一个运维工程师来着,但是最近头铁了4天整,<strong>发现维护vps实在是太麻烦了</strong>,而且自己还有很多其他的事要处理,<strong>所以这种比较吃时间,可以做到的,但做慢了却会影响用户体验而导致自己熬夜也要肝的事情还是尽量少发生比较好一点</strong>,所以自己觉得让网站托管在大厂微软的github和腾讯的coding上面</p><h2 id="3-Hexo的美化度比较高-个人感觉"><a href="#3-Hexo的美化度比较高-个人感觉" class="headerlink" title="3. Hexo的美化度比较高(个人感觉)"></a>3. Hexo的美化度比较高(个人感觉)</h2><p>　　不知道是自己没有认真地看wordpress的主题还是怎么样,我感觉Hexo的美化度是比较高的,然而我看到的比较好看的wordpress的主题都是收费版的更好看,这让暂时没什么钱的我有点难受,而且觉得不太值得</p><h2 id="4-免费"><a href="#4-免费" class="headerlink" title="4. 免费"></a>4. 免费</h2><p>　　真的,买vps不管国内国外,就连学生机都要至少10RMB/月左右,<strong>所以对于这种Hexo的部署分流方式，真是又快又好又便宜又省事,何乐而不为呢?</strong></p><h4 id="注"><a href="#注" class="headerlink" title="注:"></a>注:</h4><blockquote><p>虽然有些大佬可以薅到谷歌云和亚马逊云的羊毛免费使用一段时间,但是时间是有限的,而且还是有第一二个问题—<code>网站容易被墙</code>和<code>维护vps</code>困难</p></blockquote><h1 id="感言"><a href="#感言" class="headerlink" title="感言"></a>感言</h1><h2 id="当然我不是说不能用wordpress，wordpress其实也是有很多好处的，比如"><a href="#当然我不是说不能用wordpress，wordpress其实也是有很多好处的，比如" class="headerlink" title="当然我不是说不能用wordpress，wordpress其实也是有很多好处的，比如"></a>当然我不是说不能用wordpress，wordpress其实也是有很多好处的，比如</h2><ol><li>可以云端写文章(因为它是在网页端写作的特性)</li><li>可以搭建好了之后让一些没有计算机相关背景的作家使用(就是只要有技术的人定期维护一下就好)(当然这也不一定)</li><li>技术历史长，就是很多问题在谷歌百度上都能找到(而Hexo是一个相对来说新一点的东西)</li></ol><h2 id="做好真正重要的——————-学习和创作"><a href="#做好真正重要的——————-学习和创作" class="headerlink" title="做好真正重要的—————— 学习和创作"></a>做好真正重要的—————— <strong>学习和创作</strong></h2><p>　　这些东西其实都是一些工具，我们最应该做的还是在自己感兴趣的地方多多努力，然后创造价值，再分享给大家，这才是最重要的，也才是我们写作的最主要的目的–&gt;帮助更多的人</p><h1 id="2019年6月9日21-07-21"><a href="#2019年6月9日21-07-21" class="headerlink" title="2019年6月9日21:07:21"></a>2019年6月9日21:07:21</h1><p>　　当我今天用着wordpress写文档的时候，想着以后再有不用这个了，心里有说不出的难受，毕竟这真是我亲儿子一样，养了几个月了，难以割舍的情感，而且云端写作的体验也是妙不可言，所以我决定还是wordpress和hexo都使用<br>　　然后2019年6月9日21:49:40 发现Hexo是组件化，然后很多都是链接别处的东西，所以很容易挂掉某个组件，很惨的那种，然而WordPress就是只要你的vps不死掉，ip不死掉，基本上是没有任何事情会出大故障的</p>]]></content>
-    
-    <summary type="html">
-    
-      我对于wordpress和Hexo的一些观点,为什么我使用Hexo
-    
-    </summary>
-    
-      <category term="Hexo" scheme="http://yoursite.com/categories/Hexo/"/>
-    
-      <category term="Next" scheme="http://yoursite.com/categories/Hexo/Next/"/>
-    
-    
-      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
-    
-      <category term="Write" scheme="http://yoursite.com/tags/Write/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2019/06/09/hello-world/"/>
-    <id>http://yoursite.com/2019/06/09/hello-world/</id>
-    <published>2019-06-09T04:57:13.187Z</published>
-    <updated>2019-06-09T07:57:32.669Z</updated>
+    <link href="http://yoursite.com/2019/06/08/hello-world/"/>
+    <id>http://yoursite.com/2019/06/08/hello-world/</id>
+    <published>2019-06-08T07:10:00.000Z</published>
+    <updated>2019-06-22T03:17:19.986Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
     
