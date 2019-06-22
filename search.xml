@@ -1,19 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[安装破解Altium Designer14.2]]></title>
-    <url>%2F2019%2F06%2F22%2F%E5%AE%89%E8%A3%85%E7%A0%B4%E8%A7%A3Altium-Designer14-2%2F</url>
-    <content type="text"><![CDATA[安装破解Altium Designer 14.2.3 http://pandownload.com/ 百度云盘第三方不限速版软件(小单推荐) 欢迎访问wolfdan.cn AD软件链接：https://pan.baidu.com/s/1m6mNk_uqHGb3q6Moc1zqQA 提取码：eqyo 2.1用1打开这个链接，然后下载，只下载两个压缩包就行了， 2.2然后一起解压到当前目录 2.3看视频安装 个人分享链接:https://pan.baidu.com/s/1EHtVTZWtefQwVn6GVleE6g 提取码：zhf1(防止上面失效用的) 注:不好意思，好像重复造轮子了,dbq,但希望能帮到你…用完即走就好(毕竟是工具性质,分享性质的网站)]]></content>
-      <categories>
-        <category>hardware</category>
-        <category>总有一些事情值得</category>
-      </categories>
-      <tags>
-        <tag>hardware</tag>
-        <tag>总有一些事情值得</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[AD14.2如何安装各种库]]></title>
     <url>%2F2019%2F06%2F17%2FAD14-2%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E5%90%84%E7%A7%8D%E5%BA%93%2F</url>
     <content type="text"><![CDATA[AD14.2如何安装各种库我们先以安装NSC Amplifier.IntLib为例子安装文件由于我不知道NSC Amplifier.IntLib在哪,所以我直接搜索找到了这个官方网站的一直文档分支链接进入之后看图操作下载吧下载 使AD软件链接路径 开心食用 下载各种库？当然是找官网啦啦啦官网老库 注意:你清楚你要的库是哪个大文件包–&gt;否则1.谷歌搞清楚2.自己下载整个库解压后搜索 最后注好像又是重复造轮子，搬运工，所以大家多多了解这种解决方案的思路啦，以后多多触类旁通啦 谢谢大家的浏览啦]]></content>
@@ -42,6 +29,19 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[安装破解Altium Designer14.2]]></title>
+    <url>%2F2019%2F06%2F16%2F%E5%AE%89%E8%A3%85%E7%A0%B4%E8%A7%A3Altium-Designer14-2%2F</url>
+    <content type="text"><![CDATA[安装破解Altium Designer 14.2.3 http://pandownload.com/ 百度云盘第三方不限速版软件(小单推荐) 欢迎访问wolfdan.cn AD软件链接：https://pan.baidu.com/s/1m6mNk_uqHGb3q6Moc1zqQA 提取码：eqyo 2.1用1打开这个链接，然后下载，只下载两个压缩包就行了， 2.2然后一起解压到当前目录 2.3看视频安装 个人分享链接:https://pan.baidu.com/s/1EHtVTZWtefQwVn6GVleE6g 提取码：zhf1(防止上面失效用的) 注:不好意思，好像重复造轮子了,dbq,但希望能帮到你…用完即走就好(毕竟是工具性质,分享性质的网站)]]></content>
+      <categories>
+        <category>hardware</category>
+        <category>总有一些事情值得</category>
+      </categories>
+      <tags>
+        <tag>hardware</tag>
+        <tag>总有一些事情值得</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[ARST打卡第八周(8-521)]]></title>
     <url>%2F2019%2F06%2F16%2FARST%E6%89%93%E5%8D%A1%E7%AC%AC%E5%85%AB%E5%91%A8-8-521%2F</url>
     <content type="text"><![CDATA[ARST打卡第八周(8/521)探险就要做好面对乌云密布的准备注·最近因为踢球脚韧带拉伤了,所以最近喜欢看比较悲壮的图片,希望大家多多注意身体健康 AlgorithmARST第八周的刷题 ReviewDevOps: Tools vs. MindsetAnd it is so true: without developing a collaborative environment within the teams, and a culture to adapt to continuous change, no organization can claim to have achieved DevOps implementation success, no matter what tools or technologies you use.对的，通力合作才是最棒的DevOps Tips一个大佬的求职逆袭 Share如何使用一个域名同时构建Hexo和WordPress]]></content>
@@ -64,9 +64,9 @@
         <category>总有一些事情值得</category>
       </categories>
       <tags>
+        <tag>ARST</tag>
         <tag>总有一些事情值得</tag>
         <tag>Hexo</tag>
-        <tag>ARST</tag>
         <tag>域名</tag>
         <tag>wordpress</tag>
       </tags>
