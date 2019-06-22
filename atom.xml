@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-06-18T04:50:22.473Z</updated>
+  <updated>2019-06-22T04:55:13.274Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>安装破解Altium Designer14.2</title>
+    <link href="http://yoursite.com/2019/06/22/%E5%AE%89%E8%A3%85%E7%A0%B4%E8%A7%A3Altium-Designer14-2/"/>
+    <id>http://yoursite.com/2019/06/22/安装破解Altium-Designer14-2/</id>
+    <published>2019-06-22T04:53:50.000Z</published>
+    <updated>2019-06-22T04:55:13.274Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="安装破解Altium-Designer-14-2-3"><a href="#安装破解Altium-Designer-14-2-3" class="headerlink" title="安装破解Altium Designer 14.2.3"></a>安装破解Altium Designer 14.2.3</h3><ol><li><p><a href="http://pandownload.com/" target="_blank" rel="noopener">http://pandownload.com/</a>                百度云盘第三方不限速版软件(小单推荐)      欢迎访问wolfdan.cn</p></li><li><p>AD软件链接：<a href="https://pan.baidu.com/s/1m6mNk_uqHGb3q6Moc1zqQA" target="_blank" rel="noopener">https://pan.baidu.com/s/1m6mNk_uqHGb3q6Moc1zqQA</a> 提取码：eqyo<br> 2.1用1打开这个链接，然后下载，只下载两个压缩包就行了，<br> 2.2然后一起解压到当前目录<br> 2.3看视频安装</p></li></ol><p>个人分享链接:<a href="https://pan.baidu.com/s/1EHtVTZWtefQwVn6GVleE6g" target="_blank" rel="noopener">https://pan.baidu.com/s/1EHtVTZWtefQwVn6GVleE6g</a>             提取码：zhf1<br>(防止上面失效用的)</p><h2 id="注"><a href="#注" class="headerlink" title="注:"></a>注:</h2><p><strong>不好意思，好像重复造轮子了,dbq,但希望能帮到你…用完即走就好(毕竟是工具性质,分享性质的网站)</strong></p>]]></content>
+    
+    <summary type="html">
+    
+      安装破解Altium Designer14.2,这里有资源链接和详细解释
+    
+    </summary>
+    
+      <category term="hardware" scheme="http://yoursite.com/categories/hardware/"/>
+    
+      <category term="总有一些事情值得" scheme="http://yoursite.com/categories/hardware/%E6%80%BB%E6%9C%89%E4%B8%80%E4%BA%9B%E4%BA%8B%E6%83%85%E5%80%BC%E5%BE%97/"/>
+    
+    
+      <category term="hardware" scheme="http://yoursite.com/tags/hardware/"/>
+    
+      <category term="总有一些事情值得" scheme="http://yoursite.com/tags/%E6%80%BB%E6%9C%89%E4%B8%80%E4%BA%9B%E4%BA%8B%E6%83%85%E5%80%BC%E5%BE%97/"/>
+    
+  </entry>
   
   <entry>
     <title>AD14.2如何安装各种库</title>
@@ -120,11 +146,11 @@
       <category term="总有一些事情值得" scheme="http://yoursite.com/categories/%E5%9F%9F%E5%90%8D/ARST/Hexo/wordpress/%E6%80%BB%E6%9C%89%E4%B8%80%E4%BA%9B%E4%BA%8B%E6%83%85%E5%80%BC%E5%BE%97/"/>
     
     
-      <category term="ARST" scheme="http://yoursite.com/tags/ARST/"/>
-    
       <category term="总有一些事情值得" scheme="http://yoursite.com/tags/%E6%80%BB%E6%9C%89%E4%B8%80%E4%BA%9B%E4%BA%8B%E6%83%85%E5%80%BC%E5%BE%97/"/>
     
       <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+      <category term="ARST" scheme="http://yoursite.com/tags/ARST/"/>
     
       <category term="域名" scheme="http://yoursite.com/tags/%E5%9F%9F%E5%90%8D/"/>
     
