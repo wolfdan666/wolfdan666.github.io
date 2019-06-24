@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[ARST打卡第九周(9-521)]]></title>
+    <url>%2F2019%2F06%2F23%2FARST%E6%89%93%E5%8D%A1%E7%AC%AC%E4%B9%9D%E5%91%A8-9-521%2F</url>
+    <content type="text"><![CDATA[Algorithm最近踢球脚扭了，不能走路，要休息，所以刷题较少 ReviewThe Internet is changing your brainWe can remember the things that we need to remember but, forget the things that we rarely use. That is not a problem, it is entirely sensible and should be expected.我们要在变化快速适应，要积极求变，不断进步，终身学习 Tips 当然要推荐且必须要放耗子叔最近新发的文章啦 如何超过大多数人 就是不管干啥都要多多访问官网，比如配置next，官网才是最新的资讯因为自己对busuanzi统计的折腾，发现还是官网好啊 NexT 使用文档 Share在另一个终端上同步写HEXO AD14.2如何安装各种库 安装破解Altium Designer14.2]]></content>
+      <categories>
+        <category>ARST</category>
+      </categories>
+      <tags>
+        <tag>ARST</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[AD14.2如何安装各种库]]></title>
     <url>%2F2019%2F06%2F17%2FAD14-2%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E5%90%84%E7%A7%8D%E5%BA%93%2F</url>
     <content type="text"><![CDATA[AD14.2如何安装各种库我们先以安装NSC Amplifier.IntLib为例子安装文件由于我不知道NSC Amplifier.IntLib在哪,所以我直接搜索找到了这个官方网站的一直文档分支链接进入之后看图操作下载吧下载 使AD软件链接路径 开心食用 下载各种库？当然是找官网啦啦啦官网老库 注意:你清楚你要的库是哪个大文件包–&gt;否则1.谷歌搞清楚2.自己下载整个库解压后搜索 最后注好像又是重复造轮子，搬运工，所以大家多多了解这种解决方案的思路啦，以后多多触类旁通啦 谢谢大家的浏览啦]]></content>
@@ -23,8 +34,8 @@
         <category>总有一些事情值得</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
         <tag>总有一些事情值得</tag>
+        <tag>Hexo</tag>
         <tag>cloud studio</tag>
       </tags>
   </entry>
@@ -65,8 +76,8 @@
       </categories>
       <tags>
         <tag>ARST</tag>
-        <tag>Hexo</tag>
         <tag>总有一些事情值得</tag>
+        <tag>Hexo</tag>
         <tag>域名</tag>
         <tag>wordpress</tag>
       </tags>
