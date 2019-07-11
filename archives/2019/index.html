@@ -1431,7 +1431,27 @@
     document.write('<script type="text/javascript" src="/js/src/snow1.js"></script>');
   }
 </script>-->
-<script type="text/javascript" src="/js/src/snow2.js"></script>
+<!-- <script type="text/javascript" src="/js/src/snow2.js"></script>-->
+<!-- 3D雪花特效 2019年7月11日13:22:07  加入 感谢大佬 LeFlacon (https://leflacon.github.io/52e47f72/#more)及时回复评论，爱了 -->
+      <!--3D飘雪花特效 整理by yaxi.net   然后这个代码根源是
+      该JQuery插件特效是2015年京东为配合双12年终盛宴活动在活动页面添加的雪花飞舞3D视觉特效。
+      该雪花特效在页面中构建了一个3D雪花场景，在里面制作出非常有层次感的雪花飞舞效果，并且可以通过鼠标和雪花场景进行互动。
+喜欢的话就部署到你的网站吧，该特效适合所有web站点，但一定要先载入JQuery库。另外旧版浏览器对H5支持不好，所以此特效仅支持现代浏览器，让IE见鬼去吧！！
+-->
+     <!-- 我已经有了<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.7.2/jquery.min.js"></script>-->
+      <script type="text/javascript" src="snow.js"></script>
+      <style type="text/css">
+      .snow-container{
+      position:fixed;
+      top:0;left:0;
+      width:100%;
+      height:100%;
+      pointer-events:none;
+      z-index:100001;
+      }
+      </style>
+      <div class="snow-container"></div>
+
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/koharu.model.json"},"display":{"position":"left","width":100,"height":200,"opacity":0.8},"mobile":{"show":true},"log":false});</script></body>
 </html>
 
