@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.wolfdan.cn/"/>
-  <updated>2019-07-15T01:31:43.609Z</updated>
+  <updated>2019-07-16T13:19:09.735Z</updated>
   <id>http://www.wolfdan.cn/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git reset 和 git reset --hard区别</title>
+    <link href="http://www.wolfdan.cn/2019/07/16/git-reset-%E5%92%8C-git-reset-hard-%E5%8C%BA%E5%88%AB/"/>
+    <id>http://www.wolfdan.cn/2019/07/16/git-reset-和-git-reset-hard-区别/</id>
+    <published>2019-07-16T12:16:31.000Z</published>
+    <updated>2019-07-16T13:19:09.735Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="git-reset-和-git-reset-hard区别"><a href="#git-reset-和-git-reset-hard区别" class="headerlink" title="git reset 和 git reset --hard区别"></a><code>git reset</code> 和 <code>git reset --hard</code>区别</h1><h2 id="先说知识点"><a href="#先说知识点" class="headerlink" title="先说知识点"></a>先说知识点</h2><blockquote><p>有时候，进行了错误的提交，但是还没有push到远程分支，想要撤销本次提交，可以使用git reset –-soft/hard命令</p></blockquote><h3 id="缺省情况"><a href="#缺省情况" class="headerlink" title="缺省情况"></a>缺省情况</h3><p><code>git reset</code>缺省为<code>git reset --soft</code></p><h3 id="二者区别："><a href="#二者区别：" class="headerlink" title="二者区别："></a>二者区别：</h3><ul><li><code>git reset –-soft</code>：回退到某个版本，<strong>只回退了commit的信息，不会恢复到index file一级</strong>。如果还要提交，直接commit即可</li><li><code>git reset -–hard</code>：<strong>彻底回退到某个版本</strong>，本地的源码也会变为上一个版本的内容，撤销的commit中所包含的更改被冲掉</li></ul><h2 id="我忘了知识点踩坑"><a href="#我忘了知识点踩坑" class="headerlink" title="我忘了知识点踩坑"></a>我忘了知识点踩坑</h2><h3 id="沙雕认为"><a href="#沙雕认为" class="headerlink" title="沙雕认为"></a>沙雕认为</h3><ol><li><p>当下情况:最新版本的100M压缩包已经在本地删除，但是本地版本库中之前有个版本中还有，所以git push到gitee会被拒收..但是git一定要先传输完前面的版本之后再传后面的修改(所以我要帮git本地仓库手动执行git rm前面版本的文件，或者忘了文件名，通过下面3的复杂的操作，来完成此项操作)</p></li><li><p>真的不知道怎么去掉本地仓库的4commit，因为去不掉的话就会先向远程库提交超100M文件然后被拒接，所以原地重复…</p></li><li><p>然后如果git rm 忘了那个压缩包的名字了，所以直接回退版本到昨天的样子，然后再git reflog回来并展示今天的所有修改，git checkout归还所有修改，然后把今天的修改备份，之后再回到昨天的版本库，然后重新提交今天的内容，除了你个超过100M的压缩包</p></li></ol><p><img src="https://raw.githubusercontent.com/wolfdan666/BlogPic/master/linux/git/git%20reset/%E6%80%BB%E7%BB%93.png" alt></p><h3 id="慢慢懂了"><a href="#慢慢懂了" class="headerlink" title="慢慢懂了"></a>慢慢懂了</h3><p>奇怪，最后一次版本回退又没有删除本地文件，可能是因为恢复过？</p><p>原来是git reset –hard 和 git reset –soft的区别</p><p>所以我幸幸苦苦寻找了好久的取消commit而不影响工作区就是git reset –soft</p><p>真是汗啊，因为用得少，所以学了又忘了，所以现在踩一遍坑，使得自己更深刻了，也提醒了自己  对于基础知识  还是要多重复，学习多次，不断加深记忆，或者很可能还是会踩坑</p><p><img src="https://raw.githubusercontent.com/wolfdan666/BlogPic/master/linux/git/git%20reset/git%20reset%E8%BD%AF%E7%A1%AC%E5%B7%AE%E5%88%AB.png" alt></p><p>参考：<a href="https://blog.csdn.net/yangfengjueqi/article/details/61668381" target="_blank" rel="noopener">https://blog.csdn.net/yangfengjueqi/article/details/61668381</a></p>]]></content>
+    
+    <summary type="html">
+    
+      git reset 和 git reset --hard区别 gitee不支持上传100M以上的文件造成重复的提交失败怎么办
+    
+    </summary>
+    
+      <category term="git" scheme="http://www.wolfdan.cn/categories/git/"/>
+    
+    
+      <category term="git" scheme="http://www.wolfdan.cn/tags/git/"/>
+    
+  </entry>
   
   <entry>
     <title>makedown写作超方便的图片使用方式</title>
@@ -438,28 +460,6 @@
     
     
       <category term="ARST" scheme="http://www.wolfdan.cn/tags/ARST/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo和wordpress的选择</title>
-    <link href="http://www.wolfdan.cn/2019/06/08/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BD%BF%E7%94%A8Hexo/"/>
-    <id>http://www.wolfdan.cn/2019/06/08/为什么我使用Hexo/</id>
-    <published>2019-06-08T13:10:00.000Z</published>
-    <updated>2019-07-10T13:48:35.102Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Hexo和wordpress的选择"><a href="#Hexo和wordpress的选择" class="headerlink" title="Hexo和wordpress的选择"></a>Hexo和wordpress的选择</h1><p><img src="https://raw.githubusercontent.com/wolfdan666/BlogPic/master/ARST/ARST7/Hexo%E5%A4%9A%E7%AB%AF%E5%90%8C%E6%AD%A5/master.png" alt="master"></p><h2 id="1-原来的服务器ip被墙了"><a href="#1-原来的服务器ip被墙了" class="headerlink" title="1. 原来的服务器ip被墙了"></a>1. 原来的服务器ip被墙了</h2><p>　　因为原来自己的网站是搭建在国外的一台服务器上面，然后最近一段时间网络整顿，然后我的ip被ban了,然后我抢救了4天整,好不容易救活了,但是访问速度极其不友好,所以为了让我的读者能有最后的体验,我必须努力啊,然后我就想到了境内境外分流(其实也是受到一个学长的启发)</p><h2 id="2-因为维护vps太麻烦了"><a href="#2-因为维护vps太麻烦了" class="headerlink" title="2. 因为维护vps太麻烦了"></a>2. 因为维护vps太麻烦了</h2><p>　　记得自己是最喜欢配置各种生产环境的一个人,前段时间还想过要做一个运维工程师来着,但是最近头铁了4天整,<strong>发现维护vps实在是太麻烦了</strong>,而且自己还有很多其他的事要处理,<strong>所以这种比较吃时间,可以做到的,但做慢了却会影响用户体验而导致自己熬夜也要肝的事情还是尽量少发生比较好一点</strong>,所以自己觉得让网站托管在大厂微软的github和腾讯的coding上面</p><h2 id="3-Hexo的美化度比较高-个人感觉"><a href="#3-Hexo的美化度比较高-个人感觉" class="headerlink" title="3. Hexo的美化度比较高(个人感觉)"></a>3. Hexo的美化度比较高(个人感觉)</h2><p>　　不知道是自己没有认真地看wordpress的主题还是怎么样,我感觉Hexo的美化度是比较高的,然而我看到的比较好看的wordpress的主题都是收费版的更好看,这让暂时没什么钱的我有点难受,而且觉得不太值得</p><h2 id="4-免费"><a href="#4-免费" class="headerlink" title="4. 免费"></a>4. 免费</h2><p>　　真的,买vps不管国内国外,就连学生机都要至少10RMB/月左右,<strong>所以对于这种Hexo的部署分流方式，真是又快又好又便宜又省事,何乐而不为呢?</strong></p><h4 id="注"><a href="#注" class="headerlink" title="注:"></a>注:</h4><blockquote><p>虽然有些大佬可以薅到谷歌云和亚马逊云的羊毛免费使用一段时间,但是时间是有限的,而且还是有第一二个问题—<code>网站容易被墙</code>和<code>维护vps</code>困难</p></blockquote><h1 id="感言"><a href="#感言" class="headerlink" title="感言"></a>感言</h1><h2 id="当然我不是说不能用wordpress，wordpress其实也是有很多好处的，比如"><a href="#当然我不是说不能用wordpress，wordpress其实也是有很多好处的，比如" class="headerlink" title="当然我不是说不能用wordpress，wordpress其实也是有很多好处的，比如"></a>当然我不是说不能用wordpress，wordpress其实也是有很多好处的，比如</h2><ol><li>可以云端写文章(因为它是在网页端写作的特性)</li><li>可以搭建好了之后让一些没有计算机相关背景的作家使用(就是只要有技术的人定期维护一下就好)(当然这也不一定)</li><li>技术历史长，就是很多问题在谷歌百度上都能找到(而Hexo是一个相对来说新一点的东西)</li></ol><h2 id="做好真正重要的——————-学习和创作"><a href="#做好真正重要的——————-学习和创作" class="headerlink" title="做好真正重要的—————— 学习和创作"></a>做好真正重要的—————— <strong>学习和创作</strong></h2><p>　　这些东西其实都是一些工具，我们最应该做的还是在自己感兴趣的地方多多努力，然后创造价值，再分享给大家，这才是最重要的，也才是我们写作的最主要的目的–&gt;帮助更多的人</p><h1 id="2019年6月9日21-07-21"><a href="#2019年6月9日21-07-21" class="headerlink" title="2019年6月9日21:07:21"></a>2019年6月9日21:07:21</h1><p>　　当我今天用着wordpress写文档的时候，想着以后再有不用这个了，心里有说不出的难受，毕竟这真是我亲儿子一样，养了几个月了，难以割舍的情感，而且云端写作的体验也是妙不可言，所以我决定还是wordpress和hexo都使用<br>　　然后2019年6月9日21:49:40 发现Hexo是组件化，然后很多都是链接别处的东西，所以很容易挂掉某个组件，很惨的那种，然而WordPress就是只要你的vps不死掉，ip不死掉，基本上是没有任何事情会出大故障的</p>]]></content>
-    
-    <summary type="html">
-    
-      我对于wordpress和Hexo的一些观点,为什么我使用Hexo
-    
-    </summary>
-    
-      <category term="Hexo" scheme="http://www.wolfdan.cn/categories/Hexo/"/>
-    
-    
-      <category term="Hexo" scheme="http://www.wolfdan.cn/tags/Hexo/"/>
     
   </entry>
   
