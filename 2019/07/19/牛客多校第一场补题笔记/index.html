@@ -88,23 +88,24 @@
 
 
 
-<meta name="description" content="2019牛客多校第一场补题笔记">
+<meta name="description" content="2019牛客多校第一场补题笔记 单调栈">
 <meta name="keywords" content="算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2019牛客多校第一场补题笔记">
 <meta property="og:url" content="http://www.wolfdan.cn/2019/07/19/牛客多校第一场补题笔记/index.html">
 <meta property="og:site_name" content="狼胆">
-<meta property="og:description" content="2019牛客多校第一场补题笔记">
+<meta property="og:description" content="2019牛客多校第一场补题笔记 单调栈">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://raw.githubusercontent.com/wolfdan666/BlogPic/master/%E7%AE%97%E6%B3%95/2019%E5%B9%B4%E5%A4%9A%E6%A0%A1/%E7%89%9B%E5%AE%A2/%E7%AC%AC%E4%B8%80%E5%9C%BA/A%2B.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/wolfdan666/BlogPic/master/%E7%AE%97%E6%B3%95/2019%E5%B9%B4%E5%A4%9A%E6%A0%A1/%E7%89%9B%E5%AE%A2/%E7%AC%AC%E4%B8%80%E5%9C%BA/F1.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/wolfdan666/BlogPic/master/%E7%AE%97%E6%B3%95/2019%E5%B9%B4%E5%A4%9A%E6%A0%A1/%E7%89%9B%E5%AE%A2/%E7%AC%AC%E4%B8%80%E5%9C%BA/F2.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/wolfdan666/BlogPic/master/%E7%AE%97%E6%B3%95/2019%E5%B9%B4%E5%A4%9A%E6%A0%A1/%E7%89%9B%E5%AE%A2/%E7%AC%AC%E4%B8%80%E5%9C%BA/F3.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/wolfdan666/BlogPic/master/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/%E8%B6%A3%E8%B0%88linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%86%85%E5%AD%98%E6%98%A0%E5%B0%84/%E7%94%A8%E6%88%B7%E6%80%81/%E5%8F%89%E5%A7%90%E5%87%BA%E9%A2%98%E7%9A%84%E5%AE%98%E6%96%B9%E8%A7%A3%E6%B3%95.png">
-<meta property="og:updated_time" content="2019-07-19T07:28:18.951Z">
+<meta property="og:updated_time" content="2019-07-20T03:54:48.353Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2019牛客多校第一场补题笔记">
-<meta name="twitter:description" content="2019牛客多校第一场补题笔记">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/wolfdan666/BlogPic/master/%E7%AE%97%E6%B3%95/2019%E5%B9%B4%E5%A4%9A%E6%A0%A1/%E7%89%9B%E5%AE%A2/%E7%AC%AC%E4%B8%80%E5%9C%BA/F1.png">
+<meta name="twitter:description" content="2019牛客多校第一场补题笔记 单调栈">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/wolfdan666/BlogPic/master/%E7%AE%97%E6%B3%95/2019%E5%B9%B4%E5%A4%9A%E6%A0%A1/%E7%89%9B%E5%AE%A2/%E7%AC%AC%E4%B8%80%E5%9C%BA/A%2B.png">
 
 
 
@@ -453,7 +454,7 @@
 
           
               <div class="post-description">
-                  2019牛客多校第一场补题笔记
+                  2019牛客多校第一场补题笔记 单调栈
               </div>
           
 
@@ -472,6 +473,7 @@
       
         <h1 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h1><p><a href="https://ac.nowcoder.com/acm/contest/881#question" target="_blank" rel="noopener">2019牛客多校第一场</a></p>
 <h1 id="A题"><a href="#A题" class="headerlink" title="A题"></a>A题</h1><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>知道了单调栈，那么第一题就很好解决了，就是两个串到每个位置都比较一下前面的最小值的下标是否相等(用单调栈来实现–后面讲)，如果相等则继续，如果都没有找到就是都是自己最小，也用单调栈处理成为相等，如果遇到不相等，那么i-1就是题目所要求出来的k的值</p>
+<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><p><img src="https://raw.githubusercontent.com/wolfdan666/BlogPic/master/%E7%AE%97%E6%B3%95/2019%E5%B9%B4%E5%A4%9A%E6%A0%A1/%E7%89%9B%E5%AE%A2/%E7%AC%AC%E4%B8%80%E5%9C%BA/A%2B.png" alt="A+"></p>
 <h2 id="单调栈"><a href="#单调栈" class="headerlink" title="单调栈"></a>单调栈</h2><p>单调栈的一大优势就是<strong>线性的时间复杂度</strong>，所有的元素只会进栈一次，而且一旦出栈后就不会再进来了。</p>
 <p><strong>单调递增栈可以找到左起第一个比当前数字小的元素</strong>。比如数组 [2 1 4 6 5]，刚开始2入栈，数字1入栈的时候，发现栈顶元素2比较大，将2移出栈，此时1入栈。那么2和1都没左起比自身小的数字。然后数字4入栈的时候，栈顶元素1小于4，于是1就是4左起第一个小的数字。此时栈里有1和4，然后数字6入栈的时候，栈顶元素4小于6，于是4就是6左起第一个小的数字。此时栈里有1，4，6，然后数字5入栈的时候，栈顶元素6大于5，将6移除，此时新的栈顶元素4小于5，那么4就是5左起的第一个小的数字，最终栈内数字为 1，4，5。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* L是输出端，然后s是辅助数组,c是源数组 */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">(<span class="keyword">int</span>* c, <span class="keyword">int</span>* L)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> top = <span class="number">0</span>;</span><br><span class="line">    s[<span class="number">0</span>] = node&#123;<span class="number">0</span>, <span class="number">0</span>&#125;;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="comment">/*找到向左走第一个比它小的数 */</span></span><br><span class="line">        <span class="keyword">while</span>(top &amp;&amp; s[top].val &gt;= c[i]) top--;</span><br><span class="line">        L[i] = s[top].id;</span><br><span class="line">        s[++top] = node&#123;i, c[i]&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -743,7 +745,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目链接"><span class="nav-number">1.</span> <span class="nav-text">题目链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#A题"><span class="nav-number">2.</span> <span class="nav-text">A题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题解"><span class="nav-number">2.1.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单调栈"><span class="nav-number">2.2.</span> <span class="nav-text">单调栈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AC代码"><span class="nav-number">2.3.</span> <span class="nav-text">AC代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#B题"><span class="nav-number">3.</span> <span class="nav-text">B题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C题，D题"><span class="nav-number">4.</span> <span class="nav-text">C题，D题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#C题解推荐"><span class="nav-number">4.1.</span> <span class="nav-text">C题解推荐</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#E题"><span class="nav-number">5.</span> <span class="nav-text">E题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#F"><span class="nav-number">6.</span> <span class="nav-text">F</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#图片以及思路转载-少量整理-感谢"><span class="nav-number">6.1.</span> <span class="nav-text">图片以及思路转载+少量整理+感谢</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AC代码-1"><span class="nav-number">6.2.</span> <span class="nav-text">AC代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#G-H-I因己太菜先留坑"><span class="nav-number">7.</span> <span class="nav-text">G,H,I因己太菜先留坑</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#J"><span class="nav-number">8.</span> <span class="nav-text">J</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题解-1"><span class="nav-number">8.1.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AC代码-2"><span class="nav-number">8.2.</span> <span class="nav-text">AC代码</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目链接"><span class="nav-number">1.</span> <span class="nav-text">题目链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#A题"><span class="nav-number">2.</span> <span class="nav-text">A题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题解"><span class="nav-number">2.1.</span> <span class="nav-text">题解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#补充"><span class="nav-number">2.1.1.</span> <span class="nav-text">补充</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单调栈"><span class="nav-number">2.2.</span> <span class="nav-text">单调栈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AC代码"><span class="nav-number">2.3.</span> <span class="nav-text">AC代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#B题"><span class="nav-number">3.</span> <span class="nav-text">B题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C题，D题"><span class="nav-number">4.</span> <span class="nav-text">C题，D题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#C题解推荐"><span class="nav-number">4.1.</span> <span class="nav-text">C题解推荐</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#E题"><span class="nav-number">5.</span> <span class="nav-text">E题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#F"><span class="nav-number">6.</span> <span class="nav-text">F</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#图片以及思路转载-少量整理-感谢"><span class="nav-number">6.1.</span> <span class="nav-text">图片以及思路转载+少量整理+感谢</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AC代码-1"><span class="nav-number">6.2.</span> <span class="nav-text">AC代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#G-H-I因己太菜先留坑"><span class="nav-number">7.</span> <span class="nav-text">G,H,I因己太菜先留坑</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#J"><span class="nav-number">8.</span> <span class="nav-text">J</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题解-1"><span class="nav-number">8.1.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AC代码-2"><span class="nav-number">8.2.</span> <span class="nav-text">AC代码</span></a></li></ol></li></ol></div>
             
 
           </div>
