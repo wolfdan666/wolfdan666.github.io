@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[ARST打卡第14周-14-521]]></title>
+    <url>%2F2019%2F07%2F27%2FARST%E6%89%93%E5%8D%A1%E7%AC%AC14%E5%91%A8-14-521%2F</url>
+    <content type="text"><![CDATA[Algorithmgogogo ReviewDo You Really Need Another Computer Monitor? 是啊，对于单一的工作，没有很多要素的工作一个屏幕就够了 但是对于需要很多要素的工作，比如一边看编程视频教学，一边跟着写这种要素很多的工作，有两个屏幕真的能提高自己的效率 Tips线段树从零开始 线段树详解 Share2019牛客多校3 I]]></content>
+      <categories>
+        <category>ARST</category>
+      </categories>
+      <tags>
+        <tag>ARST</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[2019牛客多校3 I]]></title>
     <url>%2F2019%2F07%2F26%2F2019%E7%89%9B%E5%AE%A2%E5%A4%9A%E6%A0%A13-I%2F</url>
     <content type="text"><![CDATA[题目题目链接Median 题意3个数产生一个中位数，现在给你一串中位数，请还原出一个合理的原串 InputT组,每组给n表示原串的长度,然后是给你中位数串b[1]-&gt;b[n-1] 范围: n的和不超过10^6,每个b不超过10^9 Output有合理的串则输出原串,否则输出-1 题解结论若存在合理的解,那么解的每个位置的最终值一定是它能影响到的3个中位数之一 证明 Dp解法 自己动手写AC代码1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495969798#include&lt;bits/stdc++.h&gt;using namespace std;const int M = 1e5+7;bool f[M][3][3];int pre[M][3][3];int v[M][3];int b[M],a[M];int T,n;int mid(int x,int y,int z)&#123; static int tmp[3]; tmp[0]=x,tmp[1]=y,tmp[2]=z; sort(tmp,tmp+3); return tmp[1];&#125;/*回溯构造*/void back(int i,int j,int k)&#123; while(i&gt;=1) &#123; a[i] = v[i][j]; int pr = pre[i][j][k]; j = k; k = pr; i--; &#125;&#125;int main()&#123; scanf("%d",&amp;T); while(T--)&#123; scanf("%d",&amp;n); for(int i=2;i&lt;=n-1;i++) scanf("%d",&amp;b[i]); /*init*/ b[0]=b[1]=b[2]; b[n+1]=b[n]=b[n-1]; for(int i=1;i&lt;=n;i++) for(int j=0;j&lt;3;j++) for(int k=0;k&lt;3;k++) f[i][j][k]=false; /*注意:我给的手写题解中a[3]对应b[1],b[2],b[3] 我这里为了实现方便是用的对应b[2],b[3],b[4]*/ for(int i=1;i&lt;=n;i++)&#123; for(int j=0;j&lt;3;j++)&#123; v[i][j]=b[i-1+j]; &#125; sort(v[i],v[i]+3); &#125; /*边界条件: 前i-2个中位数(此时i=2为0个中位数)是满足条件的 最终f[N][i][j]的时候的是N-2个中位数是否满足条件*/ for(int i=0;i&lt;3;i++) for(int j=0;j&lt;3;j++) f[2][i][j]=true; /*solve*/ bool findans = false; for(int i=3;i&lt;=n;i++)&#123; for(int j=0;j&lt;3;j++)&#123; for(int k=0;k&lt;3;k++)&#123; for(int l=0;l&lt;3;l++)&#123; if(!f[i-1][k][l]) continue; /*判断前面的位置和本位置使用与他们位置相关的 3个中位数的排列中哪些排列能够满足要求 v[i][j]对应的是b[i-1],b[i],b[i+1]中的一个*/ if(mid(v[i-2][l],v[i-1][k],v[i][j])!=b[i-1]) continue; f[i][j][k]=true; /*记录下前面使用的是l大的*/ pre[i][j][k]=l; /*break写完再探索-std中用了break 我认为应该遍历全部情况,所以去掉了break 然后两份代码都AC了,所以可能解唯一或者是按照std 生成的数据吧*/ // break; &#125; if(i==n &amp;&amp; f[i][j][k])&#123; findans = true; back(i,j,k); goto END; &#125; &#125; &#125; &#125; END: if(!findans) printf("%d\n",-1); else&#123; for(int i=2;i&lt;n;i++) &#123; assert(mid(a[i-1],a[i],a[i+1]) == b[i]); &#125; for(int i=1;i&lt;=n;i++)&#123; printf("%d%c",a[i]," \n"[i==n]); &#125; &#125; &#125; return 0;&#125;]]></content>
