@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[银联挑战赛初赛第二场B题]]></title>
+    <url>%2F2019%2F07%2F28%2F%E9%93%B6%E8%81%94%E6%8C%91%E6%88%98%E8%B5%9B%E5%88%9D%E8%B5%9B%E7%AC%AC%E4%BA%8C%E5%9C%BAB%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[题目题目链接码队弟弟的求和问题 题面 题解思路 数论分块知识点图片截取了大佬的blog 手写AC代码1234567891011121314151617181920212223242526272829303132333435363738394041#include&lt;bits/stdc++.h&gt;using namespace std;#define ll long longconst ll mod = 1e9+7;ll n,m;ll inv6;ll qpow(ll a,ll b)&#123; ll res = 1; while(b)&#123; if(b&amp;1) res = res*a%mod; a = (a*a)%mod; b&gt;&gt;=1; &#125; return res;&#125;ll f(ll n)&#123; return n*(n+1)%mod*(2*n+1)%mod*inv6%mod;&#125;ll solve(ll n)&#123; ll ans = (n*(n+1)/2%mod)*n; // ll ans = n*n%mod*(n+1)/2%mod; for(int i=1,j;i&lt;=n;i=j+1)&#123; /*i=j+1,以及n/i要加括号*/ j = n/(n/i); /*其实j不会大于n*/ if(j&gt;n) j=n; ans = (ans - (f(j)-f(i-1))*(n/i)%mod + mod)%mod; /*只要保证每次相减时两个都是正数 然后结果再来一次保证正数操作就不会出错*/ &#125; return ans;&#125;int main()&#123; ios::sync_with_stdio(false); cin.tie(0); inv6 = qpow(6,mod-2); cin&gt;&gt;n&gt;&gt;m; ll ans = solve(n)*solve(m)%mod; cout&lt;&lt;ans&lt;&lt;endl; return 0;&#125; 菜鸡我踩坑坑我35mins 123// bug是因为除号必须在mod前！ll ans = (n*(n+1)/2%mod)*n;// ll ans = n*n%mod*(n+1)/2%mod;]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[ARST打卡第14周-14-521]]></title>
     <url>%2F2019%2F07%2F27%2FARST%E6%89%93%E5%8D%A1%E7%AC%AC14%E5%91%A8-14-521%2F</url>
     <content type="text"><![CDATA[Algorithmgogogo ReviewDo You Really Need Another Computer Monitor? 是啊，对于单一的工作，没有很多要素的工作一个屏幕就够了 但是对于需要很多要素的工作，比如一边看编程视频教学，一边跟着写这种要素很多的工作，有两个屏幕真的能提高自己的效率 Tips线段树从零开始 线段树详解 Share2019牛客多校3 I]]></content>
