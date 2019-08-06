@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[后缀数组-算法学习日常[4/100]]]></title>
+    <url>%2F2019%2F08%2F06%2F%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84-%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%B8%B8-4-100%2F</url>
+    <content type="text"><![CDATA[后缀数组论文分享后缀数组论文分享 每天一句叨叨人一能之，己百之；人十能之，己千之。果能此道矣，虽愚必明，虽柔必强。]]></content>
+      <categories>
+        <category>算法学习日常</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>算法学习日常</tag>
+        <tag>后缀数组</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[2019杭电多校1006和1007算法日常[4/100]]]></title>
     <url>%2F2019%2F08%2F05%2F%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-4-100%2F</url>
     <content type="text"><![CDATA[序 今天是杭电多校第5场，然后1006签到本来应该10mins内写完，然后我菜鸡写了2小时(各种问题不熟练和紧张)，赛后发现有大佬用dc3(一种据说复杂度O(n)的后缀数组算法,发现自己孤陋寡闻) 1007真滴有趣…闪电蛇皮走位，然后自己想复杂了一点点… 题目链接2019杭电多校5 1006解法Ekmp，用s.substr(1)的串来做ekmp函数的原串，s做ekmp函数的匹配串，这样跑一次ekmp就行，然后累加extend ekmp学习教程·我觉得比较好的一个(我也用这个学的) AC代码123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081#include &lt;iostream&gt;#include &lt;string&gt;using namespace std;long long ans;// int next[1000000];int nxt[1000000];int extend[1000000];string S, T;int n, m;/* 求解 T 中 next[]，注释参考 GetExtend() */void GetNext(string &amp; T, int &amp; m, int next[])&#123; int a = 0, p = 0; next[0] = m; for (int i = 1; i &lt; m; i++) &#123; if (i &gt;= p || i + next[i - a] &gt;= p) &#123; if (i &gt;= p) p = i; while (p &lt; m &amp;&amp; T[p] == T[p - i]) p++; next[i] = p - i; a = i; &#125; else next[i] = next[i - a]; &#125;&#125;/* 求解 extend[] */void GetExtend(string &amp; S, int &amp; n, string &amp; T, int &amp; m, int extend[], int next[])&#123; int a = 0, p = 0; GetNext(T, m, next); for (int i = 0; i &lt; n; i++) &#123; if (i &gt;= p || i + next[i - a] &gt;= p) // i &gt;= p 的作用：举个典型例子，S 和 T 无一字符相同 &#123; if (i &gt;= p) p = i; while (p &lt; n &amp;&amp; p - i &lt; m &amp;&amp; S[p] == T[p - i]) p++; extend[i] = p - i; a = i; &#125; else extend[i] = next[i - a]; &#125;&#125;int main()&#123; ios::sync_with_stdio(false); cin.tie(0); int t; cin&gt;&gt;t; while(t--)&#123; ans = 0; cin&gt;&gt;S; n = S.size(); T = S.substr(1); m = n - 1; /*可能程序以为我用了前面的函数声明中的next[],所以说我模棱两可,加个全局的命名空间就行 或者换个变量名也行*/ // GetExtend(T, m, S, n, extend, ::next); GetExtend(T, m, S, n, extend, nxt); for (int j = 0; j &lt; m; j++)&#123; // cout &lt;&lt; extend[j] &lt;&lt; " \n"[j==m-1]; ans += extend[j]+j==n-1 ? extend[j] : extend[j]+1 ; &#125; cout &lt;&lt; ans &lt;&lt; endl; &#125; return 0;&#125; 1007解法法一a[i] = a[i-1]+a[i-3],就是对于第i项有两种情况，要么是直接往上走要么是闪电 法二dls说暴力打表找规律比较不用动脑子，哭了，臭大佬，好过分 AC代码123456789101112131415161718192021222324#include &lt;bits/stdc++.h&gt;using namespace std;typedef long long ll;const ll mod = 998244353;const int inf = 0x3f3f3f3f;const int maxn = 100000 + 5;ll a[maxn];int main() &#123; a[1] = a[2] = a[3] = 1; for(int i = 4; i &lt; maxn; i++) a[i] = (a[i-1]+a[i-3])%mod; int T; scanf("%d", &amp;T); while(T--) &#123; int n, l, r; scanf("%d%d%d", &amp;n, &amp;l, &amp;r); if(l &gt; r) swap(l, r); if(l != 1) l++; if(r != n) r--; printf("%lld\n", a[r-l+1]); &#125; return 0;&#125; 注因为今天一直在听dls的直播，尽管后面的题听不懂，想听听dls一般解题思路是啥(其实后面听不懂就容易发呆了),所以今天还没有补很多题，然后就只写了这么一点点,我好弱啊 每天一句叨叨人总得有个目标，才能继续勇敢而坚强地活着，大部分成年人，在三十岁左右已经没了活着的目标，为了不让自己死去，他们制造了一个孩子，有了这个小孩，他们终于找到了努力工作和继续活下去的目标。 不，不是的，那是基因的谎言…让你这个机器人帮忙传递他们的存在 但如果你知道这是谎言，并决定真的要选择它，那才是真正的选择 教育本来就是不平等的，有些人很年轻就是OI金牌了，然而有些人还在发愁下次要怎么骗外公外婆我出去玩了，其实是偷偷跑去了网吧，如饥似渴地享受那几个小时的奥比岛，赛尔号，功夫派，洛克王国，地下城与勇士，英雄联盟…(从小学到高中渐渐变化的是游戏),然而别人早就享受到了算法的美妙，并将来很大程度能因此受到更好的教育，然后享受社会上最好的资源，过上幸福的生活，虽然我不能这样定义幸福，但是不平等确实存在，想要跨越社会阶层的鸿沟，可能要花上很久很久的努力.不过，我认为，跨越社会阶层的鸿沟，才是这个和平时代个人最英雄的挑战.做你自己的英雄，不断超越自己，并同时珍爱身边的人，过好这一生… 今天说的好像有点小多，叨叨叨多了，快滚去运动洗澡睡觉，明天继续来补题]]></content>

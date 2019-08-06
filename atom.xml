@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.wolfdan.cn/"/>
-  <updated>2019-08-05T14:42:18.768Z</updated>
+  <updated>2019-08-06T15:06:33.898Z</updated>
   <id>http://www.wolfdan.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>后缀数组-算法学习日常[4/100]</title>
+    <link href="http://www.wolfdan.cn/2019/08/06/%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84-%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%B8%B8-4-100/"/>
+    <id>http://www.wolfdan.cn/2019/08/06/后缀数组-算法学习日常-4-100/</id>
+    <published>2019-08-06T15:03:01.000Z</published>
+    <updated>2019-08-06T15:06:33.898Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="后缀数组论文分享"><a href="#后缀数组论文分享" class="headerlink" title="后缀数组论文分享"></a>后缀数组论文分享</h1><p><a href="https://github.com/wolfdan666/BlogPic/tree/master/%E7%AE%97%E6%B3%95/%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84" target="_blank" rel="noopener">后缀数组论文分享</a></p><h1 id="每天一句叨叨"><a href="#每天一句叨叨" class="headerlink" title="每天一句叨叨"></a>每天一句叨叨</h1><p>人一能之，己百之；人十能之，己千之。果能此道矣，虽愚必明，虽柔必强。</p>]]></content>
+    
+    <summary type="html">
+    
+      分享一个后缀数组的论文，很全，学了一天也没学完，发现自己之前学了三天的后缀数组又忘光了
+    
+    </summary>
+    
+      <category term="算法学习日常" scheme="http://www.wolfdan.cn/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%B8%B8/"/>
+    
+    
+      <category term="算法" scheme="http://www.wolfdan.cn/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="算法学习日常" scheme="http://www.wolfdan.cn/tags/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%B8%B8/"/>
+    
+      <category term="后缀数组" scheme="http://www.wolfdan.cn/tags/%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84/"/>
+    
+  </entry>
   
   <entry>
     <title>2019杭电多校1006和1007算法日常[4/100]</title>
@@ -478,28 +504,6 @@
     
     
       <category term="hexo" scheme="http://www.wolfdan.cn/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>priority_queue使用坑点和题集</title>
-    <link href="http://www.wolfdan.cn/2019/07/09/priority-queue%E4%BD%BF%E7%94%A8%E5%9D%91%E7%82%B9%E5%92%8C%E9%A2%98%E9%9B%86/"/>
-    <id>http://www.wolfdan.cn/2019/07/09/priority-queue使用坑点和题集/</id>
-    <published>2019-07-09T15:16:41.000Z</published>
-    <updated>2019-07-13T12:05:25.552Z</updated>
-    
-    <content type="html"><![CDATA[<hr><p>2019年7月9日23:27:19  更第一波</p><hr><h1 id="priority使用pair比较的坑点"><a href="#priority使用pair比较的坑点" class="headerlink" title="priority使用pair比较的坑点"></a>priority使用pair比较的坑点</h1><p>所以用pair的priority_queue只能使用struct的重载比较，why?!</p><ol><li><p>重载运算符的操作不能用于pair类型数据的排序，只能作用于结构体或类对象。—&gt; 所以不能使用node型的priority_queue的函数重载操作符的方法</p><ol><li>node可以函数操作符重载 <img src="https://gitee.com/wolfdan/BlogPic/raw/master/%E7%AE%97%E6%B3%95/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/node%E5%8F%AF%E4%BB%A5%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD.png" alt="node可以函数操作符重载"></li><li>pair不支持重载运算符 <img src="https://gitee.com/wolfdan/BlogPic/raw/master/%E7%AE%97%E6%B3%95/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/pair%E4%B8%8D%E6%94%AF%E6%8C%81%E9%87%8D%E8%BD%BD%E8%BF%90%E7%AE%97%E7%AC%A6.png" alt="pair不支持重载运算符"></li></ol></li><li><p>priority_queue定义不支持”嵌入式”函数重载的方法，即  priority_queue&lt;P, vector</p><p>, cop&gt;，这样会报错  sort(a,a+n,cop)可以</p><ol><li>比较区只有strut定义 <img src="https://gitee.com/wolfdan/BlogPic/raw/master/%E7%AE%97%E6%B3%95/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/struct%E6%AF%94%E8%BE%83.png" alt="比较区只有strut定义"></li><li>嵌入式函数重载报错 <img src="https://gitee.com/wolfdan/BlogPic/raw/master/%E7%AE%97%E6%B3%95/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD%E6%8A%A5%E9%94%99.png" alt="嵌入式函数重载报错"></li></ol></li></ol><h2 id="综上：不能函数重载了，那么就只能struct的自定义重载了咯"><a href="#综上：不能函数重载了，那么就只能struct的自定义重载了咯" class="headerlink" title="综上：不能函数重载了，那么就只能struct的自定义重载了咯"></a>综上：不能函数重载了，那么就只能struct的自定义重载了咯</h2><p><img src="https://gitee.com/wolfdan/BlogPic/raw/master/%E7%AE%97%E6%B3%95/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/strut%E8%87%AA%E5%AE%9A%E4%B9%89%E6%AF%94%E8%BE%83%E5%87%BD%E6%95%B0.png" alt="strut自定义比较函数."></p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt; // std::cout</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt; // std::priority_queue</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> x, y;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">bool</span> <span class="keyword">operator</span>&lt;(<span class="keyword">const</span> node&amp; a, <span class="keyword">const</span> node&amp; b)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> a.y &gt; b.y; <span class="comment">//less默认大顶堆，改为小顶堆</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cop</span><span class="params">(<span class="keyword">const</span> P&amp; a, <span class="keyword">const</span> P&amp; b)</span> </span>&#123; <span class="keyword">return</span> a.second &gt; b.second; &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; P;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">cmp1</span> &#123;</span></span><br><span class="line">    <span class="comment">// 就是说在cmp里面，当两个P使用  ()的时候，他们使用的下面的函数，也就是创建了一个自定义的函数</span></span><br><span class="line">    <span class="comment">/* 使用时 大概是这样的 cmp1 A, A(a,b) 就类似  非strut的自定义函数了</span></span><br><span class="line"><span class="comment">        bool cmp(P a,P b)&#123; return a.second&lt;b.second;&#125;</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">operator</span><span class="params">()</span><span class="params">(P a, P b)</span></span>&#123; <span class="comment">// 重载() 的函数 叫 仿函数--&gt;紫书找到的</span></span><br><span class="line">        <span class="keyword">return</span> a.second &gt; b.second; <span class="comment">//小顶堆</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Popping out elements..."</span>;</span><br><span class="line">    <span class="comment">// priority_queue&lt;node, vector&lt;node&gt;, less&lt;node&gt;&gt; test;</span></span><br><span class="line">    priority_queue&lt;P, <span class="built_in">vector</span>&lt;P&gt;, cmp1&gt; test;</span><br><span class="line">    test.push(&#123; <span class="number">3</span>, <span class="number">2</span> &#125;);</span><br><span class="line">    test.push(&#123; <span class="number">1</span>, <span class="number">6</span> &#125;);</span><br><span class="line">    test.push(&#123; <span class="number">2</span>, <span class="number">8</span> &#125;);</span><br><span class="line">    test.push(&#123; <span class="number">5</span>, <span class="number">10</span> &#125;);</span><br><span class="line">    <span class="keyword">while</span> (!test.empty()) &#123;</span><br><span class="line">        <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">' '</span> &lt;&lt; test.top().second;</span><br><span class="line">        <span class="comment">// std::cout &lt;&lt; ' ' &lt;&lt; test.top().y;</span></span><br><span class="line">        test.pop();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="题集"><a href="#题集" class="headerlink" title="题集"></a>题集</h1><p>注: 为了统一性，所以一般链接地址都是用的Virtual Judge的链接地址，只有VJ上没有的才用其他链接</p><h2 id="2019年7月13日第一更"><a href="#2019年7月13日第一更" class="headerlink" title="2019年7月13日第一更"></a>2019年7月13日第一更</h2><ul><li><a href="https://vjudge.net/problem/POJ-3190" target="_blank" rel="noopener">poj3190</a></li><li><a href="https://ac.nowcoder.com/acm/contest/948/G" target="_blank" rel="noopener">牛客重现2019矿大省赛G题</a></li></ul><h1 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h1><h2 id="priority-queue各种实现方式的时间复杂度对比"><a href="#priority-queue各种实现方式的时间复杂度对比" class="headerlink" title="priority_queue各种实现方式的时间复杂度对比"></a>priority_queue各种实现方式的时间复杂度对比</h2><p><img src="https://gitee.com/wolfdan/BlogPic/raw/master/%E7%AE%97%E6%B3%95/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/%E5%90%84%E7%A7%8D%E5%AE%9E%E7%8E%B0%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6.png" alt="priority_queue各种实现方式的时间复杂度对比"></p>]]></content>
-    
-    <summary type="html">
-    
-      priority_queue使用坑点和题集 priority使用pair比较的坑点
-    
-    </summary>
-    
-      <category term="算法" scheme="http://www.wolfdan.cn/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="算法" scheme="http://www.wolfdan.cn/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
