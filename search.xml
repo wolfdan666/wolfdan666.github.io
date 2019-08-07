@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[2019杭电多校6_1005算法日常[6/100]]]></title>
+    <url>%2F2019%2F08%2F07%2F%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-6-100%2F</url>
+    <content type="text"><![CDATA[题目题目链接2019杭电多校6_1005_HDU6638 思路自己一开想偏了，想着像以前0,1矩阵那种同权值点一样叠加成为矩形的最大面积来求解，这样子就能让复杂度在O(n^2)的样子 然后并非如此，这里的权值w是一个可正可负的整数…自己隐隐约约地感觉复杂度要达到O(n^2*log(n)),但是没有往下想，虽然想了也不一定会,,,emmmm,继续努力吧 正解 首先将纵坐标离散化到 O(n) 的范围内，方便后续的处理。 将所有点按照横坐标排序，枚举矩形的上边界，然后往后依次加入每个点，这样就确定了矩形的上下边界。 设 v[y] 表示矩形内部纵坐标为 y 的点的权值和，则答案为 v 的最大子段和，用线段树维护带修改的最大子段和即可。 时间复杂度 O(n^2*log(n)) std理解版今天比较晚了，明天要出一趟远门，所以暂时没有手写，对不起自己啊，等回家一定要好好把这个重新写几遍 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364#include&lt;cstdio&gt;#include&lt;algorithm&gt;using namespace std;typedef long long ll;const int N=2010,M=4100;int Case,n,m,i,j,k,cb,b[N],pos[N];ll pre[M],suf[M],s[M],v[M],ans;struct E&#123;int x,y,z;&#125;e[N];inline bool cmp(const E&amp;a,const E&amp;b)&#123;return a.x&lt;b.x;&#125;/*用纵坐标建的线段树，大佬对于线段树的理解以及如同我对1+1的理解一样了！*/void build(int x,int a,int b)&#123; pre[x]=suf[x]=s[x]=v[x]=0; if(a==b)&#123; pos[a]=x; return; &#125; int mid=(a+b)&gt;&gt;1; build(x&lt;&lt;1,a,mid),build(x&lt;&lt;1|1,mid+1,b);&#125;inline void change(int x,int p)&#123; x=pos[x]; s[x]+=p; if(s[x]&gt;0)pre[x]=suf[x]=v[x]=s[x];else pre[x]=suf[x]=v[x]=0; /*上传的操作精辟,orz*/ for(x&gt;&gt;=1;x;x&gt;&gt;=1)&#123; /*根的左边的 = max(左子树之前的,左子树+右子树之前的)*/ pre[x]=max(pre[x&lt;&lt;1],s[x&lt;&lt;1]+pre[x&lt;&lt;1|1]); /*根的右边的 = max(右子树右边的,右子树+左子树右边的)*/ suf[x]=max(suf[x&lt;&lt;1|1],s[x&lt;&lt;1|1]+suf[x&lt;&lt;1]); /*s是直接叠加的*/ s[x]=s[x&lt;&lt;1]+s[x&lt;&lt;1|1]; /*区间最大值 = max(左子树最大,右子树最大,左子树后面的+左子树前面的)*/ v[x]=max(max(v[x&lt;&lt;1],v[x&lt;&lt;1|1]),suf[x&lt;&lt;1]+pre[x&lt;&lt;1|1]); &#125;&#125;int main()&#123; scanf("%d",&amp;Case); while(Case--)&#123; scanf("%d",&amp;n); for(cb=0,i=1;i&lt;=n;i++)&#123; scanf("%d%d%d",&amp;e[i].x,&amp;e[i].y,&amp;e[i].z); b[++cb]=e[i].y; &#125; /*离散化纵坐标*/ sort(b+1,b+cb+1); for(m=0,i=1;i&lt;=cb;i++)if(i==1||b[i]!=b[m])b[++m]=b[i]; /*给横坐标排序*/ sort(e+1,e+n+1,cmp); ans=0; /*用离散化后的纵坐标覆盖掉原来的纵坐标*/ for(i=1;i&lt;=n;i++)e[i].y=lower_bound(b+1,b+m+1,e[i].y)-b; /*枚举上边界，x是行号，是上边界*/ for(i=1;i&lt;=n;i++)if(i==1||e[i].x!=e[i-1].x)&#123; build(1,1,m); /*加入点确定好下边界，这样上下边界都确定好了*/ for(j=i;j&lt;=n;j=k)&#123; /*又是逐步插入空树维护区间最大值的操作*/ for(k=j;k&lt;=n&amp;&amp;e[j].x==e[k].x;k++)change(e[k].y,e[k].z); if(ans&lt;v[1])ans=v[1]; &#125; &#125; printf("%lld\n",ans); &#125;&#125; 每天一句叨叨今天是情人节，然而…没得女朋友…不过有队友和我一起大杭电多校还是很开心的啦(还是有点点失落) 虽然 但是谁终将声震人间，必长久深自缄默 谁终将点燃闪电，必长久如云漂泊 全力以赴打完这一段时光的退役赛一定会是一个大学乃至人生最珍贵的记忆，所以这段时间先不要让自己被一个体内的激素控制，等时机到了，一定会更加美好！加油吧，少年！]]></content>
+      <categories>
+        <category>算法学习日常</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>线段树</tag>
+        <tag>算法学习日常</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[后缀数组-算法学习日常[5/100]]]></title>
     <url>%2F2019%2F08%2F06%2F%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%B8%B8-5-100%2F</url>
     <content type="text"><![CDATA[后缀数组论文分享后缀数组论文分享 每天一句叨叨人一能之，己百之；人十能之，己千之。果能此道矣，虽愚必明，虽柔必强。]]></content>
