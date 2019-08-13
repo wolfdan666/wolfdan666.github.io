@@ -1,6 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[算法日常[8/100]]]></title>
+    <url>%2F2019%2F08%2F13%2F%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-8-100%2F</url>
+    <content type="text"><![CDATA[缘起8月10号是计算机设计大赛决赛答辩的最后一天，这天下午是牛客多校8，晚上是银联挑战赛复赛，队友出去吃吃喝喝了，我点个外卖，打着比赛，然后第一题就卡住不会做，然后自闭了，果然银联的比赛很重视数学题啊啊啊，是我数学题没怎么练，太菜了—&gt;所以菜导致既没有吃到好东西，又导致爆零没太多收获，所以还是需要多多努力 A题爱喝「肥宅快乐水」的班长爱喝「肥宅快乐水」的班长 题目解法 看不懂的知识链接隔板法 扩展的隔板法中： 转化前的空盒 == 转化后每个盒子至少放一个 AC代码1234567891011121314151617181920212223242526272829303132333435#include&lt;bits/stdc++.h&gt;using namespace std;typedef long long ll;const ll mod=1000000007;const int inf = 0x3f3f3f3f;const int M = 2e3+7;int C[M][M];int T,n,m;void add(ll &amp;a,ll v)&#123; a += v; if(a &gt;= mod) a-=mod;&#125;void pre()&#123; for(int i=0;i&lt;M;i++)&#123; C[i][0]=1; for(int j=1;j&lt;=i;j++)&#123; C[i][j]=C[i-1][j-1]+C[i-1][j]; if(C[i][j]&gt;=mod) C[i][j]-=mod; &#125; &#125;&#125;int main()&#123; ios::sync_with_stdio(false);cin.tie(0); cin&gt;&gt;T; pre(); while(T--)&#123; cin&gt;&gt;n&gt;&gt;m; cout&lt;&lt;C[n+m-2][m-1]&lt;&lt;endl; &#125; return 0;&#125; B题整数对整数对 题目解法 AC代码1234567891011121314151617181920212223242526#include&lt;bits/stdc++.h&gt;using namespace std;typedef long long ll;ll T,n,m,p,ans;int main()&#123; ios::sync_with_stdio(false);cin.tie(0); cin&gt;&gt;T; while(T--)&#123; cin&gt;&gt;n&gt;&gt;m&gt;&gt;p; ans = 0; ll x = n/p; for(ll r = 0; r &lt; p ; r++ )&#123; /*求出b的种类数*/ ll bn = m/(p/__gcd(r,p)); /*分别对应题解的1,2,3种情况,其实1,3可以合并*/ if(!r) ans+=x*bn; else if(0&lt;r &amp;&amp; r&lt;=n%p) ans+=(x+1)*bn; else ans+=x*bn; &#125; cout&lt;&lt;ans&lt;&lt;endl; &#125; return 0;&#125; 每天一句叨叨人心的成见如同一座大山，我们总是口上说不能有偏见，其实真正的内心想法却不是这样的… 所以我对别人的偏见，我只能尽量克制，让自己理性对待，然后做之不止，乃成君子 对于别人对自己的偏见不要在意，而是要专注自己的目标 感觉自己生来就有一种追求挑战的血液，在小时候尤为明显，但是感觉在长久的教化过程中削弱了，所以我想要找回本真，生命不息，战斗不止，和天生的不公斗到底，做自己的英雄]]></content>
+      <categories>
+        <category>算法学习日常</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>算法学习日常</tag>
+        <tag>组合数学</tag>
+        <tag>隔板法</tag>
+        <tag>数学思维题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ARST打卡第16周[16/521]]]></title>
+    <url>%2F2019%2F08%2F11%2FARST%E6%89%93%E5%8D%A1%E7%AC%AC16%E5%91%A8-16-521%2F</url>
+    <content type="text"><![CDATA[Algorithm牛客多校8的签到 ReviewBeing Happy Is Hard Work好多生词啊，所以决定开始背单词Happiness, in other words, is practiced. Tips打算法比赛一定要熟练使用线段树啊，血的教训 Share2019杭电多校1006和1007算法日常[4/100] 后缀数组-算法学习日常[5/100] 2019杭电多校6_1005算法日常[6/100] 2019牛客多校8_B题算法日常[7/100] 每天一句叨叨生活总有太多的美好无法用相机记录下来，所以那就给每一个当下投以最好的微笑吧]]></content>
+      <categories>
+        <category>ARST</category>
+      </categories>
+      <tags>
+        <tag>ARST</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[2019牛客多校8_B题算法日常[7/100]]]></title>
+    <url>%2F2019%2F08%2F11%2F%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-7-100%2F</url>
+    <content type="text"><![CDATA[题目题目链接以及描述2019牛客多校8_B题 题意以及思路 AC代码1234567891011121314151617181920212223#include &lt;bits/stdc++.h&gt;using namespace std;typedef long long ll;const int maxn = 100000 + 5;int a[maxn], b[maxn], c[maxn];int main() &#123; int n; scanf("%d", &amp;n); for(int i = 1; i &lt;= n; i++) &#123; scanf("%d", &amp;a[i]); /*c[i]记录的是a[i]的上一个位置加1的位置*/ c[i] = b[a[i]]+1; b[a[i]] = i; &#125; ll ans = 0; for(int i = 1; i &lt;= n; i++) &#123; ans += 1LL*(n-i+1)*(i-c[i]+1); &#125; printf("%lld\n", ans); return 0;&#125; 每日一句叨叨但求精进,无问西东]]></content>
+      <categories>
+        <category>算法学习日常</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>算法学习日常</tag>
+        <tag>思维题</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[2019杭电多校6_1005算法日常[6/100]]]></title>
     <url>%2F2019%2F08%2F07%2F%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-6-100%2F</url>
     <content type="text"><![CDATA[题目题目链接2019杭电多校6_1005_HDU6638 思路自己一开想偏了，想着像以前0,1矩阵那种同权值点一样叠加成为矩形的最大面积来求解，这样子就能让复杂度在O(n^2)的样子 然后并非如此，这里的权值w是一个可正可负的整数…自己隐隐约约地感觉复杂度要达到O(n^2*log(n)),但是没有往下想，虽然想了也不一定会,,,emmmm,继续努力吧 正解 首先将纵坐标离散化到 O(n) 的范围内，方便后续的处理。 将所有点按照横坐标排序，枚举矩形的上边界，然后往后依次加入每个点，这样就确定了矩形的上下边界。 设 v[y] 表示矩形内部纵坐标为 y 的点的权值和，则答案为 v 的最大子段和，用线段树维护带修改的最大子段和即可。 时间复杂度 O(n^2*log(n)) std理解版今天比较晚了，明天要出一趟远门，所以暂时没有手写，对不起自己啊，等回家一定要好好把这个重新写几遍 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364#include&lt;cstdio&gt;#include&lt;algorithm&gt;using namespace std;typedef long long ll;const int N=2010,M=4100;int Case,n,m,i,j,k,cb,b[N],pos[N];ll pre[M],suf[M],s[M],v[M],ans;struct E&#123;int x,y,z;&#125;e[N];inline bool cmp(const E&amp;a,const E&amp;b)&#123;return a.x&lt;b.x;&#125;/*用纵坐标建的线段树，大佬对于线段树的理解以及如同我对1+1的理解一样了！*/void build(int x,int a,int b)&#123; pre[x]=suf[x]=s[x]=v[x]=0; if(a==b)&#123; pos[a]=x; return; &#125; int mid=(a+b)&gt;&gt;1; build(x&lt;&lt;1,a,mid),build(x&lt;&lt;1|1,mid+1,b);&#125;inline void change(int x,int p)&#123; x=pos[x]; s[x]+=p; if(s[x]&gt;0)pre[x]=suf[x]=v[x]=s[x];else pre[x]=suf[x]=v[x]=0; /*上传的操作精辟,orz*/ for(x&gt;&gt;=1;x;x&gt;&gt;=1)&#123; /*根的左边的 = max(左子树之前的,左子树+右子树之前的)*/ pre[x]=max(pre[x&lt;&lt;1],s[x&lt;&lt;1]+pre[x&lt;&lt;1|1]); /*根的右边的 = max(右子树右边的,右子树+左子树右边的)*/ suf[x]=max(suf[x&lt;&lt;1|1],s[x&lt;&lt;1|1]+suf[x&lt;&lt;1]); /*s是直接叠加的*/ s[x]=s[x&lt;&lt;1]+s[x&lt;&lt;1|1]; /*区间最大值 = max(左子树最大,右子树最大,左子树后面的+左子树前面的)*/ v[x]=max(max(v[x&lt;&lt;1],v[x&lt;&lt;1|1]),suf[x&lt;&lt;1]+pre[x&lt;&lt;1|1]); &#125;&#125;int main()&#123; scanf("%d",&amp;Case); while(Case--)&#123; scanf("%d",&amp;n); for(cb=0,i=1;i&lt;=n;i++)&#123; scanf("%d%d%d",&amp;e[i].x,&amp;e[i].y,&amp;e[i].z); b[++cb]=e[i].y; &#125; /*离散化纵坐标*/ sort(b+1,b+cb+1); for(m=0,i=1;i&lt;=cb;i++)if(i==1||b[i]!=b[m])b[++m]=b[i]; /*给横坐标排序*/ sort(e+1,e+n+1,cmp); ans=0; /*用离散化后的纵坐标覆盖掉原来的纵坐标*/ for(i=1;i&lt;=n;i++)e[i].y=lower_bound(b+1,b+m+1,e[i].y)-b; /*枚举上边界，x是行号，是上边界*/ for(i=1;i&lt;=n;i++)if(i==1||e[i].x!=e[i-1].x)&#123; build(1,1,m); /*加入点确定好下边界，这样上下边界都确定好了*/ for(j=i;j&lt;=n;j=k)&#123; /*又是逐步插入空树维护区间最大值的操作*/ for(k=j;k&lt;=n&amp;&amp;e[j].x==e[k].x;k++)change(e[k].y,e[k].z); if(ans&lt;v[1])ans=v[1]; &#125; &#125; printf("%lld\n",ans); &#125;&#125; 每天一句叨叨今天是情人节，然而…没得女朋友…不过有队友和我一起大杭电多校还是很开心的啦(还是有点点失落) 虽然 但是谁终将声震人间，必长久深自缄默 谁终将点燃闪电，必长久如云漂泊 全力以赴打完这一段时光的退役赛一定会是一个大学乃至人生最珍贵的记忆，所以这段时间先不要让自己被一个体内的激素控制，等时机到了，一定会更加美好！加油吧，少年！]]></content>
