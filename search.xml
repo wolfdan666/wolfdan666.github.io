@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[10进制矩阵快速幂-狼胆带你每天头铁一题-算法日常[9/100]]]></title>
+    <url>%2F2019%2F08%2F14%2F%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-9-100%2F</url>
+    <content type="text"><![CDATA[头铁来源因为狼胆小编本人比较垃圾，所以只能每天带大家头铁一题简单常识题(大佬眼中的常识，我这个蒟蒻还只能头铁)，希望能帮助到小白，那就很开心了 题目题目链接2019牛客多校5 B题 题解理想中的草稿状态 真实的草稿状态 dreammoon大佬的官方的题解也可以看看 AC代码123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051#include&lt;bits/stdc++.h&gt;typedef unsigned long long ULL;const int SIZE = 3000010;ULL MOD;char s[SIZE];/*矩阵相乘，第一行乘以第一列，第一行乘以第二列……也可以使用for两重循环求*/void mul(ULL* c1, ULL* c2, ULL *res)&#123; res[0] = (c1[0] * c2[0] + c1[1] * c2[2]) % MOD; res[1] = (c1[0] * c2[1] + c1[1] * c2[3]) % MOD; res[2] = (c1[2] * c2[0] + c1[3] * c2[2]) % MOD; res[3] = (c1[3] * c2[3] + c1[2] * c2[1]) % MOD;&#125;int main() &#123; int a,b; int x1,x2; scanf("%d%d%d%d", &amp;x1, &amp;x2, &amp;a, &amp;b); scanf("%s%llu",s, &amp;MOD); int len = 0; /* 统计长度，并且把个位的值(即最后一位的值)减去1 */ for(; s[len]; len++); s[len-1]--; /* 个位减掉了之后向前面借位 */ for(int i = len - 1; i &gt;= 0 &amp;&amp; s[i] &lt; '0'; i--)&#123; s[i] = '9'; s[i-1]--; &#125; ULL now0 = x1, now1 = x2; ULL d[4][4]; d[0][0] = 0; d[0][1] = 1; d[0][2] = b; d[0][3] = a; for(int it = len - 1; it &gt;= 0; it--)&#123; memset(d[1], 0, sizeof(ULL) * 12); /*A "常数"矩阵相乘4次*/ for(int p = 1; p &lt; 4; p++)&#123; mul(d[p-1], d[p-1], d[p]); &#125; s[it] -= '0'; for(int p = 0; p &lt; 4; p++)&#123; if((s[it] &gt;&gt; p) &amp; 1)&#123; ULL* ml = d[p]; std::tie(now0, now1) = std::make_pair((ml[0] * now0 + ml[1] * now1) % MOD,(ml[2] * now0 + ml[3] * now1) % MOD); &#125; &#125; mul(d[1], d[3], d[0]); &#125; printf("%llu\n", now1); return 0;&#125; 少量知识点tie pair是tuple的一个子集 每天一句叨叨今天看到一禅小和尚: 我们尝遍生活的苦，却都只是为了过好平凡的一生 但我觉得如果自己明知道人生是苦，明知道人是基因的机器人(参见算法日常4的叨叨)，却认认认真真地选择好好生活，这就是一种伟大，这就是自由，这就是自己的突破，就是自己的英雄！]]></content>
+      <categories>
+        <category>算法学习日常</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>算法学习日常</tag>
+        <tag>狼胆带你每天头铁一题</tag>
+        <tag>数学</tag>
+        <tag>矩阵快速幂</tag>
+        <tag>10进制矩阵快速幂</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[银联挑战赛复赛A,B题_算法日常[8/100]]]></title>
     <url>%2F2019%2F08%2F13%2F%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-8-100%2F</url>
     <content type="text"><![CDATA[缘起8月10号是计算机设计大赛决赛答辩的最后一天，这天下午是牛客多校8，晚上是银联挑战赛复赛，队友出去吃吃喝喝了，我点个外卖，打着比赛，然后第一题就卡住不会做，然后自闭了，果然银联的比赛很重视数学题啊啊啊，是我数学题没怎么练，太菜了—&gt;所以菜导致既没有吃到好东西，又导致爆零没太多收获，所以还是需要多多努力 A题爱喝「肥宅快乐水」的班长爱喝「肥宅快乐水」的班长 题目解法 看不懂的知识链接隔板法 扩展的隔板法中： 转化前的空盒 == 转化后每个盒子至少放一个 AC代码1234567891011121314151617181920212223242526272829303132333435#include&lt;bits/stdc++.h&gt;using namespace std;typedef long long ll;const ll mod=1000000007;const int inf = 0x3f3f3f3f;const int M = 2e3+7;int C[M][M];int T,n,m;void add(ll &amp;a,ll v)&#123; a += v; if(a &gt;= mod) a-=mod;&#125;void pre()&#123; for(int i=0;i&lt;M;i++)&#123; C[i][0]=1; for(int j=1;j&lt;=i;j++)&#123; C[i][j]=C[i-1][j-1]+C[i-1][j]; if(C[i][j]&gt;=mod) C[i][j]-=mod; &#125; &#125;&#125;int main()&#123; ios::sync_with_stdio(false);cin.tie(0); cin&gt;&gt;T; pre(); while(T--)&#123; cin&gt;&gt;n&gt;&gt;m; cout&lt;&lt;C[n+m-2][m-1]&lt;&lt;endl; &#125; return 0;&#125; B题整数对整数对 题目解法 AC代码1234567891011121314151617181920212223242526#include&lt;bits/stdc++.h&gt;using namespace std;typedef long long ll;ll T,n,m,p,ans;int main()&#123; ios::sync_with_stdio(false);cin.tie(0); cin&gt;&gt;T; while(T--)&#123; cin&gt;&gt;n&gt;&gt;m&gt;&gt;p; ans = 0; ll x = n/p; for(ll r = 0; r &lt; p ; r++ )&#123; /*求出b的种类数*/ ll bn = m/(p/__gcd(r,p)); /*分别对应题解的1,2,3种情况,其实1,3可以合并*/ if(!r) ans+=x*bn; else if(0&lt;r &amp;&amp; r&lt;=n%p) ans+=(x+1)*bn; else ans+=x*bn; &#125; cout&lt;&lt;ans&lt;&lt;endl; &#125; return 0;&#125; 每天一句叨叨人心的成见如同一座大山，我们总是口上说不能有偏见，其实真正的内心想法却不是这样的… 所以我对别人的偏见，我只能尽量克制，让自己理性对待，然后做之不止，乃成君子 对于别人对自己的偏见不要在意，而是要专注自己的目标 感觉自己生来就有一种追求挑战的血液，在小时候尤为明显，但是感觉在长久的教化过程中削弱了，所以我想要找回本真，生命不息，战斗不止，和天生的不公斗到底，做自己的英雄]]></content>
@@ -392,8 +408,8 @@
         <category>hardware</category>
       </categories>
       <tags>
-        <tag>总有一些事情值得</tag>
         <tag>hardware</tag>
+        <tag>总有一些事情值得</tag>
       </tags>
   </entry>
   <entry>
@@ -415,8 +431,8 @@
         <category>hardware</category>
       </categories>
       <tags>
-        <tag>总有一些事情值得</tag>
         <tag>hardware</tag>
+        <tag>总有一些事情值得</tag>
       </tags>
   </entry>
   <entry>
