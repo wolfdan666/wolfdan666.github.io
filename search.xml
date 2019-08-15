@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[算法日常[10/521]]]></title>
+    <url>%2F2019%2F08%2F15%2F%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-10-521%2F</url>
+    <content type="text"><![CDATA[题目题目链接2019牛客多校9 D题 题解折半搜索,详见下面的算法推荐和下面的AC的代码 meet-in-middle AC代码123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354#include &lt;bits/stdc++.h&gt;using namespace std;typedef long long ll;const int mod = 1e9 + 7;const int inf = 0x3f3f3f3f;const int maxn = 1e6;struct node &#123; ll v; int id; bool operator &lt; (const node&amp; r) const &#123; return v &lt; r.v; &#125;&#125;b[maxn];ll arr[40];ll a[maxn], c[maxn];int main() &#123; int n; ll sum; scanf("%d%lld", &amp;n, &amp;sum); for(int i = 0; i &lt; n; i++) scanf("%lld", &amp;arr[i]); int x = n/2, y = n-x; int up1 = (1&lt;&lt;x), up2 = (1&lt;&lt;y); /*全0到全1串的遍历，然后之后是对每个串的逐位遍历，记录此串的和值*/ for(int i = 0; i &lt; up1; i++) &#123; for(int j = 0; j &lt; x; j++) &#123; if(i &amp; (1&lt;&lt;j)) a[i] += arr[j]; &#125; &#125; for(int i = 0; i &lt; up2; i++) &#123; b[i].id = i; b[i].v = 0; for(int j = 0; j &lt; y; j++) &#123; if(i &amp; (1&lt;&lt;j)) b[i].v += arr[x+j]; &#125; &#125; /*让B[i]数组有序，然后使用lower_bound去搜索*/ sort(b, b+up2); for(int i = 0; i &lt; up2; i++) c[i] = b[i].v; /*这里复杂度是2^18*log(2^18) = 4.7*10^6左右*/ for(int i = 0; i &lt; up1; i++) &#123; int p = lower_bound(c, c+up2, sum-a[i])-c; if(c[p]+a[i] == sum) &#123; for(int j = 0; j &lt; x; j++) &#123; if(i &amp; (1&lt;&lt;j)) printf("1"); else printf("0"); &#125; int id = b[p].id; for(int j = 0; j &lt; y; j++) &#123; if(id &amp; (1&lt;&lt;j)) printf("1"); else printf("0"); &#125; break; &#125; &#125; return 0;&#125; 每天叨叨一句明天我小表弟要去学校了，成为一个苦逼的高三学子了，然后我就邀请我大表弟(之后简称表弟)一起来打一下王者荣耀，然后表弟说我没了以前的对游戏的热爱了，好像也是，生活的重心全都倾注到了人生五件事上面，因而对许多其他事情都保持了克制，久而久之，竟然不再会从那些事情中感受到乐趣了，我是该悲伤还是该高兴呢？ 真的要拼尽全力去过这平凡的一生吗？ 是，我想要达成我的目标，我不后悔牺牲一点娱乐的时光，因为追逐目标已经足够快乐！所以只有在特定交友环境再玩游戏，放松 而且我选择的一生对我自己来说注定是不平凡 加油！人一能之，己百之，人十能之，己千之，果能此道也，虽愚必明，虽柔必强！ 这,至少是我当下想要的一生!]]></content>
+      <categories>
+        <category>算法学习日常</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>算法学习日常</tag>
+        <tag>狼胆带你每天头铁一题</tag>
+        <tag>折半搜索</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[10进制矩阵快速幂-狼胆带你每天头铁一题-算法日常[9/100]]]></title>
     <url>%2F2019%2F08%2F14%2F%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-9-100%2F</url>
     <content type="text"><![CDATA[头铁来源因为狼胆小编本人比较垃圾，所以只能每天带大家头铁一题简单常识题(大佬眼中的常识，我这个蒟蒻还只能头铁)，希望能帮助到小白，那就很开心了 题目题目链接2019牛客多校5 B题 题解理想中的草稿状态 真实的草稿状态 dreammoon大佬的官方的题解也可以看看 AC代码123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051#include&lt;bits/stdc++.h&gt;typedef unsigned long long ULL;const int SIZE = 3000010;ULL MOD;char s[SIZE];/*矩阵相乘，第一行乘以第一列，第一行乘以第二列……也可以使用for两重循环求*/void mul(ULL* c1, ULL* c2, ULL *res)&#123; res[0] = (c1[0] * c2[0] + c1[1] * c2[2]) % MOD; res[1] = (c1[0] * c2[1] + c1[1] * c2[3]) % MOD; res[2] = (c1[2] * c2[0] + c1[3] * c2[2]) % MOD; res[3] = (c1[3] * c2[3] + c1[2] * c2[1]) % MOD;&#125;int main() &#123; int a,b; int x1,x2; scanf("%d%d%d%d", &amp;x1, &amp;x2, &amp;a, &amp;b); scanf("%s%llu",s, &amp;MOD); int len = 0; /* 统计长度，并且把个位的值(即最后一位的值)减去1 */ for(; s[len]; len++); s[len-1]--; /* 个位减掉了之后向前面借位 */ for(int i = len - 1; i &gt;= 0 &amp;&amp; s[i] &lt; '0'; i--)&#123; s[i] = '9'; s[i-1]--; &#125; ULL now0 = x1, now1 = x2; ULL d[4][4]; d[0][0] = 0; d[0][1] = 1; d[0][2] = b; d[0][3] = a; for(int it = len - 1; it &gt;= 0; it--)&#123; memset(d[1], 0, sizeof(ULL) * 12); /*A "常数"矩阵相乘4次*/ for(int p = 1; p &lt; 4; p++)&#123; mul(d[p-1], d[p-1], d[p]); &#125; s[it] -= '0'; for(int p = 0; p &lt; 4; p++)&#123; if((s[it] &gt;&gt; p) &amp; 1)&#123; ULL* ml = d[p]; std::tie(now0, now1) = std::make_pair((ml[0] * now0 + ml[1] * now1) % MOD,(ml[2] * now0 + ml[3] * now1) % MOD); &#125; &#125; mul(d[1], d[3], d[0]); &#125; printf("%llu\n", now1); return 0;&#125; 少量知识点tie pair是tuple的一个子集 每天一句叨叨今天看到一禅小和尚: 我们尝遍生活的苦，却都只是为了过好平凡的一生 但我觉得如果自己明知道人生是苦，明知道人是基因的机器人(参见算法日常4的叨叨)，却认认认真真地选择好好生活，这就是一种伟大，这就是自由，这就是自己的突破，就是自己的英雄！]]></content>
