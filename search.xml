@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[2019牛客多校9E题详解_算法日常[11/100]算法日常[11/100]]]></title>
+    <title><![CDATA[2019牛客多校9E题详解_算法日常[11/100]]]></title>
     <url>%2F2019%2F08%2F16%2F%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-11-100%2F</url>
     <content type="text"><![CDATA[组合数学思维题题目链接2019牛客多校9 E题 题解思路其实解法一二的本质内核是一样的，可以都看一下 解法一当合并这两个集合的时候，应该将这两个集合合并后消失的贡献减去消失的贡献就应该是选择了一个a，选择了一个b，从剩下的众多集合中选择两个(即cd,ce,ef……)那么这个怎么算呢，可以用完全平方公式来推导(a+b+c+d)^2=a^2+b^2+c^2+d^2+2ab+2ac+2bc+2ad+2bd+2cd所以众多集合中选择任意选择两个的情况可以用（和的平方-平方的和）/2来求（最重要的一步） 解法二 AC代码解法一代码1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950#include &lt;bits/stdc++.h&gt;using ll = long long;const int MAXN = 100010;int n, m;int f[MAXN], sz[MAXN];ll sum;inline ll sqr(int x) &#123; return 1ll * x * x;&#125;inline int getf(int x) &#123; return f[x] == x ? x : (f[x] = getf(f[x]));&#125;int main() &#123; scanf("%d%d", &amp;n, &amp;m); ll ans = (__int128) n * (n - 1) * (n - 2) * (n - 3) / 24; printf("%lld\n", ans); for (int i = 1; i &lt;= n; ++i) &#123; f[i] = i; sz[i] = 1; &#125; /*最开始的平方和*/ sum = n; while (m--) &#123; int u, v; scanf("%d%d", &amp;u, &amp;v); u = getf(u); v = getf(v); if(ans==0 || u==v) goto END; if (u != v) &#123; /*减掉合并部分的平方和*/ sum -= sqr(sz[u]) + sqr(sz[v]); /*后面的(sqr(n - sz[u] - sz[v]) - sum) / 2;就是`和的平方`-`平方和`=`剩下的所有两两组合`*/ ll tmp = 1ll * sz[u] * sz[v] * (sqr(n - sz[u] - sz[v]) - sum) / 2; f[u] = v; sz[v] += sz[u]; /*新的平方和的维护*/ sum += sqr(sz[v]); /*减去合并减少的贡献值*/ ans -= tmp; &#125; END: printf("%lld\n", ans); &#125; return 0;&#125; 解法二代码1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465#include &lt;bits/stdc++.h&gt;using namespace std;typedef long long ll;const int mod = 1e9 + 7;const int inf = 0x3f3f3f3f;const int maxn = 100000 + 5;ll C[maxn][5];int p[maxn], sz[maxn], cnt[maxn];int n, m;ll ans;set&lt;int&gt; st;inline void init() &#123; for(int i = 0; i &lt; maxn; i++) C[i][0] = 1; for(int i = 1; i &lt; maxn; i++) &#123; for(int j = 1; j &lt; 5; j++) &#123; C[i][j] = C[i-1][j] + C[i-1][j-1]; &#125; &#125;&#125;inline int Find(int x) &#123; return x == p[x] ? x : p[x] = Find(p[x]); &#125;inline void Union(int x, int y) &#123; int fx = Find(x), fy = Find(y); if(fx != fy) &#123; if(fx &gt; fy) swap(fx, fy); p[fx] = fy; ll tp = C[n-sz[fx]-sz[fy]][2]; for(auto i : st) &#123; tp -= C[i][2]*cnt[i]; &#125; tp += C[sz[fx]][2]+C[sz[fy]][2]; if(tp &gt; 0) ans -= 1LL*sz[fx]*sz[fy]*tp; cnt[sz[fx]]--; cnt[sz[fy]]--; if(cnt[sz[fx]] == 0) st.erase(sz[fx]); if(cnt[sz[fy]] == 0) st.erase(sz[fy]); sz[fy] += sz[fx]; cnt[sz[fy]]++; st.insert(sz[fy]); &#125;&#125;int main() &#123; init(); scanf("%d%d", &amp;n, &amp;m); for(int i = 1; i &lt;= n; i++) &#123; p[i] = i; sz[i] = 1; &#125; cnt[1] = n; st.insert(1); ans = C[n][4]; printf("%lld\n", ans); while(m--) &#123; int u, v; scanf("%d%d", &amp;u, &amp;v); Union(u, v); printf("%lld\n", ans); &#125; return 0;&#125; 每天一句叨叨生活总是很奇妙，我们到底该去向何方？ 世俗的成功吗？还是当下的快乐呢？ 珍惜身边的人呢？还是继续寻找？]]></content>
       <categories>
@@ -436,8 +436,8 @@
         <category>hardware</category>
       </categories>
       <tags>
-        <tag>总有一些事情值得</tag>
         <tag>hardware</tag>
+        <tag>总有一些事情值得</tag>
       </tags>
   </entry>
   <entry>
@@ -459,8 +459,8 @@
         <category>hardware</category>
       </categories>
       <tags>
-        <tag>总有一些事情值得</tag>
         <tag>hardware</tag>
+        <tag>总有一些事情值得</tag>
       </tags>
   </entry>
   <entry>
