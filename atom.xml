@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.wolfdan.cn/"/>
-  <updated>2019-08-18T12:53:26.927Z</updated>
+  <updated>2019-08-18T13:30:36.209Z</updated>
   <id>http://www.wolfdan.cn/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ARST打卡第17周[17/521]</title>
+    <link href="http://www.wolfdan.cn/2019/08/18/ARST%E6%89%93%E5%8D%A1%E7%AC%AC17%E5%91%A8-17-521/"/>
+    <id>http://www.wolfdan.cn/2019/08/18/ARST打卡第17周-17-521/</id>
+    <published>2019-08-18T13:28:37.000Z</published>
+    <updated>2019-08-18T13:30:36.209Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h1><p><a href="https://github.com/wolfdan666/WolfEat3moreMeatEveryday/tree/master/2019.8/2019.8.17" target="_blank" rel="noopener">虽然比赛很自闭，但仍一直在补牛客杭电多校题目，一起加油</a></p><h1 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h1><p><a href="https://medium.com/s/story/your-work-is-the-only-thing-that-matters-26a47ccf778c" target="_blank" rel="noopener">Your Work Is the Only Thing That Matters</a><br><strong>If you cease practicing for a second, if you let your mind get wound too tight or simply allowed to drift elsewhere, you will lose that ability. Your bat will stop connecting with the ball, your batting average will drop and soon enough you yourself will be dropped, first from the majors and then the sport altogether.</strong></p><p><strong>是啊，我们只要放松一秒，我们的竞技水平就会急剧下滑，所以我们不能放松，否则就是万丈深渊，输掉曾经所有的努力</strong></p><h1 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h1><p><a href="https://blog.csdn.net/yockie/article/details/52674366" target="_blank" rel="noopener">C++11使用emplace_back代替push_back</a><br>这个文章好久好在它的泛用性，你可以使用里面的头文件去做其他的时间测试</p><h1 id="Share"><a href="#Share" class="headerlink" title="Share"></a>Share</h1><p><a href="https://www.wolfdan.cn/2019/08/13/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-8-100/">银联挑战赛复赛A,B题_算法日常[8/100]</a></p><p><a href="https://www.wolfdan.cn/2019/08/14/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-9-100/">10进制矩阵快速幂-狼胆带你每天头铁一题-算法日常[9/100]</a></p><p><a href="https://www.wolfdan.cn/2019/08/15/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-10-521/">折半搜索_算法日常[10/521]</a></p><p><a href="https://www.wolfdan.cn/2019/08/16/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-11-100/">2019牛客多校9E题详解_算法日常[11/100]</a></p><p><a href="https://www.wolfdan.cn/2019/08/17/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-12-100/">2019牛客多校10 B题_算法日常[12/100]</a></p><p><a href="https://www.wolfdan.cn/2019/08/18/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-13-100/">2019牛客第十场F题详解_算法日常[13/100]</a></p>]]></content>
+    
+    <summary type="html">
+    
+      ARST打卡 银联挑战赛复赛A,B题_算法日常[8/100] 10进制矩阵快速幂-狼胆带你每天头铁一题算法日常[9/100] 折半搜索算法日常[10/521] 2019牛客多校9E题详解算法日常[11/100] 2019牛客多校10 B题算法日常[12/100] 2019牛客第十场F题详解算法日常[13/100]
+    
+    </summary>
+    
+      <category term="ARST" scheme="http://www.wolfdan.cn/categories/ARST/"/>
+    
+    
+      <category term="ARST" scheme="http://www.wolfdan.cn/tags/ARST/"/>
+    
+  </entry>
   
   <entry>
     <title>2019牛客第十场F题详解_算法日常[13/100]</title>
@@ -521,28 +543,6 @@
     
     
       <category term="算法" scheme="http://www.wolfdan.cn/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ARST打卡第14周-14-521</title>
-    <link href="http://www.wolfdan.cn/2019/07/27/ARST%E6%89%93%E5%8D%A1%E7%AC%AC14%E5%91%A8-14-521/"/>
-    <id>http://www.wolfdan.cn/2019/07/27/ARST打卡第14周-14-521/</id>
-    <published>2019-07-27T10:33:33.000Z</published>
-    <updated>2019-07-27T10:34:06.027Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h1><p><a href="https://github.com/wolfdan666/WolfEat3moreMeatEveryday/tree/master/2019.7/2019.7.26" target="_blank" rel="noopener">gogogo</a></p><h1 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h1><p><a href="https://onezero.medium.com/do-you-really-need-another-computer-monitor-a0534d37ba4a" target="_blank" rel="noopener">Do You Really Need Another Computer Monitor?</a></p><p>是啊，对于单一的工作，没有很多要素的工作一个屏幕就够了</p><p>但是对于需要很多要素的工作，比如一边看编程视频教学，一边跟着写这种要素很多的工作，有两个屏幕真的能提高自己的效率</p><h1 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h1><p><a href="https://blog.csdn.net/zearot/article/details/52280189" target="_blank" rel="noopener">线段树从零开始</a></p><p><a href="https://blog.csdn.net/zearot/article/details/48299459" target="_blank" rel="noopener">线段树详解</a></p><h1 id="Share"><a href="#Share" class="headerlink" title="Share"></a>Share</h1><p><a href="https://www.wolfdan.cn/2019/07/26/2019%E7%89%9B%E5%AE%A2%E5%A4%9A%E6%A0%A13-I/">2019牛客多校3 I</a></p>]]></content>
-    
-    <summary type="html">
-    
-      ARST打卡第14周 线段树
-    
-    </summary>
-    
-      <category term="ARST" scheme="http://www.wolfdan.cn/categories/ARST/"/>
-    
-    
-      <category term="ARST" scheme="http://www.wolfdan.cn/tags/ARST/"/>
     
   </entry>
   
