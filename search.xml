@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[2019牛客第十场F题详解_算法日常[13/100]]]></title>
+    <url>%2F2019%2F08%2F18%2F%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-13-100%2F</url>
+    <content type="text"><![CDATA[2019牛客第十场F题详解题目2019牛客第十场F题详解 题解我的分析请看代码 本来以为发现了更快更简单的做法，结果想写成思路给大家看，然后不断想怎么表述这个算法，想着想着发现这是一个假的超快AC算法，然后大家有兴趣的话可以看我的AC代码二的分析(果然写blog做搬运工也是有收获的) AC代码1234567891011121314151617181920212223242526272829303132333435363738394041424344454647#include&lt;bits/stdc++.h&gt;#define pb push_backusing namespace std;const int maxn=6e5+5;const int N=6e5+3;int a[maxn],b[maxn],cnt[maxn],ans,n,r;vector &lt;int&gt; h[maxn];multiset &lt;int&gt; s;void add(int x)&#123; auto p=s.find(cnt[x]); s.erase(p); cnt[x]++; s.insert(cnt[x]);&#125;void del(int x)&#123; auto p=s.find(cnt[x]); s.erase(p); cnt[x]--; s.insert(cnt[x]);&#125;int main()&#123; cin &gt;&gt; n &gt;&gt; r; for (int i=0;i&lt;n;i++)&#123; cin &gt;&gt; a[i] &gt;&gt; b[i]; /* 统一右移2*r */ a[i]+=r*2; b[i]+=r*2; &#125; for (int i=0;i&lt;n;i++)&#123; /*打a[i]的时候,把a[i]-r,a[i]+r也叠加上a[i]上面的值, 这样就能使得a[i]表示打a[i]能获得的总值*/ h[a[i]-r].pb(b[i]); h[a[i]].pb(b[i]); h[aa[i]+r].pb(b[i]); cnt[b[i]]++; cnt[b[i]-r]++; cnt[b[i]+r]++; &#125; for (int i=r;i&lt;=N-r;i++) s.insert(cnt[i]); for (int i=r;i&lt;=N-r;i++)&#123; /*得到中间打这里能够得到的个数*/ int ret=(int)h[i].size(); /*暂时删除相关的所有列值*/ for (auto x:h[i]) del(x),del(x-r),del(x+r); /*然后得到当下最大的3列值*/ auto p=s.rbegin(); ans=max(ans,ret+(*p)); /*再把列值插回去*/ for (auto x:h[i]) add(x),add(x-r),add(x+r); &#125; cout &lt;&lt; ans &lt;&lt; endl;&#125; 能更快AC的假算法1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253/*直接行列序列化排序的做法,真滴是好想法!*//*2019年8月18日20:26:30 发现这是一个假做法！靠着数据水才过的！因为这里只比较了最大的3个行值，就去比较列值了！因为可能有一种情况就是选第4大行，但是取到的列值更多，这应该是有可能出现的，总之这种做法虽然能过 但是是有可能遗漏情况的假算法！必须要枚举到所有的行*/#include&lt;bits/stdc++.h&gt;using namespace std;const int M =1e5 + 10;int num[M *3];int n , r , ans;int cnt[M * 3];struct node&#123; int x , y; int id; bool operator&lt;(node d)const&#123; return x &gt; d.x; &#125;&#125;a[M] , b[M];int main()&#123; ios::sync_with_stdio(0); cin.tie(0); cin &gt;&gt; n &gt;&gt;r; for(int i =1;i &lt;= n;i++)&#123; cin &gt;&gt; a[i].x &gt;&gt; a[i].y; a[i].x++; a[i].y++; num[a[i].x]++; &#125; /*枚举每个行坐标,相加从上到下3行的值--&gt;二维降到一维*/ for(int i = 1;i &lt;= 100000;i++)&#123; /*之所以放在最左边是因为i是从最左边开始,免去判断*/ b[i].x = num[i] + num[i +r] + num[i +r +r]; b[i].id = i; &#125; /*行值获利大到小排序*/ sort(b + 1 ,b + 100001); for(int i = 1;i &lt;= 3;i++)&#123; memset(cnt , 0 ,sizeof(cnt)); for(int j = 1;j &lt;= n;j++)&#123; /*除去原来的行(3次行值取max)以外的其他列的值的统计*/ if(a[j].x != b[i].id &amp;&amp; a[j].x != b[i].id +r &amp;&amp; a[j].x != b[i].id +r * 2) cnt[a[j].y]++; &#125; int sum = 0; for(int j = 1; j &lt; M;j++) sum = max( sum , cnt[j] + cnt[j +r] +cnt[j + r + r]); ans = max(ans , sum + b[i].x); &#125; cout &lt;&lt; ans &lt;&lt;endl;&#125; 每天叨叨一句天将降大任于斯人也，必先苦其心志，劳其筋骨，饿其体肤，空乏其身，行拂乱其所为，所以动心忍性，曾益其所不能]]></content>
+      <categories>
+        <category>算法学习日常</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>算法学习日常</tag>
+        <tag>狼胆带你每天头铁一题</tag>
+        <tag>贪心</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[2019牛客多校10 B题_算法日常[12/100]]]></title>
     <url>%2F2019%2F08%2F17%2F%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-12-100%2F</url>
     <content type="text"><![CDATA[2019牛客多校10 B题题目2019牛客多校10 B题 题解思路 (详见代码注释) C++由于容易数据溢出，所以必须加限制，否则会造成数据溢出的错误，昨晚WA了两个小时的血的教训 k不会到很大的数据范围(限制在了k&lt;10^12) 然后递归的时候是一样的,最终也是递归到x==1,x==2 是按照题中斐波那契递归回去的，所以不会出错 AC代码写了python版之后去写C++版本的，结果一直WA了整整2个多小时，眼睛痛，所以决定明天早起再看看哪里出错了并给出C++版的AC代码(第二天已经更新) Python3版12345678910111213141516171819202122232425# python3lf = [0, 6, 7]# 一千多项的时候远远超过了10^12+7的for _ in range(1000) : lf.append(lf[-2] + lf[-1]) # if _ == 999: # print(If[-1])def f(x, s) : if x == 1 : return "COFFEE"[s] if x == 2 : return "CHICKEN"[s] if s &gt;= lf[x-2] : return f(x - 1, s - lf[x - 2]) else : return f(x - 2, s)for _ in range(eval(input())) : n, s = map(int, input().split()) s -= 1 # 从s到min(s+10,lf[n]), 用中括号括起来生成列表 r = [f(n, t) for t in range(s, min(s + 10, lf[n]))] print(''.join(r)) C++AC代码1_与题解思路相同的1234567891011121314151617181920212223242526272829303132333435363738394041#include&lt;bits/stdc++.h&gt;using namespace std;typedef long long ll;const ll mod=1000000007;ll len[505];string ans;int T,n;ll k;char f(int x,ll k)&#123; if(x==1) return "COFFEE"[k]; if(x==2) return "CHICKEN"[k]; if(k&gt;=len[x-2]) return f(x-1,k-len[x-2]); else return f(x-2,k);&#125;int main()&#123; ios::sync_with_stdio(false);cin.tie(0); len[1] = 6,len[2] = 7; ll mx = 1e13; /*这里最好不要break,否则会造成数组的部分是0值，除非先赋值为mx (当然也可以使用C++AC代码二的特殊提前处理去使用break) 但是可以通过min控制数值大小，以免引发数据溢出错误 可以使用min的原因是，k不会到很大的数据范围 然后递归的时候是一样的,最终也是递归到x==1,x==2 是按照题中斐波那契递归回去的，所以不会出错*/ for(int i=3;i&lt;=500;i++)&#123; len[i] = min(len[i-2]+len[i-1],mx); &#125; for(cin&gt;&gt;T;T--;)&#123; cin&gt;&gt;n&gt;&gt;k; k-=1; ans.clear(); ll tn = min(k+10,len[n]); for(ll i=k;i&lt;tn;i++)&#123; ans += f(n,i); &#125; cout&lt;&lt;ans&lt;&lt;endl; &#125; return 0;&#125; C++AC代码2123456789101112131415161718192021222324252627282930313233343536373839404142434445464748#include &lt;bits/stdc++.h&gt;using namespace std;typedef long long ll;const int mod = 1e9 + 7;const int inf = 0x3f3f3f3f;const int maxn = 100000 + 5;ll len[505];string str[3];string dfs(int x, ll a, ll b) &#123; /*substr的第二个参数是长度*/ if(x &lt;= 2) return str[x].substr(a-1, b); if(a+b-1 &lt;= len[x-2]) return dfs(x-2, a, b); if(a &gt; len[x-2]) return dfs(x-1, a-len[x-2], b); /*分段后..x-1可以直接从1开始了*/ return dfs(x-2, a, len[x-2]-a+1) + dfs(x-1, 1, b-(len[x-2]-a+1));&#125;int main() &#123; ios::sync_with_stdio(false); cin.tie(0); str[1] = "COFFEE"; str[2] = "CHICKEN"; len[1] = 6, len[2] = 7; ll mx = 1e17; for(int i = 3; i &lt;= 500; i++) &#123; /*前缀和*/ len[i] = len[i-1] + len[i-2]; /* i=80就会跳出*/ if(len[i] &gt; mx) &#123;/*cout&lt;&lt;i&lt;&lt;endl;*/break;&#125; &#125; int T; cin &gt;&gt; T; while(T--) &#123; int n; ll k; cin &gt;&gt; n &gt;&gt; k; int x; /*提前给x降低大小，所以就可以前面使用break，并且减少递归的次数*/ for(x = 1; x &lt;= n; x++) &#123; if(len[x] &gt;= k+10) break; &#125; if(x == n+1) cout &lt;&lt; dfs(x-1, k, min(10ll, len[x]-k+1)) &lt;&lt; endl; else &#123; if((n-x)%2) x++; cout &lt;&lt; dfs(x, k, min(10ll, len[x]-k+1)) &lt;&lt; endl; &#125; &#125; return 0;&#125; 每天一句叨叨不用去刻意讨好谁，因为只有做自己，才配得上最棒的人生]]></content>
@@ -452,8 +466,8 @@
         <category>hardware</category>
       </categories>
       <tags>
-        <tag>hardware</tag>
         <tag>总有一些事情值得</tag>
+        <tag>hardware</tag>
       </tags>
   </entry>
   <entry>
@@ -475,8 +489,8 @@
         <category>hardware</category>
       </categories>
       <tags>
-        <tag>hardware</tag>
         <tag>总有一些事情值得</tag>
+        <tag>hardware</tag>
       </tags>
   </entry>
   <entry>
