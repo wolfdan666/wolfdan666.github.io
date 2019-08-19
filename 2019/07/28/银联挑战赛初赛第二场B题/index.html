@@ -406,7 +406,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  300
+                  299
                 </span>
               
 
@@ -453,10 +453,7 @@
 <h2 id="数论分块知识点"><a href="#数论分块知识点" class="headerlink" title="数论分块知识点"></a>数论分块知识点</h2><p><a href="https://taodaling.github.io/blog/2019/03/27/%E6%95%B0%E8%AE%BA%E5%88%86%E5%9D%97/" target="_blank" rel="noopener">图片截取了大佬的blog</a></p>
 <p><img src="https://raw.githubusercontent.com/wolfdan666/BlogPic/master/%E7%AE%97%E6%B3%95/%E6%AF%94%E8%B5%9B/%E7%BA%BF%E4%B8%8A/%E9%93%B6%E8%81%94%E5%88%9D%E8%B5%9B2/%E6%95%B0%E8%AE%BA%E5%88%86%E5%9D%97%E7%9F%A5%E8%AF%86%E7%82%B9.png" alt></p>
 <h2 id="手写AC代码"><a href="#手写AC代码" class="headerlink" title="手写AC代码"></a>手写AC代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">const</span> ll mod = <span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line">ll n,m;</span><br><span class="line">ll inv6;</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">qpow</span><span class="params">(ll a,ll b)</span></span>&#123;</span><br><span class="line">    ll res = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(b)&#123;</span><br><span class="line">        <span class="keyword">if</span>(b&amp;<span class="number">1</span>) res = res*a%mod;</span><br><span class="line">        a = (a*a)%mod;</span><br><span class="line">        b&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">f</span><span class="params">(ll n)</span></span>&#123; <span class="keyword">return</span> n*(n+<span class="number">1</span>)%mod*(<span class="number">2</span>*n+<span class="number">1</span>)%mod*inv6%mod;&#125;</span><br><span class="line"><span class="function">ll <span class="title">solve</span><span class="params">(ll n)</span></span>&#123;</span><br><span class="line">    ll ans = (n*(n+<span class="number">1</span>)/<span class="number">2</span>%mod)*n;</span><br><span class="line">    <span class="comment">// ll ans = n*n%mod*(n+1)/2%mod;</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>,j;i&lt;=n;i=j+<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="comment">/*i=j+1,以及n/i要加括号*/</span></span><br><span class="line">        j = n/(n/i);</span><br><span class="line">        <span class="comment">/*其实j不会大于n*/</span></span><br><span class="line">        <span class="keyword">if</span>(j&gt;n) j=n;</span><br><span class="line">        ans = (ans - (f(j)-f(i<span class="number">-1</span>))*(n/i)%mod + mod)%mod;</span><br><span class="line">        <span class="comment">/*只要保证每次相减时两个都是正数</span></span><br><span class="line"><span class="comment">        然后结果再来一次保证正数操作就不会出错*/</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>); <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">    inv6 = qpow(<span class="number">6</span>,mod<span class="number">-2</span>);</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m;</span><br><span class="line">    ll ans = solve(n)*solve(m)%mod;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="菜鸡我踩坑"><a href="#菜鸡我踩坑" class="headerlink" title="菜鸡我踩坑"></a>菜鸡我踩坑</h2><p>坑我35mins</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bug是因为除号必须在mod前！</span></span><br><span class="line">ll ans = (n*(n+<span class="number">1</span>)/<span class="number">2</span>%mod)*n;</span><br><span class="line"><span class="comment">// ll ans = n*n%mod*(n+1)/2%mod;</span></span><br></pre></td></tr></table></figure>
-
+<h2 id="菜鸡我踩坑"><a href="#菜鸡我踩坑" class="headerlink" title="菜鸡我踩坑"></a>菜鸡我踩坑</h2><p>坑我35mins<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bug是因为除号必须在mod前！</span></span><br><span class="line">ll ans = (n*(n+<span class="number">1</span>)/<span class="number">2</span>%mod)*n;</span><br><span class="line"><span class="comment">// ll ans = n*n%mod*(n+1)/2%mod;</span></span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -743,7 +740,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">45.8k</span>
+    <span title="Site words total count">45.4k</span>
   
 </div>
 
@@ -1335,6 +1332,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 

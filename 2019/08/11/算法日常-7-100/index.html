@@ -449,7 +449,6 @@
         <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><h2 id="题目链接以及描述"><a href="#题目链接以及描述" class="headerlink" title="题目链接以及描述"></a>题目链接以及描述</h2><p><a href="https://ac.nowcoder.com/acm/contest/888/B" target="_blank" rel="noopener">2019牛客多校8_B题</a><br><img src="https://raw.githubusercontent.com/wolfdan666/BlogPic/master/%E7%AE%97%E6%B3%95/2019%E5%B9%B4%E5%A4%9A%E6%A0%A1/%E7%89%9B%E5%AE%A2/%E7%AC%AC%E5%85%AB%E5%9C%BA/B1.png" alt></p>
 <h2 id="题意以及思路"><a href="#题意以及思路" class="headerlink" title="题意以及思路"></a>题意以及思路</h2><p><img src="https://raw.githubusercontent.com/wolfdan666/BlogPic/master/%E7%AE%97%E6%B3%95/2019%E5%B9%B4%E5%A4%9A%E6%A0%A1/%E7%89%9B%E5%AE%A2/%E7%AC%AC%E5%85%AB%E5%9C%BA/B2.png" alt></p>
 <h2 id="AC代码"><a href="#AC代码" class="headerlink" title="AC代码"></a>AC代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">100000</span> + <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[maxn], b[maxn], c[maxn];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i]);</span><br><span class="line">        <span class="comment">/*c[i]记录的是a[i]的上一个位置加1的位置*/</span></span><br><span class="line">        c[i] = b[a[i]]+<span class="number">1</span>;</span><br><span class="line">        b[a[i]] = i;</span><br><span class="line">    &#125;</span><br><span class="line">    ll ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        ans += <span class="number">1L</span>L*(n-i+<span class="number">1</span>)*(i-c[i]+<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, ans);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <h1 id="每日一句叨叨"><a href="#每日一句叨叨" class="headerlink" title="每日一句叨叨"></a>每日一句叨叨</h1><p><strong>但求精进,无问西东</strong></p>
 
       
@@ -741,7 +740,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">45.8k</span>
+    <span title="Site words total count">45.4k</span>
   
 </div>
 
@@ -1333,6 +1332,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 

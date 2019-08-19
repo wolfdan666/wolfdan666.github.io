@@ -447,12 +447,19 @@
 <p>今年又是 Rikka 和 Yuta 在多校上秀恩爱的一年（说不定也是最后一年了.. sad</p>
 <h4 id="1001-Rikka-with-Quicksort"><a href="#1001-Rikka-with-Quicksort" class="headerlink" title="1001 Rikka with Quicksort"></a>1001 Rikka with Quicksort</h4><p>难度：medium</p>
 <p>考察了大家对快速排序时间复杂度推导的熟悉程度（当然我是打表推式子的）</p>
-<p>如果打表的话可以考虑下面这个式子，它是计算在 $m$ 处增加一个 $1$ 对答案的贡献。<br>$$<br>\begin{aligned}</p>
-<p>h_m(i) &amp;= 0 &amp; i &lt; m\</p>
-<p>h_m(i) &amp;= 1 &amp; i =m \</p>
-<p>h_m(i) &amp;= \frac{1}{i}\sum_{j=1}^{i}\left( h_m(j-1) + h_m(i-j)\right)  &amp; i &gt; m</p>
-<p>\end{aligned}<br>$$<br>打表之后可以知道 $h_m(m)=1,h_m(n)=\frac{2(n+1)}{(m+1)(m+2)} (n &gt; m)$。应该归纳一下就可以直接证明。所以把对应的贡献求和之后可以得到答案就是：<br>$$<br>2(n+1)H(n)-4n-\frac{2(m+2)H(m+1)-4(m+1)-m)(n+1)}{m+2}<br>$$</p>
-<p>其中 $H(n)$ 表示调和级数。因为模数确定，可以用分段打表的策略来求调和级数的具体值：即把 $H(kS)$ 的值给打入程序中，这样每一次只需要计算 $kS+1$ 到 $n$ 的逆元就行了。</p>
+<p>如果打表的话可以考虑下面这个式子，它是计算在 $m$ 处增加一个 $1$ 对答案的贡献。</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+
+h_m(i) &= 0 & i < m\\
+
+h_m(i) &= 1 & i =m \\
+
+h_m(i) &= \frac{1}{i}\sum_{j=1}^{i}\left( h_m(j-1) + h_m(i-j)\right)  & i > m
+
+\end{aligned}</script><p>打表之后可以知道 $h_m(m)=1,h_m(n)=\frac{2(n+1)}{(m+1)(m+2)} (n &gt; m)$。应该归纳一下就可以直接证明。所以把对应的贡献求和之后可以得到答案就是：</p>
+<script type="math/tex; mode=display">
+2(n+1)H(n)-4n-\frac{2(m+2)H(m+1)-4(m+1)-m)(n+1)}{m+2}</script><p>其中 $H(n)$ 表示调和级数。因为模数确定，可以用分段打表的策略来求调和级数的具体值：即把 $H(kS)$ 的值给打入程序中，这样每一次只需要计算 $kS+1$ 到 $n$ 的逆元就行了。</p>
 <h4 id="1002-Rikka-with-Cake"><a href="#1002-Rikka-with-Cake" class="headerlink" title="1002 Rikka with Cake"></a>1002 Rikka with Cake</h4><p>难度：medium easy</p>
 <p>用欧拉（欧拉欧拉欧拉）公式 $V-E+F = 2$ 来算蛋糕的块数。</p>
 <p>首先考虑点数 $V$，蛋糕的四个角以及射线的端点贡献了 $n+4$ 个顶点（$K$ 太丑了我们用 $n$ 表示射线数），射线和四条边的交点共有 $n$ 个，射线之间的交点有 $c$ 个，因此点数是 $2n+4+c$。</p>
@@ -463,10 +470,11 @@
 <p>可以对每一位分开来计算，和最大不超过 $10^{10}$，因此最多只有 $10$ 位。只要对每一位算出它在多少种情况下是 $4$，全部加起来就可以了。</p>
 <p>$40$ 的数据范围指明了可以用 meet in middle 来做，可以先用 $O(2^{\frac{n}{2}})$ 的复杂度分别把前 $\frac{n}{2}$ 个数和后 $\frac{n}{2}$ 个数的所有和求出来，分别存在数组 $A$ 和 $B$ 中，那么对于第 $i$ 位来说，答案就是有多少个数对 $i,j$ 满足 $(A_i+B_j) \text{ mod } 10^{i+1} \in [4 \times 10^i,5 \times 10^i)$。这个问题只要对 $A$ 和 $B$ 按照 $x \text{ mod }  10^{i+1}$ 排序后用 two pointer 扫就可以了。</p>
 <p>对每一位分开来做时间复杂度是 $O(2^{\frac{n}{2}}n \log w_i)$，瓶颈在堆每一位排序。不难发现对每一位排序可以用一次归并排序来实现，这样就能省下一个 $\log$，时间复杂度是 $O(2^{\frac{n}{2}}n)$。</p>
-<p>####1004 Rikka with Geometric Sequence</p>
-<p>难度：medium</p>
+<h4 id="1004-Rikka-with-Geometric-Sequence"><a href="#1004-Rikka-with-Geometric-Sequence" class="headerlink" title="1004 Rikka with Geometric Sequence"></a>1004 Rikka with Geometric Sequence</h4><p>难度：medium</p>
 <p>首先长度是 $1$ 的答案就是 $n$，长度为 $2$ 的答案就是 $\frac{n(n-1)}{2}$。我们考虑长度大于等于 $3$ 的情况。</p>
-<p>假设公比的最简分数表示是 $\frac{a}{b}(a &gt; b,\gcd(a,b) = 1)$，等比数列长度是 $k$，那么 $x$ 能作为这样的一个等比数列的最后一项的条件就是 $a^{k-1}|x$，因此这样的等比数列一共有 $\left \lfloor \frac{n}{a^{k-1}} \right \rfloor$。而枚举了 $a$，满足小于 $a$ 且与 $a$ 互质的 $b$ 的数量是 $\varphi(a)$，其中 $\varphi$ 表示欧拉函数。 因此我们可以枚举 $a$ 然后对答案求和：<br>$$<br>\sum_{a=2}^n \varphi(a)\left \lfloor \frac{n}{a^{k-1}} \right \rfloor<br>$$<br>显然有贡献的 $a$ 必须小于等于 $\sqrt[k-1] n$，因此当 $k&gt;3$ 的时候就能暴力枚举 $a$ 统计答案了，问题就在于 $k=3$ 的时候的处理。这个时候可以证明 $\left \lfloor \frac{n}{a^2} \right \rfloor$ 的取值最多只有 $\sqrt[3] n$ 种：当 $a \leq \sqrt[3]n$ 的时候，只有 $\sqrt[3] n$ 种值，当 $a &gt; \sqrt[3]n$ 的时候，这个商小于等于 $\sqrt[3]n$，因此最多也就只有 $\sqrt[3]n$ 种答案。</p>
+<p>假设公比的最简分数表示是 $\frac{a}{b}(a &gt; b,\gcd(a,b) = 1)$，等比数列长度是 $k$，那么 $x$ 能作为这样的一个等比数列的最后一项的条件就是 $a^{k-1}|x$，因此这样的等比数列一共有 $\left \lfloor \frac{n}{a^{k-1}} \right \rfloor$。而枚举了 $a$，满足小于 $a$ 且与 $a$ 互质的 $b$ 的数量是 $\varphi(a)$，其中 $\varphi$ 表示欧拉函数。 因此我们可以枚举 $a$ 然后对答案求和：</p>
+<script type="math/tex; mode=display">
+\sum_{a=2}^n \varphi(a)\left \lfloor \frac{n}{a^{k-1}} \right \rfloor</script><p>显然有贡献的 $a$ 必须小于等于 $\sqrt[k-1] n$，因此当 $k&gt;3$ 的时候就能暴力枚举 $a$ 统计答案了，问题就在于 $k=3$ 的时候的处理。这个时候可以证明 $\left \lfloor \frac{n}{a^2} \right \rfloor$ 的取值最多只有 $\sqrt[3] n$ 种：当 $a \leq \sqrt[3]n$ 的时候，只有 $\sqrt[3] n$ 种值，当 $a &gt; \sqrt[3]n$ 的时候，这个商小于等于 $\sqrt[3]n$，因此最多也就只有 $\sqrt[3]n$ 种答案。</p>
 <p>所以相当于把 $a$ 的取值分成了 $\sqrt[3]n$ 段，对每一段分别用杜教筛求 $\varphi(n)$ 的前缀和就可以了。这样的时间复杂度比较迷幻，我展开一层积分一下可以得到时间复杂度是 $O(n^{\frac{5}{12}})$。不确定最终的时间复杂度是什么。但是如果预处理前 $5 \times 10^7$ 项的欧拉函数，可以非常轻松的跑过去。</p>
 <h4 id="1005-Rikka-with-Game"><a href="#1005-Rikka-with-Game" class="headerlink" title="1005 Rikka with Game"></a>1005 Rikka with Game</h4><p>难度：easy</p>
 <p>签到题，随便脑补一下就能知道答案。首先如果第一位是 $a-x$ 的话，先手会直接结束游戏：如果先手增加第一位，那么后手直接结束游戏；如果先手不增加第一位，那么后手增加第一位，此时如果先手还不结束游戏，后手直接选择结束。这三种情况下游戏结束的字典序都要比游戏开始的时候字典序大。</p>
@@ -490,7 +498,6 @@
 <p>考虑把男生和女生分别放到一棵 trie 树里面，然后考虑最高位：首先肯定是让不同子树的男生女生进行匹配，如果左子树里有一队，右子树里有一队，那么交换他们的伴侣肯定一个更好的选择。而因为左右子树的大小可能不均匀，所以在分开来匹配之后，不妨设左子树有一些男生剩下，右子树有一些女生剩下，这个时候就只能让败者组的他们互相舔舐伤口了。</p>
 <p>写成代码很简单，下面是一个简单的伪代码：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">match</span><span class="params">(node_b, node_g, depth)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (node_b.size == <span class="number">0</span> || node_g.size == <span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line">	<span class="keyword">if</span> (depth == <span class="number">-1</span>) &#123;</span><br><span class="line">		marriage(node_b, node_g); <span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	match(node_b.l, node_g.r, depth - <span class="number">1</span>);</span><br><span class="line">	match(node_b.r, node_g.l, depth - <span class="number">1</span>);</span><br><span class="line">	match(node_b.l, node_g.l, depth - <span class="number">1</span>);</span><br><span class="line">	match(node_b.r, node_g.r, depth - <span class="number">1</span>);</span><br><span class="line">	node_b.update_size();</span><br><span class="line">	node_g.update_size();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>其中 <code>node_b</code> 和 <code>node_g</code> 分别表示男孩和女孩对应的 trie 树节点，<code>depth</code> 表示现在考虑的是哪一层。大致的思想就是暴力递归下去然后贪心的匹配就行了。</p>
 <p>因为每递归 $O(\log a_i)$ 层一定会有一对新人产生，所以总的时间复杂度是 $O(n \log a_i)$ 的。</p>
 <h4 id="1009-Rikka-with-Traffic-Light"><a href="#1009-Rikka-with-Traffic-Light" class="headerlink" title="1009 Rikka with Traffic Light"></a>1009 Rikka with Traffic Light</h4><p>难度：medium hard</p>
@@ -513,7 +520,9 @@
 <p>这个题是一个简单的分形题.. 做法也很传统，就是大力递归下去，难点在于比较麻烦。</p>
 <p>我们用 $F(N)$ 表示到线段树的区间长度到 $N$ 为止的求和。那么除了 $1$ 的情况直接结束，其他的线段树都会递归左子树和右子树。如果我们假设左右子树都是从 $1$ 开始重新标号的话，那么左右子树都是递归到 $\frac{N}{2}$ 上下取整的子问题，这一部分用一个记忆化的递归就行。</p>
 <p>考虑合并左右子树成 $n$ 的情况，首先所有叶子节点的深度都会增加 $1$，这一部分的贡献是 $\sum_{n=2}^N \sum_{i=1}^n i$，可以直接计算。</p>
-<p>最后，因为加上左子树之后，右子树的所有点的编号会对应地发生变化，因此需要再算上对应的贡献。令 $g(n)$ 表示对应区间为 $n$ 的线段树所有叶子节点的深度和，设 $m$ 是最大的整数满足 $2^m \leq n$，那么 $g(n) = nm+2(n-2^m)$。而这一部分的贡献就是：<br>$$<br>\sum_{n=2}^N \left \lceil \frac{N}{2}\right \rceil g\left(\left \lfloor \frac{n}{2}\right \rfloor\right)<br>$$<br>推一个式子加上一通预处理，就能 $O(1)$ 计算这个和式了。</p>
+<p>最后，因为加上左子树之后，右子树的所有点的编号会对应地发生变化，因此需要再算上对应的贡献。令 $g(n)$ 表示对应区间为 $n$ 的线段树所有叶子节点的深度和，设 $m$ 是最大的整数满足 $2^m \leq n$，那么 $g(n) = nm+2(n-2^m)$。而这一部分的贡献就是：</p>
+<script type="math/tex; mode=display">
+\sum_{n=2}^N \left \lceil \frac{N}{2}\right \rceil g\left(\left \lfloor \frac{n}{2}\right \rfloor\right)</script><p>推一个式子加上一通预处理，就能 $O(1)$ 计算这个和式了。</p>
 <p>如果用 map 来进行记忆化的话，时间复杂度为 $O(\log^2 n)$。</p>
 <h1 id="每天一句叨叨"><a href="#每天一句叨叨" class="headerlink" title="每天一句叨叨"></a>每天一句叨叨</h1><ul>
 <li><p>jls真牛逼</p>
@@ -773,7 +782,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#jls题解"><span class="nav-number">1.</span> <span class="nav-text">jls题解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1001-Rikka-with-Quicksort"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">1001 Rikka with Quicksort</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1002-Rikka-with-Cake"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">1002 Rikka with Cake</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1003-Rikka-with-Mista"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">1003 Rikka with Mista</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1005-Rikka-with-Game"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">1005 Rikka with Game</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1006-Rikka-with-Coin"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">1006 Rikka with Coin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1007-Rikka-with-Travel"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">1007 Rikka with Travel</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1008-Rikka-with-Stable-Marriage"><span class="nav-number">1.0.0.7.</span> <span class="nav-text">1008 Rikka with Stable Marriage</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1009-Rikka-with-Traffic-Light"><span class="nav-number">1.0.0.8.</span> <span class="nav-text">1009 Rikka with Traffic Light</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1010-Rikka-with-Defensive-Line"><span class="nav-number">1.0.0.9.</span> <span class="nav-text">1010 Rikka with Defensive Line</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1011-Rikka-with-Segment-Tree"><span class="nav-number">1.0.0.10.</span> <span class="nav-text">1011 Rikka with Segment Tree</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#每天一句叨叨"><span class="nav-number">2.</span> <span class="nav-text">每天一句叨叨</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#jls题解"><span class="nav-number">1.</span> <span class="nav-text">jls题解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1001-Rikka-with-Quicksort"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">1001 Rikka with Quicksort</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1002-Rikka-with-Cake"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">1002 Rikka with Cake</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1003-Rikka-with-Mista"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">1003 Rikka with Mista</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1004-Rikka-with-Geometric-Sequence"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">1004 Rikka with Geometric Sequence</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1005-Rikka-with-Game"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">1005 Rikka with Game</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1006-Rikka-with-Coin"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">1006 Rikka with Coin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1007-Rikka-with-Travel"><span class="nav-number">1.0.0.7.</span> <span class="nav-text">1007 Rikka with Travel</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1008-Rikka-with-Stable-Marriage"><span class="nav-number">1.0.0.8.</span> <span class="nav-text">1008 Rikka with Stable Marriage</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1009-Rikka-with-Traffic-Light"><span class="nav-number">1.0.0.9.</span> <span class="nav-text">1009 Rikka with Traffic Light</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1010-Rikka-with-Defensive-Line"><span class="nav-number">1.0.0.10.</span> <span class="nav-text">1010 Rikka with Defensive Line</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1011-Rikka-with-Segment-Tree"><span class="nav-number">1.0.0.11.</span> <span class="nav-text">1011 Rikka with Segment Tree</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#每天一句叨叨"><span class="nav-number">2.</span> <span class="nav-text">每天一句叨叨</span></a></li></div>
             
 
           </div>
@@ -807,7 +816,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">45.8k</span>
+    <span title="Site words total count">45.4k</span>
   
 </div>
 
@@ -1399,6 +1408,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 
