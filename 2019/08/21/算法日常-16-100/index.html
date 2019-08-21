@@ -97,7 +97,7 @@
 <meta property="og:description" content="后缀数组基础题poj1743详解_算法日常 POJ1743 为什么c+1,ans+1 为什么da函数的n值要加1而getheight函数不用 height分组为什么直接遍历下去分就好，不用吧height值相同的放在一起">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/wolfdan666/BlogPic/master/%E7%AE%97%E6%B3%95/%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84/poj1743_height%E6%95%B0%E7%BB%84%E5%88%86%E7%BB%84%E5%88%86%E6%9E%90.png">
-<meta property="og:updated_time" content="2019-08-21T13:07:44.626Z">
+<meta property="og:updated_time" content="2019-08-21T13:15:22.102Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="后缀数组基础题poj1743详解_算法日常[16&#x2F;100]">
 <meta name="twitter:description" content="后缀数组基础题poj1743详解_算法日常 POJ1743 为什么c+1,ans+1 为什么da函数的n值要加1而getheight函数不用 height分组为什么直接遍历下去分就好，不用吧height值相同的放在一起">
@@ -457,7 +457,7 @@
 </ul>
 <h2 id="没学后缀数组？"><a href="#没学后缀数组？" class="headerlink" title="没学后缀数组？"></a>没学后缀数组？</h2><p><a href="https://www.wolfdan.cn/2019/08/20/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-15-100/">出门左转给你后缀数组学习合集</a></p>
 <h2 id="思路重点"><a href="#思路重点" class="headerlink" title="思路重点"></a>思路重点</h2><h3 id="为什么c-1-ans-1"><a href="#为什么c-1-ans-1" class="headerlink" title="为什么c+1,ans+1"></a>为什么c+1,ans+1</h3><p>二分检查的时候，最长公共前缀是x,sa差值却要大于x+1:<br>    因为之前我们处理成了差值，所以我们内卷了一个值，<br>    我们的差值相当于左右两个值，所以4个值代表着5个值<br>    所以最长公共字串只要在4的时候就相当于5,然后sa的<br>    差值还是要相间隔5才行==&gt;这样真实的5个值也才是真的<br>    间隔5个值，所以同理答案也就是c+1(ans+1)</p>
-<p>比如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1 2 3 4 5 6 7 8 9 10</span><br><span class="line">  1 1 1 1 &apos; 1 1 1 1</span><br></pre></td></tr></table></figure></p>
+<p>比如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1 2 3 4 5 6 7 8 9 10</span><br><span class="line"> 1 1 1 1 &apos; 1 1 1 1</span><br></pre></td></tr></table></figure></p>
 <p>中间的<code>&#39;</code>也是1，但是代表的5,6，所以如果从这里开始和前面的4个1构成相同串的话，然后就重叠了一个，所以必须从<code>&#39;</code>后面1开始</p>
 <p>我看了别的几个博主对于这题的分析没有谈及，这里，还有些代码没有考虑这里也能AC，说明数据都去卡时间了，没有卡下面这个特例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">9</span><br><span class="line">1 2 3 4 5 6 7 8 9</span><br></pre></td></tr></table></figure></p>
 <h3 id="为什么da函数的n值要加1而getheight函数不用"><a href="#为什么da函数的n值要加1而getheight函数不用" class="headerlink" title="为什么da函数的n值要加1而getheight函数不用"></a>为什么da函数的n值要加1而getheight函数不用</h3><p>da要加一个位置的字符,让它比所有的字符都小，所以这个字符起始的后缀是其本身，其排名为0(rank[n]=0,sa[0]=n)<br>然而calheight却不要…因为calheight直接从rank值为1(rank为0的地方是添加的最小字符)的地方记到n，根本不会用到sa<a href="排名为0的后缀">0</a>，重点还有<strong>for中用的是&lt;=</strong>..所以只要使用n.</p>
