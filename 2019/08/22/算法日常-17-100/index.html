@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="狼胆">
 <meta property="og:description" content="HDU5008详解_后缀数组_二分_RMQ_算法日常 从明天起，做一个幸福的人(每天只玩半个小时的手机,让自己要么大屏高效,要么认真体验生活)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-22T13:42:54.078Z">
+<meta property="og:updated_time" content="2019-08-22T13:45:55.445Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HDU5008详解_后缀数组_二分_RMQ_算法日常[17&#x2F;100]">
 <meta name="twitter:description" content="HDU5008详解_后缀数组_二分_RMQ_算法日常 从明天起，做一个幸福的人(每天只玩半个小时的手机,让自己要么大屏高效,要么认真体验生活)">
@@ -463,12 +463,13 @@
 <ol>
 <li>首先是关于一个字符串有多少不同子串的问题，串由小到大排起序来应该是按照sa[i]的顺序排出来的产生的。</li>
 </ol>
-<p>比如abbacd，排序出来的后缀是这样的<br>rank值i—-对应的后缀sa[i]<br>1—-abbacd　　　第一个串产生的6个<strong>前缀</strong>都是新的子串(a,ab,abb……)</p>
-<p>2—-acd　　　　　第二个串除了和上一个串的相同的前缀a(长度为1) 3-1=2 产生了2个子串</p>
-<p>3—-bacd　　　　　4-0=4</p>
-<p>4—-bbacd　　　　5-1=4</p>
-<p>5—-cd　　　　　　2－0=0</p>
-<p>6—-d　　　　　　　1－0=0</p>
+<p>比如abbacd，排序出来的后缀是这样的<br>rank值i—-对应的后缀sa[i]</p>
+<p>　　1—-abbacd　　　第一个串产生的6个<strong>前缀</strong>都是新的子串(a,ab,abb……)</p>
+<p>　　2—-acd　　　　　第二个串除了和上一个串的相同的前缀a(长度为1) 3-1=2 产生了2个子串</p>
+<p>　　3—-bacd　　　　　4-0=4</p>
+<p>　　4—-bbacd　　　　5-1=4</p>
+<p>　　5—-cd　　　　　　2－0=0</p>
+<p>　　6—-d　　　　　　　1－0=0</p>
 <p>所以所有不同的前缀应该是(len-sa[i])-height[i]的和，即后缀串长(总串长减后缀起始位置)减去与上一个串的最长公共前缀，然后求和。<br>如果你不了解height数组—-&gt;建议看看<a href="https://www.wolfdan.cn/2019/08/20/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-15-100/">学习后缀数组的小建议</a></p>
 <ol>
 <li>然后我们可以观察到字串是按照排名过来的<br>a,ab,abb,abba,abbac,abbacd,ac,acd,b,ba,……</li>
