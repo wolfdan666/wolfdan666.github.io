@@ -1943,7 +1943,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff9cbf;
+  background: #7df91f;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3266,4 +3266,8 @@ pre .javascript .function {
 ::selection {
   background: #43cd80;
   color: #fff;
+/* 2019年9月5日21:50:21 为了搞点透明度，让图片更好看 */
+}
+::selection .main-inner {
+  opacity: 0.8;
 }
