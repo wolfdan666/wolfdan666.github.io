@@ -98,18 +98,18 @@
 
 
 
-<meta name="description" content="SAM后缀自动机学习路线,学习资源">
+<meta name="description" content="SAM后缀自动机学习路线,学习资源 2019年9月5日14:29更新">
 <meta name="keywords" content="算法,算法学习日常,后缀数组,后缀自动机">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SAM后缀自动机学习路线_算法日常[19&#x2F;100]">
 <meta property="og:url" content="http://www.wolfdan.cn/2019/08/30/算法日常-19-100/index.html">
 <meta property="og:site_name" content="狼胆">
-<meta property="og:description" content="SAM后缀自动机学习路线,学习资源">
+<meta property="og:description" content="SAM后缀自动机学习路线,学习资源 2019年9月5日14:29更新">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-31T08:32:45.048Z">
+<meta property="og:updated_time" content="2019-09-05T06:31:57.694Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SAM后缀自动机学习路线_算法日常[19&#x2F;100]">
-<meta name="twitter:description" content="SAM后缀自动机学习路线,学习资源">
+<meta name="twitter:description" content="SAM后缀自动机学习路线,学习资源 2019年9月5日14:29更新">
 
 
 
@@ -423,7 +423,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  262
+                  548
                 </span>
               
 
@@ -447,7 +447,7 @@
 
           
               <div class="post-description">
-                  SAM后缀自动机学习路线,学习资源
+                  SAM后缀自动机学习路线,学习资源 2019年9月5日14:29更新
               </div>
           
 
@@ -479,6 +479,22 @@
 <ol>
 <li><a href="https://www.cnblogs.com/zinthos/p/3899679.html?tdsourcetag=s_pcqq_aiomsg" target="_blank" rel="noopener">经典题集</a></li>
 </ol>
+<hr>
+<p>2019年9月5日14:21:10 补充，建议参考链接增加以及自己学习历程的一些心得</p>
+<ul>
+<li>增加的参考链接: <a href="https://www.luogu.org/blog/Kesdiael3/hou-zhui-zi-dong-ji-yang-xie" target="_blank" rel="noopener">史上最通俗的后缀自动机详解</a></li>
+<li>学习历程: 我比较菜，所以断断续续地看了5天(主要是看不懂然后就总发呆…(雾))，然后第6天重新看了一遍oi-wiki的教程，发现自己看得懂了！(得益于前几天不断地看简介版和通俗易懂版的，让自己重新看的时候感觉许多都会，然后就有了一个比较全面的认识，然后就终于看懂了SAM算法，自闭6天后要不要这么爽)</li>
+<li>学习心得:<ul>
+<li>找一个安静的环境，让自己能够保持专注</li>
+<li>抽出一整块的时间来看SAM专题</li>
+<li>一次没有看懂没关系，反复看，找各种不同的资料看</li>
+<li>手动笔记，写写画画</li>
+<li>最终总结出自己的笔记</li>
+</ul>
+</li>
+<li>避坑提醒: oi-wiki给的板子中用的是map映射的next，<strong>建议改成<code>int next[符号集大小]</code></strong>，因为我做题时map，unordered_map都TLE了…</li>
+</ul>
+<hr>
 <h1 id="送一个bug-free的注释"><a href="#送一个bug-free的注释" class="headerlink" title="送一个bug_free的注释"></a>送一个bug_free的注释</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *　　　　　　　 ┏┓　 ┏┓+ +</span></span><br><span class="line"><span class="comment"> *　　　　　　　┏┛┻━━━┛┻┓ + +</span></span><br><span class="line"><span class="comment"> *　　　　　　　┃　　　 ┃ 　</span></span><br><span class="line"><span class="comment"> *　　　　　　　┃　　　 ┃ ++ + + +</span></span><br><span class="line"><span class="comment"> *　　　　　　 ████━████┃+</span></span><br><span class="line"><span class="comment"> *　　　　　　　┃　　　 ┃ +</span></span><br><span class="line"><span class="comment"> *　　　　　　　┃　┻　　┃</span></span><br><span class="line"><span class="comment"> *　　　　　　　┃　　　 ┃ + +</span></span><br><span class="line"><span class="comment"> *　　　　　　　┗━┓　 ┏━┛</span></span><br><span class="line"><span class="comment"> *　　　　　　　　┃　 ┃　　　　　　　　　　　</span></span><br><span class="line"><span class="comment"> *　　　　　　　　┃　 ┃ + + + +</span></span><br><span class="line"><span class="comment"> *　　　　　　　　┃　 ┃　　　　Code is far away from bug with the animal protecting　　　　　　　</span></span><br><span class="line"><span class="comment"> *　　　　　　　　┃　 ┃ + 　　　　神兽保佑,代码无bug　　</span></span><br><span class="line"><span class="comment"> *　　　　　　　　┃　 ┃</span></span><br><span class="line"><span class="comment"> *　　　　　　　　┃　 ┃　　+　　　　　　　　　</span></span><br><span class="line"><span class="comment"> *　　　　　　　　┃　 ┗━━━┓ + +</span></span><br><span class="line"><span class="comment"> *　　　　　　　　┃  　　 ┣┓</span></span><br><span class="line"><span class="comment"> *　　　　　　　　┃  　　 ┏┛</span></span><br><span class="line"><span class="comment"> *　　　　　　　　┗┓┓┏━┳┓┏┛ + + + +</span></span><br><span class="line"><span class="comment"> *　　　　　　　　 ┃┫┫ ┃┫┫</span></span><br><span class="line"><span class="comment"> *　　　　　　　　 ┗┻┛ ┗┻┛+ + + +</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
 <h1 id="每天一句叨叨"><a href="#每天一句叨叨" class="headerlink" title="每天一句叨叨"></a>每天一句叨叨</h1><p> <a href="https://www.xinpianchang.com/a10477709" target="_blank" rel="noopener">生活或许很苦，但我偏要酷</a></p>
 <p> <strong>认清生活的残酷然后依旧挣扎着往上爬，致平凡世界里的英雄们！</strong></p>
@@ -638,7 +654,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -774,7 +790,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">56.2k</span>
+    <span title="Site words total count">56.5k</span>
   
 </div>
 
