@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Hexo-Next-Gemini主题透明化以及背景图片的更改]]></title>
     <url>%2F2019%2F09%2F06%2FHexo-Next-Gemini%E4%B8%BB%E9%A2%98%E9%80%8F%E6%98%8E%E5%8C%96%E4%BB%A5%E5%8F%8A%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87%E7%9A%84%E6%9B%B4%E6%94%B9%2F</url>
-    <content type="text"><![CDATA[背景图片的更改自动变化背景图片或者固定背景图找到路径下的custom.styl文件：hexo/themes/next/source/css/_custom/在该文件中加入如下代码(其实next中有这个代码，只是开发团队默认注释掉了) 自动背景使用的是unsplash.com提供的API链接，感谢 123456789101112131415@media screen and (min-width:1200px) &#123; body &#123; background-image:url(https://source.unsplash.com/random/1600x900); //这一行的括号里填背景图片的路径，将图片重命名为background.jpg放在\themes\next\source\images下 // background-image:url(/images/background.jpg); //这一行的括号里填背景图片的路径，将图片重命名为background.jpg放在\themes\next\source\images下 background-repeat: no-repeat; background-attachment:fixed; background-position:50% 50%; background-size:100% 100%; &#125; #footer a &#123; coler: #eee; &#125;&#125;## 代码注解 background:url为图片路径，也可以直接使用链接 background-repeat：若果背景图片不能全屏，那么是否平铺显示，充满屏幕 background-attachment：背景是否随着网页上下滚动而滚动，fixed为固定 background-position：就是调整图片的位置 background-size：图片展示大小，这里设置100% 100%的意义为：如果背景图片不能全屏，那么是否通过拉伸的方式将背景强制拉伸至全屏显示。(让背景图铺满整个页面，简直就是强迫症的解药啊!!!) 若使用固定图片，那么要将图片重命名为background.jpg放在\themes\next\source\images下(说实话，小编一开始不知道要重命名成background，写文章的时候才发现，写文章还是有用呀) 注意如果很在意网站打开速度的话，不建议使用特别大的背景图片或者是自动变化的背景，因为网站会由于图片太大会拖慢整个网站的载入速度!! Gemini主题透明化预备知识Q:为什么要修改Pisces中的文件？ A:因为Gemini文件导入了Pisces文件夹中的4个文件 内容板块透明 博客根目录 themes\next\source\css_schemes\Pisces_layout.styl 文件 .content-wrap 标签下 background: white修改为：background: rgba(255,255,255,0.7); //0.7是透明度 博客根目录 themes\next\source\css_schemes\Gemini\index.styl文件 .post-block 标签下的 background: white修改为：background: rgba(255,255,255,0.7); //0.7是透明度 菜单栏背景 博客根目录 themes\next\source\css_schemes\Pisces_layout.styl 文件 .header-inner 标签下 background: white修改为：background: rgba(255,255,255,0.7); //0.7是透明度 博客根目录 themes\next\source\css_schemes\Pisces_sidebar.styl 文件 .sidebar 标签下 增加一行:opacity: 0.7; // 0.7透明度自己选择 站点概况背景 博客根目录 themes\next\source\css_schemes\Pisces_sidebar.styl 文件 .sidebar-inner 标签下 background: white修改为：background: rgba(255,255,255,0.7); //0.7是透明度 然后修改博客根目录 themes\next\source\css_schemes\Pisces_layout.styl 文件 .sidebar 标签下 background: $body-bg-color修改为：background: rgba(255,255,255,0.7); //0.7是透明度 评论区背景 博客根目录 themes\next\source\css_schemes\Gemini\index.styl文件 .comments 标签下的 background: white修改为：background: rgba(255,255,255,0.7); //0.7是透明度 效果图 参考链接大佬-http://wiki.johnhao.tech大佬-芒果浩明大佬-路人S]]></content>
+    <content type="text"><![CDATA[背景图片的更改自动变化背景图片或者固定背景图找到路径下的custom.styl文件：hexo/themes/next/source/css/_custom/在该文件中加入如下代码(其实next中有这个代码，只是开发团队默认注释掉了) 自动背景使用的是unsplash.com提供的API链接，感谢 1234567891011121314@media screen and (min-width:1200px) &#123; body &#123; background-image:url(https://source.unsplash.com/random/1600x900); //这一行的括号里填背景图片的路径，将图片重命名为background.jpg放在\themes\next\source\images下 // background-image:url(/images/background.jpg); //这一行的括号里填背景图片的路径，将图片重命名为background.jpg放在\themes\next\source\images下 background-repeat: no-repeat; background-attachment:fixed; background-position:50% 50%; background-size:100% 100%; &#125; #footer a &#123; coler: #eee; &#125;&#125; 代码注解 background:url为图片路径，也可以直接使用链接 background-repeat：若果背景图片不能全屏，那么是否平铺显示，充满屏幕 background-attachment：背景是否随着网页上下滚动而滚动，fixed为固定 background-position：就是调整图片的位置 background-size：图片展示大小，这里设置100% 100%的意义为：如果背景图片不能全屏，那么是否通过拉伸的方式将背景强制拉伸至全屏显示。(让背景图铺满整个页面，简直就是强迫症的解药啊!!!) 若使用固定图片，那么要将图片重命名为background.jpg放在\themes\next\source\images下(说实话，小编一开始不知道要重命名成background，写文章的时候才发现，写文章还是有用呀) 注意如果很在意网站打开速度的话，不建议使用特别大的背景图片或者是自动变化的背景，因为网站会由于图片太大会拖慢整个网站的载入速度!! Gemini主题透明化预备知识Q:为什么要修改Pisces中的文件？ A:因为Gemini文件导入了Pisces文件夹中的4个文件 内容板块透明 博客根目录 themes\next\source\css_schemes\Pisces_layout.styl 文件 .content-wrap 标签下 background: white修改为：background: rgba(255,255,255,0.7); //0.7是透明度 博客根目录 themes\next\source\css_schemes\Gemini\index.styl文件 .post-block 标签下的 background: white修改为：background: rgba(255,255,255,0.7); //0.7是透明度 菜单栏背景 博客根目录 themes\next\source\css_schemes\Pisces_layout.styl 文件 .header-inner 标签下 background: white修改为：background: rgba(255,255,255,0.7); //0.7是透明度 博客根目录 themes\next\source\css_schemes\Pisces_sidebar.styl 文件 .sidebar 标签下 增加一行:opacity: 0.7; // 0.7透明度自己选择 站点概况背景 博客根目录 themes\next\source\css_schemes\Pisces_sidebar.styl 文件 .sidebar-inner 标签下 background: white修改为：background: rgba(255,255,255,0.7); //0.7是透明度 然后修改博客根目录 themes\next\source\css_schemes\Pisces_layout.styl 文件 .sidebar 标签下 background: $body-bg-color修改为：background: rgba(255,255,255,0.7); //0.7是透明度 评论区背景 博客根目录 themes\next\source\css_schemes\Gemini\index.styl文件 .comments 标签下的 background: white修改为：background: rgba(255,255,255,0.7); //0.7是透明度 效果图 参考链接大佬-http://wiki.johnhao.tech大佬-芒果浩明大佬-路人S]]></content>
       <categories>
         <category>Hexo</category>
       </categories>
@@ -84,8 +84,8 @@
       <tags>
         <tag>算法</tag>
         <tag>算法学习日常</tag>
-        <tag>后缀数组</tag>
         <tag>狼胆带你每天头铁一题</tag>
+        <tag>后缀数组</tag>
       </tags>
   </entry>
   <entry>
@@ -98,8 +98,8 @@
       <tags>
         <tag>算法</tag>
         <tag>算法学习日常</tag>
-        <tag>后缀数组</tag>
         <tag>狼胆带你每天头铁一题</tag>
+        <tag>后缀数组</tag>
       </tags>
   </entry>
   <entry>
