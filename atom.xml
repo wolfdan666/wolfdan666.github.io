@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.wolfdan.cn/"/>
-  <updated>2019-09-07T14:05:40.774Z</updated>
+  <updated>2019-09-08T13:57:43.115Z</updated>
   <id>http://www.wolfdan.cn/</id>
   
   <author>
@@ -15,6 +15,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2019南昌网络赛E.Magic Master_算法日常23[23/100]</title>
+    <link href="http://www.wolfdan.cn/2019/09/08/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B823-23-100/"/>
+    <id>http://www.wolfdan.cn/2019/09/08/算法日常23-23-100/</id>
+    <published>2019-09-08T13:38:46.000Z</published>
+    <updated>2019-09-08T13:57:43.115Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h1><p><a href="https://nanti.jisuanke.com/t/41352" target="_blank" rel="noopener">计蒜客传送门</a></p><h1 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h1><p>魔法洗牌，洗完牌后进行1,2,2,2…2..操作，使得最终在John手上的牌是递减的</p><h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><ul><li>看这个题目的数据范围我们可以猜测出这题是一个找规律的题目，那我们要怎么构造这个串呢？</li><li>观察题目给的M=1，发现1,2,3都间隔了一个，然后我们推测是间隔M个放置，然后再继续推测之后得到下面的规律</li><li>走M次空格，第M+1次落下，第一个先填1，<strong>循环走</strong></li></ul><h2 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h2><p>比如N = 5, M = 4;<br>一开始是 1 _ _ _ _<br>然后走4次空格，第5次落下 变成 1 2 _ _ _<br>之后同理得到 1 2 _ 3 _ ==&gt; 1 2 _ 3 4 ==&gt; 1 2 5 3 4</p><h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>通过模拟链表实现走M次空格(详见代码)</p><h1 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h1><p>时间复杂度$O(T<em>N</em>M)$,接近O($4<em>10^9$),6s，按理1秒$2</em>10^8$也只够跑$1.2*10^9$,所以要么计蒜客评测机太快，要么数据不够强大，233</p><h1 id="AC代码"><a href="#AC代码" class="headerlink" title="AC代码"></a>AC代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">4e7</span> + <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> pos[N], nxt[N], pre[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> T; <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;T);</span><br><span class="line">    <span class="keyword">while</span>(T--) &#123;</span><br><span class="line">        <span class="keyword">int</span> n, m, q, u, v;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;m);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) nxt[i] = i+<span class="number">1</span>, pre[i] = i<span class="number">-1</span>;</span><br><span class="line">        nxt[n] = <span class="number">2</span>; pre[<span class="number">2</span>] = n;</span><br><span class="line">        pos[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> cur = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=m+<span class="number">1</span>;j++) &#123;</span><br><span class="line">                cur = nxt[cur];</span><br><span class="line">            &#125;</span><br><span class="line">            pos[cur] = i;</span><br><span class="line">            u = pre[cur]; v = nxt[cur];</span><br><span class="line">            nxt[u] = v; pre[v] = u;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;q);</span><br><span class="line">        <span class="keyword">while</span>(q--) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;u);</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, pos[u]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="每天一句叨叨"><a href="#每天一句叨叨" class="headerlink" title="每天一句叨叨"></a>每天一句叨叨</h1><p><strong>别人撞了南墙才回头，而我撞了也不回头，我要跨过去</strong></p>]]></content>
+    
+    <summary type="html">
+    
+      2019南昌网络赛E.Magic Master_算法日常23
+    
+    </summary>
+    
+      <category term="算法学习日常" scheme="http://www.wolfdan.cn/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%B8%B8/"/>
+    
+    
+      <category term="算法" scheme="http://www.wolfdan.cn/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="算法学习日常" scheme="http://www.wolfdan.cn/tags/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%B8%B8/"/>
+    
+      <category term="思维题" scheme="http://www.wolfdan.cn/tags/%E6%80%9D%E7%BB%B4%E9%A2%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ARST打卡第20周[20/521]</title>
+    <link href="http://www.wolfdan.cn/2019/09/08/ARST%E6%89%93%E5%8D%A1%E7%AC%AC20%E5%91%A8-20-521/"/>
+    <id>http://www.wolfdan.cn/2019/09/08/ARST打卡第20周-20-521/</id>
+    <published>2019-09-08T12:52:21.000Z</published>
+    <updated>2019-09-08T13:37:51.711Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h1><p><a href="https://www.wolfdan.cn/2019/09/05/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-20-100/">SPOJ-LCS,SPOJ-LCS2-后缀自动机SAM专题训练_算法日常[20/100]</a></p><p><a href="https://www.wolfdan.cn/2019/09/06/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-21-100/">spoj_nsubstr_sam后缀自动机_算法日常[21/100]</a></p><p><a href="https://www.wolfdan.cn/2019/09/07/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-22-100/">2019 徐州网络赛 M Longest subsequence_算法日常[22/100]</a></p><h1 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h1><p><a href="https://elemental.medium.com/how-to-take-the-perfect-nap-397ee26a64c7" target="_blank" rel="noopener">How to Take the Perfect Nap</a></p><p>其实自己之前看过这篇报告的中文版，现在看一遍英文版，又温习了一下，也拯救一下从暑假归来后每天要睡9个小时的自己，让自己能恢复战斗状态，每天6小时+30mins咖啡盹</p><ul><li>晚上6小时，正好是4个完整的睡眠周期，完成4次慢波睡眠期处理记忆和信息和4次快速动眼期促进创造力，然后白天再来一个30mins的咖啡盹睡眠恢复精力和警觉(不要进入慢波睡眠，否则在慢波睡眠的时候醒来会很困)就够了，固定下来就好，如果长期不适应4个睡眠周期就加到5个</li><li>咖啡盹就是快速喝完咖啡马上睡30mins</li><li>固定睡眠时间，让生物钟适应</li></ul><h2 id="再附上一篇中文的把"><a href="#再附上一篇中文的把" class="headerlink" title="再附上一篇中文的把"></a>再附上一篇中文的把</h2><p><del>虽然有点标题党</del><br><a href="https://zhuanlan.zhihu.com/p/48491069" target="_blank" rel="noopener">我们都被“8小时睡眠论”给害了?</a></p><h1 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h1><p><a href="https://blog.csdn.net/lewky_liu/article/details/82432045" target="_blank" rel="noopener">Coding Pages申请SSL/TLS证书错误</a></p><h1 id="Share"><a href="#Share" class="headerlink" title="Share"></a>Share</h1><p><a href="https://www.wolfdan.cn/2019/09/06/Hexo-Next-Gemini%E4%B8%BB%E9%A2%98%E9%80%8F%E6%98%8E%E5%8C%96%E4%BB%A5%E5%8F%8A%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87%E7%9A%84%E6%9B%B4%E6%94%B9/">Hexo-Next-Gemini主题透明化以及背景图片的更改和获取</a></p>]]></content>
+    
+    <summary type="html">
+    
+      ARST打卡
+    
+    </summary>
+    
+      <category term="ARST" scheme="http://www.wolfdan.cn/categories/ARST/"/>
+    
+    
+      <category term="ARST" scheme="http://www.wolfdan.cn/tags/ARST/"/>
+    
+  </entry>
   
   <entry>
     <title>2019 徐州网络赛 M Longest subsequence_算法日常[22/100]</title>
@@ -236,9 +284,9 @@
     
       <category term="算法学习日常" scheme="http://www.wolfdan.cn/tags/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%B8%B8/"/>
     
-      <category term="狼胆带你每天头铁一题" scheme="http://www.wolfdan.cn/tags/%E7%8B%BC%E8%83%86%E5%B8%A6%E4%BD%A0%E6%AF%8F%E5%A4%A9%E5%A4%B4%E9%93%81%E4%B8%80%E9%A2%98/"/>
-    
       <category term="后缀数组" scheme="http://www.wolfdan.cn/tags/%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="狼胆带你每天头铁一题" scheme="http://www.wolfdan.cn/tags/%E7%8B%BC%E8%83%86%E5%B8%A6%E4%BD%A0%E6%AF%8F%E5%A4%A9%E5%A4%B4%E9%93%81%E4%B8%80%E9%A2%98/"/>
     
   </entry>
   
@@ -264,9 +312,9 @@
     
       <category term="算法学习日常" scheme="http://www.wolfdan.cn/tags/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%B8%B8/"/>
     
-      <category term="狼胆带你每天头铁一题" scheme="http://www.wolfdan.cn/tags/%E7%8B%BC%E8%83%86%E5%B8%A6%E4%BD%A0%E6%AF%8F%E5%A4%A9%E5%A4%B4%E9%93%81%E4%B8%80%E9%A2%98/"/>
-    
       <category term="后缀数组" scheme="http://www.wolfdan.cn/tags/%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="狼胆带你每天头铁一题" scheme="http://www.wolfdan.cn/tags/%E7%8B%BC%E8%83%86%E5%B8%A6%E4%BD%A0%E6%AF%8F%E5%A4%A9%E5%A4%B4%E9%93%81%E4%B8%80%E9%A2%98/"/>
     
   </entry>
   
@@ -485,58 +533,6 @@
       <category term="矩阵快速幂" scheme="http://www.wolfdan.cn/tags/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82/"/>
     
       <category term="10进制矩阵快速幂" scheme="http://www.wolfdan.cn/tags/10%E8%BF%9B%E5%88%B6%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>银联挑战赛复赛A,B题_算法日常[8/100]</title>
-    <link href="http://www.wolfdan.cn/2019/08/13/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-8-100/"/>
-    <id>http://www.wolfdan.cn/2019/08/13/算法日常-8-100/</id>
-    <published>2019-08-13T09:22:31.000Z</published>
-    <updated>2019-08-13T13:15:46.307Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h1><p>8月10号是计算机设计大赛决赛答辩的最后一天，这天下午是牛客多校8，晚上是银联挑战赛复赛，队友出去吃吃喝喝了，我点个外卖，打着比赛，然后第一题就卡住不会做，然后自闭了，果然银联的比赛很重视数学题啊啊啊，是我数学题没怎么练，太菜了—-&gt;所以菜导致既没有吃到好东西，又导致爆零没太多收获，所以还是需要多多努力</p><h1 id="A题"><a href="#A题" class="headerlink" title="A题"></a>A题</h1><h2 id="爱喝「肥宅快乐水」的班长"><a href="#爱喝「肥宅快乐水」的班长" class="headerlink" title="爱喝「肥宅快乐水」的班长"></a>爱喝「肥宅快乐水」的班长</h2><p><a href="https://nanti.jisuanke.com/t/40548" target="_blank" rel="noopener">爱喝「肥宅快乐水」的班长</a></p><h2 id="题目解法"><a href="#题目解法" class="headerlink" title="题目解法"></a>题目解法</h2><p><img src="https://raw.githubusercontent.com/wolfdan666/BlogPic/master/%E7%AE%97%E6%B3%95/%E6%AF%94%E8%B5%9B/%E7%BA%BF%E4%B8%8A/2019%E9%93%B6%E8%81%94%E6%8C%91%E6%88%98%E8%B5%9B%E5%A4%8D%E8%B5%9B/A_an.png" alt="A_an"></p><h2 id="看不懂的知识链接"><a href="#看不懂的知识链接" class="headerlink" title="看不懂的知识链接"></a>看不懂的知识链接</h2><p><a href="https://zh.wikipedia.org/wiki/%E9%9A%94%E6%9D%BF%E6%B3%95" target="_blank" rel="noopener">隔板法</a></p><p>扩展的隔板法中：</p><p>转化前的空盒 == 转化后每个盒子至少放一个</p><h2 id="AC代码"><a href="#AC代码" class="headerlink" title="AC代码"></a>AC代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> ll mod=<span class="number">1000000007</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> inf = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> M = <span class="number">2e3</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">int</span> C[M][M];</span><br><span class="line"><span class="keyword">int</span> T,n,m;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(ll &amp;a,ll v)</span></span>&#123;</span><br><span class="line">    a += v;</span><br><span class="line">    <span class="keyword">if</span>(a &gt;= mod) a-=mod;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">pre</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;M;i++)&#123;</span><br><span class="line">        C[i][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=i;j++)&#123;</span><br><span class="line">            C[i][j]=C[i<span class="number">-1</span>][j<span class="number">-1</span>]+C[i<span class="number">-1</span>][j];</span><br><span class="line">            <span class="keyword">if</span>(C[i][j]&gt;=mod) C[i][j]-=mod;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);<span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;T;</span><br><span class="line">    pre();</span><br><span class="line">    <span class="keyword">while</span>(T--)&#123;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;C[n+m<span class="number">-2</span>][m<span class="number">-1</span>]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="B题"><a href="#B题" class="headerlink" title="B题"></a>B题</h1><h2 id="整数对"><a href="#整数对" class="headerlink" title="整数对"></a>整数对</h2><p><a href="https://nanti.jisuanke.com/t/40549" target="_blank" rel="noopener">整数对</a></p><h2 id="题目解法-1"><a href="#题目解法-1" class="headerlink" title="题目解法"></a>题目解法</h2><p><img src="https://raw.githubusercontent.com/wolfdan666/BlogPic/master/%E7%AE%97%E6%B3%95/%E6%AF%94%E8%B5%9B/%E7%BA%BF%E4%B8%8A/2019%E9%93%B6%E8%81%94%E6%8C%91%E6%88%98%E8%B5%9B%E5%A4%8D%E8%B5%9B/B_an.png" alt="B_an"></p><h2 id="AC代码-1"><a href="#AC代码-1" class="headerlink" title="AC代码"></a>AC代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line">ll T,n,m,p,ans;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);<span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;T;</span><br><span class="line">    <span class="keyword">while</span>(T--)&#123;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m&gt;&gt;p;</span><br><span class="line">        ans = <span class="number">0</span>;</span><br><span class="line">        ll x = n/p;</span><br><span class="line">        <span class="keyword">for</span>(ll r = <span class="number">0</span>; r &lt; p ; r++ )&#123;</span><br><span class="line">            <span class="comment">/*求出b的种类数*/</span></span><br><span class="line">            ll bn = m/(p/__gcd(r,p));</span><br><span class="line">            <span class="comment">/*分别对应题解的1,2,3种情况,其实1,3可以合并*/</span></span><br><span class="line">            <span class="keyword">if</span>(!r) ans+=x*bn;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(<span class="number">0</span>&lt;r &amp;&amp; r&lt;=n%p) ans+=(x+<span class="number">1</span>)*bn;</span><br><span class="line">            <span class="keyword">else</span> ans+=x*bn;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="每天一句叨叨"><a href="#每天一句叨叨" class="headerlink" title="每天一句叨叨"></a>每天一句叨叨</h1><p>人心的成见如同一座大山，我们总是口上说不能有偏见，其实真正的内心想法却不是这样的…</p><p>所以我对别人的偏见，我只能尽量克制，让自己理性对待，然后做之不止，乃成君子</p><p>对于别人对自己的偏见不要在意，而是要专注自己的目标</p><p>感觉自己生来就有一种追求挑战的血液，在小时候尤为明显，但是感觉在长久的教化过程中削弱了，所以我想要找回本真，生命不息，战斗不止，和天生的不公斗到底，做自己的英雄</p>]]></content>
-    
-    <summary type="html">
-    
-      银联挑战赛复赛A,B题,组合数学,隔板法,数学思维题,算法学习日常
-    
-    </summary>
-    
-      <category term="算法学习日常" scheme="http://www.wolfdan.cn/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%B8%B8/"/>
-    
-    
-      <category term="算法" scheme="http://www.wolfdan.cn/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="算法学习日常" scheme="http://www.wolfdan.cn/tags/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%B8%B8/"/>
-    
-      <category term="组合数学" scheme="http://www.wolfdan.cn/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/"/>
-    
-      <category term="隔板法" scheme="http://www.wolfdan.cn/tags/%E9%9A%94%E6%9D%BF%E6%B3%95/"/>
-    
-      <category term="数学思维题" scheme="http://www.wolfdan.cn/tags/%E6%95%B0%E5%AD%A6%E6%80%9D%E7%BB%B4%E9%A2%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ARST打卡第16周[16/521]</title>
-    <link href="http://www.wolfdan.cn/2019/08/11/ARST%E6%89%93%E5%8D%A1%E7%AC%AC16%E5%91%A8-16-521/"/>
-    <id>http://www.wolfdan.cn/2019/08/11/ARST打卡第16周-16-521/</id>
-    <published>2019-08-11T14:11:33.000Z</published>
-    <updated>2019-08-13T08:01:25.893Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h1><p><a href="https://github.com/wolfdan666/WolfEat3moreMeatEveryday/tree/master/2019.8/2019.8.10" target="_blank" rel="noopener">牛客多校8的签到</a></p><h1 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h1><p><a href="https://humanparts.medium.com/being-happy-is-hard-work-bcc222913c79" target="_blank" rel="noopener">Being Happy Is Hard Work</a><br>好多生词啊，所以决定开始背单词<br><strong>Happiness, in other words, is practiced.</strong></p><h1 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h1><p><a href="https://oi-wiki.org/ds/seg/" target="_blank" rel="noopener">打算法比赛一定要熟练使用线段树啊，血的教训</a></p><h1 id="Share"><a href="#Share" class="headerlink" title="Share"></a>Share</h1><p><a href="https://www.wolfdan.cn/2019/08/05/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-4-100/">2019杭电多校1006和1007算法日常[4/100]</a></p><p><a href="https://www.wolfdan.cn/2019/08/06/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%B8%B8-5-100/">后缀数组-算法学习日常[5/100]</a></p><p><a href="https://www.wolfdan.cn/2019/08/07/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-6-100/">2019杭电多校6_1005算法日常[6/100]</a></p><p><a href="https://www.wolfdan.cn/2019/08/11/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-7-100/">2019牛客多校8_B题算法日常[7/100]</a></p><h1 id="每天一句叨叨"><a href="#每天一句叨叨" class="headerlink" title="每天一句叨叨"></a>每天一句叨叨</h1><p><strong>生活总有太多的美好无法用相机记录下来，所以那就给每一个当下投以最好的微笑吧</strong></p>]]></content>
-    
-    <summary type="html">
-    
-      ARST打卡 打算法比赛一定要熟练使用线段树啊，血的教训 2019杭电多校1006和1007算法日常[4/100] 后缀数组-算法学习日常[5/100] 2019杭电多校6_1005算法日常[6/100] 2019牛客多校8_B题算法日常[7/100]
-    
-    </summary>
-    
-      <category term="ARST" scheme="http://www.wolfdan.cn/categories/ARST/"/>
-    
-    
-      <category term="ARST" scheme="http://www.wolfdan.cn/tags/ARST/"/>
     
   </entry>
   

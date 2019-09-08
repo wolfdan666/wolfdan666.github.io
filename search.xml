@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[2019南昌网络赛E.Magic Master_算法日常23[23/100]]]></title>
+    <url>%2F2019%2F09%2F08%2F%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B823-23-100%2F</url>
+    <content type="text"><![CDATA[题目链接计蒜客传送门 题意魔法洗牌，洗完牌后进行1,2,2,2…2..操作，使得最终在John手上的牌是递减的 题解 看这个题目的数据范围我们可以猜测出这题是一个找规律的题目，那我们要怎么构造这个串呢？ 观察题目给的M=1，发现1,2,3都间隔了一个，然后我们推测是间隔M个放置，然后再继续推测之后得到下面的规律 走M次空格，第M+1次落下，第一个先填1，循环走 举例比如N = 5, M = 4;一开始是 1 _ _ _ _然后走4次空格，第5次落下 变成 1 2 _ _ _之后同理得到 1 2 _ 3 _ ==&gt; 1 2 _ 3 4 ==&gt; 1 2 5 3 4 实现通过模拟链表实现走M次空格(详见代码) 复杂度分析时间复杂度$O(TNM)$,接近O($410^9$),6s，按理1秒$210^8$也只够跑$1.2*10^9$,所以要么计蒜客评测机太快，要么数据不够强大，233 AC代码123456789101112131415161718192021222324252627282930#include &lt;bits/stdc++.h&gt;using namespace std;const int N = 4e7 + 10;int pos[N], nxt[N], pre[N];int main() &#123; int T; scanf("%d", &amp;T); while(T--) &#123; int n, m, q, u, v; scanf("%d%d", &amp;n, &amp;m); for(int i=1;i&lt;=n;i++) nxt[i] = i+1, pre[i] = i-1; nxt[n] = 2; pre[2] = n; pos[1] = 1; int cur = 1; for(int i=2;i&lt;=n;i++)&#123; for(int j=1;j&lt;=m+1;j++) &#123; cur = nxt[cur]; &#125; pos[cur] = i; u = pre[cur]; v = nxt[cur]; nxt[u] = v; pre[v] = u; &#125; scanf("%d", &amp;q); while(q--) &#123; scanf("%d", &amp;u); printf("%d\n", pos[u]); &#125; &#125; return 0;&#125; 每天一句叨叨别人撞了南墙才回头，而我撞了也不回头，我要跨过去]]></content>
+      <categories>
+        <category>算法学习日常</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>算法学习日常</tag>
+        <tag>思维题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ARST打卡第20周[20/521]]]></title>
+    <url>%2F2019%2F09%2F08%2FARST%E6%89%93%E5%8D%A1%E7%AC%AC20%E5%91%A8-20-521%2F</url>
+    <content type="text"><![CDATA[AlgorithmSPOJ-LCS,SPOJ-LCS2-后缀自动机SAM专题训练_算法日常[20/100] spoj_nsubstr_sam后缀自动机_算法日常[21/100] 2019 徐州网络赛 M Longest subsequence_算法日常[22/100] ReviewHow to Take the Perfect Nap 其实自己之前看过这篇报告的中文版，现在看一遍英文版，又温习了一下，也拯救一下从暑假归来后每天要睡9个小时的自己，让自己能恢复战斗状态，每天6小时+30mins咖啡盹 晚上6小时，正好是4个完整的睡眠周期，完成4次慢波睡眠期处理记忆和信息和4次快速动眼期促进创造力，然后白天再来一个30mins的咖啡盹睡眠恢复精力和警觉(不要进入慢波睡眠，否则在慢波睡眠的时候醒来会很困)就够了，固定下来就好，如果长期不适应4个睡眠周期就加到5个 咖啡盹就是快速喝完咖啡马上睡30mins 固定睡眠时间，让生物钟适应 再附上一篇中文的把虽然有点标题党我们都被“8小时睡眠论”给害了? TipsCoding Pages申请SSL/TLS证书错误 ShareHexo-Next-Gemini主题透明化以及背景图片的更改和获取]]></content>
+      <categories>
+        <category>ARST</category>
+      </categories>
+      <tags>
+        <tag>ARST</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[2019 徐州网络赛 M Longest subsequence_算法日常[22/100]]]></title>
     <url>%2F2019%2F09%2F07%2F%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-22-100%2F</url>
     <content type="text"><![CDATA[题目链接计蒜客传送 题意求s中字典序大于t的最长子序列长度 注意sebsequence是子序列，可以不连续，substring才是子串，必须连续 题解对于答案来说，一定是 前i-1个字符和t的前i个一样，然后第i个字符比t的大 前缀为t，然后长度比t长 对于第一种情况，枚举这个 i ，然后找最小的 p 可以使得从(s[1]~s[p]) 中产生($t_1$,$t_2$ 到 $t_{i-1}$) ,然后在(s[p+1,n])中找最左边的比(t[i]) 大的字符，假如 找到了(s[pos])，那么后面的(s[pos+1,n]) 都可以加到答案后面（因为(s[pos] &gt; t[i]) 已经保证答案大于t了) 对于第二种，根据求第一种的方法，不难求出 如何找最小的p？预处理一个(sf[i][c]) 数组，表示(s[i]) 后面第一个字符(c)在哪里即可 如何找pos? 也是用预处理的数组循环最多26次即可 复杂度(O(n*26)) AC代码123456789101112131415161718192021222324252627282930313233343536#include &lt;bits/stdc++.h&gt;using namespace std;const int N = 1e6+10;int sf[N][26];char s[N],t[N];int n,m;int main()&#123; scanf("%d%d",&amp;n,&amp;m); scanf("%s%s",s+1,t+1); for(int i=0;i&lt;26;i++) sf[n][i] = n+1; // 预处理一个(sf[i][c]) 数组，表示(s[i]) 后面第一个字符(c)在哪里 for(int i=n-1;i&gt;=0;i--)&#123; memcpy(sf[i],sf[i+1],sizeof sf[i]); sf[i][s[i+1]-'a'] = i+1; &#125; int p = 0,res = -1; for(int i=1;i&lt;=m;i++)&#123; int pos = n+1; for(int j=t[i]-'a'+1;j&lt;26;j++)&#123; pos = min(pos,sf[p][j]);//找到最近的那个s[pos] &gt; t[i]; &#125; if(pos != n+1) res = max(res,i+n-pos);//(n-pos)为后面还可以加的长度 // p在s中找到与t相同的"前缀"(不连续子串可以跳跃) p = sf[p][t[i]-'a']; if(p == n+1)break; &#125; // 如果完全相同，那就要严格更大，所以p&lt;n if(p &lt; n) res = max(res,n-p+m); printf("%d\n",res); return 0;&#125; 借鉴https://www.codetd.com/article/7223660 每天一句叨叨有时候不试一下，永远都不知道自己有多垃圾！不过没有关系，至少我永远向上生长，这就是生命！保持乐观，积极生活，因为人相对于宇宙来说是很渺小的，所以静静观察自己的生活，享受生活吧！]]></content>
@@ -109,8 +133,8 @@
       <tags>
         <tag>算法</tag>
         <tag>算法学习日常</tag>
-        <tag>狼胆带你每天头铁一题</tag>
         <tag>后缀数组</tag>
+        <tag>狼胆带你每天头铁一题</tag>
       </tags>
   </entry>
   <entry>
@@ -123,8 +147,8 @@
       <tags>
         <tag>算法</tag>
         <tag>算法学习日常</tag>
-        <tag>狼胆带你每天头铁一题</tag>
         <tag>后缀数组</tag>
+        <tag>狼胆带你每天头铁一题</tag>
       </tags>
   </entry>
   <entry>
