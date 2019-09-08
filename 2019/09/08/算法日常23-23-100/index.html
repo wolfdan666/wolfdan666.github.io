@@ -98,18 +98,18 @@
 
 
 
-<meta name="description" content="2019南昌网络赛E.Magic Master_算法日常23 魔法洗牌，洗完牌后进行1,2,2,2...2..操作，使得最终在John手上的牌是递减的 走M次空格，第M+1次落下，第一个先填1，循环走 别人撞了南墙才回头，而我撞了也不回头，我要跨过去">
+<meta name="description" content="2019南昌网络赛E.Magic Master_算法日常23 魔法洗牌，洗完牌后进行1,2,2,2...2..操作，使得最终在John手上的牌是递减的 走M次空格，第M+1次落下，第一个先填1，循环走 用转义符`\`来保持某些符号不成为markdown的标记符，比如我要用多个\*,就要防止变成markdown的斜体 别人撞了南墙才回头，而我撞了也不回头，我要跨过去">
 <meta name="keywords" content="算法,算法学习日常,思维题">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2019南昌网络赛E.Magic Master_算法日常23[23&#x2F;100]">
 <meta property="og:url" content="http://www.wolfdan.cn/2019/09/08/算法日常23-23-100/index.html">
 <meta property="og:site_name" content="狼胆">
-<meta property="og:description" content="2019南昌网络赛E.Magic Master_算法日常23 魔法洗牌，洗完牌后进行1,2,2,2...2..操作，使得最终在John手上的牌是递减的 走M次空格，第M+1次落下，第一个先填1，循环走 别人撞了南墙才回头，而我撞了也不回头，我要跨过去">
+<meta property="og:description" content="2019南昌网络赛E.Magic Master_算法日常23 魔法洗牌，洗完牌后进行1,2,2,2...2..操作，使得最终在John手上的牌是递减的 走M次空格，第M+1次落下，第一个先填1，循环走 用转义符`\`来保持某些符号不成为markdown的标记符，比如我要用多个\*,就要防止变成markdown的斜体 别人撞了南墙才回头，而我撞了也不回头，我要跨过去">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-08T14:02:43.716Z">
+<meta property="og:updated_time" content="2019-09-08T14:15:37.920Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2019南昌网络赛E.Magic Master_算法日常23[23&#x2F;100]">
-<meta name="twitter:description" content="2019南昌网络赛E.Magic Master_算法日常23 魔法洗牌，洗完牌后进行1,2,2,2...2..操作，使得最终在John手上的牌是递减的 走M次空格，第M+1次落下，第一个先填1，循环走 别人撞了南墙才回头，而我撞了也不回头，我要跨过去">
+<meta name="twitter:description" content="2019南昌网络赛E.Magic Master_算法日常23 魔法洗牌，洗完牌后进行1,2,2,2...2..操作，使得最终在John手上的牌是递减的 走M次空格，第M+1次落下，第一个先填1，循环走 用转义符`\`来保持某些符号不成为markdown的标记符，比如我要用多个\*,就要防止变成markdown的斜体 别人撞了南墙才回头，而我撞了也不回头，我要跨过去">
 
 
 
@@ -423,7 +423,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  448
+                  497
                 </span>
               
 
@@ -447,7 +447,7 @@
 
           
               <div class="post-description">
-                  2019南昌网络赛E.Magic Master_算法日常23 魔法洗牌，洗完牌后进行1,2,2,2...2..操作，使得最终在John手上的牌是递减的 走M次空格，第M+1次落下，第一个先填1，循环走 别人撞了南墙才回头，而我撞了也不回头，我要跨过去
+                  2019南昌网络赛E.Magic Master_算法日常23 魔法洗牌，洗完牌后进行1,2,2,2...2..操作，使得最终在John手上的牌是递减的 走M次空格，第M+1次落下，第一个先填1，循环走 用转义符`\`来保持某些符号不成为markdown的标记符，比如我要用多个\*,就要防止变成markdown的斜体 别人撞了南墙才回头，而我撞了也不回头，我要跨过去
               </div>
           
 
@@ -473,7 +473,8 @@
 </ul>
 <h2 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h2><p>比如N = 5, M = 4;<br>一开始是 1 _ _ _ _<br>然后走4次空格，第5次落下 变成 1 2 _ _ _<br>之后同理得到 1 2 _ 3 _ ==&gt; 1 2 _ 3 4 ==&gt; 1 2 5 3 4</p>
 <h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>通过模拟链表实现走M次空格(详见代码)</p>
-<h1 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h1><p>时间复杂度$O(T<em>N</em>M)$,接近O($4<em>10^9$),6s，按理1秒$2</em>10^8$也只够跑$1.2*10^9$,所以要么计蒜客评测机太快，要么数据不够强大，233</p>
+<h1 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h1><p>时间复杂度 O(T*N*M) ,接近 O(4*$10^9$) ,6s时间限制，按理1秒 2*$10^8$ 也只够跑 1.2*$10^9$ ,所以要么计蒜客评测机太快，要么数据不够强大,233</p>
+<h2 id="写作小收获"><a href="#写作小收获" class="headerlink" title="写作小收获"></a>写作小收获</h2><p>用转义符<code>\</code>来保持某些符号不成为markdown的标记符，比如我要用多个*,就要防止变成markdown的斜体</p>
 <h1 id="AC代码"><a href="#AC代码" class="headerlink" title="AC代码"></a>AC代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">4e7</span> + <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> pos[N], nxt[N], pre[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> T; <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;T);</span><br><span class="line">    <span class="keyword">while</span>(T--) &#123;</span><br><span class="line">        <span class="keyword">int</span> n, m, q, u, v;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;m);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) nxt[i] = i+<span class="number">1</span>, pre[i] = i<span class="number">-1</span>;</span><br><span class="line">        nxt[n] = <span class="number">2</span>; pre[<span class="number">2</span>] = n;</span><br><span class="line">        pos[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> cur = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=m+<span class="number">1</span>;j++) &#123;</span><br><span class="line">                cur = nxt[cur];</span><br><span class="line">            &#125;</span><br><span class="line">            pos[cur] = i;</span><br><span class="line">            u = pre[cur]; v = nxt[cur];</span><br><span class="line">            nxt[u] = v; pre[v] = u;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;q);</span><br><span class="line">        <span class="keyword">while</span>(q--) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;u);</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, pos[u]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="每天一句叨叨"><a href="#每天一句叨叨" class="headerlink" title="每天一句叨叨"></a>每天一句叨叨</h1><p><strong>别人撞了南墙才回头，而我撞了也不回头，我要跨过去</strong></p>
 
@@ -728,7 +729,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目链接"><span class="nav-number">1.</span> <span class="nav-text">题目链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#题意"><span class="nav-number">2.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#题解"><span class="nav-number">3.</span> <span class="nav-text">题解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#举例"><span class="nav-number">3.1.</span> <span class="nav-text">举例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">3.2.</span> <span class="nav-text">实现</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#复杂度分析"><span class="nav-number">4.</span> <span class="nav-text">复杂度分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AC代码"><span class="nav-number">5.</span> <span class="nav-text">AC代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#每天一句叨叨"><span class="nav-number">6.</span> <span class="nav-text">每天一句叨叨</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目链接"><span class="nav-number">1.</span> <span class="nav-text">题目链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#题意"><span class="nav-number">2.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#题解"><span class="nav-number">3.</span> <span class="nav-text">题解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#举例"><span class="nav-number">3.1.</span> <span class="nav-text">举例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">3.2.</span> <span class="nav-text">实现</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#复杂度分析"><span class="nav-number">4.</span> <span class="nav-text">复杂度分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#写作小收获"><span class="nav-number">4.1.</span> <span class="nav-text">写作小收获</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AC代码"><span class="nav-number">5.</span> <span class="nav-text">AC代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#每天一句叨叨"><span class="nav-number">6.</span> <span class="nav-text">每天一句叨叨</span></a></li></ol></div>
             
 
           </div>

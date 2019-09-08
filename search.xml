@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[2019南昌网络赛E.Magic Master_算法日常23[23/100]]]></title>
     <url>%2F2019%2F09%2F08%2F%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B823-23-100%2F</url>
-    <content type="text"><![CDATA[题目链接计蒜客传送门 题意魔法洗牌，洗完牌后进行1,2,2,2…2..操作，使得最终在John手上的牌是递减的 题解 看这个题目的数据范围我们可以猜测出这题是一个找规律的题目，那我们要怎么构造这个串呢？ 观察题目给的M=1，发现1,2,3都间隔了一个，然后我们推测是间隔M个放置，然后再继续推测之后得到下面的规律 走M次空格，第M+1次落下，第一个先填1，循环走 举例比如N = 5, M = 4;一开始是 1 _ _ _ _然后走4次空格，第5次落下 变成 1 2 _ _ _之后同理得到 1 2 _ 3 _ ==&gt; 1 2 _ 3 4 ==&gt; 1 2 5 3 4 实现通过模拟链表实现走M次空格(详见代码) 复杂度分析时间复杂度$O(TNM)$,接近O($410^9$),6s，按理1秒$210^8$也只够跑$1.2*10^9$,所以要么计蒜客评测机太快，要么数据不够强大，233 AC代码123456789101112131415161718192021222324252627282930#include &lt;bits/stdc++.h&gt;using namespace std;const int N = 4e7 + 10;int pos[N], nxt[N], pre[N];int main() &#123; int T; scanf("%d", &amp;T); while(T--) &#123; int n, m, q, u, v; scanf("%d%d", &amp;n, &amp;m); for(int i=1;i&lt;=n;i++) nxt[i] = i+1, pre[i] = i-1; nxt[n] = 2; pre[2] = n; pos[1] = 1; int cur = 1; for(int i=2;i&lt;=n;i++)&#123; for(int j=1;j&lt;=m+1;j++) &#123; cur = nxt[cur]; &#125; pos[cur] = i; u = pre[cur]; v = nxt[cur]; nxt[u] = v; pre[v] = u; &#125; scanf("%d", &amp;q); while(q--) &#123; scanf("%d", &amp;u); printf("%d\n", pos[u]); &#125; &#125; return 0;&#125; 每天一句叨叨别人撞了南墙才回头，而我撞了也不回头，我要跨过去]]></content>
+    <content type="text"><![CDATA[题目链接计蒜客传送门 题意魔法洗牌，洗完牌后进行1,2,2,2…2..操作，使得最终在John手上的牌是递减的 题解 看这个题目的数据范围我们可以猜测出这题是一个找规律的题目，那我们要怎么构造这个串呢？ 观察题目给的M=1，发现1,2,3都间隔了一个，然后我们推测是间隔M个放置，然后再继续推测之后得到下面的规律 走M次空格，第M+1次落下，第一个先填1，循环走 举例比如N = 5, M = 4;一开始是 1 _ _ _ _然后走4次空格，第5次落下 变成 1 2 _ _ _之后同理得到 1 2 _ 3 _ ==&gt; 1 2 _ 3 4 ==&gt; 1 2 5 3 4 实现通过模拟链表实现走M次空格(详见代码) 复杂度分析时间复杂度 O(T*N*M) ,接近 O(4*$10^9$) ,6s时间限制，按理1秒 2*$10^8$ 也只够跑 1.2*$10^9$ ,所以要么计蒜客评测机太快，要么数据不够强大,233 写作小收获用转义符\来保持某些符号不成为markdown的标记符，比如我要用多个*,就要防止变成markdown的斜体 AC代码123456789101112131415161718192021222324252627282930#include &lt;bits/stdc++.h&gt;using namespace std;const int N = 4e7 + 10;int pos[N], nxt[N], pre[N];int main() &#123; int T; scanf("%d", &amp;T); while(T--) &#123; int n, m, q, u, v; scanf("%d%d", &amp;n, &amp;m); for(int i=1;i&lt;=n;i++) nxt[i] = i+1, pre[i] = i-1; nxt[n] = 2; pre[2] = n; pos[1] = 1; int cur = 1; for(int i=2;i&lt;=n;i++)&#123; for(int j=1;j&lt;=m+1;j++) &#123; cur = nxt[cur]; &#125; pos[cur] = i; u = pre[cur]; v = nxt[cur]; nxt[u] = v; pre[v] = u; &#125; scanf("%d", &amp;q); while(q--) &#123; scanf("%d", &amp;u); printf("%d\n", pos[u]); &#125; &#125; return 0;&#125; 每天一句叨叨别人撞了南墙才回头，而我撞了也不回头，我要跨过去]]></content>
       <categories>
         <category>算法学习日常</category>
       </categories>
@@ -133,8 +133,8 @@
       <tags>
         <tag>算法</tag>
         <tag>算法学习日常</tag>
-        <tag>狼胆带你每天头铁一题</tag>
         <tag>后缀数组</tag>
+        <tag>狼胆带你每天头铁一题</tag>
       </tags>
   </entry>
   <entry>
@@ -147,8 +147,8 @@
       <tags>
         <tag>算法</tag>
         <tag>算法学习日常</tag>
-        <tag>狼胆带你每天头铁一题</tag>
         <tag>后缀数组</tag>
+        <tag>狼胆带你每天头铁一题</tag>
       </tags>
   </entry>
   <entry>
@@ -652,8 +652,8 @@
         <category>hardware</category>
       </categories>
       <tags>
-        <tag>hardware</tag>
         <tag>总有一些事情值得</tag>
+        <tag>hardware</tag>
       </tags>
   </entry>
   <entry>
@@ -675,8 +675,8 @@
         <category>hardware</category>
       </categories>
       <tags>
-        <tag>hardware</tag>
         <tag>总有一些事情值得</tag>
+        <tag>hardware</tag>
       </tags>
   </entry>
   <entry>
