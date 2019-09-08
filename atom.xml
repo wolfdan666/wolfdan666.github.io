@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.wolfdan.cn/"/>
-  <updated>2019-09-08T13:57:43.115Z</updated>
+  <updated>2019-09-08T14:02:43.716Z</updated>
   <id>http://www.wolfdan.cn/</id>
   
   <author>
@@ -21,13 +21,13 @@
     <link href="http://www.wolfdan.cn/2019/09/08/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B823-23-100/"/>
     <id>http://www.wolfdan.cn/2019/09/08/算法日常23-23-100/</id>
     <published>2019-09-08T13:38:46.000Z</published>
-    <updated>2019-09-08T13:57:43.115Z</updated>
+    <updated>2019-09-08T14:02:43.716Z</updated>
     
     <content type="html"><![CDATA[<h1 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h1><p><a href="https://nanti.jisuanke.com/t/41352" target="_blank" rel="noopener">计蒜客传送门</a></p><h1 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h1><p>魔法洗牌，洗完牌后进行1,2,2,2…2..操作，使得最终在John手上的牌是递减的</p><h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><ul><li>看这个题目的数据范围我们可以猜测出这题是一个找规律的题目，那我们要怎么构造这个串呢？</li><li>观察题目给的M=1，发现1,2,3都间隔了一个，然后我们推测是间隔M个放置，然后再继续推测之后得到下面的规律</li><li>走M次空格，第M+1次落下，第一个先填1，<strong>循环走</strong></li></ul><h2 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h2><p>比如N = 5, M = 4;<br>一开始是 1 _ _ _ _<br>然后走4次空格，第5次落下 变成 1 2 _ _ _<br>之后同理得到 1 2 _ 3 _ ==&gt; 1 2 _ 3 4 ==&gt; 1 2 5 3 4</p><h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>通过模拟链表实现走M次空格(详见代码)</p><h1 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h1><p>时间复杂度$O(T<em>N</em>M)$,接近O($4<em>10^9$),6s，按理1秒$2</em>10^8$也只够跑$1.2*10^9$,所以要么计蒜客评测机太快，要么数据不够强大，233</p><h1 id="AC代码"><a href="#AC代码" class="headerlink" title="AC代码"></a>AC代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">4e7</span> + <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> pos[N], nxt[N], pre[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> T; <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;T);</span><br><span class="line">    <span class="keyword">while</span>(T--) &#123;</span><br><span class="line">        <span class="keyword">int</span> n, m, q, u, v;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;m);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) nxt[i] = i+<span class="number">1</span>, pre[i] = i<span class="number">-1</span>;</span><br><span class="line">        nxt[n] = <span class="number">2</span>; pre[<span class="number">2</span>] = n;</span><br><span class="line">        pos[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> cur = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=m+<span class="number">1</span>;j++) &#123;</span><br><span class="line">                cur = nxt[cur];</span><br><span class="line">            &#125;</span><br><span class="line">            pos[cur] = i;</span><br><span class="line">            u = pre[cur]; v = nxt[cur];</span><br><span class="line">            nxt[u] = v; pre[v] = u;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;q);</span><br><span class="line">        <span class="keyword">while</span>(q--) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;u);</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, pos[u]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="每天一句叨叨"><a href="#每天一句叨叨" class="headerlink" title="每天一句叨叨"></a>每天一句叨叨</h1><p><strong>别人撞了南墙才回头，而我撞了也不回头，我要跨过去</strong></p>]]></content>
     
     <summary type="html">
     
-      2019南昌网络赛E.Magic Master_算法日常23
+      2019南昌网络赛E.Magic Master_算法日常23 魔法洗牌，洗完牌后进行1,2,2,2...2..操作，使得最终在John手上的牌是递减的 走M次空格，第M+1次落下，第一个先填1，循环走 别人撞了南墙才回头，而我撞了也不回头，我要跨过去
     
     </summary>
     
@@ -47,13 +47,13 @@
     <link href="http://www.wolfdan.cn/2019/09/08/ARST%E6%89%93%E5%8D%A1%E7%AC%AC20%E5%91%A8-20-521/"/>
     <id>http://www.wolfdan.cn/2019/09/08/ARST打卡第20周-20-521/</id>
     <published>2019-09-08T12:52:21.000Z</published>
-    <updated>2019-09-08T13:37:51.711Z</updated>
+    <updated>2019-09-08T14:01:57.788Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h1><p><a href="https://www.wolfdan.cn/2019/09/05/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-20-100/">SPOJ-LCS,SPOJ-LCS2-后缀自动机SAM专题训练_算法日常[20/100]</a></p><p><a href="https://www.wolfdan.cn/2019/09/06/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-21-100/">spoj_nsubstr_sam后缀自动机_算法日常[21/100]</a></p><p><a href="https://www.wolfdan.cn/2019/09/07/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-22-100/">2019 徐州网络赛 M Longest subsequence_算法日常[22/100]</a></p><h1 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h1><p><a href="https://elemental.medium.com/how-to-take-the-perfect-nap-397ee26a64c7" target="_blank" rel="noopener">How to Take the Perfect Nap</a></p><p>其实自己之前看过这篇报告的中文版，现在看一遍英文版，又温习了一下，也拯救一下从暑假归来后每天要睡9个小时的自己，让自己能恢复战斗状态，每天6小时+30mins咖啡盹</p><ul><li>晚上6小时，正好是4个完整的睡眠周期，完成4次慢波睡眠期处理记忆和信息和4次快速动眼期促进创造力，然后白天再来一个30mins的咖啡盹睡眠恢复精力和警觉(不要进入慢波睡眠，否则在慢波睡眠的时候醒来会很困)就够了，固定下来就好，如果长期不适应4个睡眠周期就加到5个</li><li>咖啡盹就是快速喝完咖啡马上睡30mins</li><li>固定睡眠时间，让生物钟适应</li></ul><h2 id="再附上一篇中文的把"><a href="#再附上一篇中文的把" class="headerlink" title="再附上一篇中文的把"></a>再附上一篇中文的把</h2><p><del>虽然有点标题党</del><br><a href="https://zhuanlan.zhihu.com/p/48491069" target="_blank" rel="noopener">我们都被“8小时睡眠论”给害了?</a></p><h1 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h1><p><a href="https://blog.csdn.net/lewky_liu/article/details/82432045" target="_blank" rel="noopener">Coding Pages申请SSL/TLS证书错误</a></p><h1 id="Share"><a href="#Share" class="headerlink" title="Share"></a>Share</h1><p><a href="https://www.wolfdan.cn/2019/09/06/Hexo-Next-Gemini%E4%B8%BB%E9%A2%98%E9%80%8F%E6%98%8E%E5%8C%96%E4%BB%A5%E5%8F%8A%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87%E7%9A%84%E6%9B%B4%E6%94%B9/">Hexo-Next-Gemini主题透明化以及背景图片的更改和获取</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h1><p><a href="https://www.wolfdan.cn/2019/09/05/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-20-100/">SPOJ-LCS,SPOJ-LCS2-后缀自动机SAM专题训练_算法日常[20/100]</a></p><p><a href="https://www.wolfdan.cn/2019/09/06/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-21-100/">spoj_nsubstr_sam后缀自动机_算法日常[21/100]</a></p><p><a href="https://www.wolfdan.cn/2019/09/07/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-22-100/">2019 徐州网络赛 M Longest subsequence_算法日常[22/100]</a></p><p><a href="https://www.wolfdan.cn/2019/09/08/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B823-23-100/">2019南昌网络赛E.Magic Master_算法日常23[23/100]</a></p><h1 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h1><p><a href="https://elemental.medium.com/how-to-take-the-perfect-nap-397ee26a64c7" target="_blank" rel="noopener">How to Take the Perfect Nap</a></p><p>其实自己之前看过这篇报告的中文版，现在看一遍英文版，又温习了一下，也拯救一下从暑假归来后每天要睡9个小时的自己，让自己能恢复战斗状态，每天6小时+30mins咖啡盹</p><ul><li>晚上6小时，正好是4个完整的睡眠周期，完成4次慢波睡眠期处理记忆和信息和4次快速动眼期促进创造力，然后白天再来一个30mins的咖啡盹睡眠恢复精力和警觉(不要进入慢波睡眠，否则在慢波睡眠的时候醒来会很困)就够了，固定下来就好，如果长期不适应4个睡眠周期就加到5个</li><li>咖啡盹就是快速喝完咖啡马上睡30mins</li><li>固定睡眠时间，让生物钟适应</li></ul><h2 id="再附上一篇中文的把"><a href="#再附上一篇中文的把" class="headerlink" title="再附上一篇中文的把"></a>再附上一篇中文的把</h2><p><del>虽然有点标题党</del><br><a href="https://zhuanlan.zhihu.com/p/48491069" target="_blank" rel="noopener">我们都被“8小时睡眠论”给害了?</a></p><h1 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h1><p><a href="https://blog.csdn.net/lewky_liu/article/details/82432045" target="_blank" rel="noopener">Coding Pages申请SSL/TLS证书错误</a></p><h1 id="Share"><a href="#Share" class="headerlink" title="Share"></a>Share</h1><p><a href="https://www.wolfdan.cn/2019/09/06/Hexo-Next-Gemini%E4%B8%BB%E9%A2%98%E9%80%8F%E6%98%8E%E5%8C%96%E4%BB%A5%E5%8F%8A%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87%E7%9A%84%E6%9B%B4%E6%94%B9/">Hexo-Next-Gemini主题透明化以及背景图片的更改和获取</a></p>]]></content>
     
     <summary type="html">
     
-      ARST打卡
+      ARST打卡 SPOJ-LCS,SPOJ-LCS2-后缀自动机SAM专题训练 spoj_nsubstr_sam后缀自动机 2019 徐州网络赛 M Longest subsequence  2019南昌网络赛E.Magic Master How to Take the Perfect Nap 我们都被“8小时睡眠论”给害了? Coding Pages申请SSL/TLS证书错误 Hexo-Next-Gemini主题透明化以及背景图片的更改和获取
     
     </summary>
     
@@ -284,9 +284,9 @@
     
       <category term="算法学习日常" scheme="http://www.wolfdan.cn/tags/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%B8%B8/"/>
     
-      <category term="后缀数组" scheme="http://www.wolfdan.cn/tags/%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84/"/>
-    
       <category term="狼胆带你每天头铁一题" scheme="http://www.wolfdan.cn/tags/%E7%8B%BC%E8%83%86%E5%B8%A6%E4%BD%A0%E6%AF%8F%E5%A4%A9%E5%A4%B4%E9%93%81%E4%B8%80%E9%A2%98/"/>
+    
+      <category term="后缀数组" scheme="http://www.wolfdan.cn/tags/%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84/"/>
     
   </entry>
   
@@ -312,9 +312,9 @@
     
       <category term="算法学习日常" scheme="http://www.wolfdan.cn/tags/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%B8%B8/"/>
     
-      <category term="后缀数组" scheme="http://www.wolfdan.cn/tags/%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84/"/>
-    
       <category term="狼胆带你每天头铁一题" scheme="http://www.wolfdan.cn/tags/%E7%8B%BC%E8%83%86%E5%B8%A6%E4%BD%A0%E6%AF%8F%E5%A4%A9%E5%A4%B4%E9%93%81%E4%B8%80%E9%A2%98/"/>
+    
+      <category term="后缀数组" scheme="http://www.wolfdan.cn/tags/%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84/"/>
     
   </entry>
   
