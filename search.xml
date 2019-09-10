@@ -1,8 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[2019南昌网络赛Hello 2019(cf 750E)线段树_算法日常[24/100]]]></title>
+    <url>%2F2019%2F09%2F10%2F%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-24-100%2F</url>
+    <content type="text"><![CDATA[题目小趣事我在比赛一开场就开始看这题，然后没想出怎么写，12:07我校一个大佬lxc说他拿下了这题的一血，这是一个原题，cf 750E(我只能说:大佬都是移动题库!)然后做完另一个签到题之后，成为第一名，带榜了 赛后发现1Hello 2019 的提交情况如下:通过率：5.66% 正确提交 / 总提交：217 / 3837 达成学校带崩他校节奏的成就 赛后发现2这题tourist(codeforces霸榜第一，ACM world final 4小时ak第一人，被评为全球最厉害的十个程序员之一(和c语言之父这些人在一个榜单！))当年比赛的时候也没有做出来！然后大家说自己竟然尝试了一下当年T神都没有做出来的题目 题目链接计蒜客传送门codeforces 750E 题意给你一个串，然后多次询问左右区间，看删除多少个字符能使得这个区间内有9102，而没有8102的subsequence(codeforces中是有2017而没有2016) 题解 肉眼做法,表层理解,很容易看出只要删除8 因为8放在第一个不好处理，所以改成翻转string，并且翻转l,r,从而变成判断有2019没有2018， 因为每次询问一个区间，所以需要把dp状态扔到某个数据结构上,所以我们考虑线段树 线段树更新的时候是拿两段的信息合并，所以不能像做1~n的dp那样记录状态 考虑2017之间的间隔: | 2 | 0 | 1 | 9 | 0 1 2 3 4 线段树的每个节点存一个矩阵A.$mat_{ij}$表示使原串的子序列包含2019中第i个间隔到第j个间隔组成的子串，但不严格包含它的子序列最少需要删除的数字、 转移是显然的，和区间dp一样。枚举区间，枚举中间点，然后转移就好了。 考虑初值问题，显然的是非2、0、1、9、8的数字对答案不影响，所以令$a_{ii}$=0,$a_{ij}$=N(取不到就行) (i!=j) 考虑当前数字是2的时候，如果我希望只包含子串[0,0]（这里表示两个间隔间的子串），那么就必须删掉这个2，故$a_{00}$=1(可以理解为不想要成为2019是不思进取的行为，所以付出代价—&gt;这样可以在后面处理的时候淘汰掉这些大的状态值),如果希望包含子串[0,1]，那么什么都不用做，所以$a_{01}$=0。对于0、1、7同理。 考虑当前数字是8的时候，那么遇到子串[i,3]希望转移回自己(不想接受8来到达4状态)，那么需要付出1的代价，因为否则会包含子序列”2018”，同样如果遇到子串[i,4]希望转移回自己(不想接受8来到达4状态)，那么也需要付出1的代价(区间如果询问到这里就是真正要删除的数字了，因为4达到状态终点了)。 AC代码123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263#include&lt;bits/stdc++.h&gt;using namespace std;const int N=200005;char s[N];struct Node &#123; int mat[5][5]; Node operator + (Node x) &#123; Node ans; for(int i=0;i&lt;5;++i) &#123; for(int j=0;j&lt;5;++j) &#123; ans.mat[i][j]=N; for(int k=0;k&lt;5;++k) &#123; ans.mat[i][j]=min(ans.mat[i][j],mat[i][k]+x.mat[k][j]); &#125; &#125; &#125; return ans; &#125;&#125;a[N&lt;&lt;2];void build(int l,int r,int x) &#123; if(l==r) &#123; for(int i=0;i&lt;5;++i) &#123; for(int j=0;j&lt;5;++j) &#123; a[x].mat[i][j]=(i==j)?0:N; &#125; &#125; if(s[l]=='2') a[x].mat[0][1]=0,a[x].mat[0][0]=1; if(s[l]=='0') a[x].mat[1][2]=0,a[x].mat[1][1]=1; if(s[l]=='1') a[x].mat[2][3]=0,a[x].mat[2][2]=1; if(s[l]=='9') a[x].mat[3][4]=0,a[x].mat[3][3]=1; if(s[l]=='8') a[x].mat[3][3]=1,a[x].mat[4][4]=1; return ; &#125; int m=l+r&gt;&gt;1; build(l,m,x&lt;&lt;1);build(m+1,r,x&lt;&lt;1|1); a[x]=a[x&lt;&lt;1]+a[x&lt;&lt;1|1];&#125;Node query(int l,int r,int L,int R,int x) &#123; if(L&lt;=l&amp;&amp;r&lt;=R) return a[x]; int m=l+r&gt;&gt;1; if(m&lt;L) return query(m+1,r,L,R,x&lt;&lt;1|1); if(m&gt;=R) return query(l,m,L,R,x&lt;&lt;1); return query(l,m,L,R,x&lt;&lt;1)+query(m+1,r,L,R,x&lt;&lt;1|1);&#125;int main() &#123; int n,q; while(~scanf("%d%d%s",&amp;n,&amp;q,s+1)) &#123; for(int i=1;i&lt;=n/2;i++)&#123; swap(s[i],s[n-i+1]); &#125; build(1,n,1); while(q--) &#123; int l,r;int tl,tr; scanf("%d%d",&amp;tl,&amp;tr); r = n-tl+1,l = n - tr + 1; int ans=query(1,n,l,r,1).mat[0][4]; if(ans==N) ans=-1; printf("%d\n",ans); &#125; &#125; return 0;&#125; 每天一句叨叨这个世界，想不想要永远不是最重要的，重要的，是要不要得起。 就像每个人都想成功，但是不是每个人都承担得起成功的代价]]></content>
+      <categories>
+        <category>算法学习日常</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>线段树</tag>
+        <tag>算法学习日常</tag>
+        <tag>思维题</tag>
+        <tag>subsequence</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[2019南昌网络赛E.Magic Master_算法日常23[23/100]]]></title>
-    <url>%2F2019%2F09%2F08%2F%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B823-23-100%2F</url>
+    <url>%2F2019%2F09%2F08%2F%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-23-100%2F</url>
     <content type="text"><![CDATA[题目链接计蒜客传送门 题意魔法洗牌，洗完牌后进行1,2,2,2…2..操作，使得最终在John手上的牌是递减的 题解 看这个题目的数据范围我们可以猜测出这题是一个找规律的题目，那我们要怎么构造这个串呢？ 观察题目给的M=1，发现1,2,3都间隔了一个，然后我们推测是间隔M个放置，然后再继续推测之后得到下面的规律 走M次空格，第M+1次落下，第一个先填1，循环走 举例比如N = 5, M = 4;一开始是 1 _ _ _ _然后走4次空格，第5次落下 变成 1 2 _ _ _之后同理得到 1 2 _ 3 _ ==&gt; 1 2 _ 3 4 ==&gt; 1 2 5 3 4 实现通过模拟链表实现走M次空格(详见代码) 复杂度分析时间复杂度 O(T*N*M) ,接近 O(4*$10^9$) ,6s时间限制，按理1秒 2*$10^8$ 也只够跑 1.2*$10^9$ ,所以要么计蒜客评测机太快，要么数据不够强大,233 写作小收获用转义符\来保持某些符号不成为markdown的标记符，比如我要用多个*,就要防止变成markdown的斜体 AC代码123456789101112131415161718192021222324252627282930#include &lt;bits/stdc++.h&gt;using namespace std;const int N = 4e7 + 10;int pos[N], nxt[N], pre[N];int main() &#123; int T; scanf("%d", &amp;T); while(T--) &#123; int n, m, q, u, v; scanf("%d%d", &amp;n, &amp;m); for(int i=1;i&lt;=n;i++) nxt[i] = i+1, pre[i] = i-1; nxt[n] = 2; pre[2] = n; pos[1] = 1; int cur = 1; for(int i=2;i&lt;=n;i++)&#123; for(int j=1;j&lt;=m+1;j++) &#123; cur = nxt[cur]; &#125; pos[cur] = i; u = pre[cur]; v = nxt[cur]; nxt[u] = v; pre[v] = u; &#125; scanf("%d", &amp;q); while(q--) &#123; scanf("%d", &amp;u); printf("%d\n", pos[u]); &#125; &#125; return 0;&#125; 每天一句叨叨别人撞了南墙才回头，而我撞了也不回头，我要跨过去]]></content>
       <categories>
         <category>算法学习日常</category>
