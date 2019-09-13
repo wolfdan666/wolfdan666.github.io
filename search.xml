@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[为什么要wp站停站,专注hexo站]]></title>
+    <url>%2F2019%2F09%2F13%2F%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81wp%E7%AB%99%E5%81%9C%E7%AB%99-%E4%B8%93%E6%B3%A8hexo%E7%AB%99%2F</url>
+    <content type="text"><![CDATA[原因 维护两个网站有点耗时间 访问速度慢 wp站由于网站的vps在国外，然后在百度收录方面很差劲 中文内容，加上自己知识有限，所以在谷歌也没什么访问量 wp站有点重 Hexo站可以满足我的写作所有的愿望 展望 少就是多，把时间节省下来，专注做好一件事情 好好刷题，好好学习，好好写作 争取让我的小站能够对大家产生一点帮助 当然也希望自己通过写作成为更好的自己 搬家的一些痛 之前有些老文章是富文本写的…还好有wp-markdown.md，把那些转成html了 图片文件链接要重新搞一下，有点麻烦—-&gt;所以放弃了一些图片 wolfdan.cn域名的安全证书过期了，要多点好几下才能看到内容… 一些hexo不太爽的点解决_posts太多，找文件有点难 先发new draft &quot;文章名&quot;，之后hexo publish &quot;文章名&quot; 分类的话，直接在网站看]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>wordpress</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[将Deepin-linux装进移动硬盘到任何其他电脑上使用]]></title>
     <url>%2F2019%2F09%2F12%2F%E5%B0%86Deepin-linux%E8%A3%85%E8%BF%9B%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%E5%88%B0%E4%BB%BB%E4%BD%95%E5%85%B6%E4%BB%96%E7%94%B5%E8%84%91%E4%B8%8A%E4%BD%BF%E7%94%A8%2F</url>
     <content type="text"><![CDATA[需求分析最近买了一块480G的移动固态硬盘，天生的折腾性格，我哪闲得住…然后早就听闻有linux装到移动硬盘的操作，然后又听说deepin很牛*，所以我想要把deepin装到移动固态，然后实现系统插在任何电脑都是一样的配方，一样的味道，一样的我的数据和工具(在机房使用就是真香…虽然还没去机房试过)，不过在自己的电脑上跑得很high，然后插在朋友的电脑上成功了,看下图 我的high图 在朋友电脑上点亮 准备材料 电脑一台(环境是windows) 移动硬盘或者大容量的高速U盘一个 普通8G以上大小的U盘一个(用于制作启动盘) 开始安装下载镜像并制作启动盘 官网链接下载镜像,推荐选择一个地区位置离你比较近的地方的iso仓库下载 下载完成将压缩包中的deepin-boot-maker.exe和deepin-boot-maker.zip移动到一个文件夹下，然后运行.exe文件按照提示制作启动盘 压缩SSD磁盘空间右键windows图标，选择 磁盘管理 选择SSD，压缩卷(其实是取出一块的意思)，然后删除卷(其实是把它设置成可分配的意思)达到一定的大小(一定是没有数据的空间，你不要把你有数据的磁盘压缩删除了)，让你的的未分配的空间大小达到你想要的系统空间大小，比如我的设置的是100G，你们看到的20G，80G，300M的那三个就是对应我的deepin系统的/分区,/home分区,efi分区 关闭快速启动右键电源图标，点击电源选项 选择电源功能 禁用快速启动 设置启动项并关闭安全启动进入windows的设置-&gt; 更新和安全 -&gt; 恢复 -&gt; 高级启动 -&gt; 立即重启 重启后会自动进入一个蓝屏的界面，然后选择 疑难解答 -&gt; UEFI固件设置 进入bios界面后找到安全启动，然后disable 然后将Boot设置成 U盘为第一启动项 保存，重启 分区(最重要!)一步步进行到分区,然后选择高级模式，找到自己的移动硬盘，点击右侧的编辑我的分区大小是 efi 300M(一定要有efi!!!uefi安装模式必要的分区，否则可能无法在别的电脑启动) / 20G /home 80G (剩下的全部都行,因为之后用的东西都在这里) 安装安装完就是体验咯，取下U盘，慢慢使用 双显卡导致开机卡logo的解决方案 在grub选择界面按e进入编辑 找到这一行linux /vmlinuz-4.15.0-29deepin-generic root=UUID=************9-466c-bc12-6bb801e45901 ro splash quiet 在quiet后面加上acpi_osi=! acpi=&quot;windows 2009&quot;，然后按F10保存即可.这时会重新开始登录deepin系统，耐心等待进入桌面即可 开机后Ctrl+Alt+T进入打开终端，输入以下代码来打开grub配置文件：sudo vi /boot/grub/grub.cfg /quiet查找quiet位置，回车找到第一个，然后i进行编辑，同样加入acpi_osi=! acpi=&quot;windows 2009&quot; Esc退出编辑，:wq!强制保存退出 高光时刻-跑在别人电脑上在朋友电脑上进入界面按键进入bios选择，选择自己的ssd启动，然后完美进入自己的deepin，看一下，数据都在，完美 自己对于deepin的一些体验优点 界面真好看 命令行界面有好多好多种配色，真好，而且默认的就是我最爱的绿色 比起他的爸爸Ubuntu，他在系统上对微信，qq进行了优化，不用手动去调节wine-qq，wine-微信的一些兼容性问题(虽然还是有时候会出现卡死现象，无可厚非) 截图功能极其强大(弥补了wine-qq，wine-微信不能截图的缺憾) 设置简洁 缺点主要是因为deepin15.11是2019.7.20发布，还存在一些bug 网络自动代理设置不生效(Ubuntu中可以)(新版本对我的致命伤害,所以这个bug不解决，我就用windows去) 双屏中的副屏不能右键呼出菜单 每天一句叨叨万事万物由心生，如果累了，就把不重要的事情都推掉，然后做真正最重要的事情！ 还有，少折腾！比如你这三天就没有好好刷题，搞这个破deepin…然后浪费大把的赛前训练的时间！你已经后悔了…呜呜呜，对不起，我明天一定好好刷题]]></content>
@@ -9,6 +21,8 @@
       </categories>
       <tags>
         <tag>瞎折腾</tag>
+        <tag>装系统</tag>
+        <tag>Deepin</tag>
       </tags>
   </entry>
   <entry>
@@ -678,8 +692,8 @@
         <category>hardware</category>
       </categories>
       <tags>
-        <tag>hardware</tag>
         <tag>总有一些事情值得</tag>
+        <tag>hardware</tag>
       </tags>
   </entry>
   <entry>
@@ -701,8 +715,8 @@
         <category>hardware</category>
       </categories>
       <tags>
-        <tag>hardware</tag>
         <tag>总有一些事情值得</tag>
+        <tag>hardware</tag>
       </tags>
   </entry>
   <entry>
@@ -780,6 +794,116 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ARST打卡第六周(6/521)]]></title>
+    <url>%2F2019%2F06%2F01%2FARST%E6%89%93%E5%8D%A1%E7%AC%AC%E5%85%AD%E5%91%A8-6-521%2F</url>
+    <content type="text"><![CDATA[Algorithm第六周算法打卡 ReviewThe Modern Data EstateYou need to be able to access past and present data and predict the future using data. What I think? Yes,I think that there must be a big chance in big data.And we should use it well. 鲁迅说过:要用历史的眼光看问题，借鉴历史，因为历史总是惊人的相似 鲁迅又说:我没有说过 其实是根据我高中历史老师教我的，以及看桥水公司创始人很早就用电脑来分析过去的股票数据来预测将来的股票走势(我觉得这可能是最早的量化交易)和《杠杆说服力》看的一个尿不湿和啤酒的故事，所以我觉得现在应该是： 结合AI来分析挖去泛数据中的价值，并且好好利用这些价值的时候了 Tips：socket programming in cpp Share:SUBLIME插件包无法安装问题解决]]></content>
+      <categories>
+        <category>ARST</category>
+      </categories>
+      <tags>
+        <tag>ARST</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Sublime插件包无法安装问题解决]]></title>
+    <url>%2F2019%2F05%2F30%2FSublime%E6%8F%92%E4%BB%B6%E5%8C%85%E6%97%A0%E6%B3%95%E5%AE%89%E8%A3%85%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%2F</url>
+    <content type="text"><![CDATA[Sublime插件包无法安装了？背景 前段时间一直发现sublime使用过程中各种包报错说无法更新什么的，起初还以为是那些插件包出问题了，后面发现自己竟然根本无法访问Package Control！ 当时我很震惊，然后一直忙到最近才有时间来解决这个bug 我不会告诉你我觉得写ACM题目用VScode写起来那个编译运行那里还是有点不爽，所以我又回归了用sublime写ACM题目 正文 遇到问题打开终端1ctrl + ` 查看错误 实践分析发现（访问sublime提醒的官网解决方案）: 这个网址被墙了，而且网站使用的子匿名域名(看不到)也被墙了 解决方案一:通过一些学习资源(比如校园网，科学上网)开启全局访问一下解决方案二: 2.1 手动下载一个package control管理员在github上维护的包：package control管理员在github上维护的包2.2 打开链接后，右侧点击Download ZIP：把下载下来的包解压，将解压后的文件夹重命名为Package Control, 拷贝到sublime的packages目录下，直接菜单栏Perferences—&gt;Browse Packages. 然后将 Package Control文件夹拷贝进去 然后重新点击菜单栏Perferences，会发现多了Package Settings 和Package Control 这两个菜单，这就说明 Package Control安装成功了。2.3 打开Package Settings—&gt;Package Control —&gt; Settings User2.4 添加&quot;channels&quot;:&quot;http://cst.stu.126.net/u/json/cms/channel_v3.json&quot;,前面的行尾记得加逗号(这里是使用的镜像索引网站)2.5 然后就是熟悉的操作Ctrl+Shift+P—&gt;install—&gt;选包 若遇到了新的问题：package版本过旧，也可使用2中的解决方案二来解决问题 再次访问官网(发现是版本过旧)解决: Have fun就是熟悉的操作Ctrl+Shift+P—&gt;install—&gt;选包然后我装了个golang build来测试，发现成功了 参考：https://packagecontrol.io/docs/troubleshootinghttps://blog.csdn.net/wcc27857285/article/details/88368866]]></content>
+      <categories>
+        <category>编辑器</category>
+      </categories>
+      <tags>
+        <tag>Sublime</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ARST打卡第五周(5/521)]]></title>
+    <url>%2F2019%2F05%2F26%2FARST%E6%89%93%E5%8D%A1%E7%AC%AC%E4%BA%94%E5%91%A8-5-521%2F</url>
+    <content type="text"><![CDATA[Algorithm 这一周天天在准备计算机设计的国赛作品，所以比较忙，没有什么时间写算法代码，偷偷挤了点时间在上课的时候刷算法书，然后做了一小会题目，等下周项目提交之后就认真刷题，多刷题，疯狂刷题 呜呜呜，我也想好好刷题，可是时间都被项目压榨了，坐下来写blog的时候队友还叫我过去调代码，然后我说我现在有一件大事要做，就是写blog呀，因为521周打卡是不能断的！ (2019年5月26日14:33:36发现昨天寝室的电脑最终版忘记git push了，所以先粘出链接，到时候再push完善一下)poj1845分治 Review一下自动化工具 我相信未来是很智能很自动化的，我也喜欢让我的工作自动化，所以喜欢折腾各种提高效率的工具，由于这周一直在忙，于是没有看什么比较深度的英文，其实也有看Android开发的英文技术文档啦：》 Tips：2019年5月19日15:53:33 突然发现自己的网站访问不了了，以为封ip和域名了，害怕，后面发现是网络连接问题，吓死，不过还是深入了解了一下相关的内容什么是域名被墙？域名被墙了如何解决？ Share：用github当做图床 &amp;&amp; 用sublime或者VScode写markdown 再忙也不能不信守诺言，所以上周blog里面说过要给大家分享的东西，这周一定会写出来的，也会坚持521ARST打卡的 用github当做图床 生成本地git仓库 如何找到图片的真正链接 真正的链接使用感言 我承认确实没有直接粘贴使用默认图床方便快捷，但是我需要我的小站存在的时间是我的整个有生之年，甚至奢望想它存在到永久，因为我想要帮助更多的人到永久(当然这不是很现实，所以是个奢望，不过我也还是会继续进行这样的努力，因为: 不试试怎么知道不行呢？),所以我需要一个能存在很久很久的云端存储，所以我选择了github，我觉得github如果要倒闭也会给我们时间转移资源，更何况现在看来它背后是微软，现在又贴出人性化的打赏全收益，所以我觉得它不会凉，呵呵呵，所以麻烦点只是为了更稳定长久 用sublime或者VScode写markdown VScode下载Markdown All in One插件 VScode的markdown展示建立一个.md结尾的文件 sublime写markdown 使用感言 感觉有些主题的色彩高亮不够完美，所以我觉得还是直接用wordpress上的markdown编辑器比较舒服，因为这个markdown编辑器真的是我用过最好的一个:色彩高亮合适，编辑器所有的快捷键几乎都支持，版本控制，自定义等等，唯一美中不足就是实时预览对于有图片的时候不太友好，不过这是实时预览的一个通病，也无可厚非，所以有网的时候还是用wordpress写吧，真香 小插曲git图片同名不替换?其实只有本地缓存的原因啦 A joke 本来想现在预报我下周给你们分享什么的，但是感觉这样万一没做到岂不是鸽了大家，而且留下了不守信用的骂名，所以我决定保持稳重，避免风险，但… 这不会让我懈怠的，我会努力地尽量每周都给你们惊喜的，嘿嘿]]></content>
+      <categories>
+        <category>ARST</category>
+      </categories>
+      <tags>
+        <tag>ARST</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ARST打卡第四周(4/521)]]></title>
+    <url>%2F2019%2F05%2F18%2FARST%E6%89%93%E5%8D%A1%E7%AC%AC%E5%9B%9B%E5%91%A8-4-521%2F</url>
+    <content type="text"><![CDATA[这个小房间就像我的小站，我会让这里面住着一个美人 Algorithm: 第四周的LeetCode题目 View:Always Squash and Rebase your Git CommitsAlways Squash and Rebase your Git CommitsI propose a clean history is more valuable than one that is hard to understand. Tips:破解安装Quartus 15破解安装Quartus 15VS code 中的各种变量 ${file},${fileBasename}廖雪峰前辈的git教程 Share：wordpress使用markdown教程前言 之前因为每次启动这个markdown编辑器就会把我整个文章都搞乱，就是它自动把我原来写的东西都按照html的格式展示出来，后面想了想，可能也是应该的，因为原来的文章虽然采用的是富文本的模式写的，但是原生的wordpress在保存的时候还是使用了html保存，所以这也不能怪这个wordpress，所以现在我在新的文章上面直接改用markdown来写作，然后就可以直接同步到简书和自己的个人网站和大部分支持markdown的地方，所以这是很好的，所以今天的分享就是关于使用markdown在wordpress12345678#include&lt;bits/stdc++.h&gt;using namespace std;int main()&#123; cout&lt;&lt;"Hello markdown in wordpress"&lt;&lt;endl; cout&lt;&lt;"不得不说，直接用markdown写，代码高亮真滴赞那，\ 所以我觉得以后可以多粘点代码给你们看了，嘿嘿"&lt;&lt;endl; return 0;&#125; 为了blog存在100年，所以我决定不用我不熟悉的图床，不然很容易导致时间久了我的图片就看不了了，所以我得找一个稳固的图床中心：github 但是自己这周得打程序设计比赛的省赛，所以下周再和大家分享如何使用github当做自己的图床 效果图 方法正文 先登入wordpress 进入插件安装界面 搜索 WP Editor.MD 安装 通过插件Editor.MD点击进入启用设置，如下图 &lt;/center&gt; 然后就可以像效果图那样开心地写Blog了使用感言 表示这个直接在上面写的感觉也是十分好的，1. 各不同类型的颜色高亮处理的相当出色，2. 然后就是他的预览也比较好看(不过插了图片之后就有点左右显示不太合理了,自己用一下就知道了) 3. 竟然还有版本控制，和简书一样，真的很赞(虽然我不用，但是还是要点赞，因为指不定我哪天就用了呢，多一层安全总是好的) 如果你们想用sublime或者vscode作为写blog的工具，然后再之间粘贴到自己Blog的话，那么请关注收藏我的小站，我下周告诉你们 总结 小站终于可以用MarkDown了，而且效果还这么好，我兴奋啊，所以最近的产量肯定会变高的，嘻嘻嘻，大家一起进步呀…对了，我向队友坦言我刷题慢，向队友求取刷题方法了，所以我下一段时间可能会有关于刷算法的一些分享 改进 一开始本文采用了20M的图片，以及markdown评论，导致加载速度极其地慢 所以我把pic改成了 home 这个小房间就像我的小站，我会让这里面住着一个美人 然后还去除了评论使用markdown（这个主题好像有点不兼容） 然后还测试了手机端的访问以及易读性]]></content>
+      <categories>
+        <category>ARST</category>
+      </categories>
+      <tags>
+        <tag>ARST</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ARST打卡第三周(3/521)]]></title>
+    <url>%2F2019%2F05%2F12%2FARST%E6%89%93%E5%8D%A1%E7%AC%AC%E4%B8%89%E5%91%A8-3-521%2F</url>
+    <content type="text"><![CDATA[ARST打卡第三周(3/521) Algorithm:https://github.com/wolfdan666/WolfEat3moreMeatEveryday/tree/master/2019.5/2019.5.9 Review:https://medium.com/s/freakonomicsradio/the-1-5-trillion-question-how-to-fix-student-loan-debt-39125449af44?FGa=true 美国大学生确实有很高的债务，怪不得他们大学拼命学习我们国家大学学费真的很良心了，所以得好好珍惜啊不过自己的青春时光也很珍贵，所以也要在大学拼命学习 Tips: 制作了一个番茄时钟https://blog.csdn.net/qq_38190111/article/details/89044299#commentsedit Share： #CentOS开启Ftp 注意：我是在CentOS6操作的，CentOS7的重启操作是 systemctl restart vsftpd.service 分析：（很急的观众老爷可以直接看最后面的操作） Linux服务器上安装ftp提供用户上传下载，是很方便的事情，但是如果你的服务器开启了iptables防火墙，就要对ftp端口做一些设置。 ftp端口真的比较特殊，并不像80，22这些端口。它分为连接用的端口，还有当你上传下载文件的传输数据用的端口。netstat -tnl 命令可以看到，我们现在运行了ftp服务。tcp 0 0 0.0.0.0:21 0.0.0.0:* LISTEN 现在我开始对ftp端口的设置，按照我们以前的视频，添加需要开放的端口ftp连接端口有 21 和 20 端口，21端口用于连接，20端口用于传输数据，我现在添加对应的规则。[root@localhost root]# iptables -A INPUT -p tcp --dport 21 -j ACCEPT[root@localhost root]# iptables -A INPUT -p tcp --dport 20 -j ACCEPT[root@localhost root]# iptables -A OUTPUT -p tcp --sport 21 -j ACCEPT[root@localhost root]# iptables -A OUTPUT -p tcp --sport 20 -j ACCEPT 好，这样就添加完了，我们用浏览器访问一下ftp,出现超时。 所以我刚才说 ftp 是比较特殊的端口，它还有一些端口是 数据传输端口，例如目录列表， 上传 ，下载 文件都要用到这些端口。 而这些端口是 任意 端口。。。 这个 任意 真的比较特殊。 如果不指定什么一个端口范围， iptables 很难对任意端口开放的，如果iptables允许任意端口访问， 那和不设置防火墙没什么区别，所以不现实的。 那么我们的解决办法就是 指定这个数据传输端口的一个范围。下面我们修改一下ftp配置文件。 我这里使用vsftpd来修改演示，其他ftp我不知道哪里修改，大家可以找找资料。[root@localhost root]# vi /etc/vsftpd/vsftpd.conf在配置文件的最下面添加pasv_min_port=30001pasv_max_port=31000 然后保存退出。 这两句话的意思告诉vsftpd, 要传输数据的端口范围就在30001到31000 这个范围内传送。 这样我们使用 iptables 就好办多了，我们就打开 30001到31000 这些端口。[root@localhost root]# iptables -A INPUT -p tcp --dport 30001:31000 -j ACCEPT[root@localhost root]# iptables -A OUTPUT -p tcp --sport 30001:31000 -j ACCEPT[root@localhost root]# service iptables save最后进行保存， 然后我们再用浏览器范围下 ftp。可以正常访问 vi /etc/vsftpd/vsftpd.confservice vsftp restart vi /etc/sysconfig/iptables service iptables restart 操作： 先对vsftpd服务配置进行操作：vi /etc/vsftpd/vsftpd.conf在文末添加 pasv_min_port=30001pasv_max_port=31000 重启服务CentOS6：service vsftp restart 重启服务CentOS7： systemctl restart vsftpd.service 再对iptables进行配置：vi /etc/sysconfig/iptables找到一个位置，然后粘贴配置： #easy ftp -A INPUT -p tcp -m tcp --dport 21 -j ACCEPT -A INPUT -p tcp -m tcp --dport 20 -j ACCEPT -A INPUT -p tcp --dport 30001:31000 -j ACCEPT -A OUTPUT -p tcp --sport 30001:31000 -j ACCEPT#下面是bloger尝试但失败的配置，可以不用管，不用复制# hard ftp,safer but failed# allow all ftp incoming connections #-A INPUT -p tcp --dport 21 -m state --state ESTABLISHED -j ACCEPT# -A OUTPUT -p tcp --sport 21 -m state --state NEW,ESTABLISHED -j ACCEPT #Enable active ftp transfers #-A INPUT -p tcp --dport 20 -m state --state ESTABLISHED,RELATED -j ACCEPT #-A OUTPUT -p tcp --sport 20 -m state --state ESTABLISHED -j ACCEPT# Enable passive ftp transfers# -A INPUT -p tcp --sport 1024:65535 --dport 1024:65535 -m state --state ESTABLISHED -j ACCEPT# -A OUTPUT -p tcp --sport 1024:65535 --dport 1024:65535 -m state --state ESTABLISHED,RELATED -j ACCEPT 重启服务CentOS6： service iptables restart 重启服务CentOS7：systemctl restart iptables]]></content>
+      <categories>
+        <category>ARST</category>
+      </categories>
+      <tags>
+        <tag>ARST</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ARST打卡第二周(2/521)]]></title>
+    <url>%2F2019%2F05%2F05%2FARST%E6%89%93%E5%8D%A1%E7%AC%AC%E4%BA%8C%E5%91%A8-2-521%2F</url>
+    <content type="text"><![CDATA[ARST第二周(2/521) Algorithm: 第二周LeetCode Review:(为了学习英文) Consider how our digital content consumption works today. Some people consume free music and TV shows daily via pirated files, illegal streams. Some consume digital content via legal, publicly-funded radio and TV station streams. Others pay for the privilege to access highly curated and secure services like Spotify, Pandora, Netflix, Hulu, and others. AR clouds will be no different.So how will we choose? I think the answer is security and convenience. 我也认为将来全面上云之后盗版资源的安全隐患会变得极其巨大，所以必须做好安全防范，最好购买服务，但是同时也最好要照顾世界上的弱势群体 Don't Be Evil！ The Future of the AR Cloud — a Thousand Walled Gardens Bloom Tip:(主要是为了总结和归纳你在是常工作中所遇到的知识点) 安装VMware15Pro，在上面安装CentOS7，并设置NAT联网(以及kexue就不说了，自行学习) 安装VMware15Pro VMware15上安装CentOS7 设置NAT联网 Share： 1.基于上下文的自适应算术编码代码实现 设信源可能输出的符号是a, b, c 三个字母，构成一个二阶Markov信源，且各阶条件概率如下，试编写程序可以对任意字母序列（如abbcabcb）进行基于上下文的自适应算术编码，并进行相应的译码。思路:建立合适的映射表，然后对一个字符和两个字符的时候进行特殊讨论. // 设信源可能输出的符号是a, b, c 三个字母，构成一个二阶Markov信源，且各阶条件概率如下，// 试编写程序可以对任意字母序列（如abbcabcb）进行基于上下文的自适应算术编码，并进行相应的译码。/// 经过研究发现，长度变长的时候会出现不相等的情况，分析得知，是因为算法本身的概率选取的调整问题double tp = 0.01be + 0.99*end;// 选取时应该把tp调整到大区间段(个人猜测，不会证明，但可以写一个循环自动化调参训练…当在某个长度(input)上面达到某个精度的时候输出参数)// input : length 先建立 length 长的全 a 序列, length重循环 最后一个从 a+0到+1到+2(最内层),每个外层一变化都要变化一次,O(3^length)指数爆炸for(double i=0.01;i]]></content>
+      <categories>
+        <category>ARST</category>
+      </categories>
+      <tags>
+        <tag>ARST</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[儒家修身之道 - 2019春期中考试答案]]></title>
+    <url>%2F2019%2F05%2F03%2F%E5%84%92%E5%AE%B6%E4%BF%AE%E8%BA%AB%E4%B9%8B%E9%81%93-2019%E6%98%A5%E6%9C%9F%E4%B8%AD%E8%80%83%E8%AF%95%E7%AD%94%E6%A1%88%2F</url>
+    <content type="text"><![CDATA[儒家修身之道 - 2019春期中考试答案 我自己找资料写了两个半小时左右，希望这些答案能帮到你们节约时间以及拿到满分 合肥工业大学慕课平台_学生端_files下载 合肥工业大学慕课平台_学生端下载 下载之后再打开体验更佳 使用说明： 1. 可以直接网页浏览第二个文件，体验很差2. 下载两个文件放到同一个目录下面，解压缩第一个文件到当前目录，然后用谷歌打开html文件即可]]></content>
+      <categories>
+        <category>总有一些事值得</category>
+      </categories>
+      <tags>
+        <tag>总有一些事值得</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ARST打卡第一周(1/521)]]></title>
+    <url>%2F2019%2F04%2F27%2FARST%E6%89%93%E5%8D%A1%E7%AC%AC%E4%B8%80%E5%91%A8-1-521%2F</url>
+    <content type="text"><![CDATA[ARST打卡第一周(1/521) Algorithm: 自己在github上面打卡，LeetCode还是第一次做，和以前在其他平台做的题不太一样，它只要提交一个cpp的solve类就行： 第一题LeetCode​github.com 除了LeetCode的刷题，自己也有坚持字符串等的刷题，只是本周前段时间忙着做一个比赛的项目导致自己前几天都没有时间刷题(emmmm). Review: 平常不怎么关注英文技术文章，所以第一次还找了很多个网站进行尝试（最终看了群里小伙伴的打卡的review文章），所以第一次是读简单一点的文章，以后慢慢把难度提升上去 The Key To Accelerating Your Coding Skills http://blog.thefirehoseproject.com/posts/learn-to-code-and-be-self-reliant/ 1.Become self-reliant. Having the ability to learn new coding skills without structured guidance means you no longer need to wait for anyone to help you out. This means that for the majority of what you need to learn, you can simply search the internet and read the various material on what you need to know. This doesn’t mean you immediately “know” everything, but just that everything is now “figure-out-able,” so in essence, you are unstoppable. 2.Work consistently, but don’t overwork yourself. At this phase of the game, know that you can only be productive for around 6 hours a day at the most. Working in an exhausted state will only prolong the time you spend building up to the inflection point. 自己感触很深的两个点在摘抄在上面了 1.其实有时候遇到了技术问题是很好找前辈帮忙解决的，因为有很多坑前辈们都是一步步走过来的，所以就能很快的看出你的错误并且帮你纠正，但是我个人觉得有些必须自己去亲身体验，自己去努力查资料，自己努力去想的，不到迫不得已不去打扰大神，因为这样自己才能对自己遇到的问题有清析的认识，并且在以后一般不会再出现这种问题，而且自己也能在相似的事件处理上做的更好，从而锻炼了自己真正的解决问题的能力。 2.对于第二点自己有切身的体会，因为自己经常进行算法训练，有时候状态很好，一下子就能写出思路和代码，有时候很累的时候，半天想不出思路，而且就算想出了一些常规的思路，但是在很累的时候写出来的基本上都是bug，等到状态好一点的时候再把bug改回来，或者彻底推翻重写，真的是浪费了时间，又没有好好休息，从而延长了自己积累到拐点的时间。 Tip：(学习一个技术技巧) 如何在Debian 9上安装和使用Docker​https://www.howtoing.com/how-to-install-and-use-docker-on-debian-9 Share： Android开发---如何在assets文件下只播放一首歌 环境：项目需要嵌入多个音频文件 问题: 1.使用assets播放音频的时候用固定的套路会把整个文件播放完， 2.用R.raw.MusicName无法在某些类中使用(应该是我Java太菜了，所以在要调用的那个类中不能用R.raw.MusicName) 解决方案：对着函数按ctrl+左键查看setDataSource函数 可以看到length参数，如果按照一般使用setDataSource的方法，我们会使用fileDescriptor.getStartOffset()用来赋值给length，那么这样就会在语音播报的时候播报整个assets文件夹下面的音乐 &lt;p&gt;而且看@param说明可以知道length的单位是字节，所以我采用了一个笨办法，就是依次查看每一首歌的长度，从而得到了参数值，然后写成selectSong()函数(耗子叔说要利用自己的计算机思维，多做自动化工作)，然后完成调用。巧妙地解决了自己的项目需求。&lt;/p&gt; // 按ctrl+左键查看setDataSource函数 /** * Sets the data source (FileDescriptor) to use. The FileDescriptor must be * seekable (N.B. a LocalSocket is not seekable). It is the caller&#39;s responsibility * to close the file descriptor. It is safe to do so as soon as this call returns. * * @param fd the FileDescriptor for the file you want to play * @param offset the offset into the file where the data to be played starts, in bytes * @param length the length in bytes of the data to be played * @throws IllegalStateException if it is called in an invalid state * @throws IllegalArgumentException if fd is not a valid FileDescriptor * @throws IOException if fd can not be read */ public void setDataSource(FileDescriptor fd, long offset, long length) throws IOException, IllegalArgumentException, IllegalStateException { _setDataSource(fd, offset, length); } // 调用的地方AssetManager assetManager;MediaPlayer player = null;player = new MediaPlayer();assetManager = getResources().getAssets();try { String song = “”; int [] k={0}; song += selectSong(flag,k); AssetFileDescriptor fileDescriptor = assetManager.openFd(song);// player.setDataSource(fileDescriptor.getFileDescriptor(), fileDescriptor.getStartOffset(), fileDescriptor.getStartOffset()); player.setDataSource(fileDescriptor.getFileDescriptor(), fileDescriptor.getStartOffset(),k[0]); player.prepare(); player.start();} catch (IOException e) { e.printStackTrace();} // 支持函数private String selectSong(char c,int[] k) { String song = “”; if(c==’a’) { song += “不要露出您的牙齿哟.mp3”;//6408 k[0] = 6408; } else if(c==’b’) { song += “嘴角微微上扬O.mp3”;//5616 k[0] = 5616; } else if(c==’c’) { song += “恭喜你成功习得笑不露齿.mp3”; k[0]=5976; } else if(c==’d’) { song +=”咧开嘴巴开心大笑.mp3”;//4464 k[0] = 4464; } else if(c==’e’) { song +=”不妨笑的更快乐一点.mp3”;//6624 k[0] = 6624; } else if(c==’f’) { song +=”今天的大笑完成了哦.mp3”;//4752 k[0] = 4752; } else if(c==’g’) { song +=”左眼闭紧哟.mp3”;//3528 k[0] = 3528; } else if(c==’h’) { song +=”右眼瞪大点.mp3”;//3384 k[0] = 3384; } else if(c==’i’) { song +=”太好了，得到了一张俏皮图.mp3”;//6624 k[0] = 6624; } else if(c==’j’) { song +=”右眼闭紧哟.mp3”;//3024 k[0] = 3024; } else if(c==’k’) { song +=”左眼瞪大点.mp3”;//3528 k[0] = 3528; } else if(c==’l’) { song +=”哟，我有被你电到哦.mp3”;//4896 k[0] = 4896; } else if(c==’m’) { song +=”张大嘴巴“O”一声.mp3”;//5616 k[0] = 5616; } else if(c==’n’) { song +=”眼睛瞪圆圆.mp3”;//3384 k[0] = 3384; } else if(c==’o’) { song +=”惊讶表情图获取了哟.mp3”;//5472 k[0] = 5472; } return song; }&lt;/pre&gt; 项目图片 查看属性，得到字节大小 感想： 1. 感觉在知乎写文章的体验十分好(对比以前自己在简书和CSDN的写作体验) 2. Review读文章感觉自己英语水平很差劲，然后读久了感觉有点累，所以得多练习 3. 自己都20多的人了，还只是学了计算机领域的一点点皮毛，而且感觉这个ARST打卡很锻炼自己，也符合自己要成为一个技术专家(将来解决计算界的一些难题)的理想，所以决定把这个每周打卡进行10年，也就是365/7*10=521周，现在是第一周(猛地发现原来十年是个如此浪漫的数字)]]></content>
+      <categories>
+        <category>ARST</category>
+      </categories>
+      <tags>
+        <tag>ARST</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[2019年如何注册谷歌账号]]></title>
+    <url>%2F2019%2F03%2F24%2F2019%E5%B9%B4%E5%A6%82%E4%BD%95%E6%B3%A8%E5%86%8C%E8%B0%B7%E6%AD%8C%E8%B4%A6%E5%8F%B7%2F</url>
+    <content type="text"><![CDATA[2019年如何注册谷歌账号 现在谷歌账号注册对中国区用户很不友好，你如果用电脑端去网页注册，那么你的手机号不管注册过没有，你很大几率得到的是下图 无法验证 小编在各大网站平台摸爬滚打2个小时，终于找到了解决方案： 通过手机连上vpn，然后用APKPure下载Gmail 1.vpn：使用superVPN等，自行下载吧(因为这里不能传apk文件啊) （自行网上下载） 2.有了VPN肯定能下载APKPure和Gmail，所以go on下一步---注册的大正题 进入Gmail，然后依次 点击添加用户 Google 等待核对信息 然后点创建账号 然后就可以正常用刚刚在网页端报错的手机号 创建Google账号了 之后就可以开心地用 网页端登入谷歌账号了啊 happy 结语：现在很多人用卖谷歌账号赚钱，更有甚者给出错误教程，然后说别人操作不对，让别人给他转100块再帮别人创建账号，我觉得这是真的黑啊 所以想避免以后“搞机”（软硬件等）路上不被黑， 就收藏小编的网站：wolfdan.cn]]></content>
+      <categories>
+        <category>有些事情总是值得</category>
+      </categories>
+      <tags>
+        <tag>有些事情总是值得</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[电脑手机端同步的电子阅读器]]></title>
+    <url>%2F2019%2F02%2F14%2F%E7%94%B5%E8%84%91%E6%89%8B%E6%9C%BA%E7%AB%AF%E5%90%8C%E6%AD%A5%E7%9A%84%E7%94%B5%E5%AD%90%E9%98%85%E8%AF%BB%E5%99%A8%2F</url>
+    <content type="text"><![CDATA[此文由来和自我想法（可跳过） 今天给大家推荐一个自己找了比较久的的电子阅读器，为什么我要推荐一个电脑手机端同步的阅读器呢？ 手机端移动使用 和 电脑端长时间护眼+快速笔记+浏览使用流行的 掌阅 和 网易蜗牛阅读 都是我用得比较久的两款阅读器，但是无奈没有多端同步，加上自己想用电脑看书，找了很久才找到，觉得一定有人和我有相同需求，于是分享给大家 进入分享正文 这款软件就是 京东阅读 然后 上图说话 声明：本人非京东员工，仅一个热心分享 京东读书 2.云同步演示（实现京东读书手机端电脑端书籍同步（此软件比起友商的稀有之处）） 上传 于是乎 成功 nice 兄弟，来愉快地阅读吧]]></content>
+      <categories>
+        <category>总有一些事值得</category>
+      </categories>
+      <tags>
+        <tag>总有一些事值得</tag>
       </tags>
   </entry>
 </search>
