@@ -173,8 +173,8 @@
       <tags>
         <tag>算法</tag>
         <tag>算法学习日常</tag>
-        <tag>后缀数组</tag>
         <tag>狼胆带你每天头铁一题</tag>
+        <tag>后缀数组</tag>
       </tags>
   </entry>
   <entry>
@@ -187,8 +187,8 @@
       <tags>
         <tag>算法</tag>
         <tag>算法学习日常</tag>
-        <tag>后缀数组</tag>
         <tag>狼胆带你每天头铁一题</tag>
+        <tag>后缀数组</tag>
       </tags>
   </entry>
   <entry>
@@ -810,7 +810,7 @@
   <entry>
     <title><![CDATA[Sublime插件包无法安装问题解决]]></title>
     <url>%2F2019%2F05%2F30%2FSublime%E6%8F%92%E4%BB%B6%E5%8C%85%E6%97%A0%E6%B3%95%E5%AE%89%E8%A3%85%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%2F</url>
-    <content type="text"><![CDATA[Sublime插件包无法安装了？背景 前段时间一直发现sublime使用过程中各种包报错说无法更新什么的，起初还以为是那些插件包出问题了，后面发现自己竟然根本无法访问Package Control！ 当时我很震惊，然后一直忙到最近才有时间来解决这个bug 我不会告诉你我觉得写ACM题目用VScode写起来那个编译运行那里还是有点不爽，所以我又回归了用sublime写ACM题目 正文 遇到问题打开终端1ctrl + ` 查看错误 实践分析发现（访问sublime提醒的官网解决方案）: 这个网址被墙了，而且网站使用的子匿名域名(看不到)也被墙了 解决方案一:通过一些学习资源(比如校园网，科学上网)开启全局访问一下解决方案二: 2.1 手动下载一个package control管理员在github上维护的包：package control管理员在github上维护的包2.2 打开链接后，右侧点击Download ZIP：把下载下来的包解压，将解压后的文件夹重命名为Package Control, 拷贝到sublime的packages目录下，直接菜单栏Perferences—&gt;Browse Packages. 然后将 Package Control文件夹拷贝进去 然后重新点击菜单栏Perferences，会发现多了Package Settings 和Package Control 这两个菜单，这就说明 Package Control安装成功了。2.3 打开Package Settings—&gt;Package Control —&gt; Settings User2.4 添加&quot;channels&quot;:&quot;http://cst.stu.126.net/u/json/cms/channel_v3.json&quot;,前面的行尾记得加逗号(这里是使用的镜像索引网站)2.5 然后就是熟悉的操作Ctrl+Shift+P—&gt;install—&gt;选包 若遇到了新的问题：package版本过旧，也可使用2中的解决方案二来解决问题 再次访问官网(发现是版本过旧)解决: Have fun就是熟悉的操作Ctrl+Shift+P—&gt;install—&gt;选包然后我装了个golang build来测试，发现成功了 参考：https://packagecontrol.io/docs/troubleshootinghttps://blog.csdn.net/wcc27857285/article/details/88368866]]></content>
+    <content type="text"><![CDATA[Sublime插件包无法安装了？背景 前段时间一直发现sublime使用过程中各种包报错说无法更新什么的，起初还以为是那些插件包出问题了，后面发现自己竟然根本无法访问Package Control！ 当时我很震惊，然后一直忙到最近才有时间来解决这个bug 我不会告诉你我觉得写ACM题目用VScode写起来那个编译运行那里还是有点不爽，所以我又回归了用sublime写ACM题目 正文遇到问题打开终端1ctrl + ` 查看错误 实践分析发现（访问sublime提醒的官网解决方案）: 这个网址被墙了，而且网站使用的子匿名域名(看不到)也被墙了 解决方案一:通过一些学习资源(比如校园网，科学上网)开启全局访问一下解决方案二:手动下载一个package control管理员在github上维护的包：package control管理员在github上维护的包 打开链接后，右侧点击Download ZIP：把下载下来的包解压，将解压后的文件夹重命名为Package Control, 拷贝到sublime的packages目录下，直接菜单栏Perferences—&gt;Browse Packages. 然后将 Package Control文件夹拷贝进去 然后重新点击菜单栏Perferences，会发现多了Package Settings 和Package Control 这两个菜单，这就说明 Package Control安装成功了。 打开Package Settings—&gt;Package Control —&gt; Settings User 添加&quot;channels&quot;:&quot;http://cst.stu.126.net/u/json/cms/channel_v3.json&quot;,前面的行尾记得加逗号(这里是使用的镜像索引网站)2.5 然后就是熟悉的操作Ctrl+Shift+P—&gt;install—&gt;选包 若遇到了新的问题：package版本过旧，也可使用2中的解决方案二来解决问题 再次访问官网(发现是版本过旧)解决: Have fun就是熟悉的操作Ctrl+Shift+P—&gt;install—&gt;选包然后我装了个golang build来测试，发现成功了 参考：https://packagecontrol.io/docs/troubleshootinghttps://blog.csdn.net/wcc27857285/article/details/88368866]]></content>
       <categories>
         <category>编辑器</category>
       </categories>
