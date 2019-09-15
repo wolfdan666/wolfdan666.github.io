@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[2019上海网络赛B_Light bulbs_算法日常[25/100]]]></title>
+    <url>%2F2019%2F09%2F15%2F%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-25-100%2F</url>
+    <content type="text"><![CDATA[题目链接计蒜客传送门 题意给你一排N个全灭的灯泡，然后进行M次区间翻转，T组测试 1≤T≤1000 1≤N≤$10^6$ 1≤M≤1000 0≤$L_i$ ≤$R_i$ ≤N−1 题解 因为是多次区间修改，然后求区间的特性，我们可以很自然地想到使用差分+前缀和或者线段树 不过这里发现8192K，N为$10^6$,$10^6$的int是4*$10^6$Byte=4*$10^3$K.然后线段树要开两倍N(节点2*N),而且一般是一个struct结构(一般几个int)，而非一个int，所以线段树否决 然后求前缀和O(T*N)在$10^9$量级，时间限制为1s，所以我们要观察M在1000的量级，所以可以通过离散化来解决 注意，这题超级卡时间，所以使用快读(独立缓冲的cin T了)以及各位置用完及时归0而非使用memset AC代码12345678910111213141516171819202122232425262728293031323334353637383940414243444546#include&lt;bits/stdc++.h&gt;using namespace std;typedef long long ll;const int M = 1e6+10;int a[M],T,n,m,l,r,ans,sum;vector&lt;int&gt; b;inline int read() &#123; int x=0,f=1;char ch=getchar();for(;!isdigit(ch);ch=getchar())if(ch=='-')f=-1; for (;isdigit(ch);ch=getchar())x=x*10+ch-'0';return x*f;&#125;int main()&#123; // ios::sync_with_stdio(false);cin.tie(0); T = read(); int kase = 1; while(T--)&#123; n = read(),m = read(); if(!b.empty()) b.clear(); ans = 0,sum = 0; while(m--)&#123; l = read(),r = read(); l++,r++; a[l]--;a[r+1]++; b.push_back(l),b.push_back(r+1); &#125; // 先排序，因为unique只从左到右顺序查重，然后unique得到最后一个被删除的位置，用erase搽除尾部 sort(b.begin(), b.end()); b.erase(unique(b.begin(), b.end()),b.end()); int sz = b.size(); sum+=a[b[0]]; a[b[0]] = 0; for(int i=1;i&lt;sz;i++)&#123; if(sum&amp;1) ans+=b[i]-b[i-1]; sum+=a[b[i]]; a[b[i]] = 0; &#125; if(sum&amp;1) ans+=n+1-b[sz-1]; printf("Case #%d: %d\n",kase++,ans); &#125; return 0;&#125; 每天一句叨叨人生总有很多东西无法挽留，比如走远的时光，比如枯萎的情感;总有很多东西难以割舍，比如追逐的梦想，比如心中的深爱。所以你一定要珍惜眼前。]]></content>
+      <categories>
+        <category>算法学习日常</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>算法学习日常</tag>
+        <tag>思维题</tag>
+        <tag>差分</tag>
+        <tag>前缀和</tag>
+        <tag>离散化</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[为什么要wp站停站,专注hexo站]]></title>
     <url>%2F2019%2F09%2F13%2F%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81wp%E7%AB%99%E5%81%9C%E7%AB%99-%E4%B8%93%E6%B3%A8hexo%E7%AB%99%2F</url>
     <content type="text"><![CDATA[原因 维护两个网站有点耗时间 访问速度慢 wp站由于网站的vps在国外，然后在百度收录方面很差劲 中文内容，加上自己知识有限，所以在谷歌也没什么访问量 wp站有点重 Hexo站可以满足我的写作所有的愿望 展望 少就是多，把时间节省下来，专注做好一件事情 好好刷题，好好学习，好好写作 争取让我的小站能够对大家产生一点帮助 当然也希望自己通过写作成为更好的自己 搬家的一些痛 之前有些老文章是富文本写的…还好有wp-markdown.md，把那些转成html了 图片文件链接要重新搞一下，有点麻烦—-&gt;所以放弃了一些图片 wolfdan.cn域名的安全证书过期了，要多点好几下才能看到内容… 一些hexo不太爽的点解决_posts太多，找文件有点难 先发new draft &quot;文章名&quot;，之后hexo publish &quot;文章名&quot; 分类的话，直接在网站看]]></content>
@@ -173,8 +189,8 @@
       <tags>
         <tag>算法</tag>
         <tag>算法学习日常</tag>
-        <tag>后缀数组</tag>
         <tag>狼胆带你每天头铁一题</tag>
+        <tag>后缀数组</tag>
       </tags>
   </entry>
   <entry>
@@ -187,8 +203,8 @@
       <tags>
         <tag>算法</tag>
         <tag>算法学习日常</tag>
-        <tag>后缀数组</tag>
         <tag>狼胆带你每天头铁一题</tag>
+        <tag>后缀数组</tag>
       </tags>
   </entry>
   <entry>
