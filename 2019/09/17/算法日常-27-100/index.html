@@ -113,7 +113,7 @@
 <meta property="og:site_name" content="狼胆">
 <meta property="og:description" content="CF123D_SAM_算法日常[27/100] 现在给一个字符串，求所有的F(s,x)的和，x为字符串的所有不相同的子串 路还长，别太狂，以后指不定谁辉煌">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-17T13:51:59.376Z">
+<meta property="og:updated_time" content="2019-09-17T13:55:42.299Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CF123D_SAM_算法日常[27&#x2F;100]">
 <meta name="twitter:description" content="CF123D_SAM_算法日常[27/100] 现在给一个字符串，求所有的F(s,x)的和，x为字符串的所有不相同的子串 路还长，别太狂，以后指不定谁辉煌">
@@ -430,7 +430,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  913
+                  921
                 </span>
               
 
@@ -473,14 +473,14 @@
       
         <h1 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h1><p><a href="https://vjudge.net/problem/CodeForces-123D" target="_blank" rel="noopener">VJ</a><br><a href="https://codeforces.com/problemset/problem/123/D" target="_blank" rel="noopener">CF</a></p>
 <h1 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h1><ul>
-<li>如果字符串y在字符串x中出现n次，那么F(x,y)=n<em>(n+1)/2   <em>*(可以看做是一个长为n的区间,求滑动区块的总个数)</em></em></li>
+<li>如果字符串y在字符串x中出现n次，那么F(x,y)=n*(n+1)/2   <strong>(可以看做是一个长为n的区间,求滑动区块的总个数)</strong></li>
 <li>现在给一个字符串，求所有的F(s,x)的和，x为字符串的所有不相同的子串．</li>
 </ul>
 <h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><ul>
 <li>直接SAM</li>
 <li>right[v]就是SAM上状态表示的所有字符串出现的次数</li>
-<li>那么每个状态的答案就是right<a href="right[v]+1">v</a>/2*(st[v].len-st[st[v].link].len)</li>
-<li>前面right<a href="right[v]+1">v</a>/2是串的组合</li>
+<li>那么每个状态的答案就是right[v](right[v]+1)/2*(st[v].len-st[st[v].link].len)</li>
+<li>前面right[v](right[v]+1)/2是串的组合</li>
 <li>后面是 st[v].len - st[st[v].link].len是后缀的前缀长度，是本质不同的串的贡献</li>
 <li>也即后缀的前缀每个字母的贡献—-&gt;就是 <strong>每个后缀节点t跳父亲节点fa跳掉的那部分t的前缀</strong> 中的 <strong>以每一个字母开头的串t的后缀</strong> 都是和串t所在状态节点出现次数(前面的串的组合数)相同的！</li>
 <li>累加答案完成计算</li>
