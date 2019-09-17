@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[CF123D_SAM_算法日常[27/100]]]></title>
+    <url>%2F2019%2F09%2F17%2F%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-27-100%2F</url>
+    <content type="text"><![CDATA[题目链接VJCF 题意 如果字符串y在字符串x中出现n次，那么F(x,y)=n(n+1)/2 *(可以看做是一个长为n的区间,求滑动区块的总个数) 现在给一个字符串，求所有的F(s,x)的和，x为字符串的所有不相同的子串． 思路 直接SAM right[v]就是SAM上状态表示的所有字符串出现的次数 那么每个状态的答案就是rightv/2*(st[v].len-st[st[v].link].len) 前面rightv/2是串的组合 后面是 st[v].len - st[st[v].link].len是后缀的前缀长度，是本质不同的串的贡献 也即后缀的前缀每个字母的贡献—-&gt;就是 每个后缀节点t跳父亲节点fa跳掉的那部分t的前缀 中的 以每一个字母开头的串t的后缀 都是和串t所在状态节点出现次数(前面的串的组合数)相同的！ 累加答案完成计算 AC代码123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111#include &lt;bits/stdc++.h&gt;#define ms(a, x) memset(a, x, sizeof(a))typedef long long LL;using namespace std;const int N = 5e5 + 7;struct SAM &#123;#define MAXALP 30 struct state &#123; int len, link, nxt[MAXALP]; int leftmost; //某个状态的right集合中r值最小的 int rightmost; //某个状态的right集合的r的最大值 int Right; //right集合大小 &#125;; state st[N * 2]; char S[N]; int sz, last, rt; char s[N]; int cnt[2 * N], rk[2 * N]; //for radix sort int idx(char c)&#123; if (c &gt;= 'a' &amp;&amp; c &lt;= 'z') return c - 'a'; return c - 'A' + 26; &#125; void init()&#123; sz = 0; ms(st, 0); last = rt = ++sz; st[1].len = 0; st[1].link = -1; st[1].rightmost = 0; ms(st[1].nxt, -1); &#125; void extend(int c, int head)&#123; int cur = ++sz; st[cur].len = st[last].len + 1; st[cur].leftmost = st[cur].rightmost = head; memset(st[cur].nxt, -1, sizeof(st[cur].nxt)); int p; for (p = last; p != -1 &amp;&amp; st[p].nxt[c] == -1; p = st[p].link) st[p].nxt[c] = cur; if (p == -1) &#123; st[cur].link = rt; &#125; else &#123; int q = st[p].nxt[c]; if (st[p].len + 1 == st[q].len) &#123; st[cur].link = q; &#125; else &#123; int clone = ++sz; st[clone].len = st[p].len + 1; st[clone].link = st[q].link; memcpy(st[clone].nxt, st[q].nxt, sizeof(st[q].nxt)); st[clone].leftmost = st[q].leftmost; st[clone].rightmost = st[q].rightmost; for (; p != -1 &amp;&amp; st[p].nxt[c] == q; p = st[p].link) st[p].nxt[c] = clone; st[q].link = st[cur].link = clone; &#125; &#125; last = cur; &#125; void build()&#123; init(); for (int i = 0, _len = strlen(S); i &lt; _len; i++) &#123; st[sz + 1].Right = 1; extend(idx(S[i]), i); &#125; &#125; void topo()&#123; ms(cnt, 0); for (int i = 1; i &lt;= sz; i++) cnt[st[i].len]++; for (int i = 1; i &lt;= sz; i++) cnt[i] += cnt[i - 1]; //rk[1]是len最小的状态的标号 for (int i = 1; i &lt;= sz; i++) rk[cnt[st[i].len]--] = i; &#125; //跑拓扑序，预处理一些东西 void pre()&#123; for (int i = sz; i &gt;= 2; i--) &#123; int v = rk[i]; int fa = st[v].link; if (fa == -1) continue; st[fa].rightmost = max(st[fa].rightmost, st[v].rightmost); st[fa].Right += st[v].Right; &#125; &#125; void solve()&#123; LL ans = 0; for (int i = sz; i &gt;= 2; i--) &#123; int v = rk[i]; if (st[v].link == -1) continue; // 前面是串的组合 // 后面是 st[v].len - st[st[v].link].len是后缀的前缀，是本质不同的串的贡献 // 每个字母的贡献---&gt;就是每个后缀节点t跳父亲节点fa跳掉的那部分t的前缀中的每一个字母开头的后缀都是和串t出现次数相同的！ ans = ans + 1LL * st[v].Right * (st[v].Right + 1) / 2 * (st[v].len - st[st[v].link].len); // cout&lt;&lt;"TEST: "&lt;&lt;st[v].len - st[st[v].link].len&lt;&lt;endl; &#125; printf("%lld\n", ans); &#125;&#125; A;char B[N];int main()&#123; scanf("%s", A.S); A.build(); A.topo(); A.pre(); A.solve(); return 0;&#125; 参考111qqz 每天一句叨叨路还长，别太狂，以后指不定谁辉煌]]></content>
+      <categories>
+        <category>算法学习日常</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>算法学习日常</tag>
+        <tag>SAM</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[2019上海网络赛G-Substring_字符串Hash+自建Hashmap_算法日常[26/100]]]></title>
     <url>%2F2019%2F09%2F16%2F%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-26-100%2F</url>
     <content type="text"><![CDATA[题目链接计蒜客走你(揍你) 题意 定义匹配 : 两个串首尾字母相同,中间整个串相同或者是相同数量的各字符组成的不同排列 给你一个原串S，然后给你m个子串t，求这些子串在原串S中匹配的个数 无关题意的个人吐槽:众所周知，2019最后一场网络赛-上海网络赛是一场让你自闭的计数场 题解 长度种类数是O($\sqrt n$)的 然后就是离线暴力处理—&gt;hash字符串 对hash字符串比较匹配 但是如果使用unordered_map会超时 使用数组会超内存 只有使用自建hash才能过 详见代码注释 代码是借鉴一个大佬同学的 AC代码123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102#include&lt;bits/stdc++.h&gt;#define rep(i,a,n) for(int i=a;i&lt;=n;++i)#define pre(i,a,n) for(int i=n;i&gt;=a;--i)#define pb push_backusing namespace std;typedef long long ll;typedef unsigned long long ull;#ifdef ONLINE_JUDGE const int N = 1e5+50;#else const int N = 1e2+10;#endifchar s[N],p[N];int n, m;const int bas = 1e9+7;ull get(int *a) &#123; ull ret = 0; rep(i,0,27) &#123; ret = ret*bas+a[i]+1; &#125; return ret;&#125;struct node &#123; ull sta; int id;&#125;;vector&lt;node&gt; g[N];int ans[N];ull fac[N];int clk;// 手写的Hash,因为unorder_map&lt;int,int&gt; f[26][26]被卡时间namespace Hash&#123; const int hashmod = 218357; int v[hashmod]; unsigned long long h[hashmod]; int vis[hashmod]; int &amp;get(unsigned long long S) &#123; int t2 = S % hashmod, i; // vis[i]是访问过的(clk恒为1)，所以也要走下一个 // h[i] = S.则发生了hash crash(哈希碰撞)，就要走到下一个，也就是h[i] != S 走下一个 // i = t2-1说明走了一个轮回了，就不用再走了，再走就是重复走t2位置了,所以i!=t2-1 for (i = t2; vis[i]==clk &amp;&amp; h[i] != S &amp;&amp; i != t2 - 1; i = (i + 1) % hashmod); // 从未访问过的要初始化计数值为0 if (vis[i]!=clk) h[i] = S, vis[i] = clk, v[i] = 0; return v[i]; &#125;&#125;;void solve() &#123; scanf("%s",s+1); n = strlen(s+1); rep(i,1,n) g[i].clear(); scanf("%d",&amp;m); rep(i,1,m) &#123; scanf("%s",p+1); int len = strlen(p+1); node ret; ret.id = i; int cnt[28]&#123;&#125;; rep(i,1,len) ++cnt[p[i]-'a']; cnt[26] = p[1]; cnt[27] = p[len]; ret.sta = get(cnt); g[len].pb(ret); &#125; rep(i,1,m) ans[i] = 0; rep(len,1,n) if (g[len].size()) &#123; int cnt[28]&#123;&#125;; // 中间的字母是按照字母顺序来的，所以就是可以的，然后最后两个是按照直接首尾字母来的 rep(i,1,len) ++cnt[s[i]-'a']; cnt[26] = s[1]; cnt[27] = s[len]; ull sta = get(cnt); ++clk; for (int L=1,R=len; R&lt;=n; ++L,++R) &#123; ++Hash::get(sta); // 左边字符基底为一个fac,而右边为fac^0=1 sta = sta+(s[L+1]-s[L])*fac[1]; sta = sta+(ll)(s[R+1]-s[R]); // 下面是右移一位整体的字母表的hash值变化 sta = sta-fac[27-(s[L]-'a')]; sta = sta+fac[27-(s[R+1]-'a')]; &#125; // 这个t长度下,把各次提问的ans更新 // hash是这个头尾相同，中间的串是不同排列的 询问串(key) ————&gt; 原串中的个数(value) for (auto &amp;&amp;t:g[len]) ans[t.id] = Hash::get(t.sta); &#125; rep(i,1,m) printf("%d\n",ans[i]);&#125;int main() &#123; fac[0]=1; rep(i,1,30) fac[i]=fac[i-1]*bas; int t; scanf("%d",&amp;t); while (t--) solve();&#125; 每天一句叨叨所有的胜利，与征服自己的胜利比起来，都是微不足道。所有的失败，与失去自己的失败比起来，更是微不足道]]></content>
@@ -216,8 +229,8 @@
       <tags>
         <tag>算法</tag>
         <tag>算法学习日常</tag>
-        <tag>后缀数组</tag>
         <tag>狼胆带你每天头铁一题</tag>
+        <tag>后缀数组</tag>
       </tags>
   </entry>
   <entry>
@@ -230,8 +243,8 @@
       <tags>
         <tag>算法</tag>
         <tag>算法学习日常</tag>
-        <tag>后缀数组</tag>
         <tag>狼胆带你每天头铁一题</tag>
+        <tag>后缀数组</tag>
       </tags>
   </entry>
   <entry>
