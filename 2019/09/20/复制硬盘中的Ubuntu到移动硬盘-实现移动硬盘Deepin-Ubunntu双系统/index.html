@@ -105,13 +105,13 @@
 
 
 
-<meta name="description" content="复制硬盘中的Ubuntu到移动硬盘_实现移动硬盘Deepin+Ubunntu双系统">
+<meta name="description" content="复制硬盘中的Ubuntu到移动硬盘_实现移动硬盘Deepin+Ubunntu双系统 进入磁盘管理，复制分区 (必)设置启动标签 生成新的UUID,然后修改fstab文件 可能出现的状况与解决方案 进了src盘的Ubuntu 卡在了进入的logo">
 <meta name="keywords" content="瞎折腾,SSD,搞机">
 <meta property="og:type" content="article">
 <meta property="og:title" content="复制硬盘中的Ubuntu到移动硬盘_实现移动硬盘Deepin+Ubunntu双系统">
 <meta property="og:url" content="http://www.wolfdan.cn/2019/09/20/复制硬盘中的Ubuntu到移动硬盘-实现移动硬盘Deepin-Ubunntu双系统/index.html">
 <meta property="og:site_name" content="狼胆">
-<meta property="og:description" content="复制硬盘中的Ubuntu到移动硬盘_实现移动硬盘Deepin+Ubunntu双系统">
+<meta property="og:description" content="复制硬盘中的Ubuntu到移动硬盘_实现移动硬盘Deepin+Ubunntu双系统 进入磁盘管理，复制分区 (必)设置启动标签 生成新的UUID,然后修改fstab文件 可能出现的状况与解决方案 进了src盘的Ubuntu 卡在了进入的logo">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/wolfdan666/BlogPic/master/SSD/%E7%A7%BB%E6%A4%8DUbuntu/grub%E7%95%8C%E9%9D%A2.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/wolfdan666/BlogPic/master/SSD/%E7%A7%BB%E6%A4%8DUbuntu/%E8%BF%9B%E5%85%A5grub%E5%A4%B1%E8%B4%A5.jpg">
@@ -120,10 +120,10 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/wolfdan666/BlogPic/master/SSD/%E7%A7%BB%E6%A4%8DUbuntu/Paste%E5%AE%8C%E7%9A%84%E7%95%8C%E9%9D%A2.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/wolfdan666/BlogPic/master/SSD/%E7%A7%BB%E6%A4%8DUbuntu/%E5%BA%94%E7%94%A8%E7%A3%81%E7%9B%98%E6%93%8D%E4%BD%9C.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/wolfdan666/BlogPic/master/SSD/%E7%A7%BB%E6%A4%8DUbuntu/fstab%E4%BF%AE%E6%94%B9.jpg">
-<meta property="og:updated_time" content="2019-09-22T14:09:18.741Z">
+<meta property="og:updated_time" content="2019-09-22T14:19:25.047Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="复制硬盘中的Ubuntu到移动硬盘_实现移动硬盘Deepin+Ubunntu双系统">
-<meta name="twitter:description" content="复制硬盘中的Ubuntu到移动硬盘_实现移动硬盘Deepin+Ubunntu双系统">
+<meta name="twitter:description" content="复制硬盘中的Ubuntu到移动硬盘_实现移动硬盘Deepin+Ubunntu双系统 进入磁盘管理，复制分区 (必)设置启动标签 生成新的UUID,然后修改fstab文件 可能出现的状况与解决方案 进了src盘的Ubuntu 卡在了进入的logo">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/wolfdan666/BlogPic/master/SSD/%E7%A7%BB%E6%A4%8DUbuntu/grub%E7%95%8C%E9%9D%A2.jpg">
 
 
@@ -438,7 +438,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.9k
+                  2k
                 </span>
               
 
@@ -462,7 +462,7 @@
 
           
               <div class="post-description">
-                  复制硬盘中的Ubuntu到移动硬盘_实现移动硬盘Deepin+Ubunntu双系统
+                  复制硬盘中的Ubuntu到移动硬盘_实现移动硬盘Deepin+Ubunntu双系统 进入磁盘管理，复制分区 (必)设置启动标签 生成新的UUID,然后修改fstab文件 可能出现的状况与解决方案 进了src盘的Ubuntu 卡在了进入的logo
               </div>
           
 
@@ -515,6 +515,7 @@
 <h4 id="待大佬贡献或者提问添加-1"><a href="#待大佬贡献或者提问添加-1" class="headerlink" title="待大佬贡献或者提问添加"></a>待大佬贡献或者提问添加</h4><h1 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h1><p>我在我的酷比魔方knote x上面直接F7直接进入SSD的引导一直失败，Live CD也无法<code>sudo update-grub</code>,于是便在knote x上面安装了Ubuntu+windows双系统，在那个Ubuntu下使用<code>sudo update-grub</code>来引导我的SSD中的Ubuntu，惊喜发现还能引导我的Deepin!</p>
 <p>为什么是惊喜呢？</p>
 <p>因为我之前Deepin 的安装盘也F7 直接选择硬盘进入进入不了，还以为运行不了Deepin，然后发现连SSD中的Ubuntu也引导不了!但网上说knote x是可以安装Ubuntu的，于是就认为是直接进入硬盘不太行，所以必须grub引导一下，所以有了上面操作，然后收获了也能引导Deepin的惊喜</p>
+<p>由于这周末在秦皇岛打2019CCPC秦皇岛，所以9月20就开始写了,但现在(2019年9月22日22:16:40)才写完这篇文章</p>
 
       
     </div>
@@ -820,7 +821,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">76.4k</span>
+    <span title="Site words total count">76.6k</span>
   
 </div>
 
