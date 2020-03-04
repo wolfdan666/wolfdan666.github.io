@@ -6,7 +6,8 @@ sum=0
 for n in `find . -name "*.md"`
 do
 	((sum++))
-	sed -i "s/https:\/\/raw.githubusercontent.com\/wolfdan666\/BlogPic\/master\//https:\/\/gitee.com\/wolfdan\/BlogPic\/raw\/master\//g" $n
+	#sed -i "s/https:\/\/raw.githubusercontent.com\/wolfdan666\/BlogPic\/master\//https:\/\/gitee.com\/wolfdan\/BlogPic\/raw\/master\//g" $n
+	sed -i "s/https:\/\/gitee.com\/wolfdan\/BlogPic\/raw\/master/https:\/\/www.wolfdan.cn\/img/g" $n
 done
 
 echo "操作了{$sum}个文件"
