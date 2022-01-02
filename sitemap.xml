@@ -2,6 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC139%E5%91%A8-139-521/</loc>
+    
+    <lastmod>2022-01-02T11:03:48.850Z</lastmod>
+    
+    <date>1641118592000</date>
+    <title>ARST打卡第139周[139/521] | 单林敏的博客</title>
+    
+    <desc>lc390_消除游戏 raft选举和提交动画 SO_REUSEADDR的使用 vsftpd的vsf_two_process_start源码分析</desc>
+  </url>
+  
+  <url>
     <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC138%E5%91%A8-138-521/</loc>
     
     <lastmod>2021-12-26T11:43:27.932Z</lastmod>
@@ -893,17 +904,6 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-8-100/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.789Z</lastmod>
-    
-    <date>1565688151000</date>
-    <title>银联挑战赛复赛A,B题_算法日常[8/100] | 单林敏的博客</title>
-    
-    <desc>银联挑战赛复赛A,B题,组合数学,隔板法,数学思维题,算法学习日常</desc>
-  </url>
-  
-  <url>
     <loc>https://www.wolfdan.cn/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-7-100/</loc>
     
     <lastmod>2020-09-13T13:42:58.789Z</lastmod>
@@ -912,6 +912,17 @@
     <title>2019牛客多校8_B题算法日常[7/100] | 单林敏的博客</title>
     
     <desc>2019牛客多校8_B题,思维题,算法学习日常,但求精进,无问西东</desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-8-100/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.789Z</lastmod>
+    
+    <date>1565688151000</date>
+    <title>银联挑战赛复赛A,B题_算法日常[8/100] | 单林敏的博客</title>
+    
+    <desc>银联挑战赛复赛A,B题,组合数学,隔板法,数学思维题,算法学习日常</desc>
   </url>
   
   <url>
@@ -1069,17 +1080,6 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-21-100/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.786Z</lastmod>
-    
-    <date>1567780988000</date>
-    <title>spoj_nsubstr_sam后缀自动机_算法日常[21/100] | 单林敏的博客</title>
-    
-    <desc>SAM后缀自动机刷题笔记 spoj_nsubstr_sam后缀自动机_算法日常 有时候状态差，但你不能放弃，因为算法不经历撕心裂肺的思考和试错，是没有生命力的</desc>
-  </url>
-  
-  <url>
     <loc>https://www.wolfdan.cn/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-20-100/</loc>
     
     <lastmod>2020-09-13T13:42:58.786Z</lastmod>
@@ -1088,6 +1088,17 @@
     <title>SPOJ-LCS,SPOJ-LCS2-后缀自动机SAM专题训练_算法日常[20/100] | 单林敏的博客</title>
     
     <desc>SAM后缀自动机刷题笔记 SPOJ-LCS,SPOJ-LCS2-后缀自动机SAM专题训练 没有自闭，何来爆爽！向自闭的日子致敬！</desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-21-100/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.786Z</lastmod>
+    
+    <date>1567780988000</date>
+    <title>spoj_nsubstr_sam后缀自动机_算法日常[21/100] | 单林敏的博客</title>
+    
+    <desc>SAM后缀自动机刷题笔记 spoj_nsubstr_sam后缀自动机_算法日常 有时候状态差，但你不能放弃，因为算法不经历撕心裂肺的思考和试错，是没有生命力的</desc>
   </url>
   
   <url>
@@ -1465,17 +1476,6 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/vector%E5%8F%96size%E9%97%AE%E9%A2%98/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.779Z</lastmod>
-    
-    <date>1576329626000</date>
-    <title>vector取size问题 | 单林敏的博客</title>
-    
-    <desc>A std::vector is a class. It's not the actual data, but a class that manages it. Use std::vector.size() to get the size of the actual data.</desc>
-  </url>
-  
-  <url>
     <loc>https://www.wolfdan.cn/%E4%B8%80%E5%85%83%E8%8E%B7%E5%8F%96%E6%97%B6%E5%85%89%E7%9B%B8%E5%86%8C%E7%9A%842T%E7%A9%BA%E9%97%B4/</loc>
     
     <lastmod>2020-09-13T13:42:58.779Z</lastmod>
@@ -1484,6 +1484,17 @@
     <title>一元获取2T相册视频空间 | 单林敏的博客</title>
     
     <desc>一元获取时光相册的2T空间 一元获取2T相册视频空间</desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/vector%E5%8F%96size%E9%97%AE%E9%A2%98/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.779Z</lastmod>
+    
+    <date>1576329626000</date>
+    <title>vector取size问题 | 单林敏的博客</title>
+    
+    <desc>A std::vector is a class. It's not the actual data, but a class that manages it. Use std::vector.size() to get the size of the actual data.</desc>
   </url>
   
   <url>
@@ -1575,17 +1586,6 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/git%E5%A4%87%E4%BB%BDwordpress/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.776Z</lastmod>
-    
-    <date>1562462548000</date>
-    <title>git备份wordpress | 单林敏的博客</title>
-    
-    <desc>git备份wordpress git定时备份wordpress bash脚本的一些写法坑点 crontab定时执行bash脚本来备份网站，删除过老的文件 mysql数据库备份</desc>
-  </url>
-  
-  <url>
     <loc>https://www.wolfdan.cn/hello-world/</loc>
     
     <lastmod>2020-09-13T13:42:58.776Z</lastmod>
@@ -1594,6 +1594,17 @@
     <title>Hello World | 单林敏的博客</title>
     
     <desc>Hexo搭建</desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/git%E5%A4%87%E4%BB%BDwordpress/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.776Z</lastmod>
+    
+    <date>1562462548000</date>
+    <title>git备份wordpress | 单林敏的博客</title>
+    
+    <desc>git备份wordpress git定时备份wordpress bash脚本的一些写法坑点 crontab定时执行bash脚本来备份网站，删除过老的文件 mysql数据库备份</desc>
   </url>
   
   <url>
@@ -1641,17 +1652,6 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/Sublime%E6%8F%92%E4%BB%B6%E5%8C%85%E6%97%A0%E6%B3%95%E5%AE%89%E8%A3%85%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.774Z</lastmod>
-    
-    <date>1559204112000</date>
-    <title>Sublime插件包无法安装问题解决 | 单林敏的博客</title>
-    
-    <desc>Sublime插件包无法安装 packagecontrol无法访问 重装packagecontorl 科学上网</desc>
-  </url>
-  
-  <url>
     <loc>https://www.wolfdan.cn/Windows%E4%B8%8B%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
     
     <lastmod>2020-09-13T13:42:58.774Z</lastmod>
@@ -1663,14 +1663,14 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/codeforces1101B-Accordion-%E8%B4%AA%E5%BF%83-%E7%8A%B6%E6%80%81%E6%9C%BA%E8%A7%A3%E9%A2%98%E6%B3%95-%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-34-100/</loc>
+    <loc>https://www.wolfdan.cn/Sublime%E6%8F%92%E4%BB%B6%E5%8C%85%E6%97%A0%E6%B3%95%E5%AE%89%E8%A3%85%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</loc>
     
     <lastmod>2020-09-13T13:42:58.774Z</lastmod>
     
-    <date>1570626238000</date>
-    <title>codeforces1101B. Accordion 贪心 状态机解题法 算法日常[34/100] | 单林敏的博客</title>
+    <date>1559204112000</date>
+    <title>Sublime插件包无法安装问题解决 | 单林敏的博客</title>
     
-    <desc>codeforces1101B. Accordion 贪心 状态机解题法 算法日常[34/100] tutorial比较巧妙,一般不易想到 设计状态机(详见下面的代码和解释)</desc>
+    <desc>Sublime插件包无法安装 packagecontrol无法访问 重装packagecontorl 科学上网</desc>
   </url>
   
   <url>
@@ -1682,6 +1682,17 @@
     <title>codeforces1207G Indie Album AC自动机-DFS-树状数组 算法日常[32/100] | 单林敏的博客</title>
     
     <desc>codeforces1207G Indie Album AC自动机-DFS-树状数组 给要题目中要查询的字符集建立AC自动机 通过dfs求出AC自动机的各节点的及其子节点的size大小,用于后面树状数组确定好匹配的区间 最后再通过DFS让我们要匹配的串去AC自动机上进行跑动,通过树状数组来计数 人生最美好的，就是在你停止生存时，也还能以你所创造的一切为人们服务。</desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/codeforces1101B-Accordion-%E8%B4%AA%E5%BF%83-%E7%8A%B6%E6%80%81%E6%9C%BA%E8%A7%A3%E9%A2%98%E6%B3%95-%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-34-100/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.774Z</lastmod>
+    
+    <date>1570626238000</date>
+    <title>codeforces1101B. Accordion 贪心 状态机解题法 算法日常[34/100] | 单林敏的博客</title>
+    
+    <desc>codeforces1101B. Accordion 贪心 状态机解题法 算法日常[34/100] tutorial比较巧妙,一般不易想到 设计状态机(详见下面的代码和解释)</desc>
   </url>
   
   <url>
@@ -1762,17 +1773,6 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/AcWing-245-%E4%BD%A0%E8%83%BD%E5%9B%9E%E7%AD%94%E8%BF%99%E4%BA%9B%E9%97%AE%E9%A2%98%E5%90%97/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.772Z</lastmod>
-    
-    <date>1564464848000</date>
-    <title>AcWing-245.你能回答这些问题吗 | 单林敏的博客</title>
-    
-    <desc>线段树入门题 第一次手写线段树的各种踩坑</desc>
-  </url>
-  
-  <url>
     <loc>https://www.wolfdan.cn/CF1082B-Vova-and-Trophies-%E8%B4%AA%E5%BF%83-%E7%8A%B6%E6%80%81%E6%9C%BA%E8%A7%A3%E9%A2%98%E6%B3%95-%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-33-100/</loc>
     
     <lastmod>2020-09-13T13:42:58.772Z</lastmod>
@@ -1781,6 +1781,17 @@
     <title>CF1082B. Vova and Trophies 贪心 状态机解题法 算法日常[33/100] | 单林敏的博客</title>
     
     <desc>CF1082B. Vova and Trophies 贪心 状态机解题法 算法日常[33/100] 互换一次两个奖杯的位置,然后求出最长的连续金杯的个数 tutorial左右序列前缀和很难想到 我们通过状态机的思路来解题 终有一天,你会静心下来,回忆着自己的刷题的时光,热泪盈眶!</desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/AcWing-245-%E4%BD%A0%E8%83%BD%E5%9B%9E%E7%AD%94%E8%BF%99%E4%BA%9B%E9%97%AE%E9%A2%98%E5%90%97/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.772Z</lastmod>
+    
+    <date>1564464848000</date>
+    <title>AcWing-245.你能回答这些问题吗 | 单林敏的博客</title>
+    
+    <desc>线段树入门题 第一次手写线段树的各种踩坑</desc>
   </url>
   
   <url>
@@ -1883,17 +1894,6 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC68%E5%91%A8-68-521/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.769Z</lastmod>
-    
-    <date>1598195739000</date>
-    <title>ARST打卡第68周[68/521] | 单林敏的博客</title>
-    
-    <desc>201_数字范围按位与 TED演讲：怎么才算成功的人生？如何才能走向成功？ [区块链] 共识算法之争（PBFT，Raft，PoW，PoS，DPoS，Ripple） 嵌套参数的参数校验</desc>
-  </url>
-  
-  <url>
     <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC69%E5%91%A8-69-521/</loc>
     
     <lastmod>2020-09-13T13:42:58.769Z</lastmod>
@@ -1902,6 +1902,17 @@
     <title>ARST打卡第69周[69/521] | 单林敏的博客</title>
     
     <desc>557_反转字符串中的单词3 赛琳娜·戈麦斯演讲：相信自己！ Python读写配置文件模块_configobj和configParser python 安装.whl、egg、zip、tar.gz安装包 我觉得如果你专注于自己，而不是无法控制的事，这会对你有所帮助</desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC68%E5%91%A8-68-521/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.769Z</lastmod>
+    
+    <date>1598195739000</date>
+    <title>ARST打卡第68周[68/521] | 单林敏的博客</title>
+    
+    <desc>201_数字范围按位与 TED演讲：怎么才算成功的人生？如何才能走向成功？ [区块链] 共识算法之争（PBFT，Raft，PoW，PoS，DPoS，Ripple） 嵌套参数的参数校验</desc>
   </url>
   
   <url>
@@ -1960,17 +1971,6 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC66%E5%91%A8-66-521/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.768Z</lastmod>
-    
-    <date>1596450486000</date>
-    <title>ARST打卡第66周[66/521] | 单林敏的博客</title>
-    
-    <desc>LeetCode/26_unique_删除排序数组中的重复项 TED演讲：金钱能买来幸福吗？ spec文件知识整理 延迟加载配置项</desc>
-  </url>
-  
-  <url>
     <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC65%E5%91%A8-65-521/</loc>
     
     <lastmod>2020-09-13T13:42:58.768Z</lastmod>
@@ -1979,6 +1979,17 @@
     <title>ARST打卡第65周[65/521] | 单林敏的博客</title>
     
     <desc>LeetCode/410_分割数组的最大值 TED演讲：怎么才能活的更幸福？ git pull时遇到error-cannot lock ref git commit之后，想撤销commit Git-命令行-拯救“Your local changes to the following files would be overwritten by checkout” GIt冲突解决 mongodb_in</desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC66%E5%91%A8-66-521/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.768Z</lastmod>
+    
+    <date>1596450486000</date>
+    <title>ARST打卡第66周[66/521] | 单林敏的博客</title>
+    
+    <desc>LeetCode/26_unique_删除排序数组中的重复项 TED演讲：金钱能买来幸福吗？ spec文件知识整理 延迟加载配置项</desc>
   </url>
   
   <url>
@@ -1993,17 +2004,6 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC39%E5%91%A8-39-521/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.767Z</lastmod>
-    
-    <date>1579437540000</date>
-    <title>ARST打卡第39周[39/521] | 单林敏的博客</title>
-    
-    <desc>LeetCode17_电话号码和字母组合 char转string 5 Signs You Are Wasting Your Life 林子雨主讲-《Spark编程基础》 如果我们太在意别人的看法，那我们很可能将会丢掉自己【自己的一些感受】</desc>
-  </url>
-  
-  <url>
     <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC38%E5%91%A8-38-521/</loc>
     
     <lastmod>2020-09-13T13:42:58.767Z</lastmod>
@@ -2012,6 +2012,17 @@
     <title>ARST打卡第38周[38/521] | 单林敏的博客</title>
     
     <desc>16_最接近的三数之和 Why should you learn Go? 子雨大数据之Spark入门教程（Scala版） next5.1升级到next7.7闲记日志</desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC39%E5%91%A8-39-521/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.767Z</lastmod>
+    
+    <date>1579437540000</date>
+    <title>ARST打卡第39周[39/521] | 单林敏的博客</title>
+    
+    <desc>LeetCode17_电话号码和字母组合 char转string 5 Signs You Are Wasting Your Life 林子雨主讲-《Spark编程基础》 如果我们太在意别人的看法，那我们很可能将会丢掉自己【自己的一些感受】</desc>
   </url>
   
   <url>
@@ -2026,17 +2037,6 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC32%E5%91%A8-32-521/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.766Z</lastmod>
-    
-    <date>1575161927000</date>
-    <title>ARST打卡第32周[32/521] | 单林敏的博客</title>
-    
-    <desc>刷<剑指offer> I just don’t want to be a software developer anymore 安徽省大数据网络赛大数据分析第二小题 别让自己"墙"了自己</desc>
-  </url>
-  
-  <url>
     <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC33%E5%91%A8-33-521/</loc>
     
     <lastmod>2020-09-13T13:42:58.766Z</lastmod>
@@ -2048,14 +2048,14 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC34%E5%91%A8-34-521/</loc>
+    <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC32%E5%91%A8-32-521/</loc>
     
     <lastmod>2020-09-13T13:42:58.766Z</lastmod>
     
-    <date>1576397971000</date>
-    <title>ARST打卡第34周[34/521]-思考专家的意义 | 单林敏的博客</title>
+    <date>1575161927000</date>
+    <title>ARST打卡第32周[32/521] | 单林敏的博客</title>
     
-    <desc>连续子数组最大和 FFT ERROR 1215 (HY000)-Cannot add foreign key constraint中关于collation列顺序思考排错过程 SQL双重否定 SQL中因为null导致的空结果 vector取size问题 把你的 VS Code 打造成 C++ 开发利器 是啊，生命永远会变得更加忙碌，所以从现在就应该开始让自己变得更好，学会感恩，爱，与成长</desc>
+    <desc>刷<剑指offer> I just don’t want to be a software developer anymore 安徽省大数据网络赛大数据分析第二小题 别让自己"墙"了自己</desc>
   </url>
   
   <url>
@@ -2067,6 +2067,17 @@
     <title>ARST打卡第35周[35/521] | 单林敏的博客</title>
     
     <desc>非递归实现前中后序遍历二叉树 You Shouldn’t Have to Be Good at Your Job 进程和线程的区别？ 各种排序的整理 eclipse搭建MapReduce代码编译环境+java.lang.NoClassDefFoundError-org/apache/hadoop/yarn/util/Apps</desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC34%E5%91%A8-34-521/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.766Z</lastmod>
+    
+    <date>1576397971000</date>
+    <title>ARST打卡第34周[34/521]-思考专家的意义 | 单林敏的博客</title>
+    
+    <desc>连续子数组最大和 FFT ERROR 1215 (HY000)-Cannot add foreign key constraint中关于collation列顺序思考排错过程 SQL双重否定 SQL中因为null导致的空结果 vector取size问题 把你的 VS Code 打造成 C++ 开发利器 是啊，生命永远会变得更加忙碌，所以从现在就应该开始让自己变得更好，学会感恩，爱，与成长</desc>
   </url>
   
   <url>
@@ -2125,17 +2136,6 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC27%E5%91%A8-27-521/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.764Z</lastmod>
-    
-    <date>1572099422000</date>
-    <title>ARST打卡第27周[27/521] | 单林敏的博客</title>
-    
-    <desc>ARST打卡第27周 打卡小半年了 How to Become the Best in the World at Something Linux太难了？软件都不会装？只是你的习惯在作祟--Linux安装软件的正确姿势 fatal-in unpopulated submodule XXX 以及 hexo themes 下一个文件夹无法git push解决方案 deepin重装系统后重建-deepin</desc>
-  </url>
-  
-  <url>
     <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC26%E5%91%A8-26-100/</loc>
     
     <lastmod>2020-09-13T13:42:58.764Z</lastmod>
@@ -2158,14 +2158,14 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC23%E5%91%A8-23-100/</loc>
+    <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC27%E5%91%A8-27-521/</loc>
     
-    <lastmod>2020-09-13T13:42:58.763Z</lastmod>
+    <lastmod>2020-09-13T13:42:58.764Z</lastmod>
     
-    <date>1569749168000</date>
-    <title>ARST打卡第23周[23/100] | 单林敏的博客</title>
+    <date>1572099422000</date>
+    <title>ARST打卡第27周[27/521] | 单林敏的博客</title>
     
-    <desc>ARST打卡 CodeForces585 E. Marbles tutorial算法日常[30/100] CodeForces585 B tutorial 详解_算法日常[28/100] CodeForces585 D Ticket Game tutorial算法日常[29/100] Deepin无法正常关机重启 linux下gitignore c++的生成文件 防火防盗防台部落 deepin/u</desc>
+    <desc>ARST打卡第27周 打卡小半年了 How to Become the Best in the World at Something Linux太难了？软件都不会装？只是你的习惯在作祟--Linux安装软件的正确姿势 fatal-in unpopulated submodule XXX 以及 hexo themes 下一个文件夹无法git push解决方案 deepin重装系统后重建-deepin</desc>
   </url>
   
   <url>
@@ -2180,6 +2180,17 @@
   </url>
   
   <url>
+    <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC21%E5%91%A8-21-521/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.763Z</lastmod>
+    
+    <date>1568555485000</date>
+    <title>ARST打卡第21周(21/521) | 单林敏的博客</title>
+    
+    <desc>ARST打卡 2019南昌网络赛Hello 2019(cf 750E)线段树 2019上海网络赛B_Light bulbs You’re Not Meant to Do What You Love 把Ubuntu16.04装进移动硬盘的惨痛实战 将Deepin-linux装进移动硬盘到任何其他电脑上使用 为什么要wp站停站,专注hexo站</desc>
+  </url>
+  
+  <url>
     <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC22%E5%91%A8-22-521/</loc>
     
     <lastmod>2020-09-13T13:42:58.763Z</lastmod>
@@ -2191,14 +2202,14 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC21%E5%91%A8-21-521/</loc>
+    <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC23%E5%91%A8-23-100/</loc>
     
     <lastmod>2020-09-13T13:42:58.763Z</lastmod>
     
-    <date>1568555485000</date>
-    <title>ARST打卡第21周(21/521) | 单林敏的博客</title>
+    <date>1569749168000</date>
+    <title>ARST打卡第23周[23/100] | 单林敏的博客</title>
     
-    <desc>ARST打卡 2019南昌网络赛Hello 2019(cf 750E)线段树 2019上海网络赛B_Light bulbs You’re Not Meant to Do What You Love 把Ubuntu16.04装进移动硬盘的惨痛实战 将Deepin-linux装进移动硬盘到任何其他电脑上使用 为什么要wp站停站,专注hexo站</desc>
+    <desc>ARST打卡 CodeForces585 E. Marbles tutorial算法日常[30/100] CodeForces585 B tutorial 详解_算法日常[28/100] CodeForces585 D Ticket Game tutorial算法日常[29/100] Deepin无法正常关机重启 linux下gitignore c++的生成文件 防火防盗防台部落 deepin/u</desc>
   </url>
   
   <url>
@@ -2224,17 +2235,6 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC18%E5%91%A8-18-521/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.762Z</lastmod>
-    
-    <date>1566633689000</date>
-    <title>ARST打卡第18周[18/521] | 单林敏的博客</title>
-    
-    <desc>ARST打卡 生活很苦，我偏要酷 是的，这也是杜月笙先生教给我的事情，成功需要代价 13 Things You Should Give Up If You Want To Be Successful HDU5008详解_后缀数组_二分_RMQ CCPC1003后缀数组+主席树</desc>
-  </url>
-  
-  <url>
     <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC17%E5%91%A8-17-521/</loc>
     
     <lastmod>2020-09-13T13:42:58.762Z</lastmod>
@@ -2243,6 +2243,17 @@
     <title>ARST打卡第17周[17/521] | 单林敏的博客</title>
     
     <desc>ARST打卡 银联挑战赛复赛A,B题_算法日常[8/100] 10进制矩阵快速幂-狼胆带你每天头铁一题算法日常[9/100] 折半搜索算法日常[10/521] 2019牛客多校9E题详解算法日常[11/100] 2019牛客多校10 B题算法日常[12/100] 2019牛客第十场F题详解算法日常[13/100]</desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC18%E5%91%A8-18-521/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.762Z</lastmod>
+    
+    <date>1566633689000</date>
+    <title>ARST打卡第18周[18/521] | 单林敏的博客</title>
+    
+    <desc>ARST打卡 生活很苦，我偏要酷 是的，这也是杜月笙先生教给我的事情，成功需要代价 13 Things You Should Give Up If You Want To Be Successful HDU5008详解_后缀数组_二分_RMQ CCPC1003后缀数组+主席树</desc>
   </url>
   
   <url>
@@ -2268,17 +2279,6 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/ARSTB%E6%89%93%E5%8D%A1%E7%AC%AC62%E5%91%A8-62-521/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.761Z</lastmod>
-    
-    <date>1593922238000</date>
-    <title>ARSTB打卡第62周[62/521] | 单林敏的博客</title>
-    
-    <desc>LeetCode/44_通配符匹配 TED演讲：为什么我们不快乐？ 幸福 = 现实 - 期望 Web开发 HTTP协议超级详解 Python MongoDB 《孩子，你慢慢来》</desc>
-  </url>
-  
-  <url>
     <loc>https://www.wolfdan.cn/ARSTB%E6%89%93%E5%8D%A1%E7%AC%AC61%E5%91%A8-61-521/</loc>
     
     <lastmod>2020-09-13T13:42:58.761Z</lastmod>
@@ -2287,6 +2287,17 @@
     <title>ARSTB打卡第61周[61/521] | 单林敏的博客</title>
     
     <desc>LeetCode124_二叉树中的最大路径和 如何克服人生中最大的障碍？ 【GPU】win10 (1050Ti)+anaconda3+python3.6+CUDA10.0+tensorflow-gpu2.1.0 Win10中CUDA、cuDNN的安装与卸载 Win10+1050Ti配置Tensorflow教程__不用GPU，真的GAN不动___配了两天 《异类-不一样的成功启示录》</desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/ARSTB%E6%89%93%E5%8D%A1%E7%AC%AC62%E5%91%A8-62-521/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.761Z</lastmod>
+    
+    <date>1593922238000</date>
+    <title>ARSTB打卡第62周[62/521] | 单林敏的博客</title>
+    
+    <desc>LeetCode/44_通配符匹配 TED演讲：为什么我们不快乐？ 幸福 = 现实 - 期望 Web开发 HTTP协议超级详解 Python MongoDB 《孩子，你慢慢来》</desc>
   </url>
   
   <url>
@@ -2312,17 +2323,6 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC14%E5%91%A8-14-521/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.761Z</lastmod>
-    
-    <date>1564223613000</date>
-    <title>ARST打卡第14周-14-521 | 单林敏的博客</title>
-    
-    <desc>ARST打卡第14周 线段树</desc>
-  </url>
-  
-  <url>
     <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC13%E5%91%A8-13-521/</loc>
     
     <lastmod>2020-09-13T13:42:58.761Z</lastmod>
@@ -2342,6 +2342,17 @@
     <title>ARST打卡第15周[15/521] | 单林敏的博客</title>
     
     <desc>ARST打卡第15周 推荐一个OIwiki网站 线段树入门-AcWing-245-你能回答这些问题吗 priority-queue和multiset异同以及线段树空树插入维护初见 8数码和15数码算法结论和延展 拓扑排序以及C++读取空行 反二分题的做法 China Has Started a Grand Experiment in AI Education. It Could Reshape H</desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC14%E5%91%A8-14-521/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.761Z</lastmod>
+    
+    <date>1564223613000</date>
+    <title>ARST打卡第14周-14-521 | 单林敏的博客</title>
+    
+    <desc>ARST打卡第14周 线段树</desc>
   </url>
   
   <url>
@@ -2378,17 +2389,6 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/ARSTB%E6%89%93%E5%8D%A1%E7%AC%AC56%E5%91%A8-56-521-%E3%80%8A%E4%BA%BA%E7%94%9F%E7%9A%84%E6%99%BA%E6%85%A7%C2%B7%E5%A6%82%E4%BD%95%E5%BA%A6%E8%BF%87%E5%B9%B8%E7%A6%8F%E7%9A%84%E4%B8%80%E7%94%9F%E3%80%8B/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.760Z</lastmod>
-    
-    <date>1589703126000</date>
-    <title>ARSTB打卡第56周[56/521]-《人生的智慧·如何度过幸福的一生》 | 单林敏的博客</title>
-    
-    <desc>栈弹出所有可能顺序 The Magic of the Early Morning 为什么HTTPS比HTTP更安全？ 初探布隆过滤器 32g_2个2t文件_qq号交集_腾讯后台场景面试题《人生的智慧·如何度过幸福的一生》</desc>
-  </url>
-  
-  <url>
     <loc>https://www.wolfdan.cn/ARSTB%E6%89%93%E5%8D%A1%E7%AC%AC57%E5%91%A8-57-521-%E3%80%8A%E7%88%B1%E7%9A%84%E5%8D%9A%E5%BC%88%E3%80%8B/</loc>
     
     <lastmod>2020-09-13T13:42:58.760Z</lastmod>
@@ -2411,6 +2411,17 @@
   </url>
   
   <url>
+    <loc>https://www.wolfdan.cn/ARSTB%E6%89%93%E5%8D%A1%E7%AC%AC56%E5%91%A8-56-521-%E3%80%8A%E4%BA%BA%E7%94%9F%E7%9A%84%E6%99%BA%E6%85%A7%C2%B7%E5%A6%82%E4%BD%95%E5%BA%A6%E8%BF%87%E5%B9%B8%E7%A6%8F%E7%9A%84%E4%B8%80%E7%94%9F%E3%80%8B/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.760Z</lastmod>
+    
+    <date>1589703126000</date>
+    <title>ARSTB打卡第56周[56/521]-《人生的智慧·如何度过幸福的一生》 | 单林敏的博客</title>
+    
+    <desc>栈弹出所有可能顺序 The Magic of the Early Morning 为什么HTTPS比HTTP更安全？ 初探布隆过滤器 32g_2个2t文件_qq号交集_腾讯后台场景面试题《人生的智慧·如何度过幸福的一生》</desc>
+  </url>
+  
+  <url>
     <loc>https://www.wolfdan.cn/ARSTB%E6%89%93%E5%8D%A1%E7%AC%AC59%E5%91%A8-59-521/</loc>
     
     <lastmod>2020-09-13T13:42:58.760Z</lastmod>
@@ -2419,17 +2430,6 @@
     <title>ARSTB打卡第59周[59/521] | 单林敏的博客</title>
     
     <desc>LeetCode/126_单词接龙2 TED演讲：为什么我们要勇敢地做古怪的自己？ How to Fix DNS_PROBE_FINISHED_NXDOMAIN in Chrome (7 Options) 转发表(MAC表)、ARP表、路由表总结 C++成员函数的重载、覆盖与隐藏详解 红黑树C++源码_学习笔记 《给青年的十二封信》</desc>
-  </url>
-  
-  <url>
-    <loc>https://www.wolfdan.cn/ARSTB%E6%89%93%E5%8D%A1%E7%AC%AC48%E5%91%A8-48-521/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.759Z</lastmod>
-    
-    <date>1584857198000</date>
-    <title>ARSTB打卡第48周[48/521] | 单林敏的博客</title>
-    
-    <desc>LeetCode/945_使数组唯一的最小增量 TED演讲：专注的艺术 6个迹象表明，你该离开最好的朋友了 深入理解指针数组、数组指针、函数指针、函数指针数组、指向函数指针数组的指针 从复数类实现中看到精髓 从String类实现中看到精髓 面向对象高级开发学习系列</desc>
   </url>
   
   <url>
@@ -2444,14 +2444,25 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/ARSTB%E6%89%93%E5%8D%A1%E7%AC%AC50%E5%91%A8-50-521/</loc>
+    <loc>https://www.wolfdan.cn/ARSTB%E6%89%93%E5%8D%A1%E7%AC%AC48%E5%91%A8-48-521/</loc>
     
     <lastmod>2020-09-13T13:42:58.759Z</lastmod>
     
-    <date>1586091418000</date>
-    <title>ARSTB打卡第50周[50/521] | 单林敏的博客</title>
+    <date>1584857198000</date>
+    <title>ARSTB打卡第48周[48/521] | 单林敏的博客</title>
     
-    <desc>LeetCode/460_LFU缓存 TED演讲：你想做什么样的工作? 走进侯捷的程序人生 C++STL与泛型编程高级-侯捷_学习笔记 侯捷——C++11新特性</desc>
+    <desc>LeetCode/945_使数组唯一的最小增量 TED演讲：专注的艺术 6个迹象表明，你该离开最好的朋友了 深入理解指针数组、数组指针、函数指针、函数指针数组、指向函数指针数组的指针 从复数类实现中看到精髓 从String类实现中看到精髓 面向对象高级开发学习系列</desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/ARSTB%E6%89%93%E5%8D%A1%E7%AC%AC49%E5%91%A8-49-521/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.759Z</lastmod>
+    
+    <date>1585466552000</date>
+    <title>ARSTB打卡第49周[49/521] | 单林敏的博客</title>
+    
+    <desc>LeetCode/203_移除链表元素 C++ 向上与向下类型转换 函数指针，指针函数，数组指针，指针数组_核心剖析 《C++ STL与泛型编程高级-侯捷》</desc>
   </url>
   
   <url>
@@ -2466,6 +2477,17 @@
   </url>
   
   <url>
+    <loc>https://www.wolfdan.cn/ARSTB%E6%89%93%E5%8D%A1%E7%AC%AC50%E5%91%A8-50-521/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.759Z</lastmod>
+    
+    <date>1586091418000</date>
+    <title>ARSTB打卡第50周[50/521] | 单林敏的博客</title>
+    
+    <desc>LeetCode/460_LFU缓存 TED演讲：你想做什么样的工作? 走进侯捷的程序人生 C++STL与泛型编程高级-侯捷_学习笔记 侯捷——C++11新特性</desc>
+  </url>
+  
+  <url>
     <loc>https://www.wolfdan.cn/ARSTB%E6%89%93%E5%8D%A1%E7%AC%AC52%E5%91%A8-52-521/</loc>
     
     <lastmod>2020-09-13T13:42:58.759Z</lastmod>
@@ -2474,17 +2496,6 @@
     <title>ARSTB打卡第52周[52/521] | 单林敏的博客</title>
     
     <desc>LeetCode466_统计重复个数 TED演讲：为什么70%的成功者都是性格内向？ Chrome 开发者工具(DevTools)中所有快捷方式列表 内存管理学习笔记 设计模式</desc>
-  </url>
-  
-  <url>
-    <loc>https://www.wolfdan.cn/ARSTB%E6%89%93%E5%8D%A1%E7%AC%AC49%E5%91%A8-49-521/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.759Z</lastmod>
-    
-    <date>1585466552000</date>
-    <title>ARSTB打卡第49周[49/521] | 单林敏的博客</title>
-    
-    <desc>LeetCode/203_移除链表元素 C++ 向上与向下类型转换 函数指针，指针函数，数组指针，指针数组_核心剖析 《C++ STL与泛型编程高级-侯捷》</desc>
   </url>
   
   <url>
@@ -2532,17 +2543,6 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/ARSTB%E6%89%93%E5%8D%A1%E7%AC%AC45%E5%91%A8-45-521/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.758Z</lastmod>
-    
-    <date>1583056656000</date>
-    <title>ARSTB打卡第45周[45/521] | 单林敏的博客</title>
-    
-    <desc>LeetCode225_C++用队列实现栈 "在什么山上唱什么歌",对于特定需求,写特定代码 JNI调用C++类的方式 脚本批量修改文件中链接的格式 apue中memstr.c的究极困惑解决 建议可以阅读《人人都在说慌》自己感兴趣部分,这本书让我对《被讨厌的勇气》有了更加多的好感</desc>
-  </url>
-  
-  <url>
     <loc>https://www.wolfdan.cn/ARSTB%E6%89%93%E5%8D%A1%E7%AC%AC44%E5%91%A8-44-521/</loc>
     
     <lastmod>2020-09-13T13:42:58.758Z</lastmod>
@@ -2551,6 +2551,17 @@
     <title>ARSTB打卡第44周[44/521] | 单林敏的博客</title>
     
     <desc>无重复字符的最长子串 A List of Fun Things You Can Build as a Developer 设置用户ID位是什么意思 Debian系__命令行中的基础软件包管理操作_来自Debian官网 函数指针和指针函数_整理 apue.h不存在,以及apue源码下载编译的解决方法 外排序-处理极大量数据的排序算法--5 亿整数的大文件排序的思路 《你总说没事,但我知道你偷偷哭过很</desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/ARSTB%E6%89%93%E5%8D%A1%E7%AC%AC45%E5%91%A8-45-521/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.758Z</lastmod>
+    
+    <date>1583056656000</date>
+    <title>ARSTB打卡第45周[45/521] | 单林敏的博客</title>
+    
+    <desc>LeetCode225_C++用队列实现栈 "在什么山上唱什么歌",对于特定需求,写特定代码 JNI调用C++类的方式 脚本批量修改文件中链接的格式 apue中memstr.c的究极困惑解决 建议可以阅读《人人都在说慌》自己感兴趣部分,这本书让我对《被讨厌的勇气》有了更加多的好感</desc>
   </url>
   
   <url>
