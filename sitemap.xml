@@ -2,6 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC166%E5%91%A8-166-521-%E9%95%BF%E6%9C%9F%E4%B8%8A%E5%8A%AA%E5%8A%9B%EF%BC%8C%E5%B9%B6%E5%8F%8A%E6%97%B6%E8%A1%8C%E4%B9%90/</loc>
+    
+    <lastmod>2022-07-10T16:19:09.654Z</lastmod>
+    
+    <date>1657462573000</date>
+    <title>ARST打卡第166周[166/521]-长期上努力，并及时行乐 | 单林敏的博客</title>
+    
+    <desc>lc741_摘樱桃 How hard should I push myself?长期上努力，并及时行乐 git切换到某个tag 对于go web中间件的个人理解</desc>
+  </url>
+  
+  <url>
     <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC165%E5%91%A8-165-521/</loc>
     
     <lastmod>2022-07-03T14:11:57.223Z</lastmod>
@@ -1102,23 +1113,23 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/links/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.793Z</lastmod>
-    
-    <date>1560066429000</date>
-    <title>友链 | 单林敏的博客</title>
-    
-    <desc></desc>
-  </url>
-  
-  <url>
     <loc>https://www.wolfdan.cn/tags/</loc>
     
     <lastmod>2020-09-13T13:42:58.793Z</lastmod>
     
     <date>1560066420000</date>
     <title>tags | 单林敏的博客</title>
+    
+    <desc></desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/links/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.793Z</lastmod>
+    
+    <date>1560066429000</date>
+    <title>友链 | 单林敏的博客</title>
     
     <desc></desc>
   </url>
@@ -1201,6 +1212,17 @@
   </url>
   
   <url>
+    <loc>https://www.wolfdan.cn/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-8-100/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.789Z</lastmod>
+    
+    <date>1565688151000</date>
+    <title>银联挑战赛复赛A,B题_算法日常[8/100] | 单林敏的博客</title>
+    
+    <desc>银联挑战赛复赛A,B题,组合数学,隔板法,数学思维题,算法学习日常</desc>
+  </url>
+  
+  <url>
     <loc>https://www.wolfdan.cn/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-9-100/</loc>
     
     <lastmod>2020-09-13T13:42:58.789Z</lastmod>
@@ -1220,17 +1242,6 @@
     <title>脚本批量修改文件中链接的格式 | 单林敏的博客</title>
     
     <desc>使用shell自动修改多个文件中的链接成为其他链接_shell的美妙</desc>
-  </url>
-  
-  <url>
-    <loc>https://www.wolfdan.cn/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-8-100/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.789Z</lastmod>
-    
-    <date>1565688151000</date>
-    <title>银联挑战赛复赛A,B题_算法日常[8/100] | 单林敏的博客</title>
-    
-    <desc>银联挑战赛复赛A,B题,组合数学,隔板法,数学思维题,算法学习日常</desc>
   </url>
   
   <url>
@@ -1355,17 +1366,6 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-20-100/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.786Z</lastmod>
-    
-    <date>1567664417000</date>
-    <title>SPOJ-LCS,SPOJ-LCS2-后缀自动机SAM专题训练_算法日常[20/100] | 单林敏的博客</title>
-    
-    <desc>SAM后缀自动机刷题笔记 SPOJ-LCS,SPOJ-LCS2-后缀自动机SAM专题训练 没有自闭，何来爆爽！向自闭的日子致敬！</desc>
-  </url>
-  
-  <url>
     <loc>https://www.wolfdan.cn/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-2-100/</loc>
     
     <lastmod>2020-09-13T13:42:58.786Z</lastmod>
@@ -1374,6 +1374,17 @@
     <title>反二分题的做法-算法日常[2/100] | 单林敏的博客</title>
     
     <desc>2019牛客多校6D题 算法学习日常 我的头铁(~~二分~~)写法,然后check还没写好,因为想骚操作但内力不足便走火入魔了..先二分，然后在这个ans下继续向小的方向枚举20项....人的基因把我们当做机器人..那就成为一个，不断进化，并快乐地享受其中的机器人吧</desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-20-100/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.786Z</lastmod>
+    
+    <date>1567664417000</date>
+    <title>SPOJ-LCS,SPOJ-LCS2-后缀自动机SAM专题训练_算法日常[20/100] | 单林敏的博客</title>
+    
+    <desc>SAM后缀自动机刷题笔记 SPOJ-LCS,SPOJ-LCS2-后缀自动机SAM专题训练 没有自闭，何来爆爽！向自闭的日子致敬！</desc>
   </url>
   
   <url>
@@ -1531,6 +1542,17 @@
   </url>
   
   <url>
+    <loc>https://www.wolfdan.cn/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%9B%BE%E5%BA%8A%EF%BC%8C%E5%B1%95%E7%A4%BAgit%E4%BB%93%E5%BA%93%E7%9A%84%E5%9B%BE%E7%89%87/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.783Z</lastmod>
+    
+    <date>1583315017000</date>
+    <title>服务器搭建个人图床，展示git仓库的图片 | 单林敏的博客</title>
+    
+    <desc>服务器搭建个人图床，展示git仓库的图片 location如果要一个特定的url(不是`/`的时候)要使用别名，不能用root，alias指定的目录是准确的，直接指向目标文件的物理地址 然后要启动图片浏览，文件下载，就必须使用`autoindex on;`</desc>
+  </url>
+  
+  <url>
     <loc>https://www.wolfdan.cn/%E7%89%9B%E5%AE%A2%E5%A4%9A%E6%A0%A1%E7%AC%AC%E4%B8%80%E5%9C%BA%E8%A1%A5%E9%A2%98%E7%AC%94%E8%AE%B0/</loc>
     
     <lastmod>2020-09-13T13:42:58.783Z</lastmod>
@@ -1553,14 +1575,14 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%9B%BE%E5%BA%8A%EF%BC%8C%E5%B1%95%E7%A4%BAgit%E4%BB%93%E5%BA%93%E7%9A%84%E5%9B%BE%E7%89%87/</loc>
+    <loc>https://www.wolfdan.cn/%E7%9C%9F%E7%9A%84%E6%9C%89%E5%BF%85%E8%A6%81%E6%8A%8A%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E5%88%B0%E5%A4%9A%E4%B8%AA%E5%B9%B3%E5%8F%B0%E5%90%97%EF%BC%9F/</loc>
     
     <lastmod>2020-09-13T13:42:58.783Z</lastmod>
     
-    <date>1583315017000</date>
-    <title>服务器搭建个人图床，展示git仓库的图片 | 单林敏的博客</title>
+    <date>1563283388000</date>
+    <title>真的有必要把文章发布到多个平台吗？ | 单林敏的博客</title>
     
-    <desc>服务器搭建个人图床，展示git仓库的图片 location如果要一个特定的url(不是`/`的时候)要使用别名，不能用root，alias指定的目录是准确的，直接指向目标文件的物理地址 然后要启动图片浏览，文件下载，就必须使用`autoindex on;`</desc>
+    <desc>关于个人建站之后自己的一些思索</desc>
   </url>
   
   <url>
@@ -1572,17 +1594,6 @@
     <title>后缀数组-算法学习日常[5/100] | 单林敏的博客</title>
     
     <desc>分享一个后缀数组的论文，很全，学了一天也没学完，发现自己之前学了三天的后缀数组又忘光了</desc>
-  </url>
-  
-  <url>
-    <loc>https://www.wolfdan.cn/%E7%9C%9F%E7%9A%84%E6%9C%89%E5%BF%85%E8%A6%81%E6%8A%8A%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E5%88%B0%E5%A4%9A%E4%B8%AA%E5%B9%B3%E5%8F%B0%E5%90%97%EF%BC%9F/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.783Z</lastmod>
-    
-    <date>1563283388000</date>
-    <title>真的有必要把文章发布到多个平台吗？ | 单林敏的博客</title>
-    
-    <desc>关于个人建站之后自己的一些思索</desc>
   </url>
   
   <url>
@@ -1630,6 +1641,17 @@
   </url>
   
   <url>
+    <loc>https://www.wolfdan.cn/%E5%85%B3%E4%BA%8E%E8%AE%A4%E7%9F%A5-%E8%B4%A2%E5%AF%8C-%E9%98%B6%E5%B1%82%E7%9A%84%E5%90%AC%E4%B9%A6blog%E8%AE%B0/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.781Z</lastmod>
+    
+    <date>1560166356000</date>
+    <title>关于认知,财富,阶层的听书blog记 | 单林敏的博客</title>
+    
+    <desc>听书4小时-李翔专栏《洛克菲勒》和一些得到日播以及罗胖的《终身学习》blog记</desc>
+  </url>
+  
+  <url>
     <loc>https://www.wolfdan.cn/%E5%86%99%E5%B0%81%E6%83%85%E4%B9%A6%E7%BB%99%E7%AE%97%E6%B3%951/</loc>
     
     <lastmod>2020-09-13T13:42:58.781Z</lastmod>
@@ -1652,14 +1674,14 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/%E5%85%B3%E4%BA%8E%E8%AE%A4%E7%9F%A5-%E8%B4%A2%E5%AF%8C-%E9%98%B6%E5%B1%82%E7%9A%84%E5%90%AC%E4%B9%A6blog%E8%AE%B0/</loc>
+    <loc>https://www.wolfdan.cn/%E5%9C%A8could-studio%E5%90%8C%E6%AD%A5%E5%86%99Hexo/</loc>
     
     <lastmod>2020-09-13T13:42:58.781Z</lastmod>
     
-    <date>1560166356000</date>
-    <title>关于认知,财富,阶层的听书blog记 | 单林敏的博客</title>
+    <date>1560702411000</date>
+    <title>在另一个终端上同步写Hexo | 单林敏的博客</title>
     
-    <desc>听书4小时-李翔专栏《洛克菲勒》和一些得到日播以及罗胖的《终身学习》blog记</desc>
+    <desc>在另一个终端上同步写Hexo 在Could Studio同步写Hexo 多平台备份Hexo 安装node.js CouldStudio如何防止环境丢失 debian/ubuntu/deepin安装nodejs,node,npm</desc>
   </url>
   
   <url>
@@ -1671,17 +1693,6 @@
     <title>复制硬盘中的Ubuntu/Deepin到移动硬盘_实现移动硬盘Deepin+Ubunntu双系统 | 单林敏的博客</title>
     
     <desc>复制硬盘中的Ubuntu到移动硬盘_实现移动硬盘Deepin+Ubunntu双系统 进入磁盘管理，复制分区 (必)设置启动标签 生成新的UUID,然后修改fstab文件 可能出现的状况与解决方案 进了src盘的Ubuntu 卡在了进入的logo 复制硬盘中的Deepin到SSD</desc>
-  </url>
-  
-  <url>
-    <loc>https://www.wolfdan.cn/%E5%9C%A8could-studio%E5%90%8C%E6%AD%A5%E5%86%99Hexo/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.781Z</lastmod>
-    
-    <date>1560702411000</date>
-    <title>在另一个终端上同步写Hexo | 单林敏的博客</title>
-    
-    <desc>在另一个终端上同步写Hexo 在Could Studio同步写Hexo 多平台备份Hexo 安装node.js CouldStudio如何防止环境丢失 debian/ubuntu/deepin安装nodejs,node,npm</desc>
   </url>
   
   <url>
@@ -1762,17 +1773,6 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/%E4%B8%80%E5%85%83%E8%8E%B7%E5%8F%96%E6%97%B6%E5%85%89%E7%9B%B8%E5%86%8C%E7%9A%842T%E7%A9%BA%E9%97%B4/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.779Z</lastmod>
-    
-    <date>1572062946000</date>
-    <title>一元获取2T相册视频空间 | 单林敏的博客</title>
-    
-    <desc>一元获取时光相册的2T空间 一元获取2T相册视频空间</desc>
-  </url>
-  
-  <url>
     <loc>https://www.wolfdan.cn/vector%E5%8F%96size%E9%97%AE%E9%A2%98/</loc>
     
     <lastmod>2020-09-13T13:42:58.779Z</lastmod>
@@ -1781,6 +1781,17 @@
     <title>vector取size问题 | 单林敏的博客</title>
     
     <desc>A std::vector is a class. It's not the actual data, but a class that manages it. Use std::vector.size() to get the size of the actual data.</desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/%E4%B8%80%E5%85%83%E8%8E%B7%E5%8F%96%E6%97%B6%E5%85%89%E7%9B%B8%E5%86%8C%E7%9A%842T%E7%A9%BA%E9%97%B4/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.779Z</lastmod>
+    
+    <date>1572062946000</date>
+    <title>一元获取2T相册视频空间 | 单林敏的博客</title>
+    
+    <desc>一元获取时光相册的2T空间 一元获取2T相册视频空间</desc>
   </url>
   
   <url>
@@ -1817,17 +1828,6 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/jsdelivr%E5%8A%A0%E9%80%9F%E8%B5%84%E6%BA%90%E5%8A%A0%E8%BD%BD-raw-github%E8%A2%ABban%E4%B9%8B%E5%90%8E%E5%A6%82%E4%BD%95%E8%AE%BF%E9%97%AEgithub%E8%B5%84%E6%BA%90/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.777Z</lastmod>
-    
-    <date>1583996052000</date>
-    <title>jsdelivr加速资源加载_raw.github被ban之后如何访问github资源 | 单林敏的博客</title>
-    
-    <desc>jsdelivr加速资源加载_raw.github被ban之后如何访问github资源 jsdelivr做图床</desc>
-  </url>
-  
-  <url>
     <loc>https://www.wolfdan.cn/linux%E4%B8%8Bgitignore-c-%E7%9A%84%E7%94%9F%E6%88%90%E6%96%87%E4%BB%B6/</loc>
     
     <lastmod>2020-09-13T13:42:58.777Z</lastmod>
@@ -1847,6 +1847,17 @@
     <title>linux在virtualbox安装macOS并优化使用 | 单林敏的博客</title>
     
     <desc>linux在virtualbox安装macOS并优化使用 虚拟机中macOS体验调优 VirtualBox配置</desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/jsdelivr%E5%8A%A0%E9%80%9F%E8%B5%84%E6%BA%90%E5%8A%A0%E8%BD%BD-raw-github%E8%A2%ABban%E4%B9%8B%E5%90%8E%E5%A6%82%E4%BD%95%E8%AE%BF%E9%97%AEgithub%E8%B5%84%E6%BA%90/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.777Z</lastmod>
+    
+    <date>1583996052000</date>
+    <title>jsdelivr加速资源加载_raw.github被ban之后如何访问github资源 | 单林敏的博客</title>
+    
+    <desc>jsdelivr加速资源加载_raw.github被ban之后如何访问github资源 jsdelivr做图床</desc>
   </url>
   
   <url>
@@ -1949,17 +1960,6 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/Windows%E4%B8%8B%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.774Z</lastmod>
-    
-    <date>1575687265000</date>
-    <title>Windows下导入导出数据库 | 单林敏的博客</title>
-    
-    <desc>Windows下导入导出数据库 mysqldump -u root -proot school > C:/Users/wolfdan666/Desktop/Blog/SQL/数据库/school.sql mysql -u root -proot school > C:/Users/wolfdan666/Desktop/Blog/SQL/数据库/school.sql</desc>
-  </url>
-  
-  <url>
     <loc>https://www.wolfdan.cn/codeforces1101B-Accordion-%E8%B4%AA%E5%BF%83-%E7%8A%B6%E6%80%81%E6%9C%BA%E8%A7%A3%E9%A2%98%E6%B3%95-%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-34-100/</loc>
     
     <lastmod>2020-09-13T13:42:58.774Z</lastmod>
@@ -1979,6 +1979,17 @@
     <title>codeforces1207G Indie Album AC自动机-DFS-树状数组 算法日常[32/100] | 单林敏的博客</title>
     
     <desc>codeforces1207G Indie Album AC自动机-DFS-树状数组 给要题目中要查询的字符集建立AC自动机 通过dfs求出AC自动机的各节点的及其子节点的size大小,用于后面树状数组确定好匹配的区间 最后再通过DFS让我们要匹配的串去AC自动机上进行跑动,通过树状数组来计数 人生最美好的，就是在你停止生存时，也还能以你所创造的一切为人们服务。</desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/Windows%E4%B8%8B%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.774Z</lastmod>
+    
+    <date>1575687265000</date>
+    <title>Windows下导入导出数据库 | 单林敏的博客</title>
+    
+    <desc>Windows下导入导出数据库 mysqldump -u root -proot school > C:/Users/wolfdan666/Desktop/Blog/SQL/数据库/school.sql mysql -u root -proot school > C:/Users/wolfdan666/Desktop/Blog/SQL/数据库/school.sql</desc>
   </url>
   
   <url>
@@ -2004,17 +2015,6 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/Linux%E8%BF%9B%E5%85%A5emergency%E6%A8%A1%E5%BC%8F-%E5%B9%B6%E4%B8%94root%E8%A2%AB%E9%94%81%E6%80%8E%E4%B9%88%E8%A7%A3%E5%86%B3/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.773Z</lastmod>
-    
-    <date>1570283903000</date>
-    <title>Linux进入emergency模式,并且root被锁怎么解决 | 单林敏的博客</title>
-    
-    <desc>Linux突然断电宕机,然后重启无法进入用户图形界面,Linux进入emergency模式,并且root被锁怎么解决</desc>
-  </url>
-  
-  <url>
     <loc>https://www.wolfdan.cn/ICP%E5%A4%87%E6%A1%88%E7%BB%8F%E5%8E%86%E4%B8%8E%E5%90%8E%E7%BB%AD-%E8%85%BE%E8%AE%AF%E4%BA%91%E7%9A%84%E5%9F%9F%E5%90%8D%EF%BC%8C%E5%8D%8E%E4%B8%BA%E4%BA%91%E4%B8%BB%E6%9C%BA%EF%BC%8C%E5%9C%A8%E5%8D%8E%E4%B8%BA%E4%BA%91%E5%A4%87%E6%A1%88/</loc>
     
     <lastmod>2020-09-13T13:42:58.773Z</lastmod>
@@ -2023,6 +2023,17 @@
     <title>ICP备案经历与后续-腾讯云的域名，华为云主机，在华为云备案 | 单林敏的博客</title>
     
     <desc>ICP备案经历与后续-腾讯云的域名，华为云主机，在华为云备案 将Hexo解析部署到华为云 后续体验</desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/Linux%E8%BF%9B%E5%85%A5emergency%E6%A8%A1%E5%BC%8F-%E5%B9%B6%E4%B8%94root%E8%A2%AB%E9%94%81%E6%80%8E%E4%B9%88%E8%A7%A3%E5%86%B3/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.773Z</lastmod>
+    
+    <date>1570283903000</date>
+    <title>Linux进入emergency模式,并且root被锁怎么解决 | 单林敏的博客</title>
+    
+    <desc>Linux突然断电宕机,然后重启无法进入用户图形界面,Linux进入emergency模式,并且root被锁怎么解决</desc>
   </url>
   
   <url>
@@ -2045,17 +2056,6 @@
     <title>ARST打卡第十周(10-521) | 单林敏的博客</title>
     
     <desc>ARST打卡 如何快乐生活,忙而不碌 关于facebook发布Libra我们应该给予高度关注，因为这个可能影响整个世界，金融界，技术界，以及国家战略，国际垄断等等都有可能会发生巨变</desc>
-  </url>
-  
-  <url>
-    <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC%E5%9B%9B%E5%91%A8-4-521/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.772Z</lastmod>
-    
-    <date>1558167506000</date>
-    <title>ARST打卡第四周(4/521) | 单林敏的博客</title>
-    
-    <desc>ARST打卡 wordpress使用markdown教程 ARST打卡 WP Editor.MD wolfdan.cn 个人建站 小站</desc>
   </url>
   
   <url>
@@ -2089,6 +2089,17 @@
     <title>Deepin无法正常关机重启 | 单林敏的博客</title>
     
     <desc>Deepin无法正常关机重启</desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC%E5%9B%9B%E5%91%A8-4-521/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.772Z</lastmod>
+    
+    <date>1558167506000</date>
+    <title>ARST打卡第四周(4/521) | 单林敏的博客</title>
+    
+    <desc>ARST打卡 wordpress使用markdown教程 ARST打卡 WP Editor.MD wolfdan.cn 个人建站 小站</desc>
   </url>
   
   <url>
@@ -2169,6 +2180,17 @@
   </url>
   
   <url>
+    <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC67%E5%91%A8-67-521/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.769Z</lastmod>
+    
+    <date>1597591027000</date>
+    <title>ARST打卡第67周[67/521] | 单林敏的博客</title>
+    
+    <desc>LeetCode/546_移除盒子 如何成为强大的思考者？ Ganesha详解 nfs-ganesha NFS-Ganesha 核心架构解读 NFS Ganesha_Export Ceph Data via NFS 匹配某行，在下一行添加 git要把修改转移到另外的分支，但直接跳转分支失败</desc>
+  </url>
+  
+  <url>
     <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC68%E5%91%A8-68-521/</loc>
     
     <lastmod>2020-09-13T13:42:58.769Z</lastmod>
@@ -2199,17 +2221,6 @@
     <title>ARST打卡第70周[70/521] | 单林敏的博客</title>
     
     <desc>华为笔试 TED演讲：高效学习的关键 RPC简介及框架选择 brpc</desc>
-  </url>
-  
-  <url>
-    <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC67%E5%91%A8-67-521/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.769Z</lastmod>
-    
-    <date>1597591027000</date>
-    <title>ARST打卡第67周[67/521] | 单林敏的博客</title>
-    
-    <desc>LeetCode/546_移除盒子 如何成为强大的思考者？ Ganesha详解 nfs-ganesha NFS-Ganesha 核心架构解读 NFS Ganesha_Export Ceph Data via NFS 匹配某行，在下一行添加 git要把修改转移到另外的分支，但直接跳转分支失败</desc>
   </url>
   
   <url>
@@ -2301,17 +2312,6 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC40%E5%91%A8-40-521/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.767Z</lastmod>
-    
-    <date>1579959629000</date>
-    <title>ARST打卡第40周[40/521] | 单林敏的博客</title>
-    
-    <desc>LeetCode/18_四数之和 当涉及高效能时，为什么大多数人都会犯错？ 百分之三的人能够达成非凡的成就，如果你不能打破常规，打破行规，你就会变成剩下的百分之九十七 vmware 虚拟机三种网络模式—“桥接、NAT 、仅主机”区别？ VM虚拟机仅主机模式上网络</desc>
-  </url>
-  
-  <url>
     <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC39%E5%91%A8-39-521/</loc>
     
     <lastmod>2020-09-13T13:42:58.767Z</lastmod>
@@ -2320,6 +2320,17 @@
     <title>ARST打卡第39周[39/521] | 单林敏的博客</title>
     
     <desc>LeetCode17_电话号码和字母组合 char转string 5 Signs You Are Wasting Your Life 林子雨主讲-《Spark编程基础》 如果我们太在意别人的看法，那我们很可能将会丢掉自己【自己的一些感受】</desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC40%E5%91%A8-40-521/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.767Z</lastmod>
+    
+    <date>1579959629000</date>
+    <title>ARST打卡第40周[40/521] | 单林敏的博客</title>
+    
+    <desc>LeetCode/18_四数之和 当涉及高效能时，为什么大多数人都会犯错？ 百分之三的人能够达成非凡的成就，如果你不能打破常规，打破行规，你就会变成剩下的百分之九十七 vmware 虚拟机三种网络模式—“桥接、NAT 、仅主机”区别？ VM虚拟机仅主机模式上网络</desc>
   </url>
   
   <url>
@@ -2686,17 +2697,6 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/ARSTB%E6%89%93%E5%8D%A1%E7%AC%AC58%E5%91%A8-58-521/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.760Z</lastmod>
-    
-    <date>1590661539000</date>
-    <title>ARSTB打卡第58周[58/521] | 单林敏的博客</title>
-    
-    <desc>LeetCode/93_复原IP地址 如何改变思维方式并选择自己的未来 深入浅出变长结构体 RAII原理介绍 C++11的右值引用 C++面试实现string类_一种正确写法 《穷查理宝典》</desc>
-  </url>
-  
-  <url>
     <loc>https://www.wolfdan.cn/ARSTB%E6%89%93%E5%8D%A1%E7%AC%AC57%E5%91%A8-57-521-%E3%80%8A%E7%88%B1%E7%9A%84%E5%8D%9A%E5%BC%88%E3%80%8B/</loc>
     
     <lastmod>2020-09-13T13:42:58.760Z</lastmod>
@@ -2705,6 +2705,17 @@
     <title>ARSTB打卡第57周[57/521]-《爱的博弈》 | 单林敏的博客</title>
     
     <desc>深信服cpp的F卷 TED演讲：永不言弃！ 如何解决 GitHub 提交次数过多 .git 文件过大的问题？ 升级CMake版本从2.8.11到3.6.2 CentOS Linux 知乎“勃学”亚文化的模因与迷思，看见更多思想的可能，取之精华，去其糟粕 《爱的博弈》</desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/ARSTB%E6%89%93%E5%8D%A1%E7%AC%AC58%E5%91%A8-58-521/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.760Z</lastmod>
+    
+    <date>1590661539000</date>
+    <title>ARSTB打卡第58周[58/521] | 单林敏的博客</title>
+    
+    <desc>LeetCode/93_复原IP地址 如何改变思维方式并选择自己的未来 深入浅出变长结构体 RAII原理介绍 C++11的右值引用 C++面试实现string类_一种正确写法 《穷查理宝典》</desc>
   </url>
   
   <url>
@@ -2752,17 +2763,6 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/ARSTB%E6%89%93%E5%8D%A1%E7%AC%AC51%E5%91%A8-51-521/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.759Z</lastmod>
-    
-    <date>1586680667000</date>
-    <title>ARSTB打卡第51周[51/521] | 单林敏的博客</title>
-    
-    <desc>LeetCode/面试题_16.03._交点 If you do that journey(disciplined life) , you will get to have the life you deserve. TED演讲：如何摆脱“快乐陷阱”？ sizeof()计算嵌套结构体 侯捷 讲解C++内存管理（全60集）</desc>
-  </url>
-  
-  <url>
     <loc>https://www.wolfdan.cn/ARSTB%E6%89%93%E5%8D%A1%E7%AC%AC50%E5%91%A8-50-521/</loc>
     
     <lastmod>2020-09-13T13:42:58.759Z</lastmod>
@@ -2771,6 +2771,17 @@
     <title>ARSTB打卡第50周[50/521] | 单林敏的博客</title>
     
     <desc>LeetCode/460_LFU缓存 TED演讲：你想做什么样的工作? 走进侯捷的程序人生 C++STL与泛型编程高级-侯捷_学习笔记 侯捷——C++11新特性</desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/ARSTB%E6%89%93%E5%8D%A1%E7%AC%AC51%E5%91%A8-51-521/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.759Z</lastmod>
+    
+    <date>1586680667000</date>
+    <title>ARSTB打卡第51周[51/521] | 单林敏的博客</title>
+    
+    <desc>LeetCode/面试题_16.03._交点 If you do that journey(disciplined life) , you will get to have the life you deserve. TED演讲：如何摆脱“快乐陷阱”？ sizeof()计算嵌套结构体 侯捷 讲解C++内存管理（全60集）</desc>
   </url>
   
   <url>
@@ -2818,17 +2829,6 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/ARSTB%E6%89%93%E5%8D%A1%E7%AC%AC43%E5%91%A8-43-521/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.758Z</lastmod>
-    
-    <date>1581847358000</date>
-    <title>ARSTB打卡第43周[43/521] | 单林敏的博客</title>
-    
-    <desc>LeetCode/22_括号生成 Four Ways to Know if You're a Great Software Engineer 对于问题和代码核心，要有主人翁意识 北京大学肖臻老师《区块链技术与应用》公开课 Golang中学到的Code哲学《被讨厌的勇气》读书心得分享</desc>
-  </url>
-  
-  <url>
     <loc>https://www.wolfdan.cn/ARSTB%E6%89%93%E5%8D%A1%E7%AC%AC44%E5%91%A8-44-521/</loc>
     
     <lastmod>2020-09-13T13:42:58.758Z</lastmod>
@@ -2837,6 +2837,17 @@
     <title>ARSTB打卡第44周[44/521] | 单林敏的博客</title>
     
     <desc>无重复字符的最长子串 A List of Fun Things You Can Build as a Developer 设置用户ID位是什么意思 Debian系__命令行中的基础软件包管理操作_来自Debian官网 函数指针和指针函数_整理 apue.h不存在,以及apue源码下载编译的解决方法 外排序-处理极大量数据的排序算法--5 亿整数的大文件排序的思路 《你总说没事,但我知道你偷偷哭过很</desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/ARSTB%E6%89%93%E5%8D%A1%E7%AC%AC43%E5%91%A8-43-521/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.758Z</lastmod>
+    
+    <date>1581847358000</date>
+    <title>ARSTB打卡第43周[43/521] | 单林敏的博客</title>
+    
+    <desc>LeetCode/22_括号生成 Four Ways to Know if You're a Great Software Engineer 对于问题和代码核心，要有主人翁意识 北京大学肖臻老师《区块链技术与应用》公开课 Golang中学到的Code哲学《被讨厌的勇气》读书心得分享</desc>
   </url>
   
   <url>
