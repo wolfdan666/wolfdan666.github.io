@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.wolfdan.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.8.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="lc636_函数的独占时间_栈模拟 concurrence in go的英文原文的最后一节 work stealing  golang yaml解析添加默认值与校验 concurrence in go简单读书笔记分享">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ARST打卡第170周[170&#x2F;521]">
+<meta property="og:url" content="https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC170%E5%91%A8-170-521/">
+<meta property="og:site_name" content="单林敏的博客">
+<meta property="og:description" content="lc636_函数的独占时间_栈模拟 concurrence in go的英文原文的最后一节 work stealing  golang yaml解析添加默认值与校验 concurrence in go简单读书笔记分享">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-08-07T13:35:31.000Z">
+<meta property="article:modified_time" content="2022-08-07T15:32:48.050Z">
+<meta property="article:author" content="单林敏">
+<meta property="article:tag" content="ARST">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC170%E5%91%A8-170-521/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC170%E5%91%A8-170-521/","path":"ARST打卡第170周-170-521/","title":"ARST打卡第170周[170/521]"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>ARST打卡第170周[170/521] | 单林敏的博客</title>
+  
+
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?953c0cc2db0f1124313d72b95b9d07e1"></script>
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">单林敏的博客</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">wolfdan's blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-捐赠"><a href="/%E6%8D%90%E8%B5%A0/" rel="section"><i class="fa fa-coins fa-fw"></i>捐赠</a></li>
+        <li class="menu-item menu-item-冲冲"><a href="/%E5%86%B2%E5%86%B2%E5%86%B2/" rel="section"><i class="fa fa-rocket fa-fw"></i>冲冲</a></li>
+        <li class="menu-item menu-item-友链"><a href="/links/" rel="section"><i class="fa fa-link fa-fw"></i>友链</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Algorithm"><span class="nav-number">1.</span> <span class="nav-text">Algorithm</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Review"><span class="nav-number">2.</span> <span class="nav-text">Review</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tips"><span class="nav-number">3.</span> <span class="nav-text">Tips</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Share"><span class="nav-number">4.</span> <span class="nav-text">Share</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9F%E7%8E%87%E9%99%90%E5%88%B6"><span class="nav-number">4.1.</span> <span class="nav-text">速率限制</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="单林敏"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">单林敏</p>
+  <div class="site-description" itemprop="description">心外无物,知行合一</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">262</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">93</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/wolfdan666" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;wolfdan666" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:wolfdan666666@gmail.com" title="E-Mail → mailto:wolfdan666666@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/shanlinmin/activities" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;shanlinmin&#x2F;activities" rel="noopener" target="_blank"><i class="free-code-camp fa-fw"></i>知乎</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.jianshu.com/u/53acec957bf9" title="简书 → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;53acec957bf9" rel="noopener" target="_blank"><i class="book fa-fw"></i>简书</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://me.csdn.net/neve_give_up_dan" title="CSDN → https:&#x2F;&#x2F;me.csdn.net&#x2F;neve_give_up_dan" rel="noopener" target="_blank"><i class="rotate-right fa-fw"></i>CSDN</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC170%E5%91%A8-170-521/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="单林敏">
+      <meta itemprop="description" content="心外无物,知行合一">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="单林敏的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ARST打卡第170周[170/521]
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-08-07 21:35:31 / 修改时间：23:32:48" itemprop="dateCreated datePublished" datetime="2022-08-07T21:35:31+08:00">2022-08-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/ARST/" itemprop="url" rel="index"><span itemprop="name">ARST</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+            <div class="post-description">lc636_函数的独占时间_栈模拟 concurrence in go的英文原文的最后一节 work stealing  golang yaml解析添加默认值与校验 concurrence in go简单读书笔记分享</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h1><p>lc636_函数的独占时间_栈模拟</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">题解思路:</span></span><br><span class="line"><span class="comment">感觉就是模拟一个stack的调用，然后end用数字加一去操作.</span></span><br><span class="line"><span class="comment">__好久没写了，看题到AC1小时，离大谱，还是要多练.</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">exclusiveTime</span><span class="params">(n <span class="keyword">int</span>, logs []<span class="keyword">string</span>)</span> []<span class="title">int</span></span> &#123;</span><br><span class="line">	stack := <span class="built_in">make</span>([]<span class="keyword">int</span>, <span class="number">0</span>, n)</span><br><span class="line">	ans := <span class="built_in">make</span>([]<span class="keyword">int</span>, n)</span><br><span class="line">	splitLog := <span class="function"><span class="keyword">func</span><span class="params">(in <span class="keyword">string</span>)</span> <span class="params">(funcID <span class="keyword">int</span>, opStr <span class="keyword">string</span>, index <span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">		res := strings.Split(in, <span class="string">&quot;:&quot;</span>)</span><br><span class="line">		<span class="keyword">if</span> <span class="built_in">len</span>(res) != <span class="number">3</span> &#123;</span><br><span class="line">			<span class="built_in">panic</span>(res)</span><br><span class="line">		&#125;</span><br><span class="line">		funcID, err := strconv.Atoi(res[<span class="number">0</span>])</span><br><span class="line">		<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">			<span class="built_in">panic</span>(err)</span><br><span class="line">		&#125;</span><br><span class="line">		opStr = res[<span class="number">1</span>]</span><br><span class="line">		index, err = strconv.Atoi(res[<span class="number">2</span>])</span><br><span class="line">		<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">			<span class="built_in">panic</span>(err)</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span></span><br><span class="line">	&#125;</span><br><span class="line">	preFuncID, preOpStr, preIndex := splitLog(logs[<span class="number">0</span>])</span><br><span class="line">	stack = <span class="built_in">append</span>(stack, preFuncID)</span><br><span class="line">	<span class="keyword">if</span> preOpStr != <span class="string">&quot;start&quot;</span> &#123;</span><br><span class="line">		<span class="built_in">panic</span>(<span class="string">&quot;first opStr != start&quot;</span>)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> _, log := <span class="keyword">range</span> logs[<span class="number">1</span>:] &#123;</span><br><span class="line">		funcID, opStr, index := splitLog(log)</span><br><span class="line">		<span class="comment">// fmt.Println(funcID, opStr, index)</span></span><br><span class="line">		<span class="keyword">if</span> opStr != <span class="string">&quot;start&quot;</span> &#123;</span><br><span class="line">			<span class="keyword">if</span> funcID != preFuncID &#123;</span><br><span class="line">				errMsg := fmt.Sprintf(<span class="string">&quot;stack funcID %v not match preFuncID %v\n&quot;</span>,</span><br><span class="line">					funcID, preFuncID)</span><br><span class="line">				<span class="built_in">panic</span>(errMsg)</span><br><span class="line">			&#125;</span><br><span class="line">			index++</span><br><span class="line">			ans[funcID] += index - preIndex</span><br><span class="line">			<span class="comment">// fmt.Println(funcID, ans[funcID])</span></span><br><span class="line">			stack = stack[:<span class="built_in">len</span>(stack)<span class="number">-1</span>]</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">if</span> preFuncID &gt; <span class="number">-1</span> &#123;</span><br><span class="line">				ans[preFuncID] += index - preIndex</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">// fmt.Println(preFuncID, ans[preFuncID])</span></span><br><span class="line">			stack = <span class="built_in">append</span>(stack, funcID)</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> <span class="built_in">len</span>(stack) &gt; <span class="number">0</span> &#123;</span><br><span class="line">			preFuncID, preOpStr, preIndex = stack[<span class="built_in">len</span>(stack)<span class="number">-1</span>], opStr, index</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="comment">// WA了一发，因为没处理这里</span></span><br><span class="line">			preFuncID, preOpStr, preIndex = <span class="number">-1</span>, opStr, index</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> ans</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">题解比我简洁一点，学习</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">exclusiveTime_ans</span><span class="params">(n <span class="keyword">int</span>, logs []<span class="keyword">string</span>)</span> []<span class="title">int</span></span> &#123;</span><br><span class="line">	ans := <span class="built_in">make</span>([]<span class="keyword">int</span>, n)</span><br><span class="line">	<span class="keyword">type</span> pair <span class="keyword">struct</span>&#123; idx, timestamp <span class="keyword">int</span> &#125;</span><br><span class="line">	st := []pair&#123;&#125;</span><br><span class="line">	<span class="keyword">for</span> _, log := <span class="keyword">range</span> logs &#123;</span><br><span class="line">		sp := strings.Split(log, <span class="string">&quot;:&quot;</span>)</span><br><span class="line">		idx, _ := strconv.Atoi(sp[<span class="number">0</span>])</span><br><span class="line">		timestamp, _ := strconv.Atoi(sp[<span class="number">2</span>])</span><br><span class="line">		<span class="keyword">if</span> sp[<span class="number">1</span>][<span class="number">0</span>] == <span class="string">&#x27;s&#x27;</span> &#123;</span><br><span class="line">			<span class="keyword">if</span> <span class="built_in">len</span>(st) &gt; <span class="number">0</span> &#123;</span><br><span class="line">				ans[st[<span class="built_in">len</span>(st)<span class="number">-1</span>].idx] += timestamp - st[<span class="built_in">len</span>(st)<span class="number">-1</span>].timestamp</span><br><span class="line">				st[<span class="built_in">len</span>(st)<span class="number">-1</span>].timestamp = timestamp</span><br><span class="line">			&#125;</span><br><span class="line">			st = <span class="built_in">append</span>(st, pair&#123;idx, timestamp&#125;)</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			p := st[<span class="built_in">len</span>(st)<span class="number">-1</span>]</span><br><span class="line">			st = st[:<span class="built_in">len</span>(st)<span class="number">-1</span>]</span><br><span class="line">			ans[p.idx] += timestamp - p.timestamp + <span class="number">1</span></span><br><span class="line">			<span class="keyword">if</span> <span class="built_in">len</span>(st) &gt; <span class="number">0</span> &#123;</span><br><span class="line">				st[<span class="built_in">len</span>(st)<span class="number">-1</span>].timestamp = timestamp + <span class="number">1</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ans</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h1><p>concurrence in go的英文原文的最后一节 work stealing</p>
+<p>All things considered, stealing continuations are considered to be theoretically supe‐ rior to stealing tasks, and therefore it is best to queue the continuation and not the goroutine</p>
+<p>综合考虑所有因素，偷接被认为在理论上优于偷接任务，因此最好是排队继续而不是goroutine</p>
+<p>So why don’t all work-stealing algorithms implement continuation stealing? Well, continuation stealing usually requires support from the compiler. Luckily, Go has its own compiler, and continuation stealing is how Go’s work-stealing algorithm is implemented. Languages that don’t have this luxury usually implement task, or socalled “child, ” stealing as a library.</p>
+<p>那么，为什么不是所有的工作窃取算法都实现了延续窃取呢?嗯，延续窃取通常需要编译器的支持。幸运的是，Go有自己的编译器，延续窃取是Go工作窃取算法的实现方式。没有这种奢侈的语言通常实现任务，或所谓的“孩子”，窃取作为一个库。</p>
+<p>感觉go自己实现运行时的好处还是挺多的: </p>
+<ul>
+<li>可以work stealing, 让协程切换使得并发效率更好</li>
+<li>可以动态调整堆栈大小</li>
+</ul>
+<p>综合来看都是为goroutine服务，良好的并发</p>
+<h1 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h1><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7104309419424350221">golang yaml解析添加默认值与校验</a></p>
+<p>通过转成json来做校验和默认值的绕过方式还是挺机智的</p>
+<h1 id="Share"><a href="#Share" class="headerlink" title="Share"></a>Share</h1><p>concurrence in go简单读书笔记分享</p>
+<h2 id="速率限制"><a href="#速率限制" class="headerlink" title="速率限制"></a>速率限制</h2><p>如果你曾经使用过API来获取服务，那么你可能经受过与速率限制相抗衡。速率限制使得某种资源每次访问的次数受限。资源可以是任何东西：API连接，磁盘I/O，网络包，错误。</p>
+<p>你有没有想过为什么会需要制定速率限制？为什么不允许无限制地访问系统？最明显的答案是，通过对系统进行速率限制，可以防止整个系统遭受攻击。如果恶意用户可以在他们的资源允许的情况下极快地访问你的系统，那么他们可以做各种事情。</p>
+<p>例如，他们可以用日志消息或有效的请求填满服务器的磁盘。<strong>如果你的日志配置错误，他们甚至可能会执行恶意的操作，然后提交足够的请求，将任何活动记录从日志中移出并放入/dev/null中导致日志系统完全崩溃。他们可能试图暴力访问资源，或者执行分布式拒绝服务攻击。如果你没有对系统进行请求限制，你的系统就成了一个走在街上不穿衣服的大美女。（这个例子过于形象了，离谱）</strong></p>
+<p>后面的文章要结合代码和运行结果仔细看，所以推荐看原文，实现之后，还是很优美的</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Open</span><span class="params">()</span> *<span class="title">APIConnection</span></span> &#123;</span><br><span class="line">	<span class="keyword">return</span> &amp;APIConnection&#123;</span><br><span class="line">		apiLimit: MultiLimiter( <span class="comment">//1</span></span><br><span class="line">			rate.NewLimiter(Per(<span class="number">2</span>, time.Second), <span class="number">2</span>),</span><br><span class="line">			rate.NewLimiter(Per(<span class="number">10</span>, time.Minute), <span class="number">10</span>)),</span><br><span class="line">		diskLimit:    MultiLimiter(rate.NewLimiter(rate.Limit(<span class="number">1</span>), <span class="number">1</span>)),      <span class="comment">//2</span></span><br><span class="line">		networkLimit: MultiLimiter(rate.NewLimiter(Per(<span class="number">3</span>, time.Second), <span class="number">3</span>)) <span class="comment">//3</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> APIConnection <span class="keyword">struct</span> &#123;</span><br><span class="line">	networkLimit,</span><br><span class="line">	diskLimit,</span><br><span class="line">	apiLimit RateLimiter</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(a *APIConnection)</span> <span class="title">ReadFile</span><span class="params">(ctx context.Context)</span> <span class="title">error</span></span> &#123;</span><br><span class="line">	err := MultiLimiter(a.apiLimit, a.diskLimit).Wait(ctx) <span class="comment">//4</span></span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> err</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// Pretend we do work here</span></span><br><span class="line">	<span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(a *APIConnection)</span> <span class="title">ResolveAddress</span><span class="params">(ctx context.Context)</span> <span class="title">error</span></span> &#123;</span><br><span class="line">	err := MultiLimiter(a.apiLimit, a.networkLimit).Wait(ctx) <span class="comment">//5</span></span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> err</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// Pretend we do work here</span></span><br><span class="line">	<span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">01:40:15 ResolveAddress</span></span><br><span class="line"><span class="comment">01:40:15 ReadFile</span></span><br><span class="line"><span class="comment">01:40:16 ReadFile</span></span><br><span class="line"><span class="comment">01:40:17 ResolveAddress</span></span><br><span class="line"><span class="comment">01:40:17 ResolveAddress</span></span><br><span class="line"><span class="comment">01:40:17 ReadFile</span></span><br><span class="line"><span class="comment">01:40:18 ResolveAddress</span></span><br><span class="line"><span class="comment">01:40:18 ResolveAddress</span></span><br><span class="line"><span class="comment">01:40:19 ResolveAddress</span></span><br><span class="line"><span class="comment">01:40:19 ResolveAddress</span></span><br><span class="line"><span class="comment">01:40:21 ResolveAddress</span></span><br><span class="line"><span class="comment">01:40:27 ResolveAddress</span></span><br><span class="line"><span class="comment">01:40:33 ResolveAddress</span></span><br><span class="line"><span class="comment">01:40:39 ReadFile</span></span><br><span class="line"><span class="comment">01:40:45 ReadFile</span></span><br><span class="line"><span class="comment">01:40:51 ReadFile</span></span><br><span class="line"><span class="comment">01:40:57 ReadFile</span></span><br><span class="line"><span class="comment">01:41:03 ReadFile</span></span><br><span class="line"><span class="comment">01:41:09 ReadFile</span></span><br><span class="line"><span class="comment">01:41:15 ReadFile</span></span><br><span class="line"><span class="comment">01:41:15 Done.</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/alipay.jpg" alt="单林敏 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/ARST/" rel="tag"># ARST</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/ARST%E6%89%93%E5%8D%A1%E7%AC%AC169%E5%91%A8-169-521/" rel="prev" title="ARST打卡第169周[169/521]">
+                  <i class="fa fa-chevron-left"></i> ARST打卡第169周[169/521]
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">湘ICP备19025607号 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">单林敏</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"wolfdan666","repo":"gitalk_commont","client_id":"2934cb0fdcabc560461e","client_secret":"937e7b77dcdfd83f6a89f4a9b9447a76a54bc764","admin_user":"wolfdan666","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"ce59994e9de54f2a77d8e667bb1f2af7"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
