@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.wolfdan.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.8.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="lc2185_统计包含给定前缀的字符串 【TED演讲】为什么学生应该有心理健康日？ Gartner发布2023年十大战略技术趋势 helm安装etcd-ha的失败的原因是bitnami不支持ARM架构-过程分享">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ARST打卡第192周[192&#x2F;521]">
+<meta property="og:url" content="https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC192%E5%91%A8-192-521/">
+<meta property="og:site_name" content="单林敏的博客">
+<meta property="og:description" content="lc2185_统计包含给定前缀的字符串 【TED演讲】为什么学生应该有心理健康日？ Gartner发布2023年十大战略技术趋势 helm安装etcd-ha的失败的原因是bitnami不支持ARM架构-过程分享">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-01-08T06:26:25.000Z">
+<meta property="article:modified_time" content="2023-01-08T12:26:31.020Z">
+<meta property="article:author" content="单林敏">
+<meta property="article:tag" content="ARST">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC192%E5%91%A8-192-521/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC192%E5%91%A8-192-521/","path":"ARST打卡第192周-192-521/","title":"ARST打卡第192周[192/521]"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>ARST打卡第192周[192/521] | 单林敏的博客</title>
+  
+
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?953c0cc2db0f1124313d72b95b9d07e1"></script>
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">单林敏的博客</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">wolfdan's blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-捐赠"><a href="/%E6%8D%90%E8%B5%A0/" rel="section"><i class="fa fa-coins fa-fw"></i>捐赠</a></li>
+        <li class="menu-item menu-item-冲冲"><a href="/%E5%86%B2%E5%86%B2%E5%86%B2/" rel="section"><i class="fa fa-rocket fa-fw"></i>冲冲</a></li>
+        <li class="menu-item menu-item-友链"><a href="/links/" rel="section"><i class="fa fa-link fa-fw"></i>友链</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Algorithm"><span class="nav-number">1.</span> <span class="nav-text">Algorithm</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Review"><span class="nav-number">2.</span> <span class="nav-text">Review</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tips"><span class="nav-number">3.</span> <span class="nav-text">Tips</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Share-helm%E5%AE%89%E8%A3%85etcd-ha%E7%9A%84%E5%A4%B1%E8%B4%A5%E7%9A%84%E5%8E%9F%E5%9B%A0%E6%98%AFbitnami%E4%B8%8D%E6%94%AF%E6%8C%81ARM%E6%9E%B6%E6%9E%84-%E8%BF%87%E7%A8%8B%E5%88%86%E4%BA%AB"><span class="nav-number">4.</span> <span class="nav-text">Share-helm安装etcd-ha的失败的原因是bitnami不支持ARM架构-过程分享</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BAPV%E5%90%8E%E6%88%90%E5%8A%9F%E7%BB%91%E5%AE%9A%E4%BA%86%E4%B8%80%E4%B8%AApvc%EF%BC%8C%E4%BD%86%E6%98%AF%E8%BF%98%E6%98%AF%E4%B8%8D%E5%A4%AA%E8%A1%8C"><span class="nav-number">4.1.</span> <span class="nav-text">创建PV后成功绑定了一个pvc，但是还是不太行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E9%9D%A2%E7%9C%8B%E7%BD%91%E4%B8%8A%E6%96%87%E7%AB%A0%E5%8F%91%E7%8E%B0%E8%87%AA%E5%B7%B1%E5%BF%98%E4%BA%86%E8%AE%BE%E7%BD%AEhelm%E4%B8%AD%E7%9A%84value-yaml%E4%B8%AD%E7%9A%84persistence%E7%9A%84enable%E4%B8%BAfalse%E4%BA%86-%E5%B0%B1%E5%8F%88%E8%AF%95%E4%BA%86%E4%B8%80%E4%B8%8Bempty-dir%E6%A8%A1%E5%BC%8F"><span class="nav-number">4.2.</span> <span class="nav-text">后面看网上文章发现自己忘了设置helm中的value.yaml中的persistence的enable为false了,就又试了一下empty-dir模式</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="单林敏"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">单林敏</p>
+  <div class="site-description" itemprop="description">心外无物,知行合一</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">284</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">93</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/wolfdan666" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;wolfdan666" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:wolfdan666666@gmail.com" title="E-Mail → mailto:wolfdan666666@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/shanlinmin/activities" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;shanlinmin&#x2F;activities" rel="noopener" target="_blank"><i class="free-code-camp fa-fw"></i>知乎</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.jianshu.com/u/53acec957bf9" title="简书 → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;53acec957bf9" rel="noopener" target="_blank"><i class="book fa-fw"></i>简书</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://me.csdn.net/neve_give_up_dan" title="CSDN → https:&#x2F;&#x2F;me.csdn.net&#x2F;neve_give_up_dan" rel="noopener" target="_blank"><i class="rotate-right fa-fw"></i>CSDN</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC192%E5%91%A8-192-521/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="单林敏">
+      <meta itemprop="description" content="心外无物,知行合一">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="单林敏的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ARST打卡第192周[192/521]
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-01-08 14:26:25 / 修改时间：20:26:31" itemprop="dateCreated datePublished" datetime="2023-01-08T14:26:25+08:00">2023-01-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/ARST/" itemprop="url" rel="index"><span itemprop="name">ARST</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+            <div class="post-description">lc2185_统计包含给定前缀的字符串 【TED演讲】为什么学生应该有心理健康日？ Gartner发布2023年十大战略技术趋势 helm安装etcd-ha的失败的原因是bitnami不支持ARM架构-过程分享</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h1><p>lc2185_统计包含给定前缀的字符串</p>
+<p>今天的每日一题过于简单了</p>
+<figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&quot;strings&quot;</span></span><br><span class="line"><span class="comment">// golang好像有封装好的函数可以用，当然实现也很容易，就是简单的前缀对比</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">prefixCount</span><span class="params">(words []<span class="keyword">string</span>, pref <span class="keyword">string</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">    cnt := <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> _, str := <span class="keyword">range</span>(words) &#123;</span><br><span class="line">        <span class="keyword">if</span> strings.HasPrefix(str, pref) &#123;</span><br><span class="line">            cnt++</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> cnt</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h1><p>【TED演讲】为什么学生应该有心理健康日？</p>
+<div align = "center">
+    <iframe  width="100%" height="700" src="//player.bilibili.com/player.html?aid=947173654&bvid=BV1dW4y1V7de&cid=950461751&page=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+
+<p>心理健康和生理健康同样重要，学会放慢自己的脚步，在感到心理疲惫的时候，给与自己适当的休息，这样才能张弛有度，能够更好地实现自己的目标</p>
+<h1 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h1><p><a target="_blank" rel="noopener" href="https://www.gartner.com/cn/newsroom/press-releases/2023-top-10-strategic-tech-trends">Gartner发布2023年十大战略技术趋势</a></p>
+<p>了解新一年的发展趋势，是2023年第一周比较推荐的行为(当然2022年末就开始看更好)</p>
+<h1 id="Share-helm安装etcd-ha的失败的原因是bitnami不支持ARM架构-过程分享"><a href="#Share-helm安装etcd-ha的失败的原因是bitnami不支持ARM架构-过程分享" class="headerlink" title="Share-helm安装etcd-ha的失败的原因是bitnami不支持ARM架构-过程分享"></a>Share-helm安装etcd-ha的失败的原因是bitnami不支持ARM架构-过程分享</h1><p>按照指定步骤后，会得到po和pvc都处在pending状态</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line">[root@arm download]<span class="comment"># wget https://get.helm.sh/helm-v3.10.3-linux-arm64.tar.gz</span></span><br><span class="line">--2022-12-30 19:07:28--  https://get.helm.sh/helm-v3.10.3-linux-arm64.tar.gz</span><br><span class="line">Resolving get.helm.sh (get.helm.sh)... 152.199.39.108, 2606:2800:247:1cb7:261b:1f9c:2074:3c</span><br><span class="line">Connecting to get.helm.sh (get.helm.sh)|152.199.39.108|:443... connected.</span><br><span class="line">HTTP request sent, awaiting response... 200 OK</span><br><span class="line">Length: 13085851 (12M) [application/x-tar]</span><br><span class="line">Saving to: ‘helm-v3.10.3-linux-arm64.tar.gz’</span><br><span class="line"></span><br><span class="line">helm-v3.10.3-linux-arm64.tar.gz            100%[======================================================================================&gt;]  12.48M  --.-KB/s    <span class="keyword">in</span> 0.04s</span><br><span class="line"></span><br><span class="line">2022-12-30 19:07:29 (332 MB/s) - ‘helm-v3.10.3-linux-arm64.tar.gz’ saved [13085851/13085851]</span><br><span class="line"></span><br><span class="line">[root@arm download]<span class="comment"># ll</span></span><br><span class="line">total 125260</span><br><span class="line">drwxr-xr-x  2 root root      4096 Dec 30 19:07 ./</span><br><span class="line">drwx------ 12 root root      4096 Dec 29 18:54 ../</span><br><span class="line">-rw-r--r--  1 root root 115165850 Dec  7 03:31 go1.19.4.linux-arm64.tar.gz</span><br><span class="line">-rw-r--r--  1 root root  13085851 Dec 14 23:44 helm-v3.10.3-linux-arm64.tar.gz</span><br><span class="line">[root@arm download]<span class="comment"># tar -zxvf helm-v3.10.3-linux-arm64.tar.gz</span></span><br><span class="line">linux-arm64/</span><br><span class="line">linux-arm64/helm</span><br><span class="line">linux-arm64/LICENSE</span><br><span class="line">linux-arm64/README.md</span><br><span class="line">[root@arm download]<span class="comment"># mv linux-arm64/helm /usr/local/bin/helm</span></span><br><span class="line">[root@arm download]<span class="comment"># helm help</span></span><br><span class="line">The Kubernetes package manager</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">[root@arm download]<span class="comment"># helm repo add bitnami https://charts.bitnami.com/bitnami</span></span><br><span class="line">[root@arm download]<span class="comment"># helm pull bitnami/etcd</span></span><br><span class="line">[root@arm download]<span class="comment"># tar -xvf etcd-8.5.11.tgz</span></span><br><span class="line">[root@arm download]<span class="comment"># vi etcd/values.yaml # 新版本已经是false了，不用改</span></span><br><span class="line"><span class="comment"># 后面证实发现自己看错地方了...）应该是588行...</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## persistentVolumeClaimRetentionPolicy</span></span><br><span class="line">473 <span class="comment">## ref: https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/#persistentvolumeclaim-retention</span></span><br><span class="line">474 <span class="comment">## @param persistentVolumeClaimRetentionPolicy.enabled Controls if and how PVCs are deleted during the lifecycle of a StatefulSet</span></span><br><span class="line">475 <span class="comment">## @param persistentVolumeClaimRetentionPolicy.whenScaled Volume retention behavior when the replica count of the StatefulSet is reduced</span></span><br><span class="line">476 <span class="comment">## @param persistentVolumeClaimRetentionPolicy.whenDeleted Volume retention behavior that applies when the StatefulSet is deleted</span></span><br><span class="line">477 persistentVolumeClaimRetentionPolicy:</span><br><span class="line">478   enabled: <span class="literal">false</span></span><br><span class="line"></span><br><span class="line">[root@arm download]<span class="comment"># helm install my-release ./etcd</span></span><br><span class="line">...</span><br><span class="line">REVISION: 1</span><br><span class="line">TEST SUITE: None</span><br><span class="line">NOTES:</span><br><span class="line">CHART NAME: etcd</span><br><span class="line">CHART VERSION: 8.5.11</span><br><span class="line">APP VERSION: 3.5.6</span><br><span class="line"></span><br><span class="line">** Please be patient <span class="keyword">while</span> the chart is being deployed **</span><br><span class="line"></span><br><span class="line">etcd can be accessed via port 2379 on the following DNS name from within your cluster:</span><br><span class="line"></span><br><span class="line">    my-release-etcd.default.svc.cluster.local</span><br><span class="line"></span><br><span class="line">To create a pod that you can use as a etcd client run the following <span class="built_in">command</span>:</span><br><span class="line"></span><br><span class="line">    kubectl run my-release-etcd-client --restart=<span class="string">&#x27;Never&#x27;</span> --image docker.io/bitnami/etcd:3.5.6-debian-11-r10 --env ROOT_PASSWORD=$(kubectl get secret --namespace default my-release-etcd -o jsonpath=<span class="string">&quot;&#123;.data.etcd-root-password&#125;&quot;</span> | base64 -d) --env ETCDCTL_ENDPOINTS=<span class="string">&quot;my-release-etcd.default.svc.cluster.local:2379&quot;</span> --namespace default --<span class="built_in">command</span> -- sleep infinity</span><br><span class="line"></span><br><span class="line">Then, you can <span class="built_in">set</span>/get a key using the commands below:</span><br><span class="line"></span><br><span class="line">    kubectl <span class="built_in">exec</span> --namespace default -it my-release-etcd-client -- bash</span><br><span class="line">    etcdctl --user root:<span class="variable">$ROOT_PASSWORD</span> put /message Hello</span><br><span class="line">    etcdctl --user root:<span class="variable">$ROOT_PASSWORD</span> get /message</span><br><span class="line"></span><br><span class="line">To connect to your etcd server from outside the cluster execute the following commands:</span><br><span class="line"></span><br><span class="line">    kubectl port-forward --namespace default svc/my-release-etcd 2379:2379 &amp;</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;etcd URL: http://127.0.0.1:2379&quot;</span></span><br><span class="line"></span><br><span class="line"> * As rbac is enabled you should add the flag `--user root:<span class="variable">$ETCD_ROOT_PASSWORD</span>` to the etcdctl commands. Use the <span class="built_in">command</span> below to <span class="built_in">export</span> the password:</span><br><span class="line"></span><br><span class="line">    <span class="built_in">export</span> ETCD_ROOT_PASSWORD=$(kubectl get secret --namespace default my-release-etcd -o jsonpath=<span class="string">&quot;&#123;.data.etcd-root-password&#125;&quot;</span> | base64 -d)</span><br><span class="line"></span><br><span class="line">[root@arm download]<span class="comment"># kubectl run my-release-etcd-client --restart=&#x27;Never&#x27; --image docker.io/bitnami/etcd:3.5.6-debian-11-r10 --env ROOT_PASSWORD=$(kubectl get secret --namespace default my-release-etcd -o jsonpath=&quot;&#123;.data.etcd-root-password&#125;&quot; | base64 -d) --env ETCDCTL_ENDPOINTS=&quot;my-release-etcd.default.svc.cluster.local:2379&quot; --namespace default --command -- sleep infinity</span></span><br><span class="line">pod/my-release-etcd-client created</span><br><span class="line">[root@arm download]<span class="comment"># kubectl exec --namespace default -it my-release-etcd-client -- bash</span></span><br><span class="line">error: cannot <span class="built_in">exec</span> into a container <span class="keyword">in</span> a completed pod; current phase is Failed</span><br><span class="line">[root@arm download]<span class="comment"># k get po</span></span><br><span class="line">NAME                     READY   STATUS    RESTARTS   AGE</span><br><span class="line">envoy-fb5d77cc9-rjw9w    1/1     Running   0          24h</span><br><span class="line">my-release-etcd-0        0/1     Pending   0          4m7s</span><br><span class="line">my-release-etcd-client   0/1     Error     0          18s</span><br><span class="line">[root@arm download]<span class="comment"># k get po</span></span><br><span class="line">NAME                     READY   STATUS    RESTARTS   AGE</span><br><span class="line">envoy-fb5d77cc9-rjw9w    1/1     Running   0          24h</span><br><span class="line">my-release-etcd-0        0/1     Pending   0          4m23s</span><br><span class="line">my-release-etcd-client   0/1     Error     0          34s</span><br><span class="line">[root@arm download]<span class="comment"># k get po</span></span><br><span class="line">NAME                     READY   STATUS    RESTARTS   AGE</span><br><span class="line">envoy-fb5d77cc9-rjw9w    1/1     Running   0          24h</span><br><span class="line">my-release-etcd-0        0/1     Pending   0          5m47s</span><br><span class="line">my-release-etcd-client   0/1     Error     0          118s</span><br><span class="line"><span class="comment">## 自己猜测应该是端口冲突，于是helm help , helm install -h 研究了一下</span></span><br><span class="line"><span class="comment"># 后面想到这个端口是pod内的，所以不会冲突，所以继续研究pv，pvc</span></span><br></pre></td></tr></table></figure>
+
+
+<p>然后阅读<a target="_blank" rel="noopener" href="https://kubernetes.io/zh-cn/docs/concepts/storage/persistent-volumes/">pv，pvc的官方文档</a>发现:</p>
+<blockquote>
+<p>静态制备<br>集群管理员创建若干 PV 卷。这些卷对象带有真实存储的细节信息， 并且对集群用户可用（可见）。PV 卷对象存在于 Kubernetes API 中，可供用户消费（使用）。</p>
+</blockquote>
+<blockquote>
+<p>动态制备<br>如果管理员所创建的所有静态 PV 卷都无法与用户的 PersistentVolumeClaim 匹配， 集群可以尝试为该 PVC 申领动态制备一个存储卷。 这一制备操作是基于 StorageClass 来实现的：PVC 申领必须请求某个 存储类， 同时集群管理员必须已经创建并配置了该类，这样动态制备卷的动作才会发生。 <strong>如果 PVC 申领指定存储类为 <code>&quot;&quot;</code>，则相当于为自身禁止使用动态制备的卷。</strong></p>
+</blockquote>
+<p>加上看到pvc的详细信息，确实是StorageClass为空，所以只能手动制备PV存储卷先了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[root@arm ~]<span class="comment"># k describe pvc data-my-release-etcd-0</span></span><br><span class="line">Name:          data-my-release-etcd-0</span><br><span class="line">Namespace:     default</span><br><span class="line">StorageClass:</span><br><span class="line">Status:        Pending</span><br><span class="line">Volume:</span><br><span class="line">Labels:        app.kubernetes.io/instance=my-release</span><br><span class="line">               app.kubernetes.io/name=etcd</span><br><span class="line">Annotations:   &lt;none&gt;</span><br><span class="line">Finalizers:    [kubernetes.io/pvc-protection]</span><br><span class="line">Capacity:</span><br><span class="line">Access Modes:</span><br><span class="line">VolumeMode:    Filesystem</span><br><span class="line">Used By:       my-release-etcd-0</span><br><span class="line">Events:</span><br><span class="line">  Type    Reason         Age                     From                         Message</span><br><span class="line">  ----    ------         ----                    ----                         -------</span><br><span class="line">  Normal  FailedBinding  2m32s (x50807 over 8d)  persistentvolume-controller  no persistent volumes available <span class="keyword">for</span> this claim and no storage class is <span class="built_in">set</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="创建PV后成功绑定了一个pvc，但是还是不太行"><a href="#创建PV后成功绑定了一个pvc，但是还是不太行" class="headerlink" title="创建PV后成功绑定了一个pvc，但是还是不太行"></a>创建PV后成功绑定了一个pvc，但是还是不太行</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br></pre></td><td class="code"><pre><span class="line">[root@arm pv]<span class="comment"># cat po-volume.yaml</span></span><br><span class="line">apiVersion: v1</span><br><span class="line">kind: PersistentVolume</span><br><span class="line">metadata:</span><br><span class="line">  name: task-pv-volume</span><br><span class="line">  labels:</span><br><span class="line">    <span class="built_in">type</span>: <span class="built_in">local</span></span><br><span class="line">spec:</span><br><span class="line">  capacity:</span><br><span class="line">    storage: 8Gi</span><br><span class="line">  accessModes:</span><br><span class="line">    - ReadWriteOnce</span><br><span class="line">  hostPath:</span><br><span class="line">    path: <span class="string">&quot;/mnt/data&quot;</span></span><br><span class="line">[root@arm pv]<span class="comment"># k apply -f po-volume.yaml</span></span><br><span class="line">persistentvolume/task-pv-volume created</span><br><span class="line">[root@arm pv]<span class="comment"># k get pv</span></span><br><span class="line">NAME             CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                            STORAGECLASS   REASON   AGE</span><br><span class="line">task-pv-volume   8Gi        RWO            Retain           Bound    default/data-my-release-etcd-2                           3m26s</span><br><span class="line">[root@arm pv]<span class="comment"># k get pvc</span></span><br><span class="line">NAME                     STATUS    VOLUME           CAPACITY   ACCESS MODES   STORAGECLASS   AGE</span><br><span class="line">data-my-release-etcd-0   Pending                                                             9d</span><br><span class="line">data-my-release-etcd-1   Pending                                                             8d</span><br><span class="line">data-my-release-etcd-2   Bound     task-pv-volume   8Gi        RWO                           8d</span><br><span class="line"></span><br><span class="line">[root@arm pv]<span class="comment"># cat po-volume1.yaml</span></span><br><span class="line">apiVersion: v1</span><br><span class="line">kind: PersistentVolume</span><br><span class="line">metadata:</span><br><span class="line">  name: task-pv-volume-1</span><br><span class="line">  labels:</span><br><span class="line">    <span class="built_in">type</span>: <span class="built_in">local</span></span><br><span class="line">spec:</span><br><span class="line">  capacity:</span><br><span class="line">    storage: 8Gi</span><br><span class="line">  accessModes:</span><br><span class="line">    - ReadWriteOnce</span><br><span class="line">  hostPath:</span><br><span class="line">    path: <span class="string">&quot;/mnt/data&quot;</span></span><br><span class="line"></span><br><span class="line">[root@arm pv]<span class="comment"># cat po-volume2.yaml</span></span><br><span class="line">apiVersion: v1</span><br><span class="line">kind: PersistentVolume</span><br><span class="line">metadata:</span><br><span class="line">  name: task-pv-volume-2</span><br><span class="line">  labels:</span><br><span class="line">    <span class="built_in">type</span>: <span class="built_in">local</span></span><br><span class="line">spec:</span><br><span class="line">  capacity:</span><br><span class="line">    storage: 8Gi</span><br><span class="line">  accessModes:</span><br><span class="line">    - ReadWriteOnce</span><br><span class="line">  hostPath:</span><br><span class="line">    path: <span class="string">&quot;/mnt/data&quot;</span></span><br><span class="line">[root@arm pv]<span class="comment"># k apply -f po-volume1.yaml</span></span><br><span class="line">persistentvolume/task-pv-volume-1 created</span><br><span class="line">[root@arm pv]<span class="comment"># k apply -f po-volume2.yaml</span></span><br><span class="line">persistentvolume/task-pv-volume-2 created</span><br><span class="line">[root@arm pv]<span class="comment"># k get pvc</span></span><br><span class="line">NAME                     STATUS    VOLUME           CAPACITY   ACCESS MODES   STORAGECLASS   AGE</span><br><span class="line">data-my-release-etcd-0   Pending                                                             9d</span><br><span class="line">data-my-release-etcd-1   Pending                                                             9d</span><br><span class="line">data-my-release-etcd-2   Bound     task-pv-volume   8Gi        RWO                           9d</span><br><span class="line"></span><br><span class="line">[root@arm pv]<span class="comment"># k get pvc</span></span><br><span class="line">NAME                     STATUS   VOLUME             CAPACITY   ACCESS MODES   STORAGECLASS   AGE</span><br><span class="line">data-my-release-etcd-0   Bound    task-pv-volume-1   8Gi        RWO                           9d</span><br><span class="line">data-my-release-etcd-1   Bound    task-pv-volume-2   8Gi        RWO                           9d</span><br><span class="line">data-my-release-etcd-2   Bound    task-pv-volume     8Gi        RWO                           9d</span><br><span class="line">[root@arm pv]<span class="comment"># k get po</span></span><br><span class="line">NAME                     READY   STATUS             RESTARTS      AGE</span><br><span class="line">envoy-fb5d77cc9-rjw9w    1/1     Running            0             10d</span><br><span class="line">my-release-etcd-0        0/1     Pending            0             9d</span><br><span class="line">my-release-etcd-1        0/1     Pending            0             9d</span><br><span class="line">my-release-etcd-2        0/1     CrashLoopBackOff   7 (79s ago)   9d</span><br><span class="line">my-release-etcd-client   0/1     Error              0             9d</span><br><span class="line">[root@arm pv]<span class="comment"># k get po</span></span><br><span class="line">NAME                     READY   STATUS             RESTARTS      AGE</span><br><span class="line">envoy-fb5d77cc9-rjw9w    1/1     Running            0             10d</span><br><span class="line">my-release-etcd-0        0/1     Error              0             9d</span><br><span class="line">my-release-etcd-1        0/1     Error              0             9d</span><br><span class="line">my-release-etcd-2        0/1     CrashLoopBackOff   7 (81s ago)   9d</span><br><span class="line">my-release-etcd-client   0/1     Error              0             9d</span><br><span class="line">[root@arm download]<span class="comment"># k describe pod my-release-etcd-0</span></span><br><span class="line">Name:         my-release-etcd-0</span><br><span class="line">Namespace:    default</span><br><span class="line">Priority:     0</span><br><span class="line">Node:         arm/10.0.0.29</span><br><span class="line">Start Time:   Sun, 08 Jan 2023 19:44:00 +0800</span><br><span class="line">Labels:       app.kubernetes.io/instance=my-release</span><br><span class="line">              app.kubernetes.io/managed-by=Helm</span><br><span class="line">              app.kubernetes.io/name=etcd</span><br><span class="line">              controller-revision-hash=my-release-etcd-5d49546c66</span><br><span class="line">              helm.sh/chart=etcd-8.5.11</span><br><span class="line">              statefulset.kubernetes.io/pod-name=my-release-etcd-0</span><br><span class="line">Annotations:  checksum/token-secret: b9cdb65acc8d3eff297975d64902520093c035e029074d0dc7b172f405f46e00</span><br><span class="line">              cni.projectcalico.org/containerID: 27fecd909420c116cc20862804e4c98aec2c37620b88a710dfead06d252eb863</span><br><span class="line">              cni.projectcalico.org/podIP: 192.168.64.206/32</span><br><span class="line">              cni.projectcalico.org/podIPs: 192.168.64.206/32</span><br><span class="line">Status:       Running</span><br><span class="line">IP:           192.168.64.206</span><br><span class="line">IPs:</span><br><span class="line">  IP:           192.168.64.206</span><br><span class="line">Controlled By:  StatefulSet/my-release-etcd</span><br><span class="line">Containers:</span><br><span class="line">  etcd:</span><br><span class="line">    Container ID:   docker://c65f7b13411d6117954fd50fe35f826189667c6d1bf53ce8ef571a82cec165ff</span><br><span class="line">    Image:          docker.io/bitnami/etcd:3.5.6-debian-11-r10</span><br><span class="line">    Image ID:       docker-pullable://bitnami/etcd@sha256:2d7b831769734bb97a5c1cfd2fe46e29f422b70b5ba9f9aedfd91300839ac3ee</span><br><span class="line">    Ports:          2379/TCP, 2380/TCP</span><br><span class="line">    Host Ports:     0/TCP, 0/TCP</span><br><span class="line">    State:          Waiting</span><br><span class="line">      Reason:       CrashLoopBackOff</span><br><span class="line">    Last State:     Terminated</span><br><span class="line">      Reason:       Error</span><br><span class="line">      Exit Code:    1</span><br><span class="line">      Started:      Sun, 08 Jan 2023 19:45:40 +0800</span><br><span class="line">      Finished:     Sun, 08 Jan 2023 19:45:40 +0800</span><br><span class="line">    Ready:          False</span><br><span class="line">    Restart Count:  4</span><br><span class="line">    Liveness:       <span class="built_in">exec</span> [/opt/bitnami/scripts/etcd/healthcheck.sh] delay=60s timeout=5s period=30s <span class="comment">#success=1 #failure=5</span></span><br><span class="line">    Readiness:      <span class="built_in">exec</span> [/opt/bitnami/scripts/etcd/healthcheck.sh] delay=60s timeout=5s period=10s <span class="comment">#success=1 #failure=5</span></span><br><span class="line">    Environment:</span><br><span class="line">      BITNAMI_DEBUG:                     <span class="literal">false</span></span><br><span class="line">      MY_POD_IP:                          (v1:status.podIP)</span><br><span class="line">      MY_POD_NAME:                       my-release-etcd-0 (v1:metadata.name)</span><br><span class="line">      MY_STS_NAME:                       my-release-etcd</span><br><span class="line">      ETCDCTL_API:                       3</span><br><span class="line">      ETCD_ON_K8S:                       yes</span><br><span class="line">      ETCD_START_FROM_SNAPSHOT:          no</span><br><span class="line">      ETCD_DISASTER_RECOVERY:            no</span><br><span class="line">      ETCD_NAME:                         $(MY_POD_NAME)</span><br><span class="line">      ETCD_DATA_DIR:                     /bitnami/etcd/data</span><br><span class="line">      ETCD_LOG_LEVEL:                    info</span><br><span class="line">      ALLOW_NONE_AUTHENTICATION:         no</span><br><span class="line">      ETCD_ROOT_PASSWORD:                &lt;<span class="built_in">set</span> to the key <span class="string">&#x27;etcd-root-password&#x27;</span> <span class="keyword">in</span> secret <span class="string">&#x27;my-release-etcd&#x27;</span>&gt;  Optional: <span class="literal">false</span></span><br><span class="line">      ETCD_AUTH_TOKEN:                   jwt,priv-key=/opt/bitnami/etcd/certs/token/jwt-token.pem,sign-method=RS256,ttl=10m</span><br><span class="line">      ETCD_ADVERTISE_CLIENT_URLS:        http://$(MY_POD_NAME).my-release-etcd-headless.default.svc.cluster.local:2379,http://my-release-etcd.default.svc.cluster.local:2379</span><br><span class="line">      ETCD_LISTEN_CLIENT_URLS:           http://0.0.0.0:2379</span><br><span class="line">      ETCD_INITIAL_ADVERTISE_PEER_URLS:  http://$(MY_POD_NAME).my-release-etcd-headless.default.svc.cluster.local:2380</span><br><span class="line">      ETCD_LISTEN_PEER_URLS:             http://0.0.0.0:2380</span><br><span class="line">      ETCD_CLUSTER_DOMAIN:               my-release-etcd-headless.default.svc.cluster.local</span><br><span class="line">    Mounts:</span><br><span class="line">      /bitnami/etcd from data (rw)</span><br><span class="line">      /opt/bitnami/etcd/certs/token/ from etcd-jwt-token (ro)</span><br><span class="line">      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-bz6gj (ro)</span><br><span class="line">Conditions:</span><br><span class="line">  Type              Status</span><br><span class="line">  Initialized       True</span><br><span class="line">  Ready             False</span><br><span class="line">  ContainersReady   False</span><br><span class="line">  PodScheduled      True</span><br><span class="line">Volumes:</span><br><span class="line">  etcd-jwt-token:</span><br><span class="line">    Type:        Secret (a volume populated by a Secret)</span><br><span class="line">    SecretName:  my-release-etcd-jwt-token</span><br><span class="line">    Optional:    <span class="literal">false</span></span><br><span class="line">  data:</span><br><span class="line">    Type:       EmptyDir (a temporary directory that shares a pod·s lifetime)</span><br><span class="line">    Medium:</span><br><span class="line">    SizeLimit:  &lt;<span class="built_in">unset</span>&gt;</span><br><span class="line">  kube-api-access-bz6gj:</span><br><span class="line">    Type:                    Projected (a volume that contains injected data from multiple sources)</span><br><span class="line">    TokenExpirationSeconds:  3607</span><br><span class="line">    ConfigMapName:           kube-root-ca.crt</span><br><span class="line">    ConfigMapOptional:       &lt;nil&gt;</span><br><span class="line">    DownwardAPI:             <span class="literal">true</span></span><br><span class="line">QoS Class:                   BestEffort</span><br><span class="line">Node-Selectors:              &lt;none&gt;</span><br><span class="line">Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists <span class="keyword">for</span> 300s</span><br><span class="line">                             node.kubernetes.io/unreachable:NoExecute op=Exists <span class="keyword">for</span> 300s</span><br><span class="line">Events:</span><br><span class="line">  Type     Reason     Age                   From               Message</span><br><span class="line">  ----     ------     ----                  ----               -------</span><br><span class="line">  Normal   Scheduled  2m36s                 default-scheduler  Successfully assigned default/my-release-etcd-0 to arm</span><br><span class="line">  Normal   Created    101s (x4 over 2m35s)  kubelet            Created container etcd</span><br><span class="line">  Normal   Started    101s (x4 over 2m35s)  kubelet            Started container etcd</span><br><span class="line">  Warning  BackOff    70s (x12 over 2m33s)  kubelet            Back-off restarting failed container</span><br><span class="line">  Normal   Pulled     57s (x5 over 2m35s)   kubelet            Container image <span class="string">&quot;docker.io/bitnami/etcd:3.5.6-debian-11-r10&quot;</span> already present on machine</span><br><span class="line">[root@arm download]<span class="comment"># k logs my-release-etcd-0</span></span><br><span class="line"><span class="built_in">exec</span> /opt/bitnami/scripts/etcd/entrypoint.sh: <span class="built_in">exec</span> format error</span><br></pre></td></tr></table></figure>
+
+<h2 id="后面看网上文章发现自己忘了设置helm中的value-yaml中的persistence的enable为false了-就又试了一下empty-dir模式"><a href="#后面看网上文章发现自己忘了设置helm中的value-yaml中的persistence的enable为false了-就又试了一下empty-dir模式" class="headerlink" title="后面看网上文章发现自己忘了设置helm中的value.yaml中的persistence的enable为false了,就又试了一下empty-dir模式"></a>后面看网上文章发现自己忘了设置helm中的value.yaml中的persistence的enable为false了,就又试了一下empty-dir模式</h2><p>然后</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /root/download</span><br><span class="line">vim etcd/values.yaml</span><br></pre></td></tr></table></figure>
+
+<p>And set persistence to false:</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">558 persistence:</span></span><br><span class="line"><span class="number">559</span>   <span class="comment">## @param persistence.enabled If true, use a Persistent Volume Claim. If false, use emptyDir.</span></span><br><span class="line"><span class="number">560</span>   <span class="comment">##</span></span><br><span class="line"><span class="attr">561   enabled:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<p>然后</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br></pre></td><td class="code"><pre><span class="line">[root@arm download]<span class="comment"># helm uninstall my-release</span></span><br><span class="line">release <span class="string">&quot;my-release&quot;</span> uninstalled</span><br><span class="line">[root@arm download]<span class="comment"># k get pod</span></span><br><span class="line">NAME                     READY   STATUS    RESTARTS   AGE</span><br><span class="line">envoy-fb5d77cc9-rjw9w    1/1     Running   0          10d</span><br><span class="line">my-release-etcd-client   0/1     Error     0          9d</span><br><span class="line">[root@arm download]<span class="comment"># k get pvc</span></span><br><span class="line">NAME                     STATUS   VOLUME             CAPACITY   ACCESS MODES   STORAGECLASS   AGE</span><br><span class="line">data-my-release-etcd-0   Bound    task-pv-volume-1   8Gi        RWO                           9d</span><br><span class="line">data-my-release-etcd-1   Bound    task-pv-volume-2   8Gi        RWO                           9d</span><br><span class="line">data-my-release-etcd-2   Bound    task-pv-volume     8Gi        RWO                           9d</span><br><span class="line">[root@arm download]<span class="comment"># k delete pvc data-my-release-etcd-0 data-my-release-etcd-1 data-my-release-etcd-2</span></span><br><span class="line">persistentvolumeclaim <span class="string">&quot;data-my-release-etcd-0&quot;</span> deleted</span><br><span class="line">persistentvolumeclaim <span class="string">&quot;data-my-release-etcd-1&quot;</span> deleted</span><br><span class="line">persistentvolumeclaim <span class="string">&quot;data-my-release-etcd-2&quot;</span> deleted</span><br><span class="line">[root@arm download]<span class="comment"># k delete pv task-pv-volume task-pv-volume-1 task-pv-volume-2</span></span><br><span class="line">persistentvolume <span class="string">&quot;task-pv-volume&quot;</span> deleted</span><br><span class="line">persistentvolume <span class="string">&quot;task-pv-volume-1&quot;</span> deleted</span><br><span class="line">persistentvolume <span class="string">&quot;task-pv-volume-2&quot;</span> deleted</span><br><span class="line">[root@arm download]<span class="comment"># helm install my-release ./etcd</span></span><br><span class="line">NAME: my-release</span><br><span class="line">LAST DEPLOYED: Sun Jan  8 19:43:49 2023</span><br><span class="line">NAMESPACE: default</span><br><span class="line">STATUS: deployed</span><br><span class="line">REVISION: 1</span><br><span class="line">TEST SUITE: None</span><br><span class="line">NOTES:</span><br><span class="line">CHART NAME: etcd</span><br><span class="line">CHART VERSION: 8.5.11</span><br><span class="line">APP VERSION: 3.5.6</span><br><span class="line"></span><br><span class="line">** Please be patient <span class="keyword">while</span> the chart is being deployed **</span><br><span class="line"></span><br><span class="line">etcd can be accessed via port 2379 on the following DNS name from within your cluster:</span><br><span class="line"></span><br><span class="line">    my-release-etcd.default.svc.cluster.local</span><br><span class="line"></span><br><span class="line">To create a pod that you can use as a etcd client run the following <span class="built_in">command</span>:</span><br><span class="line"></span><br><span class="line">    kubectl run my-release-etcd-client --restart=<span class="string">&#x27;Never&#x27;</span> --image docker.io/bitnami/etcd:3.5.6-debian-11-r10 --env ROOT_PASSWORD=$(kubectl get secret --namespace default my-release-etcd -o jsonpath=<span class="string">&quot;&#123;.data.etcd-root-password&#125;&quot;</span> | base64 -d) --env ETCDCTL_ENDPOINTS=<span class="string">&quot;my-release-etcd.default.svc.cluster.local:2379&quot;</span> --namespace default --<span class="built_in">command</span> -- sleep infinity</span><br><span class="line"></span><br><span class="line">Then, you can <span class="built_in">set</span>/get a key using the commands below:</span><br><span class="line"></span><br><span class="line">    kubectl <span class="built_in">exec</span> --namespace default -it my-release-etcd-client -- bash</span><br><span class="line">    etcdctl --user root:<span class="variable">$ROOT_PASSWORD</span> put /message Hello</span><br><span class="line">    etcdctl --user root:<span class="variable">$ROOT_PASSWORD</span> get /message</span><br><span class="line"></span><br><span class="line">To connect to your etcd server from outside the cluster execute the following commands:</span><br><span class="line"></span><br><span class="line">    kubectl port-forward --namespace default svc/my-release-etcd 2379:2379 &amp;</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;etcd URL: http://127.0.0.1:2379&quot;</span></span><br><span class="line"></span><br><span class="line"> * As rbac is enabled you should add the flag `--user root:<span class="variable">$ETCD_ROOT_PASSWORD</span>` to the etcdctl commands. Use the <span class="built_in">command</span> below to <span class="built_in">export</span> the password:</span><br><span class="line"></span><br><span class="line">    <span class="built_in">export</span> ETCD_ROOT_PASSWORD=$(kubectl get secret --namespace default my-release-etcd -o jsonpath=<span class="string">&quot;&#123;.data.etcd-root-password&#125;&quot;</span> | base64 -d)</span><br><span class="line">[root@arm download]<span class="comment"># k get pod</span></span><br><span class="line">NAME                     READY   STATUS             RESTARTS      AGE</span><br><span class="line">envoy-fb5d77cc9-rjw9w    1/1     Running            0             10d</span><br><span class="line">my-release-etcd-0        0/1     CrashLoopBackOff   2 (18s ago)   44s</span><br><span class="line">my-release-etcd-client   0/1     Error              0             9d</span><br><span class="line">[root@arm download]<span class="comment"># k describe pod my-release-etcd-0</span></span><br><span class="line">Name:         my-release-etcd-0</span><br><span class="line">Namespace:    default</span><br><span class="line">Priority:     0</span><br><span class="line">Node:         arm/10.0.0.29</span><br><span class="line">Start Time:   Sun, 08 Jan 2023 19:44:00 +0800</span><br><span class="line">Labels:       app.kubernetes.io/instance=my-release</span><br><span class="line">              app.kubernetes.io/managed-by=Helm</span><br><span class="line">              app.kubernetes.io/name=etcd</span><br><span class="line">              controller-revision-hash=my-release-etcd-5d49546c66</span><br><span class="line">              helm.sh/chart=etcd-8.5.11</span><br><span class="line">              statefulset.kubernetes.io/pod-name=my-release-etcd-0</span><br><span class="line">Annotations:  checksum/token-secret: b9cdb65acc8d3eff297975d64902520093c035e029074d0dc7b172f405f46e00</span><br><span class="line">              cni.projectcalico.org/containerID: 27fecd909420c116cc20862804e4c98aec2c37620b88a710dfead06d252eb863</span><br><span class="line">              cni.projectcalico.org/podIP: 192.168.64.206/32</span><br><span class="line">              cni.projectcalico.org/podIPs: 192.168.64.206/32</span><br><span class="line">Status:       Running</span><br><span class="line">IP:           192.168.64.206</span><br><span class="line">IPs:</span><br><span class="line">  IP:           192.168.64.206</span><br><span class="line">Controlled By:  StatefulSet/my-release-etcd</span><br><span class="line">Containers:</span><br><span class="line">  etcd:</span><br><span class="line">    Container ID:   docker://c65f7b13411d6117954fd50fe35f826189667c6d1bf53ce8ef571a82cec165ff</span><br><span class="line">    Image:          docker.io/bitnami/etcd:3.5.6-debian-11-r10</span><br><span class="line">    Image ID:       docker-pullable://bitnami/etcd@sha256:2d7b831769734bb97a5c1cfd2fe46e29f422b70b5ba9f9aedfd91300839ac3ee</span><br><span class="line">    Ports:          2379/TCP, 2380/TCP</span><br><span class="line">    Host Ports:     0/TCP, 0/TCP</span><br><span class="line">    State:          Waiting</span><br><span class="line">      Reason:       CrashLoopBackOff</span><br><span class="line">    Last State:     Terminated</span><br><span class="line">      Reason:       Error</span><br><span class="line">      Exit Code:    1</span><br><span class="line">      Started:      Sun, 08 Jan 2023 19:45:40 +0800</span><br><span class="line">      Finished:     Sun, 08 Jan 2023 19:45:40 +0800</span><br><span class="line">    Ready:          False</span><br><span class="line">    Restart Count:  4</span><br><span class="line">    Liveness:       <span class="built_in">exec</span> [/opt/bitnami/scripts/etcd/healthcheck.sh] delay=60s timeout=5s period=30s <span class="comment">#success=1 #failure=5</span></span><br><span class="line">    Readiness:      <span class="built_in">exec</span> [/opt/bitnami/scripts/etcd/healthcheck.sh] delay=60s timeout=5s period=10s <span class="comment">#success=1 #failure=5</span></span><br><span class="line">    Environment:</span><br><span class="line">      BITNAMI_DEBUG:                     <span class="literal">false</span></span><br><span class="line">      MY_POD_IP:                          (v1:status.podIP)</span><br><span class="line">      MY_POD_NAME:                       my-release-etcd-0 (v1:metadata.name)</span><br><span class="line">      MY_STS_NAME:                       my-release-etcd</span><br><span class="line">      ETCDCTL_API:                       3</span><br><span class="line">      ETCD_ON_K8S:                       yes</span><br><span class="line">      ETCD_START_FROM_SNAPSHOT:          no</span><br><span class="line">      ETCD_DISASTER_RECOVERY:            no</span><br><span class="line">      ETCD_NAME:                         $(MY_POD_NAME)</span><br><span class="line">      ETCD_DATA_DIR:                     /bitnami/etcd/data</span><br><span class="line">      ETCD_LOG_LEVEL:                    info</span><br><span class="line">      ALLOW_NONE_AUTHENTICATION:         no</span><br><span class="line">      ETCD_ROOT_PASSWORD:                &lt;<span class="built_in">set</span> to the key <span class="string">&#x27;etcd-root-password&#x27;</span> <span class="keyword">in</span> secret <span class="string">&#x27;my-release-etcd&#x27;</span>&gt;  Optional: <span class="literal">false</span></span><br><span class="line">      ETCD_AUTH_TOKEN:                   jwt,priv-key=/opt/bitnami/etcd/certs/token/jwt-token.pem,sign-method=RS256,ttl=10m</span><br><span class="line">      ETCD_ADVERTISE_CLIENT_URLS:        http://$(MY_POD_NAME).my-release-etcd-headless.default.svc.cluster.local:2379,http://my-release-etcd.default.svc.cluster.local:2379</span><br><span class="line">      ETCD_LISTEN_CLIENT_URLS:           http://0.0.0.0:2379</span><br><span class="line">      ETCD_INITIAL_ADVERTISE_PEER_URLS:  http://$(MY_POD_NAME).my-release-etcd-headless.default.svc.cluster.local:2380</span><br><span class="line">      ETCD_LISTEN_PEER_URLS:             http://0.0.0.0:2380</span><br><span class="line">      ETCD_CLUSTER_DOMAIN:               my-release-etcd-headless.default.svc.cluster.local</span><br><span class="line">    Mounts:</span><br><span class="line">      /bitnami/etcd from data (rw)</span><br><span class="line">      /opt/bitnami/etcd/certs/token/ from etcd-jwt-token (ro)</span><br><span class="line">      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-bz6gj (ro)</span><br><span class="line">Conditions:</span><br><span class="line">  Type              Status</span><br><span class="line">  Initialized       True</span><br><span class="line">  Ready             False</span><br><span class="line">  ContainersReady   False</span><br><span class="line">  PodScheduled      True</span><br><span class="line">Volumes:</span><br><span class="line">  etcd-jwt-token:</span><br><span class="line">    Type:        Secret (a volume populated by a Secret)</span><br><span class="line">    SecretName:  my-release-etcd-jwt-token</span><br><span class="line">    Optional:    <span class="literal">false</span></span><br><span class="line">  data:</span><br><span class="line">    Type:       EmptyDir (a temporary directory that shares a pod·s lifetime)</span><br><span class="line">    Medium:</span><br><span class="line">    SizeLimit:  &lt;<span class="built_in">unset</span>&gt;</span><br><span class="line">  kube-api-access-bz6gj:</span><br><span class="line">    Type:                    Projected (a volume that contains injected data from multiple sources)</span><br><span class="line">    TokenExpirationSeconds:  3607</span><br><span class="line">    ConfigMapName:           kube-root-ca.crt</span><br><span class="line">    ConfigMapOptional:       &lt;nil&gt;</span><br><span class="line">    DownwardAPI:             <span class="literal">true</span></span><br><span class="line">QoS Class:                   BestEffort</span><br><span class="line">Node-Selectors:              &lt;none&gt;</span><br><span class="line">Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists <span class="keyword">for</span> 300s</span><br><span class="line">                             node.kubernetes.io/unreachable:NoExecute op=Exists <span class="keyword">for</span> 300s</span><br><span class="line">Events:</span><br><span class="line">  Type     Reason     Age                   From               Message</span><br><span class="line">  ----     ------     ----                  ----               -------</span><br><span class="line">  Normal   Scheduled  2m36s                 default-scheduler  Successfully assigned default/my-release-etcd-0 to arm</span><br><span class="line">  Normal   Created    101s (x4 over 2m35s)  kubelet            Created container etcd</span><br><span class="line">  Normal   Started    101s (x4 over 2m35s)  kubelet            Started container etcd</span><br><span class="line">  Warning  BackOff    70s (x12 over 2m33s)  kubelet            Back-off restarting failed container</span><br><span class="line">  Normal   Pulled     57s (x5 over 2m35s)   kubelet            Container image <span class="string">&quot;docker.io/bitnami/etcd:3.5.6-debian-11-r10&quot;</span> already present on machine</span><br><span class="line">[root@arm download]<span class="comment"># k logs my-release-etcd-0</span></span><br><span class="line"><span class="built_in">exec</span> /opt/bitnami/scripts/etcd/entrypoint.sh: <span class="built_in">exec</span> format error</span><br><span class="line">[root@arm download]<span class="comment"># </span></span><br></pre></td></tr></table></figure>
+
+<p>发现得到同样的错误，然后去网上查找发现一个issue: <a target="_blank" rel="noopener" href="https://github.com/bitnami/bitnami-docker-zookeeper/issues/73">Running the container fails with ‘exec /opt/bitnami/scripts/zookeeper/entrypoint.sh: exec format error’</a></p>
+<blockquote>
+<p>I’m afraid we currently don’t have support for ARM architecture in our containers. It’s something that we have in our backlog, but there are no immediate plans to work on it.<br>As soon as there are news, we will let you know.</p>
+</blockquote>
+<p><strong>原来bitnami不支持ARM架构的服务器…….我吐血了</strong></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/alipay.jpg" alt="单林敏 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/ARST/" rel="tag"># ARST</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/ARST%E6%89%93%E5%8D%A1%E7%AC%AC191%E5%91%A8-191-521/" rel="prev" title="ARST打卡第191周[191/521]">
+                  <i class="fa fa-chevron-left"></i> ARST打卡第191周[191/521]
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">湘ICP备19025607号 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">单林敏</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"wolfdan666","repo":"gitalk_commont","client_id":"2934cb0fdcabc560461e","client_secret":"937e7b77dcdfd83f6a89f4a9b9447a76a54bc764","admin_user":"wolfdan666","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"3d9ee685ec0f9107f9f6f64e8f272c92"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
