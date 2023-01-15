@@ -2,6 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC193%E5%91%A8-193-521/</loc>
+    
+    <lastmod>2023-01-15T06:41:57.568Z</lastmod>
+    
+    <date>1673760061000</date>
+    <title>ARST打卡第193周[193/521] | 单林敏的博客</title>
+    
+    <desc>lc2293_极大极小游戏 【TED演讲】要克服挑战,就别再与他人比较 HTAP发展简介 研究数据库内核前景(看好云原生+,HTAP数据库)</desc>
+  </url>
+  
+  <url>
     <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC192%E5%91%A8-192-521/</loc>
     
     <lastmod>2023-01-08T12:26:31.020Z</lastmod>
@@ -1883,17 +1894,6 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/%E5%AE%89%E8%A3%85%E7%A0%B4%E8%A7%A3Altium-Designer14-2/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.782Z</lastmod>
-    
-    <date>1560695030000</date>
-    <title>安装破解Altium Designer14.2 | 单林敏的博客</title>
-    
-    <desc>安装破解Altium Designer14.2,这里有资源链接和详细解释</desc>
-  </url>
-  
-  <url>
     <loc>https://www.wolfdan.cn/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E4%B8%80%E4%B8%AA%E5%9F%9F%E5%90%8D%E5%90%8C%E6%97%B6%E6%9E%84%E5%BB%BAHexo%E5%92%8CWordPress/</loc>
     
     <lastmod>2020-09-13T13:42:58.782Z</lastmod>
@@ -1902,6 +1902,17 @@
     <title>如何使用一个域名同时构建Hexo和WordPress | 单林敏的博客</title>
     
     <desc>如何使用一个域名同时构建Hexo和WordPress coding申请SSL失败的解决方法 BT面板添加网站申请SSL并修改数据库 防止每次发布后重新绑定github的域名</desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/%E5%AE%89%E8%A3%85%E7%A0%B4%E8%A7%A3Altium-Designer14-2/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.782Z</lastmod>
+    
+    <date>1560695030000</date>
+    <title>安装破解Altium Designer14.2 | 单林敏的博客</title>
+    
+    <desc>安装破解Altium Designer14.2,这里有资源链接和详细解释</desc>
   </url>
   
   <url>
@@ -2312,17 +2323,6 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/Linux%E8%BF%9B%E5%85%A5emergency%E6%A8%A1%E5%BC%8F-%E5%B9%B6%E4%B8%94root%E8%A2%AB%E9%94%81%E6%80%8E%E4%B9%88%E8%A7%A3%E5%86%B3/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.773Z</lastmod>
-    
-    <date>1570283903000</date>
-    <title>Linux进入emergency模式,并且root被锁怎么解决 | 单林敏的博客</title>
-    
-    <desc>Linux突然断电宕机,然后重启无法进入用户图形界面,Linux进入emergency模式,并且root被锁怎么解决</desc>
-  </url>
-  
-  <url>
     <loc>https://www.wolfdan.cn/SQL%E4%B8%AD%E5%9B%A0%E4%B8%BAnull%E5%AF%BC%E8%87%B4%E7%9A%84%E7%A9%BA%E7%BB%93%E6%9E%9C/</loc>
     
     <lastmod>2020-09-13T13:42:58.773Z</lastmod>
@@ -2331,6 +2331,17 @@
     <title>SQL中因为null导致的空结果 | 单林敏的博客</title>
     
     <desc>SQL中因为null导致的空结果 in/not in 的结果是依赖于“=”等值判断的结果；exists/not exists 虽然是判断集合是否为空，但通常里面的子查询做的是值判断 minus消灭了重复行！这就是前文所说的 not in 和 not exists 并非真正意义上的差集。 优化(写出鲁棒性更好的SQL！) 所以在group by之前都执行以下where \*.\* is not nu</desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/Linux%E8%BF%9B%E5%85%A5emergency%E6%A8%A1%E5%BC%8F-%E5%B9%B6%E4%B8%94root%E8%A2%AB%E9%94%81%E6%80%8E%E4%B9%88%E8%A7%A3%E5%86%B3/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.773Z</lastmod>
+    
+    <date>1570283903000</date>
+    <title>Linux进入emergency模式,并且root被锁怎么解决 | 单林敏的博客</title>
+    
+    <desc>Linux突然断电宕机,然后重启无法进入用户图形界面,Linux进入emergency模式,并且root被锁怎么解决</desc>
   </url>
   
   <url>
@@ -2554,17 +2565,6 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC65%E5%91%A8-65-521/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.768Z</lastmod>
-    
-    <date>1595654100000</date>
-    <title>ARST打卡第65周[65/521] | 单林敏的博客</title>
-    
-    <desc>LeetCode/410_分割数组的最大值 TED演讲：怎么才能活的更幸福？ git pull时遇到error-cannot lock ref git commit之后，想撤销commit Git-命令行-拯救“Your local changes to the following files would be overwritten by checkout” GIt冲突解决 mongodb_in</desc>
-  </url>
-  
-  <url>
     <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC66%E5%91%A8-66-521/</loc>
     
     <lastmod>2020-09-13T13:42:58.768Z</lastmod>
@@ -2573,6 +2573,17 @@
     <title>ARST打卡第66周[66/521] | 单林敏的博客</title>
     
     <desc>LeetCode/26_unique_删除排序数组中的重复项 TED演讲：金钱能买来幸福吗？ spec文件知识整理 延迟加载配置项</desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC65%E5%91%A8-65-521/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.768Z</lastmod>
+    
+    <date>1595654100000</date>
+    <title>ARST打卡第65周[65/521] | 单林敏的博客</title>
+    
+    <desc>LeetCode/410_分割数组的最大值 TED演讲：怎么才能活的更幸福？ git pull时遇到error-cannot lock ref git commit之后，想撤销commit Git-命令行-拯救“Your local changes to the following files would be overwritten by checkout” GIt冲突解决 mongodb_in</desc>
   </url>
   
   <url>
@@ -2587,17 +2598,6 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC38%E5%91%A8-38-521/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.767Z</lastmod>
-    
-    <date>1578809859000</date>
-    <title>ARST打卡第38周[38/521] | 单林敏的博客</title>
-    
-    <desc>16_最接近的三数之和 Why should you learn Go? 子雨大数据之Spark入门教程（Scala版） next5.1升级到next7.7闲记日志</desc>
-  </url>
-  
-  <url>
     <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC39%E5%91%A8-39-521/</loc>
     
     <lastmod>2020-09-13T13:42:58.767Z</lastmod>
@@ -2606,6 +2606,17 @@
     <title>ARST打卡第39周[39/521] | 单林敏的博客</title>
     
     <desc>LeetCode17_电话号码和字母组合 char转string 5 Signs You Are Wasting Your Life 林子雨主讲-《Spark编程基础》 如果我们太在意别人的看法，那我们很可能将会丢掉自己【自己的一些感受】</desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC38%E5%91%A8-38-521/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.767Z</lastmod>
+    
+    <date>1578809859000</date>
+    <title>ARST打卡第38周[38/521] | 单林敏的博客</title>
+    
+    <desc>16_最接近的三数之和 Why should you learn Go? 子雨大数据之Spark入门教程（Scala版） next5.1升级到next7.7闲记日志</desc>
   </url>
   
   <url>
@@ -2628,17 +2639,6 @@
     <title>ARST打卡第32周[32/521] | 单林敏的博客</title>
     
     <desc>刷<剑指offer> I just don’t want to be a software developer anymore 安徽省大数据网络赛大数据分析第二小题 别让自己"墙"了自己</desc>
-  </url>
-  
-  <url>
-    <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC33%E5%91%A8-33-521/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.766Z</lastmod>
-    
-    <date>1575685352000</date>
-    <title>ARST打卡第33周[33/521] | 单林敏的博客</title>
-    
-    <desc>数据流中的中位数 2020 and Beyond Programming Trend Predictions 应对变化,我们只要做好不变的就行了--掌握内核思想,终身学习 关于个人网站未来的讨论-Hexo,Hugo,Wordpress ICP备案经历与后续,腾讯云的域名,华为云主机,在华为云备案 导出导入数据库</desc>
   </url>
   
   <url>
@@ -2672,6 +2672,17 @@
     <title>ARST打卡第36周[36/521] | 单林敏的博客</title>
     
     <desc>单链条选择排序极其探讨 JNI与JNA性能比较 单链表排序之选择排序（赞） 复制硬盘中的Ubuntu/Deepin到移动硬盘_实现移动硬盘Deepin+Ubunntu双系统(更新版)</desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC33%E5%91%A8-33-521/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.766Z</lastmod>
+    
+    <date>1575685352000</date>
+    <title>ARST打卡第33周[33/521] | 单林敏的博客</title>
+    
+    <desc>数据流中的中位数 2020 and Beyond Programming Trend Predictions 应对变化,我们只要做好不变的就行了--掌握内核思想,终身学习 关于个人网站未来的讨论-Hexo,Hugo,Wordpress ICP备案经历与后续,腾讯云的域名,华为云主机,在华为云备案 导出导入数据库</desc>
   </url>
   
   <url>
@@ -2851,17 +2862,6 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/ARSTB%E6%89%93%E5%8D%A1%E7%AC%AC61%E5%91%A8-61-521/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.761Z</lastmod>
-    
-    <date>1592740169000</date>
-    <title>ARSTB打卡第61周[61/521] | 单林敏的博客</title>
-    
-    <desc>LeetCode124_二叉树中的最大路径和 如何克服人生中最大的障碍？ 【GPU】win10 (1050Ti)+anaconda3+python3.6+CUDA10.0+tensorflow-gpu2.1.0 Win10中CUDA、cuDNN的安装与卸载 Win10+1050Ti配置Tensorflow教程__不用GPU，真的GAN不动___配了两天 《异类-不一样的成功启示录》</desc>
-  </url>
-  
-  <url>
     <loc>https://www.wolfdan.cn/ARSTB%E6%89%93%E5%8D%A1%E7%AC%AC60%E5%91%A8-60-521/</loc>
     
     <lastmod>2020-09-13T13:42:58.761Z</lastmod>
@@ -2870,6 +2870,17 @@
     <title>ARSTB打卡第60周[60/521] | 单林敏的博客</title>
     
     <desc>LeetCode/25_K个一组翻转链表 TED演讲：若想有所作为，请停止和别人比较！ 刷掉90%候选人的互联网大厂海量数据面试题 蓄水池抽样算法（Reservoir Sampling） 个人C++面试准备_面试高频知识点集 《事实》</desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/ARSTB%E6%89%93%E5%8D%A1%E7%AC%AC61%E5%91%A8-61-521/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.761Z</lastmod>
+    
+    <date>1592740169000</date>
+    <title>ARSTB打卡第61周[61/521] | 单林敏的博客</title>
+    
+    <desc>LeetCode124_二叉树中的最大路径和 如何克服人生中最大的障碍？ 【GPU】win10 (1050Ti)+anaconda3+python3.6+CUDA10.0+tensorflow-gpu2.1.0 Win10中CUDA、cuDNN的安装与卸载 Win10+1050Ti配置Tensorflow教程__不用GPU，真的GAN不动___配了两天 《异类-不一样的成功启示录》</desc>
   </url>
   
   <url>
@@ -3060,17 +3071,6 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/ARSTB%E6%89%93%E5%8D%A1%E7%AC%AC51%E5%91%A8-51-521/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.759Z</lastmod>
-    
-    <date>1586680667000</date>
-    <title>ARSTB打卡第51周[51/521] | 单林敏的博客</title>
-    
-    <desc>LeetCode/面试题_16.03._交点 If you do that journey(disciplined life) , you will get to have the life you deserve. TED演讲：如何摆脱“快乐陷阱”？ sizeof()计算嵌套结构体 侯捷 讲解C++内存管理（全60集）</desc>
-  </url>
-  
-  <url>
     <loc>https://www.wolfdan.cn/ARSTB%E6%89%93%E5%8D%A1%E7%AC%AC52%E5%91%A8-52-521/</loc>
     
     <lastmod>2020-09-13T13:42:58.759Z</lastmod>
@@ -3079,6 +3079,17 @@
     <title>ARSTB打卡第52周[52/521] | 单林敏的博客</title>
     
     <desc>LeetCode466_统计重复个数 TED演讲：为什么70%的成功者都是性格内向？ Chrome 开发者工具(DevTools)中所有快捷方式列表 内存管理学习笔记 设计模式</desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/ARSTB%E6%89%93%E5%8D%A1%E7%AC%AC51%E5%91%A8-51-521/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.759Z</lastmod>
+    
+    <date>1586680667000</date>
+    <title>ARSTB打卡第51周[51/521] | 单林敏的博客</title>
+    
+    <desc>LeetCode/面试题_16.03._交点 If you do that journey(disciplined life) , you will get to have the life you deserve. TED演讲：如何摆脱“快乐陷阱”？ sizeof()计算嵌套结构体 侯捷 讲解C++内存管理（全60集）</desc>
   </url>
   
   <url>
@@ -3148,17 +3159,6 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/2019%E7%89%9B%E5%AE%A2%E5%A4%9A%E6%A0%A1%E7%AC%AC%E4%BA%8C%E5%9C%BA%E8%A1%A5%E9%A2%98%E7%AC%94%E8%AE%B0/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.757Z</lastmod>
-    
-    <date>1563686459000</date>
-    <title>2019牛客多校第二场补题笔记 | 单林敏的博客</title>
-    
-    <desc>2019牛客多校第二场补题笔记 单调栈</desc>
-  </url>
-  
-  <url>
     <loc>https://www.wolfdan.cn/2019%E7%89%9B%E5%AE%A2%E5%A4%9A%E6%A0%A13-I/</loc>
     
     <lastmod>2020-09-13T13:42:58.757Z</lastmod>
@@ -3178,6 +3178,17 @@
     <title>8数码和15数码算法结论和延展 | 单林敏的博客</title>
     
     <desc>8数码和15数码算法结论和延展 **那么就要在初始状态的逆序数上面 加上 0值在初始状态移动到最后一行产生的逆序数奇偶性的变化值**仍为偶数则有解</desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/2019%E7%89%9B%E5%AE%A2%E5%A4%9A%E6%A0%A1%E7%AC%AC%E4%BA%8C%E5%9C%BA%E8%A1%A5%E9%A2%98%E7%AC%94%E8%AE%B0/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.757Z</lastmod>
+    
+    <date>1563686459000</date>
+    <title>2019牛客多校第二场补题笔记 | 单林敏的博客</title>
+    
+    <desc>2019牛客多校第二场补题笔记 单调栈</desc>
   </url>
   
   <url>
