@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.wolfdan.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.8.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="lc1625_执行操作后字典序最小的字符串 拒绝的力量 如何将现有git仓库中的子目录分离为独立仓库并保留其提交历史 vscode-cpp-IntelliSense解析开发包到系统路径而非指定的项目路径原因探索以及解决方案">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ARST打卡第202周[202&#x2F;521]">
+<meta property="og:url" content="https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC202%E5%91%A8-202-521/">
+<meta property="og:site_name" content="单林敏的博客">
+<meta property="og:description" content="lc1625_执行操作后字典序最小的字符串 拒绝的力量 如何将现有git仓库中的子目录分离为独立仓库并保留其提交历史 vscode-cpp-IntelliSense解析开发包到系统路径而非指定的项目路径原因探索以及解决方案">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-03-19T08:38:18.000Z">
+<meta property="article:modified_time" content="2023-03-19T10:26:40.468Z">
+<meta property="article:author" content="单林敏">
+<meta property="article:tag" content="ARST">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC202%E5%91%A8-202-521/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC202%E5%91%A8-202-521/","path":"ARST打卡第202周-202-521/","title":"ARST打卡第202周[202/521]"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>ARST打卡第202周[202/521] | 单林敏的博客</title>
+  
+
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?953c0cc2db0f1124313d72b95b9d07e1"></script>
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">单林敏的博客</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">wolfdan's blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-捐赠"><a href="/%E6%8D%90%E8%B5%A0/" rel="section"><i class="fa fa-coins fa-fw"></i>捐赠</a></li>
+        <li class="menu-item menu-item-冲冲"><a href="/%E5%86%B2%E5%86%B2%E5%86%B2/" rel="section"><i class="fa fa-rocket fa-fw"></i>冲冲</a></li>
+        <li class="menu-item menu-item-友链"><a href="/links/" rel="section"><i class="fa fa-link fa-fw"></i>友链</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Algorithm"><span class="nav-number">1.</span> <span class="nav-text">Algorithm</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Review"><span class="nav-number">2.</span> <span class="nav-text">Review</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tips"><span class="nav-number">3.</span> <span class="nav-text">Tips</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Share-vscode-cpp-IntelliSense%E8%A7%A3%E6%9E%90%E5%BC%80%E5%8F%91%E5%8C%85%E5%88%B0%E7%B3%BB%E7%BB%9F%E8%B7%AF%E5%BE%84%E8%80%8C%E9%9D%9E%E6%8C%87%E5%AE%9A%E7%9A%84%E9%A1%B9%E7%9B%AE%E8%B7%AF%E5%BE%84%E5%8E%9F%E5%9B%A0%E6%8E%A2%E7%B4%A2%E4%BB%A5%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="nav-number">4.</span> <span class="nav-text">Share_vscode-cpp IntelliSense解析开发包到系统路径而非指定的项目路径原因探索以及解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-number">4.1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E5%9B%A0%E6%8E%A2%E7%B4%A2"><span class="nav-number">4.2.</span> <span class="nav-text">原因探索</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#IntelliSense-%E9%93%BE%E6%8E%A5%E6%9C%AC%E5%9C%B0leveldb%E7%9B%AE%E5%BD%95%E5%A4%B1%E8%B4%A5%EF%BC%8C%E4%B8%80%E7%9B%B4%E9%93%BE%E6%8E%A5%E7%B3%BB%E7%BB%9Fleveldb"><span class="nav-number">4.2.1.</span> <span class="nav-text">IntelliSense 链接本地leveldb目录失败，一直链接系统leveldb</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IntelliSense-%E6%9F%A5%E6%89%BE%E5%A4%B4%E6%96%87%E4%BB%B6%E9%A1%BA%E5%BA%8F"><span class="nav-number">4.2.2.</span> <span class="nav-text">IntelliSense 查找头文件顺序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IntelliSense-%E5%BC%95%E6%93%8E%E8%A6%81%E4%BD%BF%E7%94%A8%E7%9A%84%E9%80%92%E5%BD%92%E8%B7%AF%E5%BE%84%E6%98%AF%E5%90%A6%E6%9C%89%E9%99%90%E5%88%B6"><span class="nav-number">4.2.3.</span> <span class="nav-text">IntelliSense 引擎要使用的递归路径是否有限制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E6%96%B0%E5%B0%9D%E8%AF%95"><span class="nav-number">4.3.</span> <span class="nav-text">重新尝试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%9C%80%E7%BB%88%E5%8E%9F%E5%9B%A0%E6%80%BB%E7%BB%93"><span class="nav-number">4.4.</span> <span class="nav-text">问题最终原因总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E9%A1%B9%E7%9B%AE%E5%86%85%E5%85%B6%E4%BB%96%E8%B7%AF%E5%BE%84%E8%BE%83%E6%B7%B1%E5%A4%B4%E6%96%87%E4%BB%B6%E4%B8%BA%E5%95%A5%E8%A7%A3%E6%9E%90%E6%B2%A1%E5%87%BA%E9%97%AE%E9%A2%98"><span class="nav-number">4.4.1.</span> <span class="nav-text">关于项目内其他路径较深头文件为啥解析没出问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A4%E7%B1%BB%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="nav-number">4.5.</span> <span class="nav-text">此类问题解决方案</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="单林敏"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">单林敏</p>
+  <div class="site-description" itemprop="description">心外无物,知行合一</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">294</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">93</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/wolfdan666" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;wolfdan666" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:wolfdan666666@gmail.com" title="E-Mail → mailto:wolfdan666666@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/shanlinmin/activities" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;shanlinmin&#x2F;activities" rel="noopener" target="_blank"><i class="free-code-camp fa-fw"></i>知乎</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.jianshu.com/u/53acec957bf9" title="简书 → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;53acec957bf9" rel="noopener" target="_blank"><i class="book fa-fw"></i>简书</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://me.csdn.net/neve_give_up_dan" title="CSDN → https:&#x2F;&#x2F;me.csdn.net&#x2F;neve_give_up_dan" rel="noopener" target="_blank"><i class="rotate-right fa-fw"></i>CSDN</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC202%E5%91%A8-202-521/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="单林敏">
+      <meta itemprop="description" content="心外无物,知行合一">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="单林敏的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ARST打卡第202周[202/521]
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-03-19 16:38:18 / 修改时间：18:26:40" itemprop="dateCreated datePublished" datetime="2023-03-19T16:38:18+08:00">2023-03-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/ARST/" itemprop="url" rel="index"><span itemprop="name">ARST</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+            <div class="post-description">lc1625_执行操作后字典序最小的字符串 拒绝的力量 如何将现有git仓库中的子目录分离为独立仓库并保留其提交历史 vscode-cpp-IntelliSense解析开发包到系统路径而非指定的项目路径原因探索以及解决方案</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h1><p>lc1625_执行操作后字典序最小的字符串</p>
+<p>思路: 这个题目一看就是找规律:</p>
+<ul>
+<li>无限次操作，所以b只分奇数偶数，a看其无限次累加能获得的所有个位数的质数 </li>
+<li>分为奇数位置的一组数字，和偶数位置的一组数字</li>
+<li>如果b是偶数，那么只有奇数位置能累加到a值<ul>
+<li>所以偶数位置直接循环移动位置成最小值即可</li>
+<li>奇数位置累加到对应最小值</li>
+</ul>
+</li>
+<li>如果b为奇数，那么奇数位列和偶数位列各自得到一组最小值，然后更小的作为前导</li>
+</ul>
+<p>所以直接枚举位置操作，看看<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/lexicographically-smallest-string-after-applying-operations/solutions/2176373/zhi-xing-cao-zuo-hou-zi-dian-xu-zui-xiao-4jyr/">题解</a></p>
+<p>发现题解有很多的优化点: </p>
+<ol>
+<li>关于轮转循环终止，直接用s拼接串用<code>vis[i]</code>下标来确定终止循环</li>
+<li>关于累加a的次数可以限定到10次即可(因为10次后又回归到了个位数原点)</li>
+<li>轮转最大公约数(gcd)优化有个数学定理，直观上也能感受到</li>
+<li>然后就是累加过程中,因为都是一起追加，是只要确定头部最小即可</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">string <span class="title">findLexSmallestString</span><span class="params">(string s, <span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = s.<span class="built_in">size</span>();</span><br><span class="line">        string res = s;</span><br><span class="line">        s = s + s;</span><br><span class="line">        <span class="keyword">int</span> g = <span class="built_in">gcd</span>(b, n);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">auto</span> add = [&amp;](string&amp; t, <span class="keyword">int</span> start) &#123;</span><br><span class="line">            <span class="keyword">int</span> minVal = <span class="number">10</span>, times = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">                <span class="keyword">int</span> added = ((t[start] - <span class="string">&#x27;0&#x27;</span>) + i * a) % <span class="number">10</span>;</span><br><span class="line">                <span class="keyword">if</span> (added &lt; minVal) &#123;</span><br><span class="line">                    minVal = added;</span><br><span class="line">                    times = i;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = start; i &lt; n; i += <span class="number">2</span>) &#123;</span><br><span class="line">                t[i] = <span class="string">&#x27;0&#x27;</span> + ((t[i] - <span class="string">&#x27;0&#x27;</span>) + times * a) % <span class="number">10</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i += g) &#123;</span><br><span class="line">            string t = s.<span class="built_in">substr</span>(i, n);</span><br><span class="line">            <span class="built_in">add</span>(t, <span class="number">1</span>);</span><br><span class="line">            <span class="keyword">if</span> (b % <span class="number">2</span>) &#123;</span><br><span class="line">                <span class="built_in">add</span>(t, <span class="number">0</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            res = <span class="built_in">min</span>(res, t);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h1><p>拒绝的力量</p>
+<div align = "center">
+    <iframe  width="100%" height="700" src="//player.bilibili.com/player.html?aid=438319662&bvid=BV1UL411d79D&cid=1048270448&page=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+
+<p>勇敢地说”不”有如下好处:</p>
+<ul>
+<li>让你成为一个自尊自爱的人，不会什么事情都答应别人，能够建立合理的边界感</li>
+<li>能让你更加专注于你自己想要做的事情，而不是被外界的请求，诱惑给干扰</li>
+<li>筛选掉一些想要摆弄你的人际关系，而留下那些真正尊重你想法的人际关系</li>
+</ul>
+<h1 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h1><p><a target="_blank" rel="noopener" href="https://prinsss.github.io/splitting-a-subfolder-out-into-a-new-git-repository/">如何将现有 git 仓库中的子目录分离为独立仓库并保留其提交历史</a></p>
+<h1 id="Share-vscode-cpp-IntelliSense解析开发包到系统路径而非指定的项目路径原因探索以及解决方案"><a href="#Share-vscode-cpp-IntelliSense解析开发包到系统路径而非指定的项目路径原因探索以及解决方案" class="headerlink" title="Share_vscode-cpp IntelliSense解析开发包到系统路径而非指定的项目路径原因探索以及解决方案"></a>Share_vscode-cpp IntelliSense解析开发包到系统路径而非指定的项目路径原因探索以及解决方案</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>自己学习一个项目，项目里有改造过的levelDB包，但是vscode-cpp插件解析代码的时候，一直把代码解析到了<code>/usr/include</code>下面，而非<code>&quot;$&#123;workspaceFolder&#125;/third-party/leveldb/src/include&quot;</code>路径</p>
+<p>c_cpp_properties.json 文件配置如下。按道理来说会通过<code>&quot;$&#123;workspaceFolder&#125;/**&quot;</code> 这个配置递归到所有的子目录，但是为啥不行呢</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;configurations&quot;</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;Linux&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;includePath&quot;</span>: [</span><br><span class="line">                <span class="string">&quot;$&#123;workspaceFolder&#125;/**&quot;</span>,</span><br><span class="line">            ],</span><br><span class="line">            <span class="attr">&quot;defines&quot;</span>: [],</span><br><span class="line">            <span class="attr">&quot;compilerPath&quot;</span>: <span class="string">&quot;/usr/bin/gcc&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;cStandard&quot;</span>: <span class="string">&quot;c11&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;cppStandard&quot;</span>: <span class="string">&quot;c++14&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;intelliSenseMode&quot;</span>: <span class="string">&quot;linux-gcc-x64&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">&quot;version&quot;</span>: <span class="number">4</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="原因探索"><a href="#原因探索" class="headerlink" title="原因探索"></a>原因探索</h2><p>通过google内容无果后，改用ChatGPT先学习相关知识点</p>
+<h3 id="IntelliSense-链接本地leveldb目录失败，一直链接系统leveldb"><a href="#IntelliSense-链接本地leveldb目录失败，一直链接系统leveldb" class="headerlink" title="IntelliSense 链接本地leveldb目录失败，一直链接系统leveldb"></a>IntelliSense 链接本地leveldb目录失败，一直链接系统leveldb</h3><p>如果 IntelliSense 链接本地 leveldb 目录失败，而一直链接到了系统 leveldb，可能有以下几个原因：</p>
+<p>检查头文件路径是否正确<br>在 c_cpp_properties.json 文件的 “includePath” 中，确保添加了本地 leveldb 头文件的路径，并且路径与本地 leveldb 头文件的实际路径相符。如果路径不正确，则 IntelliSense 将无法找到本地 leveldb 头文件并使用系统头文件。</p>
+<p>检查 leveldb 的命名空间是否正确<br>在 C++ 代码中，确保使用了正确的 leveldb 命名空间。如果命名空间不正确，则编译器将无法找到正确的 leveldb 头文件并使用系统头文件。在 leveldb 头文件中，命名空间应该是 leveldb，例如：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;leveldb/db.h&quot;</span></span></span><br></pre></td></tr></table></figure>
+<p>检查 leveldb 库是否链接正确<br>如果您的项目需要链接 leveldb 库，您需要在 tasks.json 文件中添加链接 leveldb 库的任务，并确保编译器可以找到库文件。</p>
+<p>检查 C_Cpp.intelliSenseEngine 设置<br>在 VS Code 中，如果您使用的是 Tag Parser 引擎，则 IntelliSense 将无法处理 leveldb 头文件。您需要将 C_Cpp.intelliSenseEngine 设置为 Default 或 IncludeCompletion，以启用 IntelliSense 处理 leveldb 头文件。</p>
+<p>希望这些解决方案可以帮助您解决问题。</p>
+<h3 id="IntelliSense-查找头文件顺序"><a href="#IntelliSense-查找头文件顺序" class="headerlink" title="IntelliSense 查找头文件顺序"></a>IntelliSense 查找头文件顺序</h3><p>IntelliSense 在查找头文件时通常按照以下顺序进行查找：</p>
+<ol>
+<li>查找项目内的头文件：首先，IntelliSense 会查找项目内所有包含路径下的头文件，包括在 C/C++ 配置文件 c_cpp_properties.json 中配置的路径，以及通过 #include 包含的头文件。</li>
+<li>查找系统头文件：如果在项目内找不到所需的头文件，IntelliSense 会继续查找系统的标准头文件路径，通常是 /usr/include 或 /usr/local/include。</li>
+<li>查找其他路径：如果在项目内和系统路径中都找不到所需的头文件，IntelliSense 可能会查找其他路径，例如通过 -I 选项指定的路径。</li>
+</ol>
+<p>需要注意的是，如果多个头文件有相同的名称，IntelliSense 只会使用查找顺序中第一个找到的头文件。如果需要使用某个特定的头文件，可以使用完整路径或相对路径包含该头文件。</p>
+<p>另外，如果您在代码中使用了非标准的头文件，例如第三方库的头文件，建议在 c_cpp_properties.json 中将这些头文件路径添加到 “includePath” 中，以便 IntelliSense 正确地查找和处理这些头文件。</p>
+<h3 id="IntelliSense-引擎要使用的递归路径是否有限制"><a href="#IntelliSense-引擎要使用的递归路径是否有限制" class="headerlink" title="IntelliSense 引擎要使用的递归路径是否有限制"></a>IntelliSense 引擎要使用的递归路径是否有限制</h3><p>在 IntelliSense 中，引擎使用递归路径来查找头文件和解析代码。对于大多数情况，递归路径的深度没有限制，也就是说，引擎可以一直往下递归查找，直到找到需要的头文件或达到系统的递归深度限制。</p>
+<p>然而，当递归路径太深时，可能会导致 IntelliSense 的性能下降，并可能导致其无法正确地解析代码。因此，为了避免这种情况，建议在配置 C_Cpp.default.includePath 和 C_Cpp.default.forcedInclude 时，尽量将递归路径限制在合理的范围内，只包括必要的路径，避免不必要的递归和性能下降。</p>
+<p>另外，对于某些引擎（如 Tag Parser 引擎），由于其实现方式的限制，可能会导致递归路径深度限制更加严格。在这种情况下，建议使用默认引擎或 IncludeCompletion 引擎，以获得更好的性能和代码解析能力。</p>
+<h2 id="重新尝试"><a href="#重新尝试" class="headerlink" title="重新尝试"></a>重新尝试</h2><p>看到ChatGPT回答的问题之后，检查确认了自己所有的配置都没有问题，但是自己却还是遇到这个问题，所以怀疑是缓存空间不够，导致项目头文件递归受限。</p>
+<p>因此自己做了指定头文件的尝试: </p>
+<p>添加<code>&quot;third-party/leveldb/src/include&quot;</code>到<code>c_cpp_properties.json</code> 文件中, 然后居然就成功了，<del>所以之前添加的<code>&quot;third-party/leveldb/src/include/**&quot;</code>是错的，正好忽略掉了include目录(<code>**</code>往下递归)</del></p>
+<p>继续尝试，</p>
+<ul>
+<li><code>&quot;$&#123;workspaceFolder&#125;/third-party/leveldb/src/include&quot;</code>也可以</li>
+<li><code>&quot;$&#123;workspaceFolder&#125;/third-party/**&quot;</code> 就失败了，导致链接到了<code>/usr/include/leveldb/slice.h</code></li>
+<li><code>&quot;$&#123;workspaceFolder&#125;/third-party/leveldb/**&quot;</code> 也失败了</li>
+<li><code>&quot;$&#123;workspaceFolder&#125;/third-party/leveldb/src/**&quot;</code> 也失败了</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;configurations&quot;</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;Linux&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;includePath&quot;</span>: [</span><br><span class="line">                <span class="string">&quot;$&#123;workspaceFolder&#125;/**&quot;</span>,</span><br><span class="line">                <span class="string">&quot;third-party/leveldb/src/include&quot;</span></span><br><span class="line">            ],</span><br><span class="line">            <span class="attr">&quot;defines&quot;</span>: [],</span><br><span class="line">            <span class="attr">&quot;compilerPath&quot;</span>: <span class="string">&quot;/usr/bin/gcc&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;cStandard&quot;</span>: <span class="string">&quot;c11&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;cppStandard&quot;</span>: <span class="string">&quot;c++14&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;intelliSenseMode&quot;</span>: <span class="string">&quot;linux-gcc-x64&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">&quot;version&quot;</span>: <span class="number">4</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="问题最终原因总结"><a href="#问题最终原因总结" class="headerlink" title="问题最终原因总结"></a>问题最终原因总结</h2><p><strong><font color='red'>因为确实<code>**</code>会进行递归操作，于是猜测是level的包递归路径太深时，可能会导致 IntelliSense 的性能下降或者缓存不足，于是导致其无法正确地解析代码，导致对于 <code>includePath</code> 支持的内容有些折中，所以最终导致出现较深的本地目录只有在精确命名时才能找到，否则认为本地没有，于是去找系统目录，发现系统目录有，于是显示系统目录的leveldb</font></strong></p>
+<h3 id="关于项目内其他路径较深头文件为啥解析没出问题"><a href="#关于项目内其他路径较深头文件为啥解析没出问题" class="headerlink" title="关于项目内其他路径较深头文件为啥解析没出问题"></a>关于项目内其他路径较深头文件为啥解析没出问题</h3><p>对于其他的一些同样路径较深的头文件，可能是因为本地和系统目录都没找到，最后通过找<code>-I</code>指定的路径找到了本地项目头文件，所以看起来像是提前找了本地项目一样</p>
+<h2 id="此类问题解决方案"><a href="#此类问题解决方案" class="headerlink" title="此类问题解决方案"></a>此类问题解决方案</h2><p>对于较深的第三方包，通过精准指定目录，去防止IntelliSense跳转到系统头文件</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;configurations&quot;</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;Linux&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;includePath&quot;</span>: [</span><br><span class="line">                <span class="string">&quot;$&#123;workspaceFolder&#125;/**&quot;</span>,</span><br><span class="line">                <span class="string">&quot;$&#123;workspaceFolder&#125;/third-party/leveldb/src/include&quot;</span></span><br><span class="line">            ],</span><br><span class="line">            <span class="attr">&quot;defines&quot;</span>: [],</span><br><span class="line">            <span class="attr">&quot;compilerPath&quot;</span>: <span class="string">&quot;/usr/bin/gcc&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;cStandard&quot;</span>: <span class="string">&quot;c11&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;cppStandard&quot;</span>: <span class="string">&quot;c++14&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;intelliSenseMode&quot;</span>: <span class="string">&quot;linux-gcc-x64&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">&quot;version&quot;</span>: <span class="number">4</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/alipay.jpg" alt="单林敏 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/ARST/" rel="tag"># ARST</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/ARST%E6%89%93%E5%8D%A1%E7%AC%AC201%E5%91%A8-201-521/" rel="prev" title="ARST打卡第201周[201/521]">
+                  <i class="fa fa-chevron-left"></i> ARST打卡第201周[201/521]
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">湘ICP备19025607号 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">单林敏</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"wolfdan666","repo":"gitalk_commont","client_id":"2934cb0fdcabc560461e","client_secret":"937e7b77dcdfd83f6a89f4a9b9447a76a54bc764","admin_user":"wolfdan666","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"83e645c51c95dda5bd0d33ee3c93750e"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
