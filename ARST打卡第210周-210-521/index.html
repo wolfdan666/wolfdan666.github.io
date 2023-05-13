@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.wolfdan.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.8.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="2441_与对应负数同时存在的最大正整数 【TED演讲】如何有目的生活 如何阅读源代码(耗子叔的思路) C++编程中的工厂模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ARST打卡第210周[210&#x2F;521]">
+<meta property="og:url" content="https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC210%E5%91%A8-210-521/">
+<meta property="og:site_name" content="单林敏的博客">
+<meta property="og:description" content="2441_与对应负数同时存在的最大正整数 【TED演讲】如何有目的生活 如何阅读源代码(耗子叔的思路) C++编程中的工厂模式">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-05-13T08:41:28.000Z">
+<meta property="article:modified_time" content="2023-05-13T09:30:23.894Z">
+<meta property="article:author" content="单林敏">
+<meta property="article:tag" content="ARST">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC210%E5%91%A8-210-521/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC210%E5%91%A8-210-521/","path":"ARST打卡第210周-210-521/","title":"ARST打卡第210周[210/521]"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>ARST打卡第210周[210/521] | 单林敏的博客</title>
+  
+
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?953c0cc2db0f1124313d72b95b9d07e1"></script>
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">单林敏的博客</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">wolfdan's blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-捐赠"><a href="/%E6%8D%90%E8%B5%A0/" rel="section"><i class="fa fa-coins fa-fw"></i>捐赠</a></li>
+        <li class="menu-item menu-item-冲冲"><a href="/%E5%86%B2%E5%86%B2%E5%86%B2/" rel="section"><i class="fa fa-rocket fa-fw"></i>冲冲</a></li>
+        <li class="menu-item menu-item-友链"><a href="/links/" rel="section"><i class="fa fa-link fa-fw"></i>友链</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Algorithm"><span class="nav-number">1.</span> <span class="nav-text">Algorithm</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Review"><span class="nav-number">2.</span> <span class="nav-text">Review</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tips-%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E6%BA%90%E4%BB%A3%E7%A0%81-%E8%80%97%E5%AD%90%E5%8F%94%E7%9A%84%E6%80%9D%E8%B7%AF"><span class="nav-number">3.</span> <span class="nav-text">Tips-如何阅读源代码(耗子叔的思路)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Share-C-%E7%BC%96%E7%A8%8B%E4%B8%AD%E7%9A%84%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F"><span class="nav-number">4.</span> <span class="nav-text">Share-C++编程中的工厂模式</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="单林敏"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">单林敏</p>
+  <div class="site-description" itemprop="description">心外无物,知行合一</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">302</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">93</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/wolfdan666" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;wolfdan666" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:wolfdan666666@gmail.com" title="E-Mail → mailto:wolfdan666666@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/shanlinmin/activities" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;shanlinmin&#x2F;activities" rel="noopener" target="_blank"><i class="free-code-camp fa-fw"></i>知乎</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.jianshu.com/u/53acec957bf9" title="简书 → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;53acec957bf9" rel="noopener" target="_blank"><i class="book fa-fw"></i>简书</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://me.csdn.net/neve_give_up_dan" title="CSDN → https:&#x2F;&#x2F;me.csdn.net&#x2F;neve_give_up_dan" rel="noopener" target="_blank"><i class="rotate-right fa-fw"></i>CSDN</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC210%E5%91%A8-210-521/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="单林敏">
+      <meta itemprop="description" content="心外无物,知行合一">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="单林敏的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ARST打卡第210周[210/521]
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-05-13 16:41:28 / 修改时间：17:30:23" itemprop="dateCreated datePublished" datetime="2023-05-13T16:41:28+08:00">2023-05-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/ARST/" itemprop="url" rel="index"><span itemprop="name">ARST</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+            <div class="post-description">2441_与对应负数同时存在的最大正整数 【TED演讲】如何有目的生活 如何阅读源代码(耗子叔的思路) C++编程中的工厂模式</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h1><p>2441_与对应负数同时存在的最大正整数</p>
+<p>直接用 unordered_set hash数组保存过往的数字，然后每次查一下以前是否有相反数，然后维护最大绝对值即可</p>
+<p>题解还有排序+双指针和暴力枚举的做法就不多介绍了</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findMaxK</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        unordered_set&lt;<span class="keyword">int</span>&gt; hash_set;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">-1</span>;</span><br><span class="line">        <span class="comment">// 参考题解发现题解一次性把插入解决了</span></span><br><span class="line">        <span class="comment">// unordered_set&lt;int&gt; s(nums.begin(), nums.end());</span></span><br><span class="line">        hash_set.<span class="built_in">insert</span>(nums[<span class="number">0</span>]);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;nums.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">            <span class="comment">// if (s.count(-x))</span></span><br><span class="line">            <span class="comment">// 题解的判断方式也挺好</span></span><br><span class="line">            <span class="keyword">if</span> (hash_set.<span class="built_in">find</span>(-nums[i]) != hash_set.<span class="built_in">end</span>()) &#123;</span><br><span class="line">                ans = <span class="built_in">max</span>(ans, <span class="built_in">abs</span>(nums[i]));</span><br><span class="line">            &#125;</span><br><span class="line">            hash_set.<span class="built_in">insert</span>(nums[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h1><p>【TED演讲】如何有目的生活</p>
+<div align = "center">
+    <iframe  width="100%" height="700" src="//player.bilibili.com/player.html?aid=825806459&bvid=BV1Ag4y157hZ&cid=1119408106&page=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+
+<p>珍惜自己手上拥有的东西(才能，资源等)，然后用这些东西去让世界变得更加美好</p>
+<p>人的价值不在于拥有多少，而在于给世界创造了多少</p>
+<h1 id="Tips-如何阅读源代码-耗子叔的思路"><a href="#Tips-如何阅读源代码-耗子叔的思路" class="headerlink" title="Tips-如何阅读源代码(耗子叔的思路)"></a>Tips-如何阅读源代码(耗子叔的思路)</h1><p>首先是阅读代码之前，最好先有以下了解：</p>
+<ol>
+<li>基础知识：相关的语言和基础技术的知识；</li>
+<li>软件功能：需要知道这个软件是做什么的、有哪些特性、哪些配置项，最好能够读一遍用户手册，然后让软件跑起来，自己先用一下感受一下；</li>
+<li>相关文档：读一下相关的内部文档；</li>
+<li>代码的组织结构：先简单看下源码的组织结构。</li>
+</ol>
+<p>接下来，就是详细地看代码的实现，这里耗子叔分享了一个源代码阅读的经验：</p>
+<ol>
+<li>接口抽象定义：任何代码都会有很多接口或抽象定义，其描述了代码需要处理的数据结构或者业务实体，以及它们之间的关系，理清楚这些关系是非常重要的；</li>
+<li>模块粘合层：我们的代码有很多都是用来粘合代码的，比如中间件（middleware）、Promises 模式、回调（Callback）、代理委托、依赖注入等。这些代码模块间的粘合技术是非常重要的，因为它们会把本来平铺直述的代码给分裂开来，让你不容易看明白它们的关系；</li>
+<li>业务流程：这是代码运行的过程。一开始，我们不要进入细节，但需要在高层搞清楚整个业务的流程是什么样的，在这个流程中，数据是怎么被传递和处理的。一般来说，我们需要画程序流程图或者时序处理图；</li>
+<li>具体实现：了解上述的三个方面的内容，相信你对整个代码的框架和逻辑已经有了总体认识。这个时候，你就可以深入细节，开始阅读具体实现的代码了。对于代码的具体实现，一般来说，你需要知道下面一些事实，这样有助于你在阅读代码时找到重点。</li>
+</ol>
+<ul>
+<li>代码逻辑：代码有两种逻辑，一种是业务逻辑，这种逻辑是真正的业务处理逻辑；另一种是控制逻辑，这种逻辑只是用控制程序流转的，不是业务逻辑。比如：flag 之类的控制变量，多线程处理的代码，异步控制的代码，远程通讯的代码，对象序列化反序列化的代码等。这两种逻辑你要分开，很多代码之所以混乱就是把这两种逻辑混在一起了；</li>
+<li>出错处理：根据 2：8 原则，20% 的代码是正常的逻辑，80% 的代码是在处理各种错误，所以，你在读代码的时候，完全可以把处理错误的代码全部删除掉，这样就会留下比较干净和简单的正常逻辑的代码。排除干扰因素，可以更高效地读代码；</li>
+<li>数据处理：只要你认真观察，就会发现，我们好多代码就是在那里倒腾数据。比如 DAO、DTO，比如 JSON、XML，这些代码冗长无聊，不是主要逻辑，可以不理；</li>
+<li>重要的算法：一般来说，我们的代码里会有很多重要的算法，我说的并不一定是什么排序或是搜索算法，可能会是一些其它的核心算法，比如一些索引表的算法，全局唯一 ID 的算法，信息推荐的算法、统计算法、通读算法（如 Gossip）等。这些比较核心的算法可能会非常难读，但它们往往是最有技术含量的部分；</li>
+<li>底层交互：有一些代码是和底层系统的交互，一般来说是和操作系统或是 JVM 的交互。因此，读这些代码通常需要一定的底层技术知识，不然，很难读懂；</li>
+</ul>
+<ol start="5">
+<li>运行时调试：很多时候，代码只有运行起来了，才能知道具体发生了什么事，所以，我们让代码运行进来，然后用日志也好，debug 设置断点跟踪也好。实际看一下代码的运行过程，是了解代码的一种很好的方式。</li>
+</ol>
+<p>总结一下，阅读代码的方法如下。</p>
+<ul>
+<li>一般采用自顶向下，从总体到细节的【剥洋葱皮】的读法；</li>
+<li>画图是必要的，程序流程图，调用时序图，模块组织图；</li>
+<li>代码逻辑归一下类，排除杂音，主要逻辑才会更清楚；</li>
+<li>debug 跟踪一下代码是了解代码在执行中发生了什么的最好方式。</li>
+</ul>
+<p>另外这里也有个其他见解 <a target="_blank" rel="noopener" href="https://www.codedump.info/post/20200605-how-to-read-code-v2020/">https://www.codedump.info/post/20200605-how-to-read-code-v2020/</a> 兼听则明</p>
+<p>转载自: <a target="_blank" rel="noopener" href="https://wanghenshui.github.io/2021/05/28/code-review.html">https://wanghenshui.github.io/2021/05/28/code-review.html</a></p>
+<h1 id="Share-C-编程中的工厂模式"><a href="#Share-C-编程中的工厂模式" class="headerlink" title="Share-C++编程中的工厂模式"></a>Share-C++编程中的工厂模式</h1><p>在C++编程中，工厂模式（Factory Pattern）是一种创建对象的设计模式。它提供了一种将对象的创建与使用代码解耦的方式，使得代码更具灵活性和可维护性。工厂模式通常包括以下几个关键组件：</p>
+<ol>
+<li>抽象产品（Abstract Product）：定义产品的共同接口或抽象基类。抽象产品可以是一个纯虚类，只声明了接口而没有实现。</li>
+<li>具体产品（Concrete Product）：实现抽象产品接口的具体类。每个具体产品对应工厂模式中的一个产品类型。</li>
+<li>抽象工厂（Abstract Factory）：定义了创建抽象产品的接口。它可以是一个纯虚类或者接口类，提供了创建产品的方法。</li>
+<li>具体工厂（Concrete Factory）：实现抽象工厂接口，负责创建具体产品的实例。</li>
+</ol>
+<p>使用工厂模式的一般步骤如下：</p>
+<ol>
+<li>定义抽象产品接口：创建一个抽象产品类或接口，声明产品的公共方法。</li>
+<li>实现具体产品：针对每个具体产品类型，创建一个具体产品类，实现抽象产品接口的方法。</li>
+<li>定义抽象工厂接口：创建一个抽象工厂类或接口，声明用于创建产品的方法。</li>
+<li>实现具体工厂：针对每个具体产品类型，创建一个具体工厂类，实现抽象工厂接口的方法。在每个方法中，根据需要创建对应的具体产品实例，并返回抽象产品接口。</li>
+</ol>
+<p>通过使用工厂模式，客户端代码可以通过与抽象工厂和抽象产品进行交互，而无需直接与具体产品进行耦合。这样可以使得代码更加灵活，可以轻松地替换具体产品的实现或者扩展产品的种类，而无需修改客户端代码。</p>
+<p>工厂模式还有一些变体，如简单工厂模式、工厂方法模式和抽象工厂模式，它们在实现方式和应用场景上有所不同，但都遵循了工厂模式的基本原则。根据具体的需求和设计目标，选择适合的工厂模式变体来实现对象的创建和管理。</p>
+<p>以下是一个简单的工厂模式的例子：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 抽象产品</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Product</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">use</span><span class="params">()</span> </span>= <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">virtual</span> ~<span class="built_in">Product</span>() &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 具体产品A</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ConcreteProductA</span> :</span> <span class="keyword">public</span> Product &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">use</span><span class="params">()</span> <span class="keyword">override</span> </span>&#123;</span><br><span class="line">        std::cout &lt;&lt; <span class="string">&quot;Using ConcreteProductA&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 具体产品B</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ConcreteProductB</span> :</span> <span class="keyword">public</span> Product &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">use</span><span class="params">()</span> <span class="keyword">override</span> </span>&#123;</span><br><span class="line">        std::cout &lt;&lt; <span class="string">&quot;Using ConcreteProductB&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 抽象工厂</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Factory</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> Product* <span class="title">createProduct</span><span class="params">()</span> </span>= <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">virtual</span> ~<span class="built_in">Factory</span>() &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 具体工厂A，用于创建具体产品A</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ConcreteFactoryA</span> :</span> <span class="keyword">public</span> Factory &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">Product* <span class="title">createProduct</span><span class="params">()</span> <span class="keyword">override</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">ConcreteProductA</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 具体工厂B，用于创建具体产品B</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ConcreteFactoryB</span> :</span> <span class="keyword">public</span> Factory &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">Product* <span class="title">createProduct</span><span class="params">()</span> <span class="keyword">override</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">ConcreteProductB</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 使用具体工厂A创建产品</span></span><br><span class="line">    Factory* factoryA = <span class="keyword">new</span> <span class="built_in">ConcreteFactoryA</span>();</span><br><span class="line">    Product* productA = factoryA-&gt;<span class="built_in">createProduct</span>();</span><br><span class="line">    productA-&gt;<span class="built_in">use</span>();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 使用具体工厂B创建产品</span></span><br><span class="line">    Factory* factoryB = <span class="keyword">new</span> <span class="built_in">ConcreteFactoryB</span>();</span><br><span class="line">    Product* productB = factoryB-&gt;<span class="built_in">createProduct</span>();</span><br><span class="line">    productB-&gt;<span class="built_in">use</span>();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 释放资源</span></span><br><span class="line">    <span class="keyword">delete</span> factoryA;</span><br><span class="line">    <span class="keyword">delete</span> productA;</span><br><span class="line">    <span class="keyword">delete</span> factoryB;</span><br><span class="line">    <span class="keyword">delete</span> productB;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在上述示例中，我们定义了一个抽象产品 <code>Product</code> ，具有一个纯虚函数 <code>use()</code> 。然后，我们定义了两个具体产品 <code>ConcreteProductA</code> 和 <code>ConcreteProductB</code> ，它们分别实现了 <code>Product</code> 接口。</p>
+<p>接下来，我们定义了抽象工厂 <code>Factory</code> ，具有一个纯虚函数 <code>createProduct()</code> ，用于创建产品对象。然后，我们创建了两个具体工厂 <code>ConcreteFactoryA</code> 和 <code>ConcreteFactoryB</code> ，它们分别实现了 <code>Factory</code> 接口，并在其 <code>createProduct()</code> 方法中创建了对应的具体产品对象。</p>
+<p>最后，在 <code>main()</code> 函数中，我们使用具体工厂 <code>ConcreteFactoryA</code> 和 <code>ConcreteFactoryB</code> 创建了具体产品 <code>ConcreteProductA</code> 和 <code>ConcreteProductB</code> 的实例，并调用了它们的 <code>use()</code> 方法进行使用。</p>
+<p><strong>通过工厂模式，客户端代码与具体产品的创建过程解耦，只与抽象工厂和抽象产品进行交互。这样，如果需要替换产品的实现或者扩展产品的种类，只需要修改工厂的具体实现，而不需要修改客户端代码。</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clang++ factory.cpp -std=c++11 -o factory.out</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/alipay.jpg" alt="单林敏 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/ARST/" rel="tag"># ARST</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/ARST%E6%89%93%E5%8D%A1%E7%AC%AC209%E5%91%A8-209-521/" rel="prev" title="ARST打卡第209周[209/521]">
+                  <i class="fa fa-chevron-left"></i> ARST打卡第209周[209/521]
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">湘ICP备19025607号 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">单林敏</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"wolfdan666","repo":"gitalk_commont","client_id":"2934cb0fdcabc560461e","client_secret":"937e7b77dcdfd83f6a89f4a9b9447a76a54bc764","admin_user":"wolfdan666","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"8b3dc2ebbe50d84865d3a8e4eb8fbbd8"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
