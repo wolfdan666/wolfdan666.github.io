@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.wolfdan.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.8.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="lc1494_并行课程II 【TED演讲】你不完美，你注定要奋斗，但你值得爱和归属 Rocksdb dynamic-level-bytes测试简单记录 wsl2中docker内部网络的ip转发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ARST打卡第215周[215&#x2F;521]">
+<meta property="og:url" content="https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC215%E5%91%A8-215-521/">
+<meta property="og:site_name" content="单林敏的博客">
+<meta property="og:description" content="lc1494_并行课程II 【TED演讲】你不完美，你注定要奋斗，但你值得爱和归属 Rocksdb dynamic-level-bytes测试简单记录 wsl2中docker内部网络的ip转发">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-06-16T12:38:13.000Z">
+<meta property="article:modified_time" content="2023-06-16T14:14:31.004Z">
+<meta property="article:author" content="单林敏">
+<meta property="article:tag" content="ARST">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC215%E5%91%A8-215-521/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC215%E5%91%A8-215-521/","path":"ARST打卡第215周-215-521/","title":"ARST打卡第215周[215/521]"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>ARST打卡第215周[215/521] | 单林敏的博客</title>
+  
+
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?953c0cc2db0f1124313d72b95b9d07e1"></script>
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">单林敏的博客</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">wolfdan's blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-捐赠"><a href="/%E6%8D%90%E8%B5%A0/" rel="section"><i class="fa fa-coins fa-fw"></i>捐赠</a></li>
+        <li class="menu-item menu-item-冲冲"><a href="/%E5%86%B2%E5%86%B2%E5%86%B2/" rel="section"><i class="fa fa-rocket fa-fw"></i>冲冲</a></li>
+        <li class="menu-item menu-item-友链"><a href="/links/" rel="section"><i class="fa fa-link fa-fw"></i>友链</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Algorithm"><span class="nav-number">1.</span> <span class="nav-text">Algorithm</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Review"><span class="nav-number">2.</span> <span class="nav-text">Review</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tips"><span class="nav-number">3.</span> <span class="nav-text">Tips</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Share-wsl2%E4%B8%ADdocker%E5%86%85%E9%83%A8%E7%BD%91%E7%BB%9C%E7%9A%84ip%E8%BD%AC%E5%8F%91"><span class="nav-number">4.</span> <span class="nav-text">Share-wsl2中docker内部网络的ip转发</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E5%8D%97"><span class="nav-number">4.1.</span> <span class="nav-text">指南</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E6%93%8D"><span class="nav-number">4.2.</span> <span class="nav-text">实操</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="单林敏"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">单林敏</p>
+  <div class="site-description" itemprop="description">心外无物,知行合一</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">307</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">93</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/wolfdan666" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;wolfdan666" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:wolfdan666666@gmail.com" title="E-Mail → mailto:wolfdan666666@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/shanlinmin/activities" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;shanlinmin&#x2F;activities" rel="noopener" target="_blank"><i class="free-code-camp fa-fw"></i>知乎</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.jianshu.com/u/53acec957bf9" title="简书 → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;53acec957bf9" rel="noopener" target="_blank"><i class="book fa-fw"></i>简书</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://me.csdn.net/neve_give_up_dan" title="CSDN → https:&#x2F;&#x2F;me.csdn.net&#x2F;neve_give_up_dan" rel="noopener" target="_blank"><i class="rotate-right fa-fw"></i>CSDN</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC215%E5%91%A8-215-521/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="单林敏">
+      <meta itemprop="description" content="心外无物,知行合一">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="单林敏的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ARST打卡第215周[215/521]
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-06-16 20:38:13 / 修改时间：22:14:31" itemprop="dateCreated datePublished" datetime="2023-06-16T20:38:13+08:00">2023-06-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/ARST/" itemprop="url" rel="index"><span itemprop="name">ARST</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+            <div class="post-description">lc1494_并行课程II 【TED演讲】你不完美，你注定要奋斗，但你值得爱和归属 Rocksdb dynamic-level-bytes测试简单记录 wsl2中docker内部网络的ip转发</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h1><p>lc1494_并行课程II</p>
+<p>思路: 像有依赖的背包贪心，感觉要模拟这个有向无环图__但是不知道咋写–看题解学习一下</p>
+<p><em>震惊发现windows chrome未登录状态下还有两个英文版的tips，而mac chrome就没有tips</em></p>
+<p>看了题解，发现子集和前置条件的逻辑还是挺烧脑子的，尽量结合示例来看</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minNumberOfSemesters</span><span class="params">(<span class="keyword">int</span> n, vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt;&amp; relations, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">dp</span><span class="params">(<span class="number">1</span> &lt;&lt; n, INT_MAX)</span></span>;</span><br><span class="line">        <span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">need</span><span class="params">(<span class="number">1</span> &lt;&lt; n, <span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span>&amp; edge : relations) &#123;</span><br><span class="line">            need[(<span class="number">1</span> &lt;&lt; (edge[<span class="number">1</span>] - <span class="number">1</span>))] |= <span class="number">1</span> &lt;&lt; (edge[<span class="number">0</span>] - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; (<span class="number">1</span> &lt;&lt; n); ++i) &#123;</span><br><span class="line">            need[i] = need[i &amp; (i - <span class="number">1</span>)] | need[i &amp; (-i)];</span><br><span class="line">            <span class="keyword">if</span> ((need[i] | i) != i) &#123; <span class="comment">// i 中有任意一门课程的前置课程没有完成学习</span></span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 下面已经是把前置课程都完成了，所以可以减去前置课程</span></span><br><span class="line">            <span class="keyword">int</span> valid = i ^ need[i]; <span class="comment">// 当前学期可以进行学习的课程集合</span></span><br><span class="line">            <span class="keyword">if</span> (__builtin_popcount(valid) &lt;= k) &#123; <span class="comment">// 如果个数小于 k，则可以全部学习，不再枚举子集</span></span><br><span class="line">                dp[i] = <span class="built_in">min</span>(dp[i], dp[i ^ valid] + <span class="number">1</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123; <span class="comment">// 否则枚举当前学期需要进行学习的课程集合</span></span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> sub = valid; sub; sub = (sub - <span class="number">1</span>) &amp; valid) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (__builtin_popcount(sub) &lt;= k) &#123;</span><br><span class="line">                        dp[i] = <span class="built_in">min</span>(dp[i], dp[i ^ sub] + <span class="number">1</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[(<span class="number">1</span> &lt;&lt; n) - <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 链接：https://leetcode.cn/problems/parallel-courses-ii/solutions/2306009/bing-xing-ke-cheng-ii-by-leetcode-soluti-l0mo/</span></span><br></pre></td></tr></table></figure>
+
+<p>答案太精妙了，建议可以反复学习，锻炼脑子</p>
+<h1 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h1><p>【TED演讲】你不完美，你注定要奋斗，但你值得爱和归属</p>
+<div align = "center">
+    <iframe  width="100%" height="700" src="//player.bilibili.com/player.html?aid=997221012&bvid=BV1Fs4y1y7ZT&cid=1160663498&page=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+
+<p><em>这篇文章真的超级适合当听力练习，我居然能不看字幕听懂大部分</em></p>
+<p>无论你怎么追求完美，到最终，你都会发现有些事情你无法搞定。</p>
+<p>当你预期太高，而有时候没有达成自己的预期的时候，你就会感到巨大的脆弱感。</p>
+<p>因此，唯一能做的就是:<br>接纳脆弱，接纳自己的不完美，注定要继续努力奋斗，但是我们已经尽力而为了，去爱他人去自我实现了，所以不后悔，所以我们值得爱和归属</p>
+<h1 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h1><p><a target="_blank" rel="noopener" href="https://tidb.net/book/tidb-monthly/2022/2022-10/usercase/rocksdb-dynamic-level-bytes">Rocksdb dynamic-level-bytes测试简单记录</a></p>
+<p>这篇文章的测试数据很好的说明了展现了 <code>dynamic-level-bytes</code> 能有效降低写放大 </p>
+<p>不过其中说到数据要到最后一层才能被清理也不太理解–并不是，具体看下文</p>
+<ul>
+<li>不过通过读文章知道删除更快是因为有叠加bottom compaction辅助删除</li>
+<li>里面说是第五层数据减少，而不是第六层，是因为数据compaction到第6层，然后在第6层删除，所以第6层有增有减，大体不变，而第五层就compaction下去了，就减少较为明显</li>
+</ul>
+<p>LSM架构下所有更新都是以追加一条新记录写入内存表中，delete记录也是写一条新的记录，只不过是type标记为delete。而具体delete的这条记录何时被彻底删除取决于它对应的value记录所在的位置(memtable/L0/L1..)以及flush/compaction的时间，flush将内存中的数据刷到磁盘中并且过程中会做多版本行的处理包含delete与其相应记录的消除(对应记录在memtable的情况)，记录如果被snapshot引用则不能消除，需要等compaction。如果value记录在0/1/2..层，也就是磁盘上了，需要等待compaction，compaction会将未被snapshot引用的多版本行也包括delete记录消除，新写的sst中将不包含这条delete及相应的value记录，旧的sst文件在没有引用之后由回收线程进行释放。</p>
+<p>上面引自: <a target="_blank" rel="noopener" href="https://www.zhihu.com/question/363140211/answer/958514051">Rocksdb删除一个key会经历哪些流程？</a></p>
+<h1 id="Share-wsl2中docker内部网络的ip转发"><a href="#Share-wsl2中docker内部网络的ip转发" class="headerlink" title="Share-wsl2中docker内部网络的ip转发"></a>Share-wsl2中docker内部网络的ip转发</h1><h2 id="指南"><a href="#指南" class="headerlink" title="指南"></a>指南</h2><p>wsl 默认为内部网络，外部无法访问，通过配置 nat 转发可以直接访问 docker 的内部网络，无需其他复杂的配置。</p>
+<p>首先需要知道 wsl2 的内部 ip 地址和 docker 内部的网络地址。例如我的网络是这样的系统 Ubuntu</p>
+<p>wsl2 的 ip 地址 </p>
+<blockquote>
+<p>inet 192.168.119.0/20 brd 192.168.127.255 scope global eth0</p>
+</blockquote>
+<p>docker 内部的 ip 地址</p>
+<blockquote>
+<p>inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0</p>
+</blockquote>
+<p>进入 Ubuntu</p>
+<blockquote>
+<p>#允许路由转发<br>sudo iptables -P FORWARD ACCEPT</p>
+</blockquote>
+<p>以管理员身份运行 cmd</p>
+<blockquote>
+<p>#启用路由转发服务 任务管理器 -&gt; 服务 -&gt; 打开服务 -&gt; Routing and Remote Access 或者执行下面的命令<br>sc start RemoteAccess<br>#添加路由表<br>#注意，这里 172.17.0.1 不行，必须的172.17.0.0<br>route add -P 172.17.0.0 mask 255.255.0.0 192.168.119.0<br>#ping docker 内部网关就可以 ping 通了<br>ping 172.17.0.1</p>
+</blockquote>
+<p>然后就可以直接在 windows 下 ping wsl2 中 docker 的内部网络了 方便调试</p>
+<h2 id="实操"><a href="#实操" class="headerlink" title="实操"></a>实操</h2><p>wsl2 内的 docker</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">root@69033e222523:/<span class="comment"># ip a</span></span><br><span class="line">1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000</span><br><span class="line">    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00</span><br><span class="line">    inet 127.0.0.1/8 scope host lo</span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line">5: eth0@if6: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UP group default</span><br><span class="line">    link/ether 02:42:ac:13:00:03 brd ff:ff:ff:ff:ff:ff link-netnsid 0</span><br><span class="line">    inet 172.19.0.3/16 brd 172.19.255.255 scope global eth0</span><br><span class="line">       valid_lft forever preferred_lft forever</span><br></pre></td></tr></table></figure>
+
+<p>wsl2</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"> ⚡ 06/14|10:25:19  ~  ip a</span><br><span class="line">1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000</span><br><span class="line">    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00</span><br><span class="line">    inet 127.0.0.1/8 scope host lo</span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line">    inet6 ::1/128 scope host</span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line">2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP group default qlen 1000</span><br><span class="line">    link/ether 00:15:5d:ed:bb:c1 brd ff:ff:ff:ff:ff:ff</span><br><span class="line">    inet 172.18.170.161/20 brd 172.18.175.255 scope global eth0</span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line">    inet6 fe80::215:5dff:feed:bbc1/64 scope link</span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line">3: docker0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc noqueue state DOWN group default</span><br><span class="line">    link/ether 02:42:c8:6b:eb:52 brd ff:ff:ff:ff:ff:ff</span><br><span class="line">    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0</span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line">4: br-7358ad5430e2: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UP group default</span><br><span class="line">    link/ether 02:42:6f:37:ea:f3 brd ff:ff:ff:ff:ff:ff</span><br><span class="line">    inet 172.19.0.1/16 brd 172.19.255.255 scope global br-7358ad5430e2</span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line">    inet6 fe80::42:6fff:fe37:eaf3/64 scope link</span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line">6: veth0545bc9@if5: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue master br-7358ad5430e2 state UP group default</span><br><span class="line">    link/ether 6e:6e:aa:ee:87:8f brd ff:ff:ff:ff:ff:ff link-netnsid 0</span><br><span class="line">    inet6 fe80::6c6e:aaff:feee:878f/64 scope link</span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line"> ⚡ 06/14|10:43:06  ~  iptables -P FORWARD ACCEPT</span><br></pre></td></tr></table></figure>
+
+<p>管理员 PowerShell</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">PS</span> D:\Users\lm&gt; <span class="built_in">sc</span> <span class="built_in">start</span> RemoteAccess</span><br><span class="line"><span class="built_in">PS</span> D:\Users\lm&gt; route add <span class="literal">-P</span> <span class="number">172.19</span>.<span class="number">0.1</span> mask <span class="number">255.255</span>.<span class="number">0.0</span> <span class="number">172.18</span>.<span class="number">170.161</span></span><br><span class="line"> 操作完成!</span><br><span class="line"><span class="built_in">PS</span> D:\Users\lm&gt; ping <span class="number">172.19</span>.<span class="number">0.3</span></span><br><span class="line"></span><br><span class="line">正在 Ping <span class="number">172.19</span>.<span class="number">0.3</span> 具有 <span class="number">32</span> 字节的数据:</span><br><span class="line">请求超时。</span><br><span class="line">请求超时。</span><br><span class="line"></span><br><span class="line"><span class="number">172.19</span>.<span class="number">0.3</span> 的 Ping 统计信息:</span><br><span class="line">    数据包: 已发送 = <span class="number">2</span>，已接收 = <span class="number">0</span>，丢失 = <span class="number">2</span> (<span class="number">100</span>% 丢失)，</span><br><span class="line">Control<span class="literal">-C</span></span><br><span class="line"><span class="built_in">PS</span> D:\Users\lm&gt; route add <span class="literal">-P</span> <span class="number">172.19</span>.<span class="number">0.0</span> mask <span class="number">255.255</span>.<span class="number">0.0</span> <span class="number">172.18</span>.<span class="number">170.161</span></span><br><span class="line"> 操作完成!</span><br><span class="line"><span class="built_in">PS</span> D:\Users\lm&gt; ping <span class="number">172.19</span>.<span class="number">0.3</span></span><br><span class="line"></span><br><span class="line">正在 Ping <span class="number">172.19</span>.<span class="number">0.3</span> 具有 <span class="number">32</span> 字节的数据:</span><br><span class="line">来自 <span class="number">172.19</span>.<span class="number">0.3</span> 的回复: 字节=<span class="number">32</span> 时间&lt;<span class="number">1</span>ms TTL=<span class="number">63</span></span><br><span class="line">来自 <span class="number">172.19</span>.<span class="number">0.3</span> 的回复: 字节=<span class="number">32</span> 时间&lt;<span class="number">1</span>ms TTL=<span class="number">63</span></span><br><span class="line">来自 <span class="number">172.19</span>.<span class="number">0.3</span> 的回复: 字节=<span class="number">32</span> 时间&lt;<span class="number">1</span>ms TTL=<span class="number">63</span></span><br><span class="line"></span><br><span class="line"><span class="number">172.19</span>.<span class="number">0.3</span> 的 Ping 统计信息:</span><br><span class="line">    数据包: 已发送 = <span class="number">3</span>，已接收 = <span class="number">3</span>，丢失 = <span class="number">0</span> (<span class="number">0</span>% 丢失)，</span><br><span class="line">往返行程的估计时间(以毫秒为单位):</span><br><span class="line">    最短 = <span class="number">0</span>ms，最长 = <span class="number">0</span>ms，平均 = <span class="number">0</span>ms</span><br><span class="line">Control<span class="literal">-C</span></span><br><span class="line"><span class="built_in">PS</span> D:\Users\lm&gt;</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/alipay.jpg" alt="单林敏 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/ARST/" rel="tag"># ARST</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/ARST%E6%89%93%E5%8D%A1%E7%AC%AC214%E5%91%A8-214-521/" rel="prev" title="ARST打卡第214周[214/521]">
+                  <i class="fa fa-chevron-left"></i> ARST打卡第214周[214/521]
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">湘ICP备19025607号 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">单林敏</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"wolfdan666","repo":"gitalk_commont","client_id":"2934cb0fdcabc560461e","client_secret":"937e7b77dcdfd83f6a89f4a9b9447a76a54bc764","admin_user":"wolfdan666","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"16227cd26218056c7644b7a5b65fa78a"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
