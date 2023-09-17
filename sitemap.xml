@@ -2,6 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC228%E5%91%A8-228-521/</loc>
+    
+    <lastmod>2023-09-17T04:35:31.403Z</lastmod>
+    
+    <date>1694871180000</date>
+    <title>ARST打卡第228周[228/521] | 单林敏的博客</title>
+    
+    <desc>lc198_打家劫舍 Vim registers_The basics and beyond git分批上传大文件 查询并删除git大文件</desc>
+  </url>
+  
+  <url>
     <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC227%E5%91%A8-227-521/</loc>
     
     <lastmod>2023-09-09T07:05:44.045Z</lastmod>
@@ -1828,6 +1839,17 @@
   </url>
   
   <url>
+    <loc>https://www.wolfdan.cn/%E9%93%B6%E8%81%94%E6%8C%91%E6%88%98%E8%B5%9B%E5%88%9D%E8%B5%9B%E7%AC%AC%E4%BA%8C%E5%9C%BAB%E9%A2%98/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.790Z</lastmod>
+    
+    <date>1564320419000</date>
+    <title>银联挑战赛初赛第二场B题 | 单林敏的博客</title>
+    
+    <desc>银联挑战赛初赛第二场B题 数论分块 取模和除法在一起时候的坑点</desc>
+  </url>
+  
+  <url>
     <loc>https://www.wolfdan.cn/%E8%AE%B8%E5%B2%91%E8%80%81%E5%B8%88%E7%9A%84%E3%80%8A%E5%A6%82%E4%BD%95%E6%88%90%E4%B8%BA%E6%9C%89%E6%95%88%E5%AD%A6%E4%B9%A0%E7%9A%84%E9%AB%98%E6%89%8B%E3%80%8B%E8%AF%BB%E4%B9%A6%E6%9C%89%E6%84%9F/</loc>
     
     <lastmod>2020-09-13T13:42:58.790Z</lastmod>
@@ -1847,17 +1869,6 @@
     <title>防火防盗防台部落 | 单林敏的博客</title>
     
     <desc>防火防盗防台部落 我的简书文章被台部落盗取 我的CSDN文章被台部落盗取 我的博客园文章被台部落盗取</desc>
-  </url>
-  
-  <url>
-    <loc>https://www.wolfdan.cn/%E9%93%B6%E8%81%94%E6%8C%91%E6%88%98%E8%B5%9B%E5%88%9D%E8%B5%9B%E7%AC%AC%E4%BA%8C%E5%9C%BAB%E9%A2%98/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.790Z</lastmod>
-    
-    <date>1564320419000</date>
-    <title>银联挑战赛初赛第二场B题 | 单林敏的博客</title>
-    
-    <desc>银联挑战赛初赛第二场B题 数论分块 取模和除法在一起时候的坑点</desc>
   </url>
   
   <url>
@@ -2037,17 +2048,6 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-2-100/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.786Z</lastmod>
-    
-    <date>1564841661000</date>
-    <title>反二分题的做法-算法日常[2/100] | 单林敏的博客</title>
-    
-    <desc>2019牛客多校6D题 算法学习日常 我的头铁(~~二分~~)写法,然后check还没写好,因为想骚操作但内力不足便走火入魔了..先二分，然后在这个ans下继续向小的方向枚举20项....人的基因把我们当做机器人..那就成为一个，不断进化，并快乐地享受其中的机器人吧</desc>
-  </url>
-  
-  <url>
     <loc>https://www.wolfdan.cn/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-20-100/</loc>
     
     <lastmod>2020-09-13T13:42:58.786Z</lastmod>
@@ -2056,6 +2056,17 @@
     <title>SPOJ-LCS,SPOJ-LCS2-后缀自动机SAM专题训练_算法日常[20/100] | 单林敏的博客</title>
     
     <desc>SAM后缀自动机刷题笔记 SPOJ-LCS,SPOJ-LCS2-后缀自动机SAM专题训练 没有自闭，何来爆爽！向自闭的日子致敬！</desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-2-100/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.786Z</lastmod>
+    
+    <date>1564841661000</date>
+    <title>反二分题的做法-算法日常[2/100] | 单林敏的博客</title>
+    
+    <desc>2019牛客多校6D题 算法学习日常 我的头铁(~~二分~~)写法,然后check还没写好,因为想骚操作但内力不足便走火入魔了..先二分，然后在这个ans下继续向小的方向枚举20项....人的基因把我们当做机器人..那就成为一个，不断进化，并快乐地享受其中的机器人吧</desc>
   </url>
   
   <url>
@@ -2158,17 +2169,6 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-12-100/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.784Z</lastmod>
-    
-    <date>1566054119000</date>
-    <title>2019牛客多校10 B题_算法日常[12/100] | 单林敏的博客</title>
-    
-    <desc>2019牛客多校10 B题,斐波那契数列递归构造字符串的思维题 C++由于容易数据溢出，所以必须加限制，否则会造成数据溢出的错误，昨晚WA了两个小时的血的教训 不用去刻意讨好谁，因为只有做自己，才配得上最棒的人生</desc>
-  </url>
-  
-  <url>
     <loc>https://www.wolfdan.cn/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-13-100/</loc>
     
     <lastmod>2020-09-13T13:42:58.784Z</lastmod>
@@ -2180,17 +2180,6 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-14-100/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.784Z</lastmod>
-    
-    <date>1566183429000</date>
-    <title>2019杭电多校9题解_算法日常[14/100] | 单林敏的博客</title>
-    
-    <desc>2019杭电多校9题解_算法日常</desc>
-  </url>
-  
-  <url>
     <loc>https://www.wolfdan.cn/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-11-100/</loc>
     
     <lastmod>2020-09-13T13:42:58.784Z</lastmod>
@@ -2199,6 +2188,28 @@
     <title>2019牛客多校9E题详解_算法日常[11/100] | 单林敏的博客</title>
     
     <desc>2019牛客多校9 E题,组合数学的思维题 生活到底是什么</desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-12-100/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.784Z</lastmod>
+    
+    <date>1566054119000</date>
+    <title>2019牛客多校10 B题_算法日常[12/100] | 单林敏的博客</title>
+    
+    <desc>2019牛客多校10 B题,斐波那契数列递归构造字符串的思维题 C++由于容易数据溢出，所以必须加限制，否则会造成数据溢出的错误，昨晚WA了两个小时的血的教训 不用去刻意讨好谁，因为只有做自己，才配得上最棒的人生</desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/%E7%AE%97%E6%B3%95%E6%97%A5%E5%B8%B8-14-100/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.784Z</lastmod>
+    
+    <date>1566183429000</date>
+    <title>2019杭电多校9题解_算法日常[14/100] | 单林敏的博客</title>
+    
+    <desc>2019杭电多校9题解_算法日常</desc>
   </url>
   
   <url>
@@ -2235,14 +2246,14 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%B8%B8-5-100/</loc>
+    <loc>https://www.wolfdan.cn/%E7%94%B5%E8%84%91%E6%89%8B%E6%9C%BA%E7%AB%AF%E5%90%8C%E6%AD%A5%E7%9A%84%E7%94%B5%E5%AD%90%E9%98%85%E8%AF%BB%E5%99%A8/</loc>
     
     <lastmod>2020-09-13T13:42:58.783Z</lastmod>
     
-    <date>1565103781000</date>
-    <title>后缀数组-算法学习日常[5/100] | 单林敏的博客</title>
+    <date>1550075600000</date>
+    <title>电脑手机端同步的电子阅读器 | 单林敏的博客</title>
     
-    <desc>分享一个后缀数组的论文，很全，学了一天也没学完，发现自己之前学了三天的后缀数组又忘光了</desc>
+    <desc></desc>
   </url>
   
   <url>
@@ -2257,14 +2268,14 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/%E7%94%B5%E8%84%91%E6%89%8B%E6%9C%BA%E7%AB%AF%E5%90%8C%E6%AD%A5%E7%9A%84%E7%94%B5%E5%AD%90%E9%98%85%E8%AF%BB%E5%99%A8/</loc>
+    <loc>https://www.wolfdan.cn/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%B8%B8-5-100/</loc>
     
     <lastmod>2020-09-13T13:42:58.783Z</lastmod>
     
-    <date>1550075600000</date>
-    <title>电脑手机端同步的电子阅读器 | 单林敏的博客</title>
+    <date>1565103781000</date>
+    <title>后缀数组-算法学习日常[5/100] | 单林敏的博客</title>
     
-    <desc></desc>
+    <desc>分享一个后缀数组的论文，很全，学了一天也没学完，发现自己之前学了三天的后缀数组又忘光了</desc>
   </url>
   
   <url>
@@ -2312,17 +2323,6 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/%E5%85%B3%E4%BA%8E%E8%AE%A4%E7%9F%A5-%E8%B4%A2%E5%AF%8C-%E9%98%B6%E5%B1%82%E7%9A%84%E5%90%AC%E4%B9%A6blog%E8%AE%B0/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.781Z</lastmod>
-    
-    <date>1560166356000</date>
-    <title>关于认知,财富,阶层的听书blog记 | 单林敏的博客</title>
-    
-    <desc>听书4小时-李翔专栏《洛克菲勒》和一些得到日播以及罗胖的《终身学习》blog记</desc>
-  </url>
-  
-  <url>
     <loc>https://www.wolfdan.cn/%E5%86%99%E5%B0%81%E6%83%85%E4%B9%A6%E7%BB%99%E7%AE%97%E6%B3%951/</loc>
     
     <lastmod>2020-09-13T13:42:58.781Z</lastmod>
@@ -2331,6 +2331,17 @@
     <title>拓扑排序以及C++读取空行[算法学习日常1/100] | 单林敏的博客</title>
     
     <desc>2019牛客多校5H题 拓扑排序BFS 算法学习日常 我的头铁(~~比赛因此卡1小时去谷歌~~)写法,先直接用cin.get()吃掉t和lentmp后面的回车,再getline(),否则getline会吃那个回车而导致少读数据</desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/%E5%85%B3%E4%BA%8E%E8%AE%A4%E7%9F%A5-%E8%B4%A2%E5%AF%8C-%E9%98%B6%E5%B1%82%E7%9A%84%E5%90%AC%E4%B9%A6blog%E8%AE%B0/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.781Z</lastmod>
+    
+    <date>1560166356000</date>
+    <title>关于认知,财富,阶层的听书blog记 | 单林敏的博客</title>
+    
+    <desc>听书4小时-李翔专栏《洛克菲勒》和一些得到日播以及罗胖的《终身学习》blog记</desc>
   </url>
   
   <url>
@@ -2345,17 +2356,6 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/%E5%A4%8D%E5%88%B6%E7%A1%AC%E7%9B%98%E4%B8%AD%E7%9A%84Ubuntu%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98-%E5%AE%9E%E7%8E%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98Deepin-Ubunntu%E5%8F%8C%E7%B3%BB%E7%BB%9F/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.781Z</lastmod>
-    
-    <date>1568967283000</date>
-    <title>复制硬盘中的Ubuntu/Deepin到移动硬盘_实现移动硬盘Deepin+Ubunntu双系统 | 单林敏的博客</title>
-    
-    <desc>复制硬盘中的Ubuntu到移动硬盘_实现移动硬盘Deepin+Ubunntu双系统 进入磁盘管理，复制分区 (必)设置启动标签 生成新的UUID,然后修改fstab文件 可能出现的状况与解决方案 进了src盘的Ubuntu 卡在了进入的logo 复制硬盘中的Deepin到SSD</desc>
-  </url>
-  
-  <url>
     <loc>https://www.wolfdan.cn/%E5%9C%A8could-studio%E5%90%8C%E6%AD%A5%E5%86%99Hexo/</loc>
     
     <lastmod>2020-09-13T13:42:58.781Z</lastmod>
@@ -2364,6 +2364,17 @@
     <title>在另一个终端上同步写Hexo | 单林敏的博客</title>
     
     <desc>在另一个终端上同步写Hexo 在Could Studio同步写Hexo 多平台备份Hexo 安装node.js CouldStudio如何防止环境丢失 debian/ubuntu/deepin安装nodejs,node,npm</desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/%E5%A4%8D%E5%88%B6%E7%A1%AC%E7%9B%98%E4%B8%AD%E7%9A%84Ubuntu%E5%88%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98-%E5%AE%9E%E7%8E%B0%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98Deepin-Ubunntu%E5%8F%8C%E7%B3%BB%E7%BB%9F/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.781Z</lastmod>
+    
+    <date>1568967283000</date>
+    <title>复制硬盘中的Ubuntu/Deepin到移动硬盘_实现移动硬盘Deepin+Ubunntu双系统 | 单林敏的博客</title>
+    
+    <desc>复制硬盘中的Ubuntu到移动硬盘_实现移动硬盘Deepin+Ubunntu双系统 进入磁盘管理，复制分区 (必)设置启动标签 生成新的UUID,然后修改fstab文件 可能出现的状况与解决方案 进了src盘的Ubuntu 卡在了进入的logo 复制硬盘中的Deepin到SSD</desc>
   </url>
   
   <url>
@@ -2510,17 +2521,6 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/linux%E4%B8%8Bgitignore-c-%E7%9A%84%E7%94%9F%E6%88%90%E6%96%87%E4%BB%B6/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.777Z</lastmod>
-    
-    <date>1569321159000</date>
-    <title>linux下gitignore c++的生成文件 | 单林敏的博客</title>
-    
-    <desc>linux下gitignore c++的生成文件 送一份linux下Sublime的C++编译配置</desc>
-  </url>
-  
-  <url>
     <loc>https://www.wolfdan.cn/linux%E5%9C%A8virtualbox%E5%AE%89%E8%A3%85macOS%E5%B9%B6%E4%BC%98%E5%8C%96%E4%BD%BF%E7%94%A8/</loc>
     
     <lastmod>2020-09-13T13:42:58.777Z</lastmod>
@@ -2529,6 +2529,17 @@
     <title>linux在virtualbox安装macOS并优化使用 | 单林敏的博客</title>
     
     <desc>linux在virtualbox安装macOS并优化使用 虚拟机中macOS体验调优 VirtualBox配置</desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/linux%E4%B8%8Bgitignore-c-%E7%9A%84%E7%94%9F%E6%88%90%E6%96%87%E4%BB%B6/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.777Z</lastmod>
+    
+    <date>1569321159000</date>
+    <title>linux下gitignore c++的生成文件 | 单林敏的博客</title>
+    
+    <desc>linux下gitignore c++的生成文件 送一份linux下Sublime的C++编译配置</desc>
   </url>
   
   <url>
@@ -2774,17 +2785,6 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC%E4%BA%94%E5%91%A8-5-521/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.771Z</lastmod>
-    
-    <date>1558858664000</date>
-    <title>ARST打卡第五周(5/521) | 单林敏的博客</title>
-    
-    <desc>ARST打卡 域名被墙了如何解决？ 用github当做图床 && 用sublime或者VScode写markdown poj1845</desc>
-  </url>
-  
-  <url>
     <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC%E5%85%AB%E5%91%A8-8-521/</loc>
     
     <lastmod>2020-09-13T13:42:58.771Z</lastmod>
@@ -2793,6 +2793,17 @@
     <title>ARST打卡第八周(8-521) | 单林敏的博客</title>
     
     <desc>ARST8/521 DevOps( Tools vs. Mindset ) 一个大佬的求职逆袭 如何使用一个域名同时构建Hexo和WordPress</desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC%E4%BA%94%E5%91%A8-5-521/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.771Z</lastmod>
+    
+    <date>1558858664000</date>
+    <title>ARST打卡第五周(5/521) | 单林敏的博客</title>
+    
+    <desc>ARST打卡 域名被墙了如何解决？ 用github当做图床 && 用sublime或者VScode写markdown poj1845</desc>
   </url>
   
   <url>
@@ -2818,17 +2829,6 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC%E4%B8%83%E5%91%A8-7-521/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.770Z</lastmod>
-    
-    <date>1560087420000</date>
-    <title>ARST打卡第七周(7/521) | 单林敏的博客</title>
-    
-    <desc>ARST7/521(以及关于v2ray和Hexo一些折腾和想法)</desc>
-  </url>
-  
-  <url>
     <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC%E4%B8%89%E5%91%A8-3-521/</loc>
     
     <lastmod>2020-09-13T13:42:58.770Z</lastmod>
@@ -2848,6 +2848,17 @@
     <title>ARST打卡第九周(9-521) | 单林敏的博客</title>
     
     <desc>ARST打卡 在另一个终端上同步写HEXO AD14.2如何安装各种库 安装破解Altium Designer14.2</desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC%E4%B8%83%E5%91%A8-7-521/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.770Z</lastmod>
+    
+    <date>1560087420000</date>
+    <title>ARST打卡第七周(7/521) | 单林敏的博客</title>
+    
+    <desc>ARST7/521(以及关于v2ray和Hexo一些折腾和想法)</desc>
   </url>
   
   <url>
@@ -3335,17 +3346,6 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/ARSTB%E6%89%93%E5%8D%A1%E7%AC%AC55%E5%91%A8-55-521/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.760Z</lastmod>
-    
-    <date>1589114287000</date>
-    <title>ARSTB打卡第55周[55/521] | 单林敏的博客</title>
-    
-    <desc>LeetCode236_二叉树的最近公共祖先 TED演讲：拥有的越多，就会越快乐吗？ 利用Android系统原生API实现分享功能 Python3 Byte类型字符串转string常规类型 PYQT5登录界面跳转主界面方法 PyQt5中数据表格控件QTableWidget使用方法 pyqt5中的tableWidget添加checkBox、comboBox</desc>
-  </url>
-  
-  <url>
     <loc>https://www.wolfdan.cn/ARSTB%E6%89%93%E5%8D%A1%E7%AC%AC54%E5%91%A8-54-521/</loc>
     
     <lastmod>2020-09-13T13:42:58.760Z</lastmod>
@@ -3354,6 +3354,17 @@
     <title>ARSTB打卡第54周[54/521] | 单林敏的博客</title>
     
     <desc>Leetcode53_最大子序和 【TED演讲】想成为一个优秀的人，最关键的是什么？ PyQt完整入门教程 王道OS学习笔记 《生命因你而火热》读书分享</desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/ARSTB%E6%89%93%E5%8D%A1%E7%AC%AC55%E5%91%A8-55-521/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.760Z</lastmod>
+    
+    <date>1589114287000</date>
+    <title>ARSTB打卡第55周[55/521] | 单林敏的博客</title>
+    
+    <desc>LeetCode236_二叉树的最近公共祖先 TED演讲：拥有的越多，就会越快乐吗？ 利用Android系统原生API实现分享功能 Python3 Byte类型字符串转string常规类型 PYQT5登录界面跳转主界面方法 PyQt5中数据表格控件QTableWidget使用方法 pyqt5中的tableWidget添加checkBox、comboBox</desc>
   </url>
   
   <url>
@@ -3423,28 +3434,6 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/ARSTB%E6%89%93%E5%8D%A1%E7%AC%AC50%E5%91%A8-50-521/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.759Z</lastmod>
-    
-    <date>1586091418000</date>
-    <title>ARSTB打卡第50周[50/521] | 单林敏的博客</title>
-    
-    <desc>LeetCode/460_LFU缓存 TED演讲：你想做什么样的工作? 走进侯捷的程序人生 C++STL与泛型编程高级-侯捷_学习笔记 侯捷——C++11新特性</desc>
-  </url>
-  
-  <url>
-    <loc>https://www.wolfdan.cn/ARSTB%E6%89%93%E5%8D%A1%E7%AC%AC51%E5%91%A8-51-521/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.759Z</lastmod>
-    
-    <date>1586680667000</date>
-    <title>ARSTB打卡第51周[51/521] | 单林敏的博客</title>
-    
-    <desc>LeetCode/面试题_16.03._交点 If you do that journey(disciplined life) , you will get to have the life you deserve. TED演讲：如何摆脱“快乐陷阱”？ sizeof()计算嵌套结构体 侯捷 讲解C++内存管理（全60集）</desc>
-  </url>
-  
-  <url>
     <loc>https://www.wolfdan.cn/ARSTB%E6%89%93%E5%8D%A1%E7%AC%AC49%E5%91%A8-49-521/</loc>
     
     <lastmod>2020-09-13T13:42:58.759Z</lastmod>
@@ -3464,6 +3453,28 @@
     <title>ARSTB打卡第52周[52/521] | 单林敏的博客</title>
     
     <desc>LeetCode466_统计重复个数 TED演讲：为什么70%的成功者都是性格内向？ Chrome 开发者工具(DevTools)中所有快捷方式列表 内存管理学习笔记 设计模式</desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/ARSTB%E6%89%93%E5%8D%A1%E7%AC%AC51%E5%91%A8-51-521/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.759Z</lastmod>
+    
+    <date>1586680667000</date>
+    <title>ARSTB打卡第51周[51/521] | 单林敏的博客</title>
+    
+    <desc>LeetCode/面试题_16.03._交点 If you do that journey(disciplined life) , you will get to have the life you deserve. TED演讲：如何摆脱“快乐陷阱”？ sizeof()计算嵌套结构体 侯捷 讲解C++内存管理（全60集）</desc>
+  </url>
+  
+  <url>
+    <loc>https://www.wolfdan.cn/ARSTB%E6%89%93%E5%8D%A1%E7%AC%AC50%E5%91%A8-50-521/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.759Z</lastmod>
+    
+    <date>1586091418000</date>
+    <title>ARSTB打卡第50周[50/521] | 单林敏的博客</title>
+    
+    <desc>LeetCode/460_LFU缓存 TED演讲：你想做什么样的工作? 走进侯捷的程序人生 C++STL与泛型编程高级-侯捷_学习笔记 侯捷——C++11新特性</desc>
   </url>
   
   <url>
@@ -3500,6 +3511,17 @@
   </url>
   
   <url>
+    <loc>https://www.wolfdan.cn/ARSTB%E6%89%93%E5%8D%A1%E7%AC%AC44%E5%91%A8-44-521/</loc>
+    
+    <lastmod>2020-09-13T13:42:58.758Z</lastmod>
+    
+    <date>1582015845000</date>
+    <title>ARSTB打卡第44周[44/521] | 单林敏的博客</title>
+    
+    <desc>无重复字符的最长子串 A List of Fun Things You Can Build as a Developer 设置用户ID位是什么意思 Debian系__命令行中的基础软件包管理操作_来自Debian官网 函数指针和指针函数_整理 apue.h不存在,以及apue源码下载编译的解决方法 外排序-处理极大量数据的排序算法--5 亿整数的大文件排序的思路 《你总说没事,但我知道你偷偷哭过很</desc>
+  </url>
+  
+  <url>
     <loc>https://www.wolfdan.cn/ARSTB%E6%89%93%E5%8D%A1%E7%AC%AC43%E5%91%A8-43-521/</loc>
     
     <lastmod>2020-09-13T13:42:58.758Z</lastmod>
@@ -3522,25 +3544,14 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/ARSTB%E6%89%93%E5%8D%A1%E7%AC%AC44%E5%91%A8-44-521/</loc>
-    
-    <lastmod>2020-09-13T13:42:58.758Z</lastmod>
-    
-    <date>1582015845000</date>
-    <title>ARSTB打卡第44周[44/521] | 单林敏的博客</title>
-    
-    <desc>无重复字符的最长子串 A List of Fun Things You Can Build as a Developer 设置用户ID位是什么意思 Debian系__命令行中的基础软件包管理操作_来自Debian官网 函数指针和指针函数_整理 apue.h不存在,以及apue源码下载编译的解决方法 外排序-处理极大量数据的排序算法--5 亿整数的大文件排序的思路 《你总说没事,但我知道你偷偷哭过很</desc>
-  </url>
-  
-  <url>
-    <loc>https://www.wolfdan.cn/8%E6%95%B0%E7%A0%81%E5%92%8C15%E6%95%B0%E7%A0%81%E7%AE%97%E6%B3%95%E7%BB%93%E8%AE%BA%E5%92%8C%E5%BB%B6%E5%B1%95/</loc>
+    <loc>https://www.wolfdan.cn/2019%E7%89%9B%E5%AE%A2%E5%A4%9A%E6%A0%A13-I/</loc>
     
     <lastmod>2020-09-13T13:42:58.757Z</lastmod>
     
-    <date>1564586509000</date>
-    <title>8数码和15数码算法结论和延展 | 单林敏的博客</title>
+    <date>1564120220000</date>
+    <title>2019牛客多校3 I | 单林敏的博客</title>
     
-    <desc>8数码和15数码算法结论和延展 **那么就要在初始状态的逆序数上面 加上 0值在初始状态移动到最后一行产生的逆序数奇偶性的变化值**仍为偶数则有解</desc>
+    <desc>2019牛客多校3 I</desc>
   </url>
   
   <url>
@@ -3555,14 +3566,14 @@
   </url>
   
   <url>
-    <loc>https://www.wolfdan.cn/2019%E7%89%9B%E5%AE%A2%E5%A4%9A%E6%A0%A13-I/</loc>
+    <loc>https://www.wolfdan.cn/8%E6%95%B0%E7%A0%81%E5%92%8C15%E6%95%B0%E7%A0%81%E7%AE%97%E6%B3%95%E7%BB%93%E8%AE%BA%E5%92%8C%E5%BB%B6%E5%B1%95/</loc>
     
     <lastmod>2020-09-13T13:42:58.757Z</lastmod>
     
-    <date>1564120220000</date>
-    <title>2019牛客多校3 I | 单林敏的博客</title>
+    <date>1564586509000</date>
+    <title>8数码和15数码算法结论和延展 | 单林敏的博客</title>
     
-    <desc>2019牛客多校3 I</desc>
+    <desc>8数码和15数码算法结论和延展 **那么就要在初始状态的逆序数上面 加上 0值在初始状态移动到最后一行产生的逆序数奇偶性的变化值**仍为偶数则有解</desc>
   </url>
   
   <url>
