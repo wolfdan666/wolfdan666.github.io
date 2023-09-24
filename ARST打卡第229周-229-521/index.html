@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.wolfdan.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.8.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="lc146_LRU缓存 阿兰·德波顿：温和的成功哲学【TED演讲】 MacOS谷歌浏览器中文字变得很细,苹方 《认知觉醒》">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ARST打卡第229周[229&#x2F;521]">
+<meta property="og:url" content="https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC229%E5%91%A8-229-521/">
+<meta property="og:site_name" content="单林敏的博客">
+<meta property="og:description" content="lc146_LRU缓存 阿兰·德波顿：温和的成功哲学【TED演讲】 MacOS谷歌浏览器中文字变得很细,苹方 《认知觉醒》">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-09-24T06:36:14.000Z">
+<meta property="article:modified_time" content="2023-09-24T09:21:39.419Z">
+<meta property="article:author" content="单林敏">
+<meta property="article:tag" content="ARST">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC229%E5%91%A8-229-521/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC229%E5%91%A8-229-521/","path":"ARST打卡第229周-229-521/","title":"ARST打卡第229周[229/521]"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>ARST打卡第229周[229/521] | 单林敏的博客</title>
+  
+
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?953c0cc2db0f1124313d72b95b9d07e1"></script>
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">单林敏的博客</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">wolfdan's blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-捐赠"><a href="/%E6%8D%90%E8%B5%A0/" rel="section"><i class="fa fa-coins fa-fw"></i>捐赠</a></li>
+        <li class="menu-item menu-item-冲冲"><a href="/%E5%86%B2%E5%86%B2%E5%86%B2/" rel="section"><i class="fa fa-rocket fa-fw"></i>冲冲</a></li>
+        <li class="menu-item menu-item-友链"><a href="/links/" rel="section"><i class="fa fa-link fa-fw"></i>友链</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Algorithm"><span class="nav-number">1.</span> <span class="nav-text">Algorithm</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Review"><span class="nav-number">2.</span> <span class="nav-text">Review</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tips"><span class="nav-number">3.</span> <span class="nav-text">Tips</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Share-%E3%80%8A%E8%AE%A4%E7%9F%A5%E8%A7%89%E9%86%92%E3%80%8B"><span class="nav-number">4.</span> <span class="nav-text">Share-《认知觉醒》</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E4%B9%A6%E6%91%98%E5%88%86%E4%BA%AB"><span class="nav-number">4.1.</span> <span class="nav-text">一些书摘分享</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="单林敏"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">单林敏</p>
+  <div class="site-description" itemprop="description">心外无物,知行合一</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">321</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">93</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/wolfdan666" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;wolfdan666" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:wolfdan666666@gmail.com" title="E-Mail → mailto:wolfdan666666@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/shanlinmin/activities" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;shanlinmin&#x2F;activities" rel="noopener" target="_blank"><i class="free-code-camp fa-fw"></i>知乎</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.jianshu.com/u/53acec957bf9" title="简书 → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;53acec957bf9" rel="noopener" target="_blank"><i class="book fa-fw"></i>简书</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://me.csdn.net/neve_give_up_dan" title="CSDN → https:&#x2F;&#x2F;me.csdn.net&#x2F;neve_give_up_dan" rel="noopener" target="_blank"><i class="rotate-right fa-fw"></i>CSDN</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC229%E5%91%A8-229-521/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="单林敏">
+      <meta itemprop="description" content="心外无物,知行合一">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="单林敏的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ARST打卡第229周[229/521]
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-09-24 14:36:14 / 修改时间：17:21:39" itemprop="dateCreated datePublished" datetime="2023-09-24T14:36:14+08:00">2023-09-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/ARST/" itemprop="url" rel="index"><span itemprop="name">ARST</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+            <div class="post-description">lc146_LRU缓存 阿兰·德波顿：温和的成功哲学【TED演讲】 MacOS谷歌浏览器中文字变得很细,苹方 《认知觉醒》</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h1><p>lc146_LRU缓存</p>
+<p>思路:<br>看数据范围，感觉必须先有一个哈希map来进行快速O(1)查找数据已经其对应下标，然后通过数组或者链表来进行左右移动数值。<br>但这里的后续数组链表操作如果没法 O(logn) 就会超时。</p>
+<p>于是决定看看<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/lru-cache/solutions/259678/lruhuan-cun-ji-zhi-by-leetcode-solution/">题解</a>学习一下。</p>
+<p><strong>原来题解是通过 hash 表的 value 设置成链表指针的地址来达成随机访问！</strong>然后再插入队头即可..</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">DLinkedNode</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> key, value;</span><br><span class="line">    DLinkedNode* prev;</span><br><span class="line">    DLinkedNode* next;</span><br><span class="line">    <span class="built_in">DLinkedNode</span>(): <span class="built_in">key</span>(<span class="number">0</span>), <span class="built_in">value</span>(<span class="number">0</span>), <span class="built_in">prev</span>(<span class="literal">nullptr</span>), <span class="built_in">next</span>(<span class="literal">nullptr</span>) &#123;&#125;</span><br><span class="line">    <span class="built_in">DLinkedNode</span>(<span class="keyword">int</span> _key, <span class="keyword">int</span> _value): <span class="built_in">key</span>(_key), <span class="built_in">value</span>(_value), <span class="built_in">prev</span>(<span class="literal">nullptr</span>), <span class="built_in">next</span>(<span class="literal">nullptr</span>) &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LRUCache</span> &#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    unordered_map&lt;<span class="keyword">int</span>, DLinkedNode*&gt; cache;</span><br><span class="line">    DLinkedNode* head;</span><br><span class="line">    DLinkedNode* tail;</span><br><span class="line">    <span class="keyword">int</span> size;</span><br><span class="line">    <span class="keyword">int</span> capacity;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">LRUCache</span>(<span class="keyword">int</span> _capacity): <span class="built_in">capacity</span>(_capacity), <span class="built_in">size</span>(<span class="number">0</span>) &#123;</span><br><span class="line">        <span class="comment">// 使用伪头部和伪尾部节点</span></span><br><span class="line">        head = <span class="keyword">new</span> <span class="built_in">DLinkedNode</span>();</span><br><span class="line">        tail = <span class="keyword">new</span> <span class="built_in">DLinkedNode</span>();</span><br><span class="line">        head-&gt;next = tail;</span><br><span class="line">        tail-&gt;prev = head;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">get</span><span class="params">(<span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!cache.<span class="built_in">count</span>(key)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 如果 key 存在，先通过哈希表定位，再移到头部</span></span><br><span class="line">        DLinkedNode* node = cache[key];</span><br><span class="line">        <span class="built_in">moveToHead</span>(node);</span><br><span class="line">        <span class="keyword">return</span> node-&gt;value;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">put</span><span class="params">(<span class="keyword">int</span> key, <span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!cache.<span class="built_in">count</span>(key)) &#123;</span><br><span class="line">            <span class="comment">// 如果 key 不存在，创建一个新的节点</span></span><br><span class="line">            DLinkedNode* node = <span class="keyword">new</span> <span class="built_in">DLinkedNode</span>(key, value);</span><br><span class="line">            <span class="comment">// 添加进哈希表</span></span><br><span class="line">            cache[key] = node;</span><br><span class="line">            <span class="comment">// 添加至双向链表的头部</span></span><br><span class="line">            <span class="built_in">addToHead</span>(node);</span><br><span class="line">            ++size;</span><br><span class="line">            <span class="keyword">if</span> (size &gt; capacity) &#123;</span><br><span class="line">                <span class="comment">// 如果超出容量，删除双向链表的尾部节点</span></span><br><span class="line">                DLinkedNode* removed = <span class="built_in">removeTail</span>();</span><br><span class="line">                <span class="comment">// 删除哈希表中对应的项</span></span><br><span class="line">                cache.<span class="built_in">erase</span>(removed-&gt;key);</span><br><span class="line">                <span class="comment">// 防止内存泄漏</span></span><br><span class="line">                <span class="keyword">delete</span> removed;</span><br><span class="line">                --size;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 如果 key 存在，先通过哈希表定位，再修改 value，并移到头部</span></span><br><span class="line">            DLinkedNode* node = cache[key];</span><br><span class="line">            node-&gt;value = value;</span><br><span class="line">            <span class="built_in">moveToHead</span>(node);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">addToHead</span><span class="params">(DLinkedNode* node)</span> </span>&#123;</span><br><span class="line">        node-&gt;prev = head;</span><br><span class="line">        node-&gt;next = head-&gt;next;</span><br><span class="line">        head-&gt;next-&gt;prev = node;</span><br><span class="line">        head-&gt;next = node;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">removeNode</span><span class="params">(DLinkedNode* node)</span> </span>&#123;</span><br><span class="line">        node-&gt;prev-&gt;next = node-&gt;next;</span><br><span class="line">        node-&gt;next-&gt;prev = node-&gt;prev;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">moveToHead</span><span class="params">(DLinkedNode* node)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">removeNode</span>(node);</span><br><span class="line">        <span class="built_in">addToHead</span>(node);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">DLinkedNode* <span class="title">removeTail</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        DLinkedNode* node = tail-&gt;prev;</span><br><span class="line">        <span class="built_in">removeNode</span>(node);</span><br><span class="line">        <span class="keyword">return</span> node;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h1><p>阿兰·德波顿：温和的成功哲学【TED演讲】</p>
+<div align = "center">
+    <iframe  width="100%" height="700" src="//player.bilibili.com/player.html?aid=489009234&bvid=BV1PN411Y7zV&cid=1213709987&p=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+
+<p>如果你认为成功的人才有才能，那么你就会”残忍”地认为失败的人都是没有才能的人，而不是认为他们是不幸的人。<br>这种想法将会提高社会上的自杀率。追求自我实现的发达国家的自杀率大于任何其他国家。</p>
+<p>以人类的社会地位去评价一个人是一种罪过。</p>
+<p>悲剧不应该只是告诉我们失败，而是应该告诉我们他们虽然失去，但是他们不是失败者。</p>
+<p><strong>每个人对成功的定义或多或少受到社会上的观点影响，我们应该去探索自己真正想要的生活，才能过自己想要的成功生活。</strong></p>
+<p>知道完全的公平和正义是不可能的，但是会不断地去追求正义。</p>
+<h1 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h1><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/bdc877e67189">MacOS谷歌浏览器中文字变得很细,苹方</a></p>
+<h1 id="Share-《认知觉醒》"><a href="#Share-《认知觉醒》" class="headerlink" title="Share-《认知觉醒》"></a>Share-《认知觉醒》</h1><p>推荐书籍 《认知觉醒》</p>
+<p>有句话说的是，人无法赚到认知外的钱。还有句话是钱财乃身外之物。</p>
+<p>所以我们可以知道身体和思想才是我们能够永远带着的两个东西。<br>因此锻炼身体和锻炼认知就是我们在世界上好好生活的两个非常重要的事情。</p>
+<p>这本书就写了如何锻炼认知能力，开启元认知。</p>
+<p>其中主要的观点:</p>
+<ul>
+<li>设置自己想要达成的事情，然后把任务分解到自己的舒适区外的一点点的位置，从而不断进步地完成目标。</li>
+<li>早起，冥想，读书，写作，运动，从而不断锻炼自己的专注力，认知力。</li>
+<li>时常记录，反思，然后不断迭代改变，才能进化成更好的自己。</li>
+</ul>
+<h2 id="一些书摘分享"><a href="#一些书摘分享" class="headerlink" title="一些书摘分享"></a>一些书摘分享</h2><ul>
+<li>人的精力是有限的，只有在精力比较充沛的时候才能容易得保持专注(抵制诱惑)。所以得珍惜自己的精力，及时休息调整。</li>
+<li>当然保持专注也需要把做事情的内容调整到适宜的难度，太难的拆分成一步步可的，太容易的就调整成限时的。</li>
+<li>番茄时钟休息不能玩手机！不要知错还一直犯错了，顺便把手表也搞成消息免打扰。</li>
+</ul>
+<p>国内时间管理达人李参博客中介绍的方法，还购买了她推荐的专业番茄钟来实践体验。说实话，这个方法和工具真的很棒！每次开始阅读和写作时，我只要按下计时键就不再管时间，让自己完全专注地投入其中，直至25分钟过去后提示音响起，中途除非有极特殊的事情需要中断，否则我会将其余事情全放到一边，等专注时间结束后再处理。时间一到，我会立即合上书本或让双手马上离开键盘，然后开始5分钟的休息计时。在这5分钟里，我会做与阅读或写作无关的事情，比如：看看窗外、收收衣服、拆拆包裹，等等，但刷手机、玩游戏这些被动使用注意力的事情我不推荐，因为它们仍然是消耗精力的。</p>
+<p>当然，25分钟只是一个参考标准，我们可以根据自己的思维耐力来设定工作时段，有的人可以集中精力半小时，而有的人也许只能集中15分钟，只要到达了自己的疲劳边缘，就可以主动停下来。而且这个“主动停止”的动作一定要坚决。很多人在一开始的时候，由于精力分散得还不明显，就不愿意主动停下来，但这往往会得不偿失。主动休息犹如主动喝水，当感到很渴的时候再喝水，其实已经晚了，你想让精力保持高位，就要学会主动停下来，这甚至可以作为一个关键点。</p>
+<p>另外，很多人在学习和工作中都不具备不受打扰的理想条件，但只要坚持“极度专注+主动休息”的模式，效果也会让你满意。不管你能工作几分钟，只要开始了，就尽力保持专注，把无关的事情都放在一边。</p>
+<ul>
+<li>注意力的增强回路是正向的还是负向的，很大程度上取决于你最初的选择，这也是老生常谈的道理：要事第一！</li>
+</ul>
+<p>在增强回路的起点，做出有利选择所消耗的自制力是最小的，如果等负的增强回路形成，再想改变就难喽！</p>
+<p>在初始阶段，强迫自己先做重要的事情，一旦进入正向的增强回路，你便能拥有强大的行动力——这正是增强自制力、提升行动力的秘密。</p>
+<ul>
+<li>一切源于“想清楚”</li>
+</ul>
+<p>你陷入怠惰、懒散、空虚的情绪中动弹不得时，往往是因为你的大脑处于模糊状态。大脑要么不清楚自己想要什么；要么同时想做的事太多，无法确定最想实现的目标是什么；要么知道目标，但没想好具体要在什么时候以什么方式去实现。</p>
+<p>不管你处在什么状态下，只要拿出笔和纸，写下目标、写下时间，你的元认知能力就能迅速提升，你就会动力满满。归结起来还是那句话：认知越清晰，行动越坚定。</p>
+<p>正如爱因斯坦所说：“如果给我1小时解答一道决定我生死的问题，我会花55分钟弄清楚这道题到底在问什么。一旦清楚它到底在问什么，剩下的5分钟足够回答这个问题。”</p>
+<p>聪明的思考者都知道“想清楚”才是一切的关键，在“想清楚”这件事上，他们比任何人都愿意花时间，而普通人似乎正好相反，喜欢一头扎进生活的细节洪流中，随波逐流，因为这样似乎毫不费力。于是在普通人眼里是“知易行难”，而在聪明人眼里是“知难行易”，这一点值得我们反思。</p>
+<p>我相信，你若真的想清楚了，就会主动实践，重构自己的行动力。相信我，一旦做到了，那感觉真的不一样！</p>
+<ul>
+<li>成长中的悖论：想先看到结果再行动的人往往无法看到结果。耍小聪明的人会因为结果不明朗，担心付出没有回报，所以不愿行动，以致永远停留在原地。</li>
+</ul>
+<p>你觉得学英语没用，是因为你看不到生活中有需要英语的地方。只有英语学好了，和英语有关的机会才会慢慢地出现在你的周围。你觉得学历没用，是因为你根本不知道学习对你的生活轨迹能带来多少改变，你只是基于当时的场景，认为自己手里只是额外多了一张纸。你觉得锻炼身体没有用，正是因为你不去运动，所以感受不到它的价值……</p>
+<p>没错，这个世界是有认知层次的。处在下一个认知层次的人往往看不到上一个认知层次的风景，因而只能用狭隘的视角来判断：这些东西虽然很有道理，但似乎看起来并没有什么用。</p>
+<ul>
+<li><p>认知练习也需要不断实践才能成为真正的认知</p>
+</li>
+<li><p>稀缺心态影响自己的精力，导致自己变蠢，需要目标引导，专注在一件事情上，少就是多</p>
+</li>
+<li><p>多角度看问题，才能更加平和包容，多多练习</p>
+</li>
+<li><p>每日反思能减少愤怒。</p>
+</li>
+<li><p>游戏人生，不要让事情本身束缚了你的情绪和注意力，把任务拆解成小块游戏任务的形式。当然也是把必须做的不喜欢的任务，通过换一个视角，想象自己在做一件对自己有益的事情，从而达到摆脱痛苦，获得快乐的目的。</p>
+</li>
+</ul>
+<p>特别是“自主需求”，它是自我决定理论的关键与核心。也就是说，我们如果能主动选择和掌控所做的事情，就会产生内在动力，获取幸福。就像前文提到的 1500米跑步测试，在大多数人眼里，它是一项考核任务，没得选择，只能被动承受，但在我眼里，它却成了一件好玩的事——游戏，于是我有了选择和掌控的能力，最终得到了优势和认可。而在整个过程中，我仅仅改变了自己对事物的看法，境况就变得完全不同，这正是积极心理学的神奇之处。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/alipay.jpg" alt="单林敏 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/ARST/" rel="tag"># ARST</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/ARST%E6%89%93%E5%8D%A1%E7%AC%AC228%E5%91%A8-228-521/" rel="prev" title="ARST打卡第228周[228/521]">
+                  <i class="fa fa-chevron-left"></i> ARST打卡第228周[228/521]
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">湘ICP备19025607号 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">单林敏</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"wolfdan666","repo":"gitalk_commont","client_id":"2934cb0fdcabc560461e","client_secret":"937e7b77dcdfd83f6a89f4a9b9447a76a54bc764","admin_user":"wolfdan666","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"91962fb371d84a28eb1f8d11e0b55462"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
