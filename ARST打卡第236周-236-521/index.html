@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.wolfdan.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.8.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="lc715_Range模块 【TED演讲】你不知道未来的自己想要什么 linux学习——软链接、硬链接与复制的区别 vps预览hugo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ARST打卡第236周[236&#x2F;521]">
+<meta property="og:url" content="https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC236%E5%91%A8-236-521/">
+<meta property="og:site_name" content="单林敏的博客">
+<meta property="og:description" content="lc715_Range模块 【TED演讲】你不知道未来的自己想要什么 linux学习——软链接、硬链接与复制的区别 vps预览hugo">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-11-12T12:07:09.000Z">
+<meta property="article:modified_time" content="2023-11-12T13:59:56.114Z">
+<meta property="article:author" content="单林敏">
+<meta property="article:tag" content="ARST">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC236%E5%91%A8-236-521/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC236%E5%91%A8-236-521/","path":"ARST打卡第236周-236-521/","title":"ARST打卡第236周[236/521]"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>ARST打卡第236周[236/521] | 单林敏的博客</title>
+  
+
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?953c0cc2db0f1124313d72b95b9d07e1"></script>
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">单林敏的博客</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">wolfdan's blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-捐赠"><a href="/%E6%8D%90%E8%B5%A0/" rel="section"><i class="fa fa-coins fa-fw"></i>捐赠</a></li>
+        <li class="menu-item menu-item-冲冲"><a href="/%E5%86%B2%E5%86%B2%E5%86%B2/" rel="section"><i class="fa fa-rocket fa-fw"></i>冲冲</a></li>
+        <li class="menu-item menu-item-友链"><a href="/links/" rel="section"><i class="fa fa-link fa-fw"></i>友链</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Algorithm"><span class="nav-number">1.</span> <span class="nav-text">Algorithm</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Review"><span class="nav-number">2.</span> <span class="nav-text">Review</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tips"><span class="nav-number">3.</span> <span class="nav-text">Tips</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Share"><span class="nav-number">4.</span> <span class="nav-text">Share</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#vps%E9%A2%84%E8%A7%88hugo"><span class="nav-number">4.1.</span> <span class="nav-text">vps预览hugo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E5%BF%AB%E9%80%9F%E9%A2%84%E8%A7%88"><span class="nav-number">4.1.1.</span> <span class="nav-text">简单快速预览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AB%98%E7%BA%A7%E9%A2%84%E8%A7%88"><span class="nav-number">4.1.2.</span> <span class="nav-text">高级预览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%84%E8%A7%88%E7%94%9F%E6%88%90%E7%9A%84%E7%BD%91%E9%A1%B5"><span class="nav-number">4.1.3.</span> <span class="nav-text">预览生成的网页</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="单林敏"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">单林敏</p>
+  <div class="site-description" itemprop="description">心外无物,知行合一</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">328</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">93</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/wolfdan666" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;wolfdan666" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:wolfdan666666@gmail.com" title="E-Mail → mailto:wolfdan666666@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/shanlinmin/activities" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;shanlinmin&#x2F;activities" rel="noopener" target="_blank"><i class="free-code-camp fa-fw"></i>知乎</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.jianshu.com/u/53acec957bf9" title="简书 → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;53acec957bf9" rel="noopener" target="_blank"><i class="book fa-fw"></i>简书</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://me.csdn.net/neve_give_up_dan" title="CSDN → https:&#x2F;&#x2F;me.csdn.net&#x2F;neve_give_up_dan" rel="noopener" target="_blank"><i class="rotate-right fa-fw"></i>CSDN</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.wolfdan.cn/ARST%E6%89%93%E5%8D%A1%E7%AC%AC236%E5%91%A8-236-521/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="单林敏">
+      <meta itemprop="description" content="心外无物,知行合一">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="单林敏的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ARST打卡第236周[236/521]
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-11-12 20:07:09 / 修改时间：21:59:56" itemprop="dateCreated datePublished" datetime="2023-11-12T20:07:09+08:00">2023-11-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/ARST/" itemprop="url" rel="index"><span itemprop="name">ARST</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+            <div class="post-description">lc715_Range模块 【TED演讲】你不知道未来的自己想要什么 linux学习——软链接、硬链接与复制的区别 vps预览hugo</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h1><p>lc715_Range模块</p>
+<p>思路:<br>暴力算法就是维护一个pair对，或者直接用kv的map，然后就直接按照key排序了。</p>
+<p>这样每次直接根据k-range的左值进行范围查找和计算。</p>
+<p>两个 k-range 只有包含，交叠和错开三种状态，所以只要进行处理就行。</p>
+<p>这里实现的关键是 lower_bound 对 key 操作是否能实现。<br>然后时间复杂度是 O(nlog(n)) , n 为最多查询次数。<br>空间复制度是 O(2n)。</p>
+<p>不太熟这个操作，写代码时间超时了，学习一下<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/range-module/solutions/1608992/range-mo-kuai-by-leetcode-solution-4utf/">题解</a>吧。</p>
+<p>发现思路和题解完全一样，但是自己的实现速度和坚定度不够，还得多多练习。<br>并且这里时间复杂度分析把后面的操作算成时间常数，只算了 log(a+r) , 所以时间复杂度也得更细致一点。</p>
+<p>给题解加点注释。<br>发现思路很简单，但是很考验实现速度和精细度。以后还得多练。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RangeModule</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">RangeModule</span>() &#123;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">addRange</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 先找大于 left 的，然后 prev 获取前一个，就能保证 pre_l &lt;= left.</span></span><br><span class="line">        <span class="keyword">auto</span> it = intervals.<span class="built_in">upper_bound</span>(left);</span><br><span class="line">        <span class="keyword">if</span> (it != intervals.<span class="built_in">begin</span>()) &#123;</span><br><span class="line">            <span class="keyword">auto</span> start = <span class="built_in">prev</span>(it);</span><br><span class="line">            <span class="comment">// 在前面，pass</span></span><br><span class="line">            <span class="keyword">if</span> (start-&gt;second &gt;= right) &#123;</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 交叠处理</span></span><br><span class="line">            <span class="keyword">if</span> (start-&gt;second &gt;= left) &#123;</span><br><span class="line">                left = start-&gt;first;</span><br><span class="line">                intervals.<span class="built_in">erase</span>(start);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (it != intervals.<span class="built_in">end</span>() &amp;&amp; it-&gt;first &lt;= right) &#123;</span><br><span class="line">            right = <span class="built_in">max</span>(right, it-&gt;second);</span><br><span class="line">            it = intervals.<span class="built_in">erase</span>(it);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// it 在最开始找不到时也能顺利到这里。妙。</span></span><br><span class="line">        intervals[left] = right;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">queryRange</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">auto</span> it = intervals.<span class="built_in">upper_bound</span>(left);</span><br><span class="line">        <span class="keyword">if</span> (it == intervals.<span class="built_in">begin</span>()) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        it = <span class="built_in">prev</span>(it);</span><br><span class="line">        <span class="keyword">return</span> right &lt;= it-&gt;second;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">removeRange</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">auto</span> it = intervals.<span class="built_in">upper_bound</span>(left);</span><br><span class="line">        <span class="keyword">if</span> (it != intervals.<span class="built_in">begin</span>()) &#123;</span><br><span class="line">            <span class="keyword">auto</span> start = <span class="built_in">prev</span>(it);</span><br><span class="line">            <span class="keyword">if</span> (start-&gt;second &gt;= right) &#123;</span><br><span class="line">                <span class="comment">// 从中间切成两段</span></span><br><span class="line">                <span class="keyword">int</span> ri = start-&gt;second;</span><br><span class="line">                <span class="keyword">if</span> (start-&gt;first == left) &#123;</span><br><span class="line">                    intervals.<span class="built_in">erase</span>(start);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> &#123;</span><br><span class="line">                    start-&gt;second = left;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (right != ri) &#123;</span><br><span class="line">                    intervals[right] = ri;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (start-&gt;second &gt; left) &#123;</span><br><span class="line">                <span class="comment">// 交叠</span></span><br><span class="line">                <span class="keyword">if</span> (start-&gt;first == left) &#123;</span><br><span class="line">                    intervals.<span class="built_in">erase</span>(start);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> &#123;</span><br><span class="line">                    start-&gt;second = left;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (it != intervals.<span class="built_in">end</span>() &amp;&amp; it-&gt;first &lt; right) &#123;</span><br><span class="line">            <span class="comment">// right太大，包括删除的范围就多</span></span><br><span class="line">            <span class="keyword">if</span> (it-&gt;second &lt;= right) &#123;</span><br><span class="line">                it = intervals.<span class="built_in">erase</span>(it);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                intervals[right] = it-&gt;second;</span><br><span class="line">                intervals.<span class="built_in">erase</span>(it);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    map&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; intervals;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h1><p>【TED演讲】你不知道未来的自己想要什么</p>
+<div align = "center">
+    <iframe  width="100%" height="700" src="//player.bilibili.com/player.html?aid=280068740&bvid=BV11c411o7eV&cid=1309109755&p=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+
+<p>未来不可知，你不知道未来的自己的想法。<br>我们可以通过下面三种方式去培育自己让自己成为更好的人: </p>
+<p><strong>保持好奇心，保持谦卑，保持勇敢。</strong></p>
+<h1 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/geerniya/article/details/79093301">linux学习——软链接、硬链接与复制的区别</a></p>
+<h1 id="Share"><a href="#Share" class="headerlink" title="Share"></a>Share</h1><h2 id="vps预览hugo"><a href="#vps预览hugo" class="headerlink" title="vps预览hugo"></a>vps预览hugo</h2><h3 id="简单快速预览"><a href="#简单快速预览" class="headerlink" title="简单快速预览"></a>简单快速预览</h3><p>因为没有发布，所以一般只能在本地预览，如果是本地操作系统，可以直接查看，但是vps的话，无法直接输出网址查看页面状况。可以通过借助 python 的 http.server 进行简单预览</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 -m http.server 8001</span><br></pre></td></tr></table></figure>
+
+<h3 id="高级预览"><a href="#高级预览" class="headerlink" title="高级预览"></a>高级预览</h3><p>如果想要完整预览，还是得用 Nginx 搞个服务，让服务器的 ip 和 port 端口开启对外服务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装nginx（顺便安装网络排查工具 net-tools）。centos 用 yum install nginx</span></span><br><span class="line">apt install nginx net-tools</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># vim 配置文件，加上如下配置在 http 的作用域里面</span></span><br><span class="line">vim /etc/nginx/nginx.conf</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"># http.server 80 </span><br><span class="line">server &#123;</span><br><span class="line">    # ipv4，ipv6 的 80 端口监听</span><br><span class="line">    listen       80 default_server;</span><br><span class="line">    listen       [::]:80 default_server;</span><br><span class="line">    server_name  us.wolfdan.cn;     # 你的域名</span><br><span class="line">    root         /root/wolfdan.cn/public; # 公开的静态文件路径__不建议放root下，见后文问题排查</span><br><span class="line"></span><br><span class="line">    include /etc/nginx/default.d/*.conf;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    error_page 404 /404.html;</span><br><span class="line">    location = /40x.html &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    error_page 500 502 503 504 /50x.html;</span><br><span class="line">    location = /50x.html &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启动 nginx 报错</span></span><br><span class="line">[root@us-arm public]<span class="comment"># nginx</span></span><br><span class="line">nginx: [emerg] a duplicate default server <span class="keyword">for</span> [::]:80 <span class="keyword">in</span> /etc/nginx/nginx.conf:66</span><br></pre></td></tr></table></figure>
+<p>需要注释掉默认的 nginx 静态欢迎网页</p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="deletion">- include /etc/nginx/sites-enabled/*;</span></span><br><span class="line"><span class="addition">+ # include /etc/nginx/sites-enabled/*;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启动 nginx</span></span><br><span class="line">nginx </span><br><span class="line"><span class="comment"># 重启 nginx</span></span><br><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure>
+
+<p>访问 <a target="_blank" rel="noopener" href="http://us.wolfdan.cn/">http://us.wolfdan.cn:80/</a> 得到的是 403 …<br>查看日志发现目录权限不够:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@us-arm public]<span class="comment"># tail /var/log/nginx/error.log  -n 1</span></span><br><span class="line">2023/11/09 09:57:57 [error] 866439<span class="comment">#866439: *2 &quot;/root/wolfdan.cn/public/index.html&quot; is forbidden (13: Permission denied), client: 141.98.11.60, server: us.wolfdan.cn, request: &quot;GET / HTTP/1.1&quot;, host: &quot;141.148.143.17&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>观察发现跑 nginx 是一个 www-data 的虚拟用户</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@us-arm wolfdan.cn]<span class="comment"># ps aux | grep nginx</span></span><br><span class="line">root      797588  0.0  0.0  50572  6344 ?        Ss   09:41   0:00 nginx: master process nginx</span><br><span class="line">www-data  866439  0.0  0.0  51192  5980 ?        S    09:52   0:00 nginx: worker process</span><br><span class="line">www-data  866440  0.0  0.0  51192  5980 ?        S    09:52   0:00 nginx: worker process</span><br><span class="line">www-data  866441  0.0  0.0  51192  5980 ?        S    09:52   0:00 nginx: worker process</span><br><span class="line">www-data  866442  0.0  0.0  51192  5980 ?        S    09:52   0:00 nginx: worker process</span><br><span class="line">root     1107736  0.0  0.0   7700   680 pts/0    S+   10:28   0:00 grep --color=auto nginx</span><br></pre></td></tr></table></figure>
+
+<p>那就设置 public 目录权限为 www-data . </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@us-arm wolfdan.cn]<span class="comment"># chown -R www-data:www-data public</span></span><br></pre></td></tr></table></figure>
+
+<p>改完还是403，很奇怪…</p>
+<p>通过设置 nginx.conf 的 user www-data; 改成 user root; 再 <code>pkill -9 nginx &amp;&amp; nginx</code> 重启之后是能够访问页面的。</p>
+<p>但是 www-data 为啥不行？</p>
+<p>感觉是因为 /root 目录下有特殊的保护机制(原因见下文)，导致不行，因为通过尝试复制到其他目录，就成功了…</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@us-arm wolfdan.cn]<span class="comment"># cp -R public/ /var/www/</span></span><br><span class="line">[root@us-arm wolfdan.cn]<span class="comment"># nginx -s reload</span></span><br></pre></td></tr></table></figure>
+
+<p>然后想到之前 windows 也无法访问 wsl 的 root 目录，于是明白了是<strong>因为 root 目录默认不让其他用户访问.</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[root@us-arm /]<span class="comment"># ll</span></span><br><span class="line">total 72</span><br><span class="line">drwxr-xr-x  19 root root  4096 Oct 14 18:17 ./</span><br><span class="line">drwxr-xr-x  19 root root  4096 Oct 14 18:17 ../</span><br><span class="line">lrwxrwxrwx   1 root root     7 Jul 20 05:44 bin -&gt; usr/bin/</span><br><span class="line">drwx------   2 root root 16384 Jul 20 05:56 lost+found/</span><br><span class="line"><span class="comment"># ...</span></span><br><span class="line">dr-xr-xr-x 246 root root     0 Oct 14 18:17 proc/</span><br><span class="line"><span class="comment"># 看这里是无法让其他用户访问的。</span></span><br><span class="line">drwx------  11 root root  4096 Nov  9 10:57 root/</span><br><span class="line"><span class="comment"># ...</span></span><br><span class="line">drwxr-xr-x  14 root root  4096 Nov  9 09:19 var/</span><br></pre></td></tr></table></figure>
+
+<h3 id="预览生成的网页"><a href="#预览生成的网页" class="headerlink" title="预览生成的网页"></a>预览生成的网页</h3><p>查看发现并没有看到对应的 hello hugo 的文章，是因为默认是 draft ，需要如下方式生成一下。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># *--buildDrafts: 生成被标记为 「草稿」 的文档</span></span><br><span class="line"><span class="comment"># *-w: 监控更改，如果发生更改直接显示到博客上 (保存即可预览效果)</span></span><br><span class="line">hugo server --buildDrafts -w</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成最终文章</span></span><br><span class="line">hugo </span><br></pre></td></tr></table></figure>
+
+<p>编辑一个脚本直接发到 nginx 目录下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@us-arm wolfdan.cn]<span class="comment"># vim deploy.sh</span></span><br><span class="line">[root@us-arm wolfdan.cn]<span class="comment"># cat deploy.sh</span></span><br><span class="line"><span class="comment"># 部署到nginx</span></span><br><span class="line"><span class="comment"># rm -rf /var/www/public</span></span><br><span class="line">cp -R public/ /var/www/</span><br><span class="line">chown -R www-data:www-data /var/www/public</span><br><span class="line">[root@us-arm wolfdan.cn]<span class="comment"># sh -x deploy.sh</span></span><br><span class="line">+ cp -R public/ /var/www/</span><br><span class="line">+ chown -R www-data:www-data /var/www/public</span><br></pre></td></tr></table></figure>
+
+<p>发现还是没有成功看到草稿文章，然后手动去修改了 draft 标签，再次进行上面的生成步骤</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@us-arm wolfdan.cn]<span class="comment"># cp content/post/hello-hugo.md content/post/hello-hugo-public.md</span></span><br><span class="line">[root@us-arm wolfdan.cn]<span class="comment"># vim content/post/hello-hugo-public.md</span></span><br><span class="line"><span class="comment"># 修改为 draft = false</span></span><br><span class="line">[root@us-arm wolfdan.cn]<span class="comment"># hugo</span></span><br><span class="line">[root@us-arm wolfdan.cn]<span class="comment"># bash -x deploy.sh</span></span><br><span class="line">+ cp -R public/ /var/www/</span><br><span class="line">+ chown -R www-data:www-data /var/www/public</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/alipay.jpg" alt="单林敏 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/ARST/" rel="tag"># ARST</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/ARST%E6%89%93%E5%8D%A1%E7%AC%AC235%E5%91%A8-235-521/" rel="prev" title="ARST打卡第235周[235/521]">
+                  <i class="fa fa-chevron-left"></i> ARST打卡第235周[235/521]
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">湘ICP备19025607号 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">单林敏</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"wolfdan666","repo":"gitalk_commont","client_id":"2934cb0fdcabc560461e","client_secret":"937e7b77dcdfd83f6a89f4a9b9447a76a54bc764","admin_user":"wolfdan666","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"9983ba4bfbc542dcb84ff2190180148f"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
